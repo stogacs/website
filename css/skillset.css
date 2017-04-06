@@ -1,0 +1,156 @@
+*, *:before, *:after {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+font-family: "fontello";
+font-style: normal;
+font-weight: normal;
+speak: none;
+display: inline-block;
+text-decoration: inherit;
+/* For safety - reset parent styles, that can break glyph codes*/
+font-variant: normal;
+text-transform: none;
+}
+
+
+/*MAIN*/
+
+.skillset-list {
+display: table;
+width: 100%;
+padding: 0px;
+margin: 0px;
+}
+.skillset-list li {
+position: relative;
+float: left;
+clear: right;
+width: 100%;
+list-style: none;
+text-align: left;
+font-size: 1em;
+font-weight: 300;
+color: #666666;
+}
+.skillset-list li .bar {
+display: table;
+float: left;
+width: 100%;
+height: 10px;
+margin: 10px 0px 10px 0px;
+background-color: #f5f5f5;
+}
+ @-webkit-keyframes create-full {
+ 0% {
+ opacity: 0.4;
+ z-index: 100;
+ -ms-transform: scale(0.6); /* IE 9 */
+ -webkit-transform: scale(0.6); /* Chrome, Safari, Opera */
+ transform: scale(0.6);
+}
+ 50% {
+ opacity: 0.8;
+ z-index: 150;
+ -ms-transform: scale(1.5); /* IE 9 */
+ -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+ transform: scale(1.5);
+}
+ 100% {
+ opacity: 1;
+ z-index: 200;
+ -ms-transform: scale(1.0); /* IE 9 */
+ -webkit-transform: scale(1.0); /* Chrome, Safari, Opera */
+ transform: scale(1.0);
+}
+}
+ @keyframes create-full {
+ 0% {
+ opacity: 0.4;
+ z-index: 100;
+ -ms-transform: scale(0.6); /* IE 9 */
+ -webkit-transform: scale(0.6); /* Chrome, Safari, Opera */
+ transform: scale(0.6);
+}
+ 50% {
+ opacity: 0.8;
+ z-index: 150;
+ -ms-transform: scale(1.5); /* IE 9 */
+ -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+ transform: scale(1.5);
+}
+ 100% {
+ opacity: 1;
+ z-index: 200;
+ -ms-transform: scale(1.0); /* IE 9 */
+ -webkit-transform: scale(1.0); /* Chrome, Safari, Opera */
+ transform: scale(1.0);
+}
+}
+.skillset-list li .bar .full {
+position: relative;
+z-index: 100;
+float: left;
+height: 10px;
+background-color: #f32b1a;
+border-right: 1px solid #FBE0DE;
+-webkit-animation: create-full 0.5s 1;
+-moz-animation: create-full 0.5s 1;
+-o-animation: create-full 0.5s 1;
+animation: create-full 0.5s 1;
+}
+ @-webkit-keyframes create-empty {
+ 0% {
+ opacity: 0.4;
+}
+ 50% {
+ opacity: 0.8;
+}
+ 100% {
+ opacity: 1;
+}
+}
+ @keyframes create-empty {
+ 0% {
+ opacity: 0.4;
+}
+ 50% {
+ opacity: 0.8;
+}
+ 100% {
+ opacity: 1;
+}
+}
+.skillset-list li .bar .empty {
+float: left;
+height: 10px;
+background-color: #f0f0f0;
+border-right: 1px solid #e0e0e0;
+-webkit-animation: create-bar 0.5s 1;
+-moz-animation: create-bar 0.5s 1;
+-o-animation: create-bar 0.5s 1;
+animation: create-bar 0.5s 1;
+}
+.skillset-list li #list-info {
+position: absolute;
+bottom: 90px;
+right: 0px;
+z-index: 100;
+opacity: 0;
+width: 200px;
+padding: 8px;
+background-color: #333333;
+border: 1px solid rgba(255,255,255,0.9);
+-webkit-transition: opacity 0.2s ease-out, bottom 0.2s ease-out;
+-moz-transition: opacity 0.2s ease-out, bottom 0.2s ease-out;
+-o-transition: opacity 0.2s ease-out, bottom 0.2s ease-out;
+transition: opacity 0.2s ease-out, bottom 0.2s ease-out;
+}
+.skillset-list li #list-info p {
+color: #ffffff;
+font-weight: 400;
+font-size: 0.9em;
+}
