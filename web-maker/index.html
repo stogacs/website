@@ -1,12 +1,25 @@
-<HTML>
-<head> I like pie </head>
-<body>
-<p1>
-<ol>
-<li> cars </li>
-<li> are </li> 
-<li> cool </li>
-</p1> 
-<p2> cars are bad </p2>
-</body>
-</HTML>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Build A Website</title>
+    </head>
+    
+    <form action = "index.php" method = "post" id = "myform">
+        <input type = "text"  value = "<?php echo $_POST['name'];  ?>"name = "name">
+        <input type="submit"/>
+    </form>
+    
+    <textarea form = "myform" name="code" style = "width:500px; height:600px;" > <?php echo $_POST['code'];  ?> </textarea>
+    
+   <?php
+        $code = $_POST["code"];
+        $name = $_POST["name"];
+        if(isset($code) && isset($name)){
+            $file = fopen("$name.html", "w");
+            fwrite($file, $code);
+            fclose($file);
+            echo "<p>here is a </p><a href = '/$name.html' target='_blank'>link</a> <p> to your website!!!</p>";
+        }
+    ?>
+    
+</html>
