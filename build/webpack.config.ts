@@ -27,6 +27,7 @@ const common = (mode: Mode): webpack.Configuration => {
         "@components": path.resolve(dir.src, "components"),
         "@assets": path.resolve(dir.src, "assets"),
         "@data": path.resolve(dir.src, "data"),
+        "@util": path.resolve(dir.src, "util"),
       },
     },
     entry: {

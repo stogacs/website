@@ -4,8 +4,9 @@
   "description": "The repository of the Conestoga Computer Science Club's website.",
   "main": "index.js",
   "scripts": {
+    "setup": "bin/upimages.sh",
     "start:dev": "cross-env MODE=\"development\" TS_NODE_PROJECT=\"build/tsconfig.webpack.json\" webpack-dev-server",
-    "build": "cross-env TS_NODE_PROJECT=\"build/tsconfig.webpack.json\" webpack",
+    "build": " cross-env TS_NODE_PROJECT=\"build/tsconfig.webpack.json\" webpack",
     "build:dev": "cross-env MODE=\"development\" npm run build",
     "build:prod": "cross-env MODE=\"production\" npm run build"
   },
