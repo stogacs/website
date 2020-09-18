@@ -3,11 +3,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import { Pictures } from "@data/models/Pictures";
 import { splitChunks } from "@util";
 
-export interface PicturesProps {
-  pictures: string[];
-}
+export type PicturesProps = Pictures;
 
 export class PicturesComponent extends React.Component<PicturesProps> {
   render(): React.ReactNode {

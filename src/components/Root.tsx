@@ -4,12 +4,14 @@ import Container from "react-bootstrap/Container";
 import { BrowserRouter as Router } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-import { ExperiencesComponent, ExperienceProps } from "./Experiences";
-import { PicturesComponent } from "./Pictures";
+import { ExperiencesComponent, ExperiencesProps } from "./Experiences";
+import { PicturesComponent, PicturesProps } from "./Pictures";
+import { ContactsComponent, ContactsProps } from "./Contacts";
 
 export interface RootProps {
-  experiences: ExperienceProps;
-  pictures: string[];
+  experiences: ExperiencesProps;
+  pictures: PicturesProps;
+  contacts: ContactsProps;
 }
 
 export class RootComponent extends React.Component<RootProps> {
@@ -24,7 +26,11 @@ export class RootComponent extends React.Component<RootProps> {
           </Nav>
 
           <ExperiencesComponent competitions={this.props.experiences.competitions} />
-          <PicturesComponent pictures={this.props.pictures} />
+          <PicturesComponent pictures={this.props.pictures.pictures} />
+          <ContactsComponent
+            links={this.props.contacts.links}
+            people={this.props.contacts.people}
+          />
         </Container>
       </Router>
     );

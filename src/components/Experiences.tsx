@@ -1,31 +1,13 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import { Experiences } from "@data/models/Experiences";
 import { splitChunks } from "@util";
 
-export interface Competition {
-  title: string;
-  link: string;
-  awards: Award[];
-}
+export type ExperiencesProps = Experiences;
 
-export interface Award {
-  year: string;
-  title: string;
-  names: string[];
-}
-
-export interface ExperienceProps {
-  competitions: Competition[];
-}
-
-export class ExperiencesComponent extends React.Component<ExperienceProps> {
-  constructor(props: ExperienceProps) {
-    super(props);
-  }
-
+export class ExperiencesComponent extends React.Component<ExperiencesProps> {
   render(): React.ReactNode {
     const competitionElems = this.props.competitions.map((competition) => {
       const listings = competition.awards.map((award) => (
