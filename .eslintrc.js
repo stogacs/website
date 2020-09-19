@@ -23,5 +23,6 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/no-empty-interface": "off",
   },
 };

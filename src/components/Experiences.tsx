@@ -2,14 +2,33 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import { Experiences } from "@data/models/Experiences";
+import { ExperiencesService, Experiences } from "@data/Experiences";
 import { splitChunks } from "@util";
 
-export type ExperiencesProps = Experiences;
+export interface ExperiencesProps {}
 
-export class ExperiencesComponent extends React.Component<ExperiencesProps> {
+interface ExperiencesState {
+  experiences?: Experiences;
+}
+
+export class ExperiencesComponent extends React.Component<ExperiencesState, ExperiencesState> {
+  service: ExperiencesService;
+
+  constructor(props: ExperiencesState) {
+    super(props);
+    this.service = new ExperiencesService();
+    this.state = {};
+
+    this.service.fetch().then((data) => this.setState({ experiences: data }));
+  }
+
   render(): React.ReactNode {
-    const competitionElems = this.props.competitions.map((competition) => {
+    if (!this.state.experiences) {
+      return <div>Loading...</div>;
+    }
+
+    const competitions = this.state.experiences.competitions;
+    const competitionElems = competitions.map((competition) => {
       const listings = competition.awards.map((award) => (
         <p key={award.title}>
           <b>{award.title}</b> {award.names.length != 0 && "- " + award.names.join(", ")}

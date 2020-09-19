@@ -1,0 +1,29 @@
+{
+  "links": [
+    {
+      "name": "Contact Email",
+      "url": "conestogacomputerscienceclub@gmail.com",
+      "icon": "envelope"
+    },
+    {
+      "name": "GitHub Organization",
+      "url": "https://github.com/stogacs",
+      "icon": { "set": "fab", "name": "github" }
+    }
+  ],
+  "people": [
+    {
+      "name": "Eric Zhao",
+      "position": "Co-President",
+      "photo": "",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/Dophin2009",
+          "icon": { "set": "fab", "name": "github" }
+        },
+        { "name": "Email", "url": "21zhaoe@tesdk12.net", "icon": "envelope" }
+      ]
+    }
+  ]
+}

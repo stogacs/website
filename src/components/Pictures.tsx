@@ -3,14 +3,33 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import { Pictures } from "@data/models/Pictures";
+import { PicturesService, Pictures } from "@data/Pictures";
 import { splitChunks } from "@util";
 
-export type PicturesProps = Pictures;
+export interface PicturesProps {}
 
-export class PicturesComponent extends React.Component<PicturesProps> {
+interface PicturesState {
+  data?: Pictures;
+}
+
+export class PicturesComponent extends React.Component<PicturesProps, PicturesState> {
+  service: PicturesService;
+
+  constructor(props: PicturesProps) {
+    super(props);
+    this.service = new PicturesService();
+    this.state = {};
+
+    this.service.fetch().then((data) => this.setState({ data: data }));
+  }
+
   render(): React.ReactNode {
-    const images = this.props.pictures.map((data) => (
+    if (!this.state.data) {
+      return <Container>Loading...</Container>;
+    }
+
+    const pictures = this.state.data;
+    const images = pictures.list.map((data) => (
       <Col key={data} sm={2} md={4} lg={4} xl={4} className="mb-3">
         <img src={data} className="img-fluid" />
       </Col>

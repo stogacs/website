@@ -13,3 +13,10 @@ export interface Award {
 export interface Experiences {
   competitions: Competition[];
 }
+
+export class ExperiencesService {
+  async fetch(): Promise<Experiences> {
+    const experiences = (await import("./manual/experiences.json")).default;
+    return experiences;
+  }
+}
