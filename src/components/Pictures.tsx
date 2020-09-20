@@ -43,9 +43,9 @@ export class PicturesComponent extends React.Component<PicturesProps, PicturesSt
     return (
       <section className="pictures-section bg-light-gray">
         <Container>
-          <Row className="text-uppercase mb-5">
+          <Row className="text-uppercase mb-5 pb-5">
             <Col lg={12}>
-              <h2 className="text-dark pictures-heading text-center">Pictures</h2>
+              <h2 className="pictures-heading text-dark text-center">Pictures</h2>
             </Col>
           </Row>
           {chunks}
