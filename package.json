@@ -32,6 +32,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-router-hash-link": "^1.2.1",
+    "@types/react-scrollspy": "^3.3.3",
     "@types/terser-webpack-plugin": "^4.2.0",
     "@types/webpack-dev-server": "^3.11.0",
     "@typescript-eslint/eslint-plugin": "^4.1.1",
@@ -80,6 +81,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.1.0",
+    "react-scrollspy": "^3.4.3",
     "typeface-montserrat": "0.0.75"
   }
 }

@@ -2,8 +2,47 @@
 @import "./variables";
 @import "~bootstrap/scss/bootstrap";
 
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
 .bg-light-gray {
   background-color: $gray-100;
+}
+
+.navbar-title {
+  font-size: 1.8rem;
+}
+
+.nav-section-link {
+  /* stylelint-disable */
+  @extend .text-light;
+  @extend .text-muted;
+  @extend .text-uppercase;
+  @extend .btn;
+  @extend .p-3;
+  @extend .m-1;
+  /* stylelint-enable*/
+
+  &:hover {
+    @include background-opacity($primary, 0.5);
+    text-decoration: none;
+  }
+}
+
+.nav-link-scrolled {
+  background-color: $primary;
+  color: $white !important;
+}
+
+header.header-section {
+  background-attachment: scroll;
+  background-image: url("../images/logo.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
 }
 
 .experiences-section,
