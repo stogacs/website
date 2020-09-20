@@ -102,8 +102,10 @@ export class ContactsComponent extends React.Component<ContactsProps, ContactsSt
               <h2 className="contacts-heading text-light text-center">Contacts</h2>
             </Col>
           </Row>
+          <Row className="contacts-alinks-container justify-content-center mb-5">
+            {linkComponents}
+          </Row>
           <Row className="justify-content-center mb-4">{peopleChunks}</Row>
-          <Row className="contacts-alinks-container justify-content-center">{linkComponents}</Row>
         </Container>
       </section>
     );
