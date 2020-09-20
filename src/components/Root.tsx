@@ -14,7 +14,7 @@ export class RootComponent extends React.Component {
   render(): React.ReactNode {
     return (
       <Router>
-        <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="topnav">
+        <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="topnav pb-1 pt-1">
           <Container className="pr-0 pl-0">
             <Navbar.Brand href="#home" className="navbar-title text-light">
               StogaCS
