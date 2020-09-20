@@ -22,3 +22,18 @@
 .experiences-subheading {
   font-size: 1.1rem;
 }
+
+.contacts-link {
+  color: $gray-400;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.contacts-alinks-container {
+  > * {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

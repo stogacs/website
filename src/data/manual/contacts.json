@@ -13,6 +13,18 @@
   ],
   "people": [
     {
+      "name": "Arnav Kaushik",
+      "position": "Co-President",
+      "photo": "",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/ArnavKaushik",
+          "icon": { "set": "fab", "name": "github" }
+        }
+      ]
+    },
+    {
       "name": "Eric Zhao",
       "position": "Co-President",
       "photo": "contact-eric-zhao.jpg",
@@ -21,9 +33,26 @@
           "name": "GitHub",
           "url": "https://github.com/Dophin2009",
           "icon": { "set": "fab", "name": "github" }
-        },
-        { "name": "Email", "url": "21zhaoe@tesdk12.net", "icon": "envelope" }
+        }
       ]
+    },
+    {
+      "name": "Aditya Sirohi",
+      "position": "Vice-President",
+      "photo": "",
+      "links": []
+    },
+    {
+      "name": "Jeffrey Tan",
+      "position": "Treasurer",
+      "photo": "",
+      "links": []
+    },
+    {
+      "name": "Daniel Xu",
+      "position": "Secretary",
+      "photo": "",
+      "links": []
     }
   ]
 }

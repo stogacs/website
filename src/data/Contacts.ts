@@ -26,6 +26,14 @@ export class ContactsService {
     const data: ContactsJson = (await import("./manual/contacts.json")).default;
 
     const peoplePromises = data.people.map((person) => {
+      if (person.photo === "") {
+        return {
+          name: person.name,
+          position: person.position,
+          photo: null,
+          links: person.links,
+        };
+      }
       return import(/* */ `./manual/${person.photo}`).then((imp) => {
         return {
           name: person.name,
