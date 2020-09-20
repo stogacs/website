@@ -14,7 +14,7 @@ export class RootComponent extends React.Component {
   render(): React.ReactNode {
     return (
       <Router>
-        <Navbar id="navbar" fixed="top" variant="dark" bg="dark" expand="lg">
+        <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="topnav">
           <Container className="pr-0 pl-0">
             <Navbar.Brand href="#home" className="navbar-title text-light">
               StogaCS
@@ -24,7 +24,7 @@ export class RootComponent extends React.Component {
               <Nav variant="pills" className="ml-auto">
                 <Scrollspy
                   currentClassName="nav-link-scrolled"
-                  items={["experiences", "pictures", "contacts"]}
+                  items={["home", "experiences", "pictures", "contacts"]}
                   componentTag="span"
                   offset={-2}
                 >
@@ -43,9 +43,11 @@ export class RootComponent extends React.Component {
           </Container>
         </Navbar>
 
-        <header id="home" className="header-section"></header>
-
         <div>
+          <section id="home" className="header-section">
+            <Container className="header-container"></Container>
+          </section>
+
           <section id="experiences">
             <ExperiencesComponent />
           </section>

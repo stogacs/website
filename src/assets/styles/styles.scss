@@ -11,6 +11,10 @@
   background-color: $gray-100;
 }
 
+.topnav {
+  background-color: $black !important;
+}
+
 .navbar-title {
   font-size: 1.8rem;
 }
@@ -27,6 +31,7 @@
 
   &:hover {
     @include background-opacity($primary, 0.5);
+
     text-decoration: none;
   }
 }
@@ -36,13 +41,19 @@
   color: $white !important;
 }
 
-header.header-section {
+.header-section {
+  background-color: $black !important;
+}
+
+.header-container {
   background-attachment: scroll;
   background-image: url("../images/logo.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
+  padding-bottom: 300px;
+  padding-top: 400px;
 }
 
 .experiences-section,
