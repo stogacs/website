@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Media from "react-bootstrap/Media";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library, IconName, IconProp, IconPrefix } from "@fortawesome/fontawesome-svg-core";
@@ -62,9 +63,14 @@ export class ContactsComponent extends React.Component<ContactsProps, ContactsSt
     });
 
     return (
-      <section className="bg-dark pt-5 pb-5">
+      <section className="contacts-section bg-dark">
         <Container>
-          <Row>{peopleComponents}</Row>
+          <Row className="text-uppercase mb-5">
+            <Col lg={12}>
+              <h2 className="contacts-heading text-light text-center">Contacts</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-center">{peopleComponents}</Row>
           <Row className="justify-content-center">{linkComponents}</Row>
         </Container>
       </section>

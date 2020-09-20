@@ -12,7 +12,7 @@ export interface Link {
 export interface Person {
   name: string;
   position: string;
-  photo: string;
+  photo: any;
   links: Link[];
 }
 
@@ -23,7 +23,36 @@ export interface Contacts {
 
 export class ContactsService {
   async fetch(): Promise<Contacts> {
-    const data = (await import("./manual/contacts.json")).default;
-    return data;
+    const data: ContactsJson = (await import("./manual/contacts.json")).default;
+
+    const peoplePromises = data.people.map((person) => {
+      return import(/* */ `./manual/${person.photo}`).then((imp) => {
+        return {
+          name: person.name,
+          position: person.position,
+          photo: imp.default,
+          links: person.links,
+        };
+      });
+    });
+
+    const people = await Promise.all(peoplePromises);
+
+    return {
+      links: data.links,
+      people: people,
+    };
   }
+}
+
+interface ContactsJson {
+  links: Link[];
+  people: PersonJson[];
+}
+
+interface PersonJson {
+  name: string;
+  position: string;
+  photo: string;
+  links: Link[];
 }
