@@ -1,2 +1,16 @@
+@import "~typeface-montserrat/index.css";
 @import "./variables";
 @import "~bootstrap/scss/bootstrap";
+
+.experiences-section {
+  padding-bottom: 150px;
+  padding-top: 150px;
+}
+
+.experiences-heading {
+  font-weight: 700;
+}
+
+.experiences-subheading {
+  font-size: 1.1rem;
+}

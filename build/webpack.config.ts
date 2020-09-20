@@ -70,7 +70,7 @@ const common = (mode: Mode): webpack.Configuration => {
         },
         {
           test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
-          loader: "url-loader",
+          loader: "file-loader",
         },
       ],
     },

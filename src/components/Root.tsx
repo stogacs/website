@@ -18,11 +18,13 @@ export class RootComponent extends React.Component {
               <HashLink to="#experiences">Experiences</HashLink>
             </Nav.Item>
           </Nav>
-
-          <ExperiencesComponent />
-          <PicturesComponent />
-          <ContactsComponent />
         </Container>
+
+        <ExperiencesComponent />
+        <PicturesComponent />
+        <section>
+          <ContactsComponent />
+        </section>
       </Router>
     );
   }

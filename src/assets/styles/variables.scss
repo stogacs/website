@@ -24,17 +24,17 @@ $pink: #e83e8c !default;
 $red: #e74c3c !default;
 $orange: #fd7e14 !default;
 $yellow: #f39c12 !default;
-$green: #00bc8c !default;
+$green: #008000 !default;
 $teal: #20c997 !default;
 $cyan: #3498db !default;
 
-$primary: $blue !default;
+$primary: $green !default;
 $secondary: $gray-700 !default;
-$success: $green !default;
+$success: $blue !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
-$light: $gray-500 !default;
+$light: $white !default;
 $dark: $gray-800 !default;
 
 $yiq-contrasted-threshold: 175 !default;
@@ -46,12 +46,12 @@ $body-color: $white !default;
 
 // Links
 
-$link-color: $success !default;
+$link-color: $primary !default;
 
 // Fonts
 
-$font-family-sans-serif: "Lato", -apple-system, blinkmacsystemfont, "Segoe UI",
-  roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
+$font-family-sans-serif: "Montserrat", "Lato", -apple-system, blinkmacsystemfont,
+  "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
 $font-size-base: 0.9375rem !default;

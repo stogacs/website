@@ -62,10 +62,12 @@ export class ContactsComponent extends React.Component<ContactsProps, ContactsSt
     });
 
     return (
-      <Container>
-        <Row>{peopleComponents}</Row>
-        <Row className="justify-content-center">{linkComponents}</Row>
-      </Container>
+      <section className="bg-dark pt-5 pb-5">
+        <Container>
+          <Row>{peopleComponents}</Row>
+          <Row className="justify-content-center">{linkComponents}</Row>
+        </Container>
+      </section>
     );
   }
 }
