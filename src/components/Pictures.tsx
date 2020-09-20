@@ -30,14 +30,26 @@ export class PicturesComponent extends React.Component<PicturesProps, PicturesSt
 
     const pictures = this.state.data;
     const images = pictures.list.map((data) => (
-      <Col key={data} md={4} sm={6} className="mb-3">
+      <Col key={data} md={4} sm={6}>
         <img src={data} className="img-fluid" />
       </Col>
     ));
-    const chunks = splitChunks(images, 3).map((row) => <Row key="">{row}</Row>);
+    const chunks = splitChunks(images, 3).map((row) => (
+      <Row key="" className="mb-3">
+        {row}
+      </Row>
+    ));
+
     return (
-      <section className="bg-light-gray pt-5 pb-5">
-        <Container>{chunks}</Container>
+      <section className="pictures-section bg-light-gray">
+        <Container>
+          <Row className="text-uppercase mb-5">
+            <Col lg={12}>
+              <h2 className="text-dark pictures-heading text-center">Pictures</h2>
+            </Col>
+          </Row>
+          {chunks}
+        </Container>
       </section>
     );
   }

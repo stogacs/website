@@ -2,7 +2,12 @@
 @import "./variables";
 @import "~bootstrap/scss/bootstrap";
 
-.experiences-section {
+.bg-light-gray {
+  background-color: $gray-100;
+}
+
+.experiences-section,
+.pictures-section {
   padding-bottom: 150px;
   padding-top: 150px;
 }
@@ -13,4 +18,8 @@
 
 .experiences-subheading {
   font-size: 1.1rem;
+}
+
+.pictures-heading {
+  font-weight: 700;
 }
