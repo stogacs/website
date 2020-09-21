@@ -3,6 +3,8 @@ import webpack from "webpack";
 import TerserPlugin from "terser-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
+import UpImages from "./UpImages";
+
 export enum Mode {
   development = "development",
   production = "production",
@@ -76,6 +78,7 @@ const common = (mode: Mode): webpack.Configuration => {
       ],
     },
     plugins: [
+      UpImages,
       new HtmlWebpackPlugin({
         title: "StogaCS",
       }),
