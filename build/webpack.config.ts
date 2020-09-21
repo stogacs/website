@@ -95,7 +95,7 @@ const common = (mode: Mode): webpack.Configuration => {
         new TerserPlugin({
           cache: true,
           parallel: true,
-          sourceMap: true,
+          sourceMap: isDev,
         }),
       ],
     },
