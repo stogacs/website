@@ -11,8 +11,8 @@ jobs:
           node-version: '12'
           check-latest: true
       - run: npm install
-      - run: npm setup
-      - run: npm build:prod
+      - run: npm run setup
+      - run: npm run build:prod
       - if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
