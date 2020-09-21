@@ -86,7 +86,7 @@ const common = (mode: Mode): webpack.Configuration => {
         title: "StogaCS",
       }),
       new CopyPlugin({
-        patterns: ["CNAME"],
+        patterns: ["CNAME", path.resolve(dir.src, "static")],
       }),
     ],
     node: {

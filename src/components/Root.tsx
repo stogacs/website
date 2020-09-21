@@ -37,6 +37,9 @@ export class RootComponent extends React.Component {
                   <HashLink smooth to="#contacts" className="nav-section-link">
                     Contacts
                   </HashLink>
+                  <a href="/codefest" className="nav-section-link">
+                    CodeFest
+                  </a>
                 </Scrollspy>
               </Nav>
             </Navbar.Collapse>
