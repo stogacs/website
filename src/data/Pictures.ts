@@ -4,7 +4,7 @@ export interface Pictures {
 
 export class PicturesService {
   async fetch(): Promise<Pictures> {
-    const pictures = await import("./images");
+    const pictures = await import("./PicturesImport");
     const obj: Pictures = { list: pictures.default };
     return obj;
   }
