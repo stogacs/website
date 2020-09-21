@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -6,9 +6,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Scrollspy from "react-scrollspy";
 
-import ExperiencesComponent from "./Experiences";
-import PicturesComponent from "./Pictures";
-import ContactsComponent from "./Contacts";
+const ExperiencesComponent = React.lazy(() => import("./Experiences"));
+const PicturesComponent = React.lazy(() => import("./Pictures"));
+const ContactsComponent = React.lazy(() => import("./Contacts"));
 
 export class RootComponent extends React.Component {
   render(): React.ReactNode {
@@ -43,7 +43,7 @@ export class RootComponent extends React.Component {
           </Container>
         </Navbar>
 
-        <div>
+        <Suspense fallback={<div>Loading...</div>}>
           <section id="home" className="header-section">
             <Container className="header-container"></Container>
           </section>
@@ -59,7 +59,7 @@ export class RootComponent extends React.Component {
           <section id="contacts">
             <ContactsComponent />
           </section>
-        </div>
+        </Suspense>
       </Router>
     );
   }
