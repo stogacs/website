@@ -2,6 +2,7 @@ import path from "path";
 import webpack from "webpack";
 import TerserPlugin from "terser-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyPlugin from "copy-webpack-plugin";
 
 export enum Mode {
   development = "development",
@@ -83,6 +84,9 @@ const common = (mode: Mode): webpack.Configuration => {
     plugins: [
       new HtmlWebpackPlugin({
         title: "StogaCS",
+      }),
+      new CopyPlugin({
+        patterns: ["CNAME"],
       }),
     ],
     node: {
