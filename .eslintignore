@@ -1,0 +1,7 @@
+node_modules/
+**/*.scss.d.ts
+
+.eslintrc.js
+src/data/PicturesImport.ts
+
+dist/
