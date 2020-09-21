@@ -3,8 +3,6 @@ import webpack from "webpack";
 import TerserPlugin from "terser-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-import UpImages from "./UpImages";
-
 export enum Mode {
   development = "development",
   production = "production",
@@ -44,7 +42,12 @@ const common = (mode: Mode): webpack.Configuration => {
       rules: [
         {
           test: /\.tsx?$/,
-          use: ["babel-loader", "ts-loader", "eslint-loader"],
+          use: [
+            "babel-loader",
+            "ts-loader",
+            "eslint-loader",
+            path.resolve(__dirname, "loaders/glob-import-loader.ts"),
+          ],
         },
         {
           test: /\.s[ac]ss$/,
@@ -78,7 +81,6 @@ const common = (mode: Mode): webpack.Configuration => {
       ],
     },
     plugins: [
-      UpImages,
       new HtmlWebpackPlugin({
         title: "StogaCS",
       }),

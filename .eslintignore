@@ -2,5 +2,6 @@ node_modules/
 **/*.scss.d.ts
 
 .eslintrc.js
+src/data/images.ts
 
 dist/
