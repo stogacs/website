@@ -28,7 +28,7 @@ const replacer = (
         const moduleName = obj + index;
         modules.push(moduleName);
         withModules = true;
-        return "import * as " + moduleName + " from " + fileName;
+        return "import " + moduleName + " from " + fileName;
       } else if (match.match(importFiles)) {
         return "import " + fileName;
       }
