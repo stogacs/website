@@ -6,9 +6,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Scrollspy from "react-scrollspy";
 
-import { ExperiencesComponent } from "./Experiences";
-import { PicturesComponent } from "./Pictures";
-import { ContactsComponent } from "./Contacts";
+import ExperiencesComponent from "./Experiences";
+import PicturesComponent from "./Pictures";
+import ContactsComponent from "./Contacts";
 
 export class RootComponent extends React.Component {
   render(): React.ReactNode {
@@ -64,3 +64,5 @@ export class RootComponent extends React.Component {
     );
   }
 }
+
+export default RootComponent;

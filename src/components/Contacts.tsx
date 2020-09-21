@@ -117,3 +117,5 @@ export class ContactsComponent extends React.Component<ContactsProps, ContactsSt
     );
   }
 }
+
+export default ContactsComponent;

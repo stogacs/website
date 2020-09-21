@@ -102,3 +102,5 @@ export class PicturesComponent extends React.Component<PicturesProps, PicturesSt
     );
   }
 }
+
+export default PicturesComponent;

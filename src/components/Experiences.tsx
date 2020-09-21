@@ -71,3 +71,5 @@ export class ExperiencesComponent extends React.Component<ExperiencesState, Expe
     );
   }
 }
+
+export default ExperiencesComponent;
