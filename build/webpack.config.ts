@@ -35,7 +35,8 @@ const common = (mode: Mode): webpack.Configuration => {
     },
     output: {
       path: dir.dist,
-      filename: "[name].js",
+      filename: "[name].bundle.js",
+      chunkFilename: "[name].bundle.js",
     },
     module: {
       rules: [
