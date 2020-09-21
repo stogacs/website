@@ -97,10 +97,16 @@ export class ContactsComponent extends React.Component<ContactsProps, ContactsSt
     return (
       <section className="contacts-section bg-dark">
         <Container fluid>
-          <Row className="text-uppercase mb-5">
+          <Row className="text-uppercase mb-3">
             <Col lg={12}>
               <h2 className="contacts-heading text-light text-center">Contacts</h2>
             </Col>
+          </Row>
+          <Row className="justify-content-center text-center mb-1">
+            <h4>
+              Join Code: <br />
+              <b>{data.code}</b>
+            </h4>
           </Row>
           <Row className="contacts-alinks-container justify-content-center mb-5">
             {linkComponents}

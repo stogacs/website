@@ -19,6 +19,7 @@ export interface Person {
 export interface Contacts {
   links: Link[];
   people: Person[];
+  code: string;
 }
 
 export class ContactsService {
@@ -49,6 +50,7 @@ export class ContactsService {
     return {
       links: data.links,
       people: people,
+      code: data.code,
     };
   }
 }
@@ -56,6 +58,7 @@ export class ContactsService {
 interface ContactsJson {
   links: Link[];
   people: PersonJson[];
+  code: string;
 }
 
 interface PersonJson {

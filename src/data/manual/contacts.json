@@ -1,8 +1,9 @@
 {
+  "code": "MRV4S-28MM5",
   "links": [
     {
       "name": "Contact Email",
-      "url": "conestogacomputerscienceclub@gmail.com",
+      "url": "mailto:conestogacomputerscienceclub@gmail.com",
       "icon": "envelope"
     },
     {
@@ -15,7 +16,7 @@
     {
       "name": "Arnav Kaushik",
       "position": "Co-President",
-      "photo": "",
+      "photo": "contact-arnav-kaushik.jpg",
       "links": [
         {
           "name": "GitHub",
@@ -51,7 +52,7 @@
     {
       "name": "Daniel Xu",
       "position": "Secretary",
-      "photo": "",
+      "photo": "contact-daniel-xu.jpg",
       "links": []
     }
   ]

@@ -26,7 +26,7 @@ export class RootComponent extends React.Component {
                   currentClassName="nav-link-scrolled"
                   items={["home", "experiences", "pictures", "contacts"]}
                   componentTag="span"
-                  offset={-2}
+                  offset={1}
                 >
                   <HashLink smooth to="#experiences" className="nav-section-link">
                     Experience
