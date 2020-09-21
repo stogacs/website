@@ -24,7 +24,7 @@ export interface Contacts {
 
 export class ContactsService {
   async fetch(): Promise<Contacts> {
-    const data: ContactsJson = (await import("./manual/contacts.json")).default;
+    const data: ContactsJson = (await import("./load/contacts.json")).default;
 
     const peoplePromises = data.people.map((person) => {
       if (person.photo === "") {
@@ -35,7 +35,7 @@ export class ContactsService {
           links: person.links,
         };
       }
-      return import(/* */ `./manual/${person.photo}`).then((imp) => {
+      return import(/* */ `./load/${person.photo}`).then((imp) => {
         return {
           name: person.name,
           position: person.position,

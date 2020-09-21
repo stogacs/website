@@ -16,7 +16,7 @@
     {
       "name": "Arnav Kaushik",
       "position": "Co-President",
-      "photo": "contact-arnav-kaushik.jpg",
+      "photo": "icons/contact-arnav-kaushik.jpg",
       "links": [
         {
           "name": "GitHub",
@@ -28,7 +28,7 @@
     {
       "name": "Eric Zhao",
       "position": "Co-President",
-      "photo": "contact-eric-zhao.jpg",
+      "photo": "icons/contact-eric-zhao.jpg",
       "links": [
         {
           "name": "GitHub",
@@ -40,7 +40,7 @@
     {
       "name": "Aditya Sirohi",
       "position": "Vice-President",
-      "photo": "contact-aditya-sirohi.jpg",
+      "photo": "icons/contact-aditya-sirohi.jpg",
       "links": []
     },
     {
@@ -52,7 +52,7 @@
     {
       "name": "Daniel Xu",
       "position": "Secretary",
-      "photo": "contact-daniel-xu.jpg",
+      "photo": "icons/contact-daniel-xu.jpg",
       "links": []
     }
   ]

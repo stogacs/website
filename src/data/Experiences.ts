@@ -16,7 +16,7 @@ export interface Experiences {
 
 export class ExperiencesService {
   async fetch(): Promise<Experiences> {
-    const experiences = (await import("./manual/experiences.json")).default;
+    const experiences = (await import("./load/experiences.json")).default;
     return experiences;
   }
 }
