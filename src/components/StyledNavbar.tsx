@@ -14,7 +14,7 @@ export class StyledNavbar extends React.Component<StyledNavbarProps> {
     return (
       <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="topnav pb-1 pt-1">
         <Container className="pr-0 pl-0">
-          <Navbar.Brand href="#home" className="navbar-title text-muted">
+          <Navbar.Brand href="/" className="navbar-title text-muted">
             STOGACS
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
