@@ -75,6 +75,7 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
                 <h2 className="experiences-heading section-heading text-light text-uppercase">
                   Presentations
                 </h2>
+                <h4 className="section-subheading text-muted">Created by Club Members</h4>
               </Col>
             </Row>
             {presentationChunks}
