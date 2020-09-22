@@ -70,7 +70,7 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
         <section className="resources-top-padding" />
         <section className="presentations-section">
           <Container>
-            <Row className="text-center mb-5">
+            <Row className="text-center pb-3 mb-5">
               <Col lg={12} className="text-center">
                 <h2 className="experiences-heading section-heading text-light text-uppercase">
                   Presentations
@@ -121,7 +121,7 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
           <Card.Text>{p.description}</Card.Text>
         </Card.Body>
         <Card.Footer>
-          {authorText} ({p.year})
+          {authorText} <small className="text-muted ml-1">{p.year}</small>
         </Card.Footer>
       </Card>
     );
