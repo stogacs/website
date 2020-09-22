@@ -120,7 +120,9 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
           <Card.Title>{p.title}</Card.Title>
           <Card.Text>{p.description}</Card.Text>
         </Card.Body>
-        <Card.Footer>{authorText}</Card.Footer>
+        <Card.Footer>
+          {authorText} ({p.year})
+        </Card.Footer>
       </Card>
     );
   }

@@ -4,6 +4,7 @@ export interface Presentation {
   author: string | string[];
   year: number;
   description: string;
+  categories: string | string[];
   links: PresentationLink[];
 }
 

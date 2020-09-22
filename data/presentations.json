@@ -5,6 +5,7 @@
     "author": "Eric Zhao",
     "year": 2020,
     "description": "Brief presentation/workshop to introduce regular expressions.",
+    "categories": ["tool"],
     "links": [
       {
         "url": "https://stogacs.github.io/regexws",
@@ -27,6 +28,7 @@
     "author": "Eric Zhao",
     "year": 2020,
     "description": "A presentation on composing documents using LaTeX, Pandoc, and Rmarkdown.",
+    "categories": ["r", "latex", "tool"],
     "links": [
       {
         "url": "https://dophin2009.github.io/rmdocs",
@@ -49,6 +51,7 @@
     "author": "Eric Zhao",
     "year": 2020,
     "description": "Workshop/lecture on basic JavaScript.",
+    "categories": ["web", "javascript", "language"],
     "links": [
       {
         "url": "https://stogacs.github.io/jsws",
@@ -71,6 +74,7 @@
     "author": "Eric Zhao",
     "year": 2019,
     "description": "Presentation introducing the basics of Git.",
+    "categories": ["tools"],
     "links": [
       {
         "url": "https://stogacs.github.io/intro-git",
@@ -93,9 +97,46 @@
     "author": "Sid Iyer",
     "year": 2018,
     "description": "Presentation on the basic concepts of neural networks.",
+    "categories": ["concept"],
     "links": [
       {
         "url": "https://docs.google.com/presentation/d/1tBC9cQItk8jUn1weNsQZxqEJkiSe1HTLMBZE_ryYItM",
+        "tooltip": "Open in new tab",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Intro to Blockchain",
+    "slug": "blockchain",
+    "author": ["Sid Iyer", "Justin Huang"],
+    "year": 2018,
+    "description": "An examination of what blockchain is and what its strengths, weaknesses, and potential applications are.",
+    "categories": ["concept"],
+    "links": [
+      {
+        "url": "https://docs.google.com/presentation/d/1cDvttj3d40mvykBnPavoFVqK4yb0_Hzscg2QqjhC73c",
+        "tooltip": "Open in new tab",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Randomness",
+    "slug": "randomness",
+    "author": "Sid Iyer",
+    "year": 2018,
+    "description": "A presentation on randomness and overviews of a few random algorithms.",
+    "categories": ["concept"],
+    "links": [
+      {
+        "url": "https://docs.google.com/presentation/d/1lFsrCBjlVMS7XotHXYMjwr2tFIVwWXT8FBetMfHFWAM",
         "tooltip": "Open in new tab",
         "icon": {
           "set": "fas",
