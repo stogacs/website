@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Regular Expressions",
+    "slug": "regexws",
+    "author": "Eric Zhao",
+    "description": "Brief presentation/workshop to introduce regular expressions.",
+    "links": [
+      {
+        "url": "https://stogacs.github.io/regexws",
+        "tooltip": "Open in new tab",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
+      },
+      {
+        "url": "https://github.com/stogacs/regexws",
+        "tooltip": "See source code",
+        "icon": { "set": "fab", "name": "github" }
+      }
+    ]
+  }
+]

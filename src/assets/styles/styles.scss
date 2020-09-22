@@ -90,3 +90,17 @@
     padding-right: 10px;
   }
 }
+
+.resources-top-padding {
+  padding-top: 150px;
+}
+
+.resources-presentation-header-name {
+  /* stylelint-disable */
+  @extend .text-monospace;
+  /* stylelint-enable */
+
+  background-color: $gray-800;
+  border-radius: 4px;
+  padding: 5px;
+}

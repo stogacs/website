@@ -4,11 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Media from "react-bootstrap/Media";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library, IconName, IconProp, IconPrefix } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-
-library.add(fab, fas);
+import { IconName, IconProp, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 
 import { Contacts, Link, ContactsService } from "@data/Contacts";
 import { splitChunks } from "@util";

@@ -3,6 +3,8 @@ import Container from "react-bootstrap/Container";
 import { HashLink } from "react-router-hash-link";
 import Scrollspy from "react-scrollspy";
 
+import TitleDeclaration from "./TitleDeclaration";
+
 const StyledNavbar = React.lazy(() => import("./StyledNavbar"));
 const ExperiencesComponent = React.lazy(() => import("./Experiences"));
 const PicturesComponent = React.lazy(() => import("./Pictures"));
@@ -12,6 +14,7 @@ export class HomeComponent extends React.Component {
   render(): React.ReactNode {
     return (
       <div>
+        <TitleDeclaration />
         <HomeNavbar />
         <Suspense fallback={<div>Loading...</div>}>
           <section id="home" className="header-section">
