@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom";
 import React from "react";
 
-import RootComponent from "@components/Root";
+import AppComponent from "@components/App";
 
 import "@assets/styles/styles.scss";
 
-ReactDOM.render(<RootComponent></RootComponent>, document.body);
+ReactDOM.render(<AppComponent></AppComponent>, document.body);

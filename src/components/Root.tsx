@@ -1,8 +1,7 @@
 import React, { Suspense } from "react";
+import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import { BrowserRouter as Router } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Scrollspy from "react-scrollspy";
 
@@ -13,7 +12,7 @@ const ContactsComponent = React.lazy(() => import("./Contacts"));
 export class RootComponent extends React.Component {
   render(): React.ReactNode {
     return (
-      <Router>
+      <div>
         <Navbar fixed="top" variant="dark" bg="dark" expand="lg" className="topnav pb-1 pt-1">
           <Container className="pr-0 pl-0">
             <Navbar.Brand href="#home" className="navbar-title text-muted">
@@ -63,7 +62,7 @@ export class RootComponent extends React.Component {
             <ContactsComponent />
           </section>
         </Suspense>
-      </Router>
+      </div>
     );
   }
 }
