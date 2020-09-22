@@ -13,6 +13,7 @@ import { IconName, IconProp, IconPrefix } from "@fortawesome/fontawesome-svg-cor
 import TitleDeclaration from "./TitleDeclaration";
 
 import { Presentation, PresentationLink, PresentationsService } from "@data/Presentations";
+import { splitChunks } from "@util";
 
 const StyledNavbar = React.lazy(() => import("./StyledNavbar"));
 
@@ -24,6 +25,8 @@ interface ResourcesState {
 
 export class ResourcesComponent extends React.Component<ResourcesProps, ResourcesState> {
   presentationService: PresentationsService;
+
+  readonly ROW_NUM = 3;
 
   // eslint-disable-next-line @typescript-eslint/ban-types
   constructor(props: ResourcesProps) {
@@ -38,6 +41,23 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
 
   render(): React.ReactNode {
     const presentationCards = this.state.presentations?.map((p) => this.renderPresentationCard(p));
+    const presentationChunks = presentationCards
+      ? splitChunks(presentationCards, this.ROW_NUM)
+          .map((chunk) => {
+            const length = chunk.length;
+            for (let i = 0; i < this.ROW_NUM - length; i++) {
+              chunk.push(<Card className="invisible"></Card>);
+            }
+            return chunk;
+          })
+          .map((chunk) => {
+            return (
+              <Row key="" className="justify-content-center mb-4 mt-3 ml-2 mr-2">
+                <CardDeck className="w-100">{chunk}</CardDeck>
+              </Row>
+            );
+          })
+      : undefined;
 
     return (
       <div>
@@ -49,7 +69,7 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
         </StyledNavbar>
         <section className="resources-top-padding" />
         <section className="presentations-section">
-          <Container fluid>
+          <Container>
             <Row className="text-center mb-5">
               <Col lg={12} className="text-center">
                 <h2 className="experiences-heading section-heading text-light text-uppercase">
@@ -57,9 +77,7 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
                 </h2>
               </Col>
             </Row>
-            <Row className="justify-content-center">
-              <CardDeck>{presentationCards}</CardDeck>
-            </Row>
+            {presentationChunks}
           </Container>
         </section>
       </div>
