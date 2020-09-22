@@ -108,6 +108,8 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
       </OverlayTrigger>
     ));
 
+    const authorText = typeof p.author === "string" ? p.author : p.author.join(", ");
+
     return (
       <Card>
         <Card.Header>
@@ -118,7 +120,7 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
           <Card.Title>{p.title}</Card.Title>
           <Card.Text>{p.description}</Card.Text>
         </Card.Body>
-        <Card.Footer>Author: {p.author}</Card.Footer>
+        <Card.Footer>{authorText}</Card.Footer>
       </Card>
     );
   }
