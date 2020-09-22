@@ -8,11 +8,11 @@ const ExperiencesComponent = React.lazy(() => import("./Experiences"));
 const PicturesComponent = React.lazy(() => import("./Pictures"));
 const ContactsComponent = React.lazy(() => import("./Contacts"));
 
-export class RootComponent extends React.Component {
+export class HomeComponent extends React.Component {
   render(): React.ReactNode {
     return (
       <div>
-        <RootNavbar />
+        <HomeNavbar />
         <Suspense fallback={<div>Loading...</div>}>
           <section id="home" className="header-section">
             <Container className="header-container"></Container>
@@ -35,7 +35,7 @@ export class RootComponent extends React.Component {
   }
 }
 
-class RootNavbar extends React.Component {
+class HomeNavbar extends React.Component {
   render(): React.ReactNode {
     return (
       <StyledNavbar>
@@ -60,4 +60,4 @@ class RootNavbar extends React.Component {
   }
 }
 
-export default RootComponent;
+export default HomeComponent;

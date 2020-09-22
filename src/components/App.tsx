@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const RootComponent = React.lazy(() => import("./Root"));
+const HomeComponent = React.lazy(() => import("./Home"));
 
 export class AppComponent extends React.Component {
   render(): React.ReactNode {
@@ -10,7 +10,7 @@ export class AppComponent extends React.Component {
         <Switch>
           <Route path="/">
             <Suspense fallback={<div>Loading...</div>}>
-              <RootComponent />
+              <HomeComponent />
             </Suspense>
           </Route>
         </Switch>
