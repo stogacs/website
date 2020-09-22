@@ -6,7 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import GlobalNavLinks from "./GlobalNavLinks";
 
 export interface StyledNavbarProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export class StyledNavbar extends React.Component<StyledNavbarProps> {
