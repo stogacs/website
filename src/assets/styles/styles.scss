@@ -17,6 +17,7 @@
 
 .navbar-title {
   font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .nav-section-link {
@@ -28,6 +29,8 @@
   @extend .p-3;
   @extend .m-1;
   /* stylelint-enable*/
+
+  font-weight: 600;
 
   &:hover {
     @include background-opacity($primary, 0.5);
