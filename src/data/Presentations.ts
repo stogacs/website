@@ -2,6 +2,7 @@ export interface Presentation {
   title: string;
   slug: string;
   author: string;
+  year: number;
   description: string;
   links: PresentationLink[];
 }
