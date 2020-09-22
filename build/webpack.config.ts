@@ -89,18 +89,17 @@ const common = (mode: Mode): webpack.Configuration => {
         patterns: ["CNAME"],
       }),
     ],
-    node: {
-      fs: "empty",
-      cluster: "empty",
-    },
     optimization: {
-      minimize: true,
+      minimize: !isDev,
       minimizer: [
+        /* eslint-disable */
+        // @ts-ignore
         new TerserPlugin({
           cache: true,
           parallel: true,
           sourceMap: isDev,
         }),
+        /* eslint-enable */
       ],
     },
     performance: {
