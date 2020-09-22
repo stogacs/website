@@ -3,6 +3,7 @@
     "title": "Regular Expressions",
     "slug": "regexws",
     "author": "Eric Zhao",
+    "year": 2020,
     "description": "Brief presentation/workshop to introduce regular expressions.",
     "links": [
       {
@@ -17,6 +18,89 @@
         "url": "https://github.com/stogacs/regexws",
         "tooltip": "See source code",
         "icon": { "set": "fab", "name": "github" }
+      }
+    ]
+  },
+  {
+    "title": "Writing Documents* with LaTeX, R, and R Markdown",
+    "slug": "rmdocs",
+    "author": "Eric Zhao",
+    "year": 2020,
+    "description": "A presentation on composing documents using LaTeX, Pandoc, and Rmarkdown.",
+    "links": [
+      {
+        "url": "https://dophin2009.github.io/rmdocs",
+        "tooltip": "Open in new tab",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
+      },
+      {
+        "url": "https://github.com/Dophin2009/rmdocs",
+        "tooltip": "See source code",
+        "icon": { "set": "fab", "name": "github" }
+      }
+    ]
+  },
+  {
+    "title": "Introduction to (Browser) JavaScript",
+    "slug": "jsws",
+    "author": "Eric Zhao",
+    "year": 2020,
+    "description": "Workshop/lecture on basic JavaScript.",
+    "links": [
+      {
+        "url": "https://stogacs.github.io/jsws",
+        "tooltip": "Open in new tab",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
+      },
+      {
+        "url": "https://github.com/stogacs/jsws",
+        "tooltip": "See source code",
+        "icon": { "set": "fab", "name": "github" }
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Git",
+    "slug": "intro-git",
+    "author": "Eric Zhao",
+    "year": 2019,
+    "description": "Presentation introducing the basics of Git.",
+    "links": [
+      {
+        "url": "https://stogacs.github.io/intro-git",
+        "tooltip": "Open in new tab",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
+      },
+      {
+        "url": "https://github.com/stogacs/intro-git",
+        "tooltip": "See source code",
+        "icon": { "set": "fab", "name": "github" }
+      }
+    ]
+  },
+  {
+    "title": "Intro to Neural Networks",
+    "slug": "neuralnet",
+    "author": "Sid Iyer",
+    "year": 2018,
+    "description": "Presentation on the basic concepts of neural networks.",
+    "links": [
+      {
+        "url": "https://docs.google.com/presentation/d/1tBC9cQItk8jUn1weNsQZxqEJkiSe1HTLMBZE_ryYItM",
+        "tooltip": "Open in new tab",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
       }
     ]
   }
