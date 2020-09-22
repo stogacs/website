@@ -1,6 +1,6 @@
+import $ from "jquery";
 import "bootstrap";
-import "jquery";
-import "blocs";
+import "expose-loader?exposes[]=blocs!./blocs.js";
 import "lazysizes";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.scss";

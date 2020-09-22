@@ -33,6 +33,10 @@ const common = (mode: Mode): webpack.Configuration => {
     },
     entry: {
       index: path.resolve(dir.src, "index"),
+      codefest: {
+        import: path.resolve(dir.src, "static", "codefest", "index"),
+        filename: "codefest/index.bundle.js",
+      },
     },
     output: {
       path: dir.dist,
@@ -76,17 +80,38 @@ const common = (mode: Mode): webpack.Configuration => {
           ],
         },
         {
+          test: /\.css$/,
+          use: [
+            {
+              loader: "style-loader",
+            },
+            {
+              loader: "css-loader",
+              options: {
+                modules: {
+                  auto: true,
+                  localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                  exportLocalsConvention: "camelCase",
+                },
+              },
+            },
+          ],
+        },
+        {
           test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
           loader: "file-loader",
         },
       ],
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        title: "StogaCS",
+      new webpack.ProvidePlugin({
+        "window.jQuery": "jquery",
+        "window.$": "jquery",
+        $: "jquery",
+        jQuery: "jquery",
       }),
       new CopyPlugin({
-        patterns: ["CNAME", path.resolve(dir.src, "static")],
+        patterns: ["CNAME", path.resolve(dir.src, "index.html"), path.resolve(dir.src, "static")],
       }),
     ],
     optimization: {
