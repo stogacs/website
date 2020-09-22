@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import CardGroup from "react-bootstrap/CardGroup";
+import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -58,7 +58,7 @@ export class ResourcesComponent extends React.Component<ResourcesProps, Resource
               </Col>
             </Row>
             <Row className="justify-content-center">
-              <CardGroup>{presentationCards}</CardGroup>
+              <CardDeck>{presentationCards}</CardDeck>
             </Row>
           </Container>
         </section>
