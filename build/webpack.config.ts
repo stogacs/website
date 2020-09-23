@@ -111,7 +111,12 @@ const common = (mode: Mode): webpack.Configuration => {
         jQuery: "jquery",
       }),
       new CopyPlugin({
-        patterns: ["CNAME", path.resolve(dir.src, "index.html"), path.resolve(dir.src, "static")],
+        patterns: [
+          "CNAME",
+          path.resolve(dir.src, "index.html"),
+          path.resolve(dir.src, "404.html"),
+          path.resolve(dir.src, "static"),
+        ],
       }),
     ],
     optimization: {
