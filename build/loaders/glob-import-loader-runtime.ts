@@ -2,7 +2,7 @@ import glob from "glob";
 import path from "path";
 
 const replacer = (
-  context: any,
+  context: any, // eslint-disable-line @typescript-eslint/no-explicit-any
   match: string,
   fromStatement: string,
   obj: string,
@@ -41,6 +41,7 @@ const replacer = (
   return result;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
 const loader = (context: any, source: string): string => {
   const regex = /.?import + ?((\w+) +from )?(['"])(.*?)\3/gm;
 

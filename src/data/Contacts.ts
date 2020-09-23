@@ -12,6 +12,7 @@ export interface Link {
 export interface Person {
   name: string;
   position: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   photo: any;
   links: Link[];
 }
