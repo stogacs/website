@@ -1,7 +1,6 @@
 import path from "path";
 import webpack from "webpack";
 import TerserPlugin from "terser-webpack-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyPlugin from "copy-webpack-plugin";
 
 export enum Mode {
@@ -49,7 +48,7 @@ const common = (mode: Mode): webpack.Configuration => {
           test: /\.tsx?$/,
           use: [
             "babel-loader",
-            "eslint-loader",
+            // "eslint-loader",
             path.resolve(__dirname, "loaders/glob-import-loader.ts"),
           ],
         },
@@ -59,12 +58,6 @@ const common = (mode: Mode): webpack.Configuration => {
             {
               loader: "style-loader",
             },
-            // {
-            // loader: "@teamsupercell/typings-for-css-modules-loader",
-            // options: {
-            // formatter: "prettier",
-            // },
-            // },
             {
               loader: "css-loader",
               options: {
@@ -130,6 +123,8 @@ const common = (mode: Mode): webpack.Configuration => {
       maxAssetSize: 500000,
       maxEntrypointSize: 500000,
     },
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     devServer: {
       contentBase: dir.dist,
     },
