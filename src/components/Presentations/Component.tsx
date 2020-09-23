@@ -16,8 +16,10 @@ import { fas, faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 library.add(fab, fas);
 
-import { Presentation, PresentationLink, PresentationsService } from "@data/Presentations";
 import { splitChunks } from "@util";
+
+import PresentationsService from "./Service";
+import Presentation, { PresentationLink } from "./Model";
 
 export interface PresentationsProps {}
 

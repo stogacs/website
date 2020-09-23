@@ -1,31 +1,8 @@
-export interface Link {
-  name: string;
-  url: string;
-  icon:
-    | {
-        set: string;
-        name: string;
-      }
-    | string;
-}
+import Contacts, { Link } from "./Model";
 
-export interface Person {
-  name: string;
-  position: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  photo: any;
-  links: Link[];
-}
-
-export interface Contacts {
-  links: Link[];
-  people: Person[];
-  code: string;
-}
-
-export class ContactsService {
+export default class ContactsService {
   async fetch(): Promise<Contacts> {
-    const data: ContactsJson = (await import("./load/contacts.json")).default;
+    const data: ContactsJson = (await import("@data/contacts.json")).default;
 
     const peoplePromises = data.people.map((person) => {
       if (person.photo === "") {
@@ -36,7 +13,7 @@ export class ContactsService {
           links: person.links,
         };
       }
-      return import(/* */ `./load/${person.photo}`).then((imp) => {
+      return import(`@data/${person.photo}`).then((imp) => {
         return {
           name: person.name,
           position: person.position,

@@ -26,7 +26,7 @@ const common = (mode: Mode): webpack.Configuration => {
       alias: {
         "@components": path.resolve(dir.src, "components"),
         "@assets": path.resolve(dir.src, "assets"),
-        "@data": path.resolve(dir.src, "data"),
+        "@data": path.resolve("data"),
         "@util": path.resolve(dir.src, "util"),
       },
     },

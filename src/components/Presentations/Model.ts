@@ -1,4 +1,4 @@
-export interface Presentation {
+export default interface Presentation {
   title: string;
   slug: string;
   author: string | string[];
@@ -17,11 +17,4 @@ export interface PresentationLink {
         name: string;
       }
     | string;
-}
-
-export class PresentationsService {
-  async fetch(): Promise<Presentation[]> {
-    const data = (await import("./load/presentations.json")).default;
-    return data;
-  }
 }

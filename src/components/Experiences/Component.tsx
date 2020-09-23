@@ -3,7 +3,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import { ExperiencesService, Experiences } from "@data/Experiences";
+import ExperiencesService from "./Service";
+import Experiences from "./Model";
 
 export interface ExperiencesProps {}
 

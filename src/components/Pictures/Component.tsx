@@ -7,8 +7,10 @@ import Carousel from "react-bootstrap/Carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGripHorizontal } from "@fortawesome/free-solid-svg-icons";
 
-import { PicturesService, Pictures } from "@data/Pictures";
 import { splitChunks } from "@util";
+
+import PicturesService from "./Service";
+import Pictures from "./Model";
 
 export interface PicturesProps {}
 

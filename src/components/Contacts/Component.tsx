@@ -10,8 +10,10 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 library.add(fab, fas);
 
-import { Contacts, Link, ContactsService } from "@data/Contacts";
 import { splitChunks } from "@util";
+
+import Contacts, { Link } from "./Model";
+import ContactsService from "./Service";
 
 export interface ContactsProps {}
 
