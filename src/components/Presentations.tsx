@@ -11,8 +11,10 @@ import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconName, IconProp, IconPrefix } from "@fortawesome/fontawesome-svg-core";
-import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { library, IconName, IconProp, IconPrefix } from "@fortawesome/fontawesome-svg-core";
+import { fas, faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+library.add(fab, fas);
 
 import { Presentation, PresentationLink, PresentationsService } from "@data/Presentations";
 import { splitChunks } from "@util";
