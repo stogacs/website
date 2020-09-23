@@ -104,12 +104,6 @@ const common = (mode: Mode): webpack.Configuration => {
       ],
     },
     plugins: [
-      new webpack.ProvidePlugin({
-        "window.jQuery": "jquery",
-        "window.$": "jquery",
-        $: "jquery",
-        jQuery: "jquery",
-      }),
       new CopyPlugin({
         patterns: [
           "CNAME",

@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 // Blocs.js
 function setUpSpecialNavs() {
   $(".navbar-toggler").click(function (t) {
@@ -101,7 +103,7 @@ function getFillHeight() {
   return t < fillBodyHeight && (t = fillBodyHeight + 100), t;
 }
 
-function scrollToTarget(t, e) {
+export function scrollToTarget(t, e) {
   var a = "slow";
   0 == t
     ? (t = $(e).closest(".bloc").height())
@@ -160,7 +162,7 @@ function hideAll() {
 
 function inViewCheck() {
   $($(".hideMe").get().reverse()).each(function (t) {
-    var e = jQuery(this),
+    var e = $(this),
       a = e.offset().top + e.height(),
       o = $(window).scrollTop() + $(window).height();
     if ((e.height() > $(window).height() && (a = e.offset().top), a < o)) {
@@ -337,7 +339,3 @@ $(document).ready(function () {
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
-
-module.exports = {
-  scrollToTarget: scrollToTarget,
-};
