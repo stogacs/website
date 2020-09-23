@@ -49,7 +49,6 @@ const common = (mode: Mode): webpack.Configuration => {
           test: /\.tsx?$/,
           use: [
             "babel-loader",
-            "ts-loader",
             "eslint-loader",
             path.resolve(__dirname, "loaders/glob-import-loader.ts"),
           ],
