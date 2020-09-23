@@ -144,5 +144,23 @@
         }
       }
     ]
+  },
+  {
+    "title": "Group Projects",
+    "slug": "groupprojects",
+    "author": "Justin Huang",
+    "year": 2018,
+    "description": "How to effectively get started working collaboratively on projects.",
+    "categories": ["concept", "tools"],
+    "links": [
+      {
+        "url": "https://docs.google.com/presentation/d/1b-0uSJr0UpIqbGp4BYkDwLbnPz16bl-KnNFZiezxjto",
+        "tooltip": "Open in new tab",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
+      }
+    ]
   }
 ]
