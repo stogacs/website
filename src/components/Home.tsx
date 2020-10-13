@@ -3,9 +3,9 @@ import Container from "react-bootstrap/Container";
 import { HashLink } from "react-router-hash-link";
 import Scrollspy from "react-scrollspy";
 
-import TitleDeclaration from "./TitleDeclaration";
+import TitleDeclaration from "./shared/TitleDeclaration";
 
-const StyledNavbar = React.lazy(() => import("./StyledNavbar"));
+const StyledNavbar = React.lazy(() => import("./shared/StyledNavbar"));
 const ExperiencesComponent = React.lazy(() => import("./Experiences"));
 const PicturesComponent = React.lazy(() => import("./Pictures"));
 const ContactsComponent = React.lazy(() => import("./Contacts"));

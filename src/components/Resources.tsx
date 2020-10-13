@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 
-import TitleDeclaration from "./TitleDeclaration";
+import TitleDeclaration from "./shared/TitleDeclaration";
 
 const PresentationsComponent = React.lazy(() => import("./Presentations"));
-const StyledNavbar = React.lazy(() => import("./StyledNavbar"));
+const StyledNavbar = React.lazy(() => import("./shared/StyledNavbar"));
 
 export class ResourcesComponent extends React.Component {
   render(): React.ReactNode {
