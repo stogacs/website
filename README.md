@@ -25,3 +25,18 @@ To build for production:
 To lint:
 
     npm run lint
+
+## Commit Conventions
+
+Prefix all short commit messages with `{type}:` where `{type}` is one
+of the following:
+
+-   `build`: Changed build configuration / tools
+    -   `build(deps)`: Added / changed some dependency
+    -   `build(ci)`: Changed the build CI pipeline
+-   `feat`: Added a new feature
+-   `fix`: Fixed some bug
+-   `refactor`: Refactored / reorganized code without adding features
+    or fixes
+-   `style`: Reformatted some code
+-   `docs`: Edited documentation, including this README
