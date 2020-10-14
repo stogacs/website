@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 
 import FileUpload from "./FileUpload";
 
-// import "./mstquery.py";
+import "./mstquery.py";
 
 export interface MSTQueryProps {}
 

@@ -4,13 +4,14 @@
   "description": "The repository of the Conestoga Computer Science Club's website.",
   "main": "index.js",
   "scripts": {
+    "poetry": "poetry run",
     "check-types": "tsc -p . --noEmit",
     "eslint": "eslint .",
     "lint": "npm run eslint && npm run check-types",
-    "build": " cross-env TS_NODE_PROJECT=\"build/tsconfig.json\" webpack",
+    "build": "poetry run cross-env TS_NODE_PROJECT=\"build/tsconfig.json\" webpack",
     "build:dev": "cross-env MODE=\"development\" npm run build",
     "build:prod": "cross-env MODE=\"production\" npm run build",
-    "start:dev": "cross-env MODE=\"development\" TS_NODE_PROJECT=\"build/tsconfig.json\" webpack-dev-server"
+    "start:dev": "poetry run cross-env MODE=\"development\" TS_NODE_PROJECT=\"build/tsconfig.json\" webpack-dev-server"
   },
   "author": "Conestoga Computer Science Club",
   "license": "MIT",
