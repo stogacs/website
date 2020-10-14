@@ -3,12 +3,18 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const HomeComponent = React.lazy(() => import("./Home"));
 const ResourcesComponent = React.lazy(() => import("./Resources"));
+const ToolsComponent = React.lazy(() => import("./Tools"));
 
 export class AppComponent extends React.Component {
   render(): React.ReactNode {
     return (
       <Router>
         <Switch>
+          <Route path="/tools">
+            <Suspense fallback={<div>Loading...</div>}>
+              <ToolsComponent />
+            </Suspense>
+          </Route>
           <Route path="/resources">
             <Suspense fallback={<div>Loading...</div>}>
               <ResourcesComponent />
