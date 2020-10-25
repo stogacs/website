@@ -1,5 +1,22 @@
 [
   {
+    "title": "Intro to Recursion",
+    "slug": "recursion",
+    "author": ["Aditya Sirohi", "Arnav Kaushik"],
+    "year": 2020,
+    "description": "Introduction to the concept of recursion.",
+    "categories": ["concept"],
+    "links": [
+      {
+        "url": "https://docs.google.com/presentation/d/1e7q5UAduyne3R1RHDu8RLxjf4nbBPpBoPbOcOsXGfrc/edit?usp=sharing",
+        "tooltip": "Open in new tab",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
+    ]
+  },
+  {
     "title": "Computer Vision",
     "slug": "cv",
     "author": "Arnav Kaushik",
