@@ -1,5 +1,25 @@
 [
   {
+    "title": "Tiny Tiny Web API",
+    "slug": "ttweb",
+    "author": "Eric Zhao",
+    "year": 2020,
+    "description": "A workshop in creating a tiny web API using Flask.",
+    "categories": ["concept", "web", "python"],
+    "links": [
+      {
+        "url": "https://github.com/stogacs/ttweb",
+        "tooltip": "See source code",
+        "icon": { "set": "fab", "name": "github" }
+      },
+      {
+        "url": "https://github.com/stogacs/ttweb/releases/download/latest/index.pdf",
+        "tooltip": "Download slides",
+        "icon": { "set": "fas", "name": "file-download" }
+      }
+    ]
+  },
+  {
     "title": "Intro to Recursion",
     "slug": "recursion",
     "author": ["Aditya Sirohi", "Arnav Kaushik"],
