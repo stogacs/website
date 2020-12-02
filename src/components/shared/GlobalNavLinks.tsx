@@ -8,7 +8,7 @@ export class GlobalNavLinks extends React.Component {
         <Link to="/resources" className="nav-section-link">
           Resources
         </Link>
-        <a href="/codefest" className="disabled nav-section-link">
+        <a href="/codefest" className="nav-section-link">
           CodeFest
         </a>
       </div>
