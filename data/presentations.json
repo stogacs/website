@@ -1,4 +1,24 @@
-[
+[ 
+  {
+    "title": "Text Encoding",
+    "slug": "textenc",
+    "author": "Eric Zhao",
+    "year": 2020,
+    "description": "How text is stored in computers.",
+    "categories": ["concept"],
+    "links": [
+      {
+        "url": "https://github.com/Dophin2009/textenc",
+        "tooltip": "See source code",
+        "icon": { "set": "fab", "name": "github" }
+      },
+      {
+        "url": "https://github.com/Dophin2009/textenc/releases/download/latest/index.pdf",
+        "tooltip": "Download slides",
+        "icon": { "set": "fas", "name": "file-download" }
+      }
+    ]
+  },
   {
     "title": "Tiny Tiny Web API",
     "slug": "ttweb",
