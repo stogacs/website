@@ -1,5 +1,25 @@
 [ 
   {
+    "title": "Functional Programming in Imperative Languages",
+    "slug": "basicfp",
+    "author": "Eric Zhao",
+    "year": 2021,
+    "description": "An introduction into iterators in imperative programming languages.",
+    "categories": ["concept", "exercise"],
+    "links": [
+      {
+        "url": "https://github.com/stogacs/basicfp",
+        "tooltip": "See source code",
+        "icon": { "set": "fab", "name": "github" }
+      },
+      {
+        "url": "https://github.com/stogacs/basicfp/releases/download/latest/index.pdf",
+        "tooltip": "Download slides",
+        "icon": { "set": "fas", "name": "file-download" }
+      }
+    ]
+  },
+  {
     "title": "Text Encoding",
     "slug": "textenc",
     "author": "Eric Zhao",
