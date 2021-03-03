@@ -1,5 +1,25 @@
 [ 
   {
+    "title": "Web Extensions 101",
+    "slug": "webext101",
+    "author": "Eric Zhao",
+    "year": 2021,
+    "description": "Let's make a web extension!",
+    "categories": ["concept", "web", "javascript"],
+    "links": [
+      {
+        "url": "https://github.com/Dophin2009/webext101",
+        "tooltip": "See source code",
+        "icon": { "set": "fab", "name": "github" }
+      },
+      {
+        "url": "https://github.com/Dophin2009/webext101/releases/download/latest/index.pdf",
+        "tooltip": "Download slides",
+        "icon": { "set": "fas", "name": "file-download" }
+      }
+    ]
+  },
+  {
     "title": "Functional Programming in Imperative Languages",
     "slug": "basicfp",
     "author": "Eric Zhao",
