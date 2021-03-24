@@ -1,5 +1,33 @@
 [ 
   {
+    "title": "Mold",
+    "slug": "mold",
+    "author": "Eric Zhao",
+    "year": 2021,
+    "description": "A web development workshop.",
+    "categories": ["code", "web", "typescript"],
+    "links": [
+      {
+        "url": "https://github.com/Dophin2009/moldws/tree/master/starter",
+        "tooltip": "Starter code",
+        "icon": { "set": "fab", "name": "github" }
+      },
+      {
+        "url": "https://github.com/Dophin2009/mold",
+        "tooltip": "Completed website code",
+        "icon": { "set": "fab", "name": "github" }
+      },
+      {
+        "url": "https://dophin2009.github.io/mold/",
+        "tooltip": "Deployed instance of Mold",
+        "icon": {
+          "set": "fas",
+          "name": "external-link-alt"
+        }
+      }
+    ]
+  },
+  {
     "title": "Web Extensions 101",
     "slug": "webext101",
     "author": "Eric Zhao",
