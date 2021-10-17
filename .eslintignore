@@ -1,9 +1,2 @@
 node_modules/
-**/*.scss.d.ts
-
-.eslintrc.js
-
-src/data/PicturesImport.ts
-src/static
-
 dist/

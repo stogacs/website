@@ -1,32 +1,27 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "esModuleInterop": true,
-    "downlevelIteration": true,
-    "inlineSources": true,
-    "inlineSourceMap": true,
-    "jsx": "react",
-    "lib": ["DOM", "ES2020"],
-    "module": "ES2020",
-    "moduleResolution": "Node",
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "outDir": "build",
+    "allowJs": false,
     "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "outDir": "dist",
-    "preserveConstEnums": true,
-    "resolveJsonModule": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
     "removeComments": true,
-    "target": "ES6",
-    "typeRoots": ["node_modules/@types", "src/@types"],
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
-      "@data/*": ["data/*"],
-      "@util": ["src/util"]
-    }
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "strictNullChecks": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
-  "include": ["src/*", "src/@types/*.d.ts"],
-  "exclude": ["node_modules", "build"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/scripts/"
+  ]
 }

@@ -2,7 +2,7 @@ name: pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   publish:
@@ -14,8 +14,7 @@ jobs:
           node-version: '12'
           check-latest: true
       - run: npm install
-      - run: npm run lint
-      - run: npm run build:prod
+      - run: npm run build
       - if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:

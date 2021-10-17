@@ -1,48 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
     <title>StogaCS</title>
-    <meta name="description" content="Website of the Conestoga High School Computer Science Club" />
-    <meta name="keywords" content="conestoga, club, computer science, computer, science, stogacs" />
-    <meta name="robots" content="index, follow" />
+    <link href="/style/definitions.css" rel="stylesheet">
+    <link href="/style/navbar.css" rel="stylesheet">
+    <link href="/style/index.css" rel="stylesheet">
+    <link href="/style/animations.css" rel="stylesheet">
+</head>
+<body>
+<div class="flex flex-center" id="navbar">
+    <div class="flex" id="title">
+        <a href="#">stoga_cs</a>
+    </div>
+    <div class="flex" id="navs">
+        <a href="#experience">Experience</a>
+        <a href="#pictures">Pictures</a>
+        <a href="#contacts">Contacts</a>
+        <a href="/resources">Resources</a>
+        <a href="/codefest">Codefest</a>
+    </div>
+</div>
+<section class="flex flex-center" id="banner">
+    <img class="logo-piece" id="background" src="/assets/media/logo_background.png" alt="Logo Background">
+    <img class="logo-piece" id="laptop" src="/assets/media/logo_laptop.png" alt="Laptop">
+    <img class="logo-piece" id="brackets" src="/assets/media/logo_brackets.png" alt="Brackets">
+    <img class="logo-piece" id="gold" src="/assets/media/logo_gold.png" alt="Gold Thing">
+    <img class="logo-piece" id="scroll" src="/assets/media/logo_scroll.png" alt="Scroll">
+    <p class="logo-piece" id="text">Conestoga<br>Computer<br>Science Club</p>
+</section>
 
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<section class="flex" id="experience">
+    <div class="section-header">
+        <h1>Experience</h1>
+        <p>Awards</p>
+    </div>
+    <noscript>Please enable JavaScript to view this portion of the site</noscript>
+    <div class="flex flex-center" id="awards"></div>
+</section>
 
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafrex/spa-github-pages
-      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-      // ----------------------------------------------------------------------
-      // This script checks to see if a redirect is present in the query string
-      // and converts it back into the correct url and adds it to the
-      // browser's history using window.history.replaceState(...),
-      // which won't cause the browser to attempt to load the new url.
-      // When the single page app is loaded further down in this file,
-      // the correct url will be waiting in the browser's history for
-      // the single page app to route accordingly.
-      (function (l) {
-        if (l.search) {
-          var q = {};
-          l.search
-            .slice(1)
-            .split("&")
-            .forEach(function (v) {
-              var a = v.split("=");
-              q[a[0]] = a.slice(1).join("=").replace(/~and~/g, "&");
-            });
-          if (q.p !== undefined) {
-            window.history.replaceState(
-              null,
-              null,
-              l.pathname.slice(0, -1) + (q.p || "") + (q.q ? "?" + q.q : "") + l.hash,
-            );
-          }
-        }
-      })(window.location);
-    </script>
-  </head>
-  <body>
-    <script src="index.bundle.js"></script>
-  </body>
+<section class="flex" id="pictures">
+    <div class="section-header">
+        <h1>Pictures</h1>
+    </div>
+    <noscript>Please enable JavaScript to view this portion of the site</noscript>
+    <div class="flex flex-center" id="slideshow"></div>
+</section>
+
+<section class="flex" id="contacts">
+    <div class="section-header">
+        <h1>Contacts:</h1>
+        <p>Schoology Code:<br><b><a href="https://schoology.tesd.net/groups/">MRV4S-28MM5</a></b></p>
+        <div class="flex flex-center">
+            <a href="mailto:conestogacomputerscienceclub@gmail.com"><img src="/assets/media/mail.png" width="60%"></a>
+            <a href="https://github.com/stogacs"><img src="/assets/media/github.png" width="60%"></a>
+        </div>
+    </div>
+    <noscript>Please enable JavaScript to view this portion of the site</noscript>
+    <div class="flex flex-center" id="people"></div>
+</section>
+</body>
+<script src="/scripts/index.js"></script>
 </html>
