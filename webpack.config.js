@@ -42,6 +42,10 @@ module.exports = {
                             '**/scripts/**'
                         ]
                     }
+                },
+                {
+                    from: path.resolve(__dirname, "CNAME"),
+                    to: path.resolve(__dirname, "dist"),
                 }
             ]
         })
