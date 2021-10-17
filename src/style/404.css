@@ -1,0 +1,12 @@
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--darkpage);
+    color: var(--darktext);
+    padding: 0;
+    margin: 0;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+a {color: var(--link);}
+#body { width: 100%; height: 45rem; align-items: center; flex-direction: column;}
