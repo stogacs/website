@@ -1,42 +1,27 @@
+![Logo](https://raw.githubusercontent.com/stogacs/stogacs.club/main/logo.png)
+
 # stogacs.club
+The official site for the Conestoga Computer Science Club. View the site at [stogacs.club](https://stogacs.club)
 
-The repository of the Conestoga Computer Science Club's website.
 
-To add pictures, contacts, or presentation links, edit / add to the
-files in [`/data`](./data).
+## Instructions
 
-## Contributing
+First off, you'll probably want to install [NodeJS](https://nodejs.org/en/) and [npm](https://www.npmjs.com/), then install the repository by either [downloading it](https://github.com/stogacs/stogacs.club/archive/refs/heads/main.zip) or running `git clone https://github.com/stogacs/stogacs.club`
 
-The website is written in Typescript, using React, Babel, Webpack, etc.
+To start a dev server:
 
-To set up and run dev server:
-
-    npm install
-    npm run start:dev
-
-To build for development:
-
-    npm run build:dev
+```
+npm install
+npm run dev
+```
 
 To build for production:
+```
+npm run build
+```
 
-    npm run build:prod
+## Contributing
+All pull requests are welcome.
 
-To lint:
-
-    npm run lint
-
-## Commit Conventions
-
-Prefix all short commit messages with `{type}:` where `{type}` is one
-of the following:
-
--   `build`: Changed build configuration / tools
-    -   `build(deps)`: Added / changed some dependency
-    -   `build(ci)`: Changed the build CI pipeline
--   `feat`: Added a new feature
--   `fix`: Fixed some bug
--   `refactor`: Refactored / reorganized code without adding features
-    or fixes
--   `style`: Reformatted some code
--   `docs`: Edited documentation, including this README
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
