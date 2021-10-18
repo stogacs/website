@@ -12,12 +12,12 @@ To start a dev server:
 
 ```
 npm install
-npm run dev
+npm run start:dev
 ```
 
 To build for production:
 ```
-npm run build
+npm run build:prod
 ```
 
 ## Contributing
