@@ -3,17 +3,16 @@
   "version": "2.0.0",
   "description": "Website for the Conestoga Computer Science Club",
   "scripts": {
-    "start": "webpack serve",
     "build": "webpack",
-    "dev": "npm run build && npm run start",
-    "deploy": "npm run build && gh-pages -d dist -m Deployed Site"
+    "build:prod": "webpack --env mode=production",
+    "build:dev": "webpack --env mode=development",
+    "start:dev": "npm run build:dev && webpack serve --env mode=development"
   },
   "author": "stogacs",
   "license": "MIT",
   "dependencies": {
     "common-js": "^0.3.8",
     "copy-webpack-plugin": "^9.0.1",
-    "gh-pages": "^3.2.3",
     "ts-loader": "^8.0.5",
     "typescript": "^4.0.3",
     "webpack": "^5.1.3",
