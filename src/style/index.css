@@ -36,9 +36,9 @@ body {
 .award > a:hover {text-decoration: underline;}
 
 /* Pictures */
-#pictures {width: 100%; padding-bottom: 50%; ;flex-direction: column;}
-#slideshow {padding-top: 10vh;justify-items: center;}
-#slideshow > img {width: 50%;position: absolute;user-select: none;cursor: pointer;}
+#pictures {padding-bottom: 50rem; flex-direction: column;}
+#slideshow {padding-top: 10vh;}
+#slideshow > img {width: 50rem;position: absolute;user-select: none;cursor: pointer;}
 
 /* Contacts */
 #contacts { width: 100%; padding-bottom: 10%; flex-direction: column; background-color: var(--darkpage); color: var(--darktext); }
