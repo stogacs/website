@@ -21,7 +21,7 @@ fetch(shekelsFileUrl).then(result => {result.text().then(content => {
         }
     }
     // Sort by shekel count
-    shekelHolders.sort((a, b) => (a.count > b.count) ? 1 : -1);
+    shekelHolders.sort((a, b) => a - b);
 
     shekelHolders.forEach((person, place) => {
         leaderboard.innerHTML += `<li>${getSuffix(place + 1)} - ${person.name} - ${person.count}💸</li>`
