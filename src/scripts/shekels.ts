@@ -10,7 +10,6 @@ fetch(shekelsFileUrl).then(result => {result.text().then(content => {
     let lines:string[] = content.split("\n").filter(value => !value.trim().startsWith("#") && value !== "");
     if (lines.length < 2) return;
     for (let i = 1; i < lines.length; i++) {
-        console.log(i);
         let userdata:string[] = lines[i].split("|");
         if (userdata.length > 1) {
             // If our user doesn't have a preferred name, use their id
@@ -20,8 +19,8 @@ fetch(shekelsFileUrl).then(result => {result.text().then(content => {
             console.log(`Error: Invalid userdata ${lines[i]}`);
         }
     }
-    // Sort by shekel count
-    a.sort(function(a:number,b:number){return a - b});
+    // Sort by shekel count (does not work for negatives)
+    shekelHolders.sort((a, b) => a.count - b.count);
 
     shekelHolders.forEach((person, place) => {
         leaderboard.innerHTML += `<li>${getSuffix(place + 1)} - ${person.name} - ${person.count}💸</li>`
