@@ -1,7 +1,7 @@
 import {ShekelHolder} from "./data/ShekelHolder";
 
-// Proxy that re-directs to https://raw.githubusercontent.com/stogacs/shekels-leaderboard/main/shekels.txt
-let shekelsFileUrl:string = "https://leaderboard.humboldt123.repl.co/";
+
+let shekelsFileUrl:string = "https://leaderboard.stogacs.club/shekels.txt";
 let leaderboard = document.getElementById("leaderboard") as HTMLElement;
 let shekelHolders:ShekelHolder[] = [];
 
