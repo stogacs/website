@@ -27,7 +27,8 @@ export class Person {
             new Person("Aditya", "Sirohi", 2022, "Co-President"),
             new Person("Sean", "Nissenbaum", 2022, "Officer"),
             new Person("Saj", "Agarwala", 2023, "Officer"),
-            new Person("Brendan", "McQuilkin", 2023, "Officer")
+            new Person("Brendan", "McQuilkin", 2023, "Officer"),
+            new Person("Vishnu", "Menon", 2023, "Officer")
         ]
     }
 
