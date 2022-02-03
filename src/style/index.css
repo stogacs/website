@@ -2,6 +2,7 @@
     --banner: #212121;
     --terminal: #1ebc73;
     --award-title: #165a4c;
+    --banner-text: #9babb2;
 }
 
 body {
@@ -27,7 +28,7 @@ body {
 #laptop { animation: 1s ease-out 0s 1 slide-left; }
 #brackets { animation: 1s ease-out 0s 1 slide-right; }
 #text {color: var(--terminal);font-size: small;text-align: center;white-space:nowrap;overflow: hidden;animation: type 4s steps(29, end) 100ms 1 normal both;}
-
+#banner-text {align-self: end;padding-bottom: 5rem;color: var(--banner-text)}
 /* Experience */
 #experience {width: 100%; flex-direction: column; padding-bottom: 10%;}
 #awards {flex-direction: row;flex-wrap: wrap;text-align: center;}
@@ -44,7 +45,7 @@ body {
 #contacts { width: 100%; padding-bottom: 10%; flex-direction: column; background-color: var(--darkpage); color: var(--darktext); }
 .section-header > p > b > a {color: var(--link);}
 #people {flex-direction: row; flex-wrap: wrap; padding-top: 3rem;}
-.person { margin: 0 3rem 3rem 0; }
+.person { margin: 0 4rem 3rem 0; }
 .person > img {width: 12rem; border-radius: 100%; }
-.info { margin-left: 2rem; flex-direction: column; }
+.info { margin-left: 2rem; flex-direction: column; width: 12vw;}
 .info > p {color: var(--darktext); margin: 0;}
