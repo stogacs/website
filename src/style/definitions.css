@@ -8,6 +8,7 @@
     --noscript: #e83b3b;
     --link: #e83b3b;
 }
+
 html { scroll-behavior: smooth; }
 
 noscript {text-align: center; color: var(--noscript)}
