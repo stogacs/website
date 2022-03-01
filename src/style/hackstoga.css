@@ -42,17 +42,7 @@ body {
 #brackets { animation: 1s ease-out 0s 1 descend; }
 
 #signup-form { position:sticky; padding-top: 30rem;}
-#signup-button {
-    cursor: pointer;
-    border: none;
-    font-size: larger;
-    font-family: inherit;
-    color: inherit;
-    padding: 0.8rem 1rem;
-    transition: 0.3s;
-    background: rgb(var(--signup-button-fill));
-    box-shadow: 0.4rem 0.3rem rgba(var(--signup-button-shadow), 30%);
-}
+#signup-button {cursor: pointer; border: none; font-size: larger; font-family: inherit; color: inherit; padding: 0.8rem 1rem; transition: 0.3s; background: rgb(var(--signup-button-fill)); box-shadow: 0.4rem 0.3rem rgba(var(--signup-button-shadow), 30%);}
 #signup-button:hover { box-shadow: 0.8rem 0.6rem rgba(var(--signup-button-shadow), 30%); filter: drop-shadow(0 0 2px #fff5);}
 
 /* Info */
