@@ -1,4 +1,4 @@
-![Logo](https://stogacs.club/assets/media/logo_text.png)
+![Logo](https://stogacs.club/assets/media/logo.png)
 
 # stogacs.club
 The official site for the Conestoga Computer Science Club. View the site at [stogacs.club](https://stogacs.club)
