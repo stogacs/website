@@ -10,10 +10,8 @@ body {
 
 a {color: var(--link);}
 
-.schedule-table th {background-color: #239063;  padding: 1vh 0 0 1vh;}
-.schedule-table td, .schedule-table th {
-    padding: 0 2vw 0 0;
-    text-align: center;
-}
+.table {padding: 2vh;}
+.table th {background-color: #239063;  padding: 1vh 0 0 1vh;}
+.table td, .table th { padding: 0 1.5vw 0 1.5vw; text-align: center;  }
 
 #body { width: 100%; height: 45rem; align-items: center; flex-direction: column;}
