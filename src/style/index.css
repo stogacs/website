@@ -37,10 +37,9 @@ body {
 .award > a {text-decoration: none; color: var(--award-title);}
 .award > a:hover {text-decoration: underline;}
 
-/* Pictures */
-#pictures {padding-bottom: 50rem; flex-direction: column;}
-#slideshow {padding-top: 10vh;}
-#slideshow > img {width: 50rem;position: absolute;user-select: none;cursor: pointer;}
+/* Trailer Section */
+#about {padding-bottom: 10rem; flex-direction: column;}
+#trailer {padding-top: 10vh; border: 0;}
 
 /* Contacts */
 #contacts { width: 100%; padding-bottom: 10%; flex-direction: column; background-color: var(--darkpage); color: var(--darktext); }

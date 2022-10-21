@@ -7,7 +7,6 @@ module.exports = (env) => {
         entry: {
             index: './src/scripts/index.ts',
             presentations: './src/scripts/presentations.ts',
-            shekels: './src/scripts/shekels.ts',
             // add more entries for each script here
         },
         resolve: {
