@@ -1,5 +1,5 @@
 const questions = [
-    "Given the number of sides of a shape, determine what shape it is. Assume that the sides and interior angles of the shape are all equal to each other.",
+    "Given the number of sides of a shape, determine what shape it is (Triangle, square, pentagon, hexagon, heptagon, octagon, etc). Assume that the sides and interior angles of the shape are all equal to each other.<br>Input will consist of one integer, the number of sides N, in the range 3 <= N <= 10<br>",
     "Given an array of sorted integers, find the smallest index that a given value appears. If value is not found in the array, return -1 (Must be done in logN time)",
     "Given a string, output the number of non-repeating characters (must be solved in O(N) time)",
     "Given a list of integers, repeatedly output the sum of all integers within a given interval (must be solved in O(N) time)",
