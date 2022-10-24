@@ -23,12 +23,11 @@ export class Person {
     }
     public static getPeople():Person[] {
         return [
-            new Person("Jeffrey", "Tan", 2022, "Co-President"),
-            new Person("Aditya", "Sirohi", 2022, "Co-President"),
-            new Person("Sean", "Nissenbaum", 2022, "Officer"),
-            new Person("Saj", "Agarwala", 2023, "Officer"),
+            new Person("Vishnu", "Menon", 2023, "Co-President"),
+            new Person("Saj", "Agarwala", 2023, "Co-President"),
             new Person("Brendan", "McQuilkin", 2023, "Officer"),
-            new Person("Vishnu", "Menon", 2023, "Officer")
+            new Person("Wilson", "Zhang", 2024, "Officer"),
+            new Person("Richard", "Zhang", 2024, "Officer")
         ]
     }
 
