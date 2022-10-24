@@ -1,0 +1,66 @@
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--darkpage);
+    color: var(--darktext);
+    padding: 0;
+    margin: 0;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+p {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--lighttext);
+    padding:0% 10% 0%;
+    margin:10;
+    align-items: left;
+}
+
+button {
+    font-family: 'JetBrains Mono', monospace;
+    font-size:20;
+    color:#00BB1F;
+    background-color:#464646;
+    width:100px;
+    height:62px;
+    transition: 0.2s linear;
+    border:none;
+    border-radius:10px;
+}
+
+input {
+    font-family: 'JetBrains Mono', monospace;
+    font-size:20;
+    color:#00BB1F;
+    background-color:#464646;
+    width:100px;
+    height:20px;
+    border:none;
+    padding-left:10px;
+    margin:0% 10% 0%;
+}
+
+button:hover {
+    background-color:rgb(167, 198, 255);
+    color:rgb(66, 132, 255);
+}
+
+.fileSubmit {
+    all: revert;
+    margin:0% 10% 0%;
+}
+
+.submitButton {
+    
+    width:250px;
+    height:40px;
+    margin: 1% 10% 5%;
+}
+
+.caseResults {
+    color: #35B700;
+}
+
+a {color: var(--link);}
+
+#body { width: 100%; height: 45rem; align-items: center; flex-direction: column;}
