@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>StogaCS</title>
+    <meta name="title" content="Stoga CS Widener Contest">
+    <meta name="description" content="😎 honestly just get better">
+    <meta name="theme-color" content="#eaaded">
+    <meta property="og:title" content="Stoga CS">
+    <meta property="og:description" content="😎 The official website for the Conestoga Computer Science Club">
+    <link href="/style/definitions.css" rel="stylesheet">
+    <link href="/style/navbar.css" rel="stylesheet">
+    <link href="/style/index.css" rel="stylesheet">
+    <link href="/style/animations.css" rel="stylesheet">
+    <link href="/style/contest.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="flex flex-center" id="navbar">
+        <div class="flex" id="title">
+            <a href="/">stoga_cs</a>
+        </div>
+        <div class="flex" id="navs">
+            <a href="/">Home</a>
+        </div>
+    </div>
+    <section class="flex flex-center" id="body">
+        <h1>Widener Preliminary Contest</h1>
+        <p>Welcome to the Widener Preliminary Contest! Here, you'll compete against your fellow CS-ians and try to
+            represent Conestoga at the Widener Competition on Thursday, Nov 17, 2022</p>
+        <ul>
+            <li>You'll have 6 problems to do within 30 minutes</li>
+            <li>Each problem has a different runtime limit</li>
+            <li>Each problem has 9 test cases - you will only be told whether they passed (correct output in time
+                limit) or not</li>
+            <li>Your score will be a cumulative of time spent to solve and test cases correct</li>
+        </ul>
+        <p id="luck">Good luck! If you're ready to begin, press the button...</p>
+        <button id="start" onclick=onStart()> Start! </button>
+    </section>
+
+
+
+</body>
+<script src="/assets/contest.js"></script>
+
+</html>
