@@ -5,9 +5,44 @@
     --navbar-highlight: #165a4c;
 }
 
-#navbar {width: 100%;background-color: var(--navbar);align-items: center;font-size: large;flex-wrap: wrap;z-index: 1; position: fixed;}
-#title  {margin: 0 auto 0 5%;}
-#title > a {color: var(--navbar-title);font-size: xx-large;text-decoration: none;}
-#navs {width: 50%; margin: 0 5% 0 0; padding: 1% 0.5% 1% 0.5%; justify-content: right; flex-wrap: wrap; gap: 1rem;}
-#navs > a {color: var(--navbar-text); text-decoration: none; padding: 1% 0.5% 1% 0.5%; border-radius: .25rem; position: initial;}
-#navs > a:hover {animation: 0.5s ease-out 0s 1 navbar-highlight; background-color: var(--navbar-highlight);}
+#navbar {
+	width: 100%;
+	background-color: var(--navbar);
+	align-items: center;
+	font-size: large;
+	flex-wrap: wrap;
+	z-index: 1;
+	position: fixed;
+}
+
+#title {
+	margin: 0 auto 0 5%;
+}
+
+#title > a {
+	color: var(--navbar-title);
+	font-size: xx-large;
+	text-decoration: none;
+}
+
+#navs {
+	width: 50%;
+	margin: 0 5% 0 0;
+	padding: 1% 0.5% 1% 0.5%;
+	justify-content: right;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+#navs > a {
+	color: var(--navbar-text);
+	text-decoration: none;
+	padding: 1% 0.5% 1% 0.5%;
+	border-radius: .25rem;
+	position: initial;
+}
+
+#navs > a:hover {
+	animation: 0.5s ease-out 0s 1 navbar-highlight;
+	background-color: var(--navbar-highlight);
+}
