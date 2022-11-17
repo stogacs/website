@@ -57,7 +57,7 @@ module.exports = (env) => {
             },
         },
         performance: {
-            hints: false, // TOOO: more elegant solution
+            hints: false, // TODO: more elegant solution
         }
     };
 

@@ -1,29 +1,29 @@
 @keyframes navbar-highlight {
-    0% {background-color: var(--navbar);}
-    100% {background-color: var(--navbar-highlight);}
+    0%		{ background-color: var(--navbar); }
+    100%	{ background-color: var(--navbar-highlight); }
 }
 
 @keyframes ascend {
-    0% {transform: translateY(60%);}
-    100% {transform: translateY(0);}
+    0%		{ transform: translateY(60%); }
+    100%	{ transform: translateY(0); }
 }
 
 @keyframes descend {
-    0% {transform: translateY(-40%);}
-    100% {transform: translateY(0);}
+    0%		{ transform: translateY(-40%); }
+    100%	{ transform: translateY(0); }
 }
 
 @keyframes slide-left {
-    0% {transform: translateX(-40%);}
-    100% {transform: translateX(0);}
+    0%		{ transform: translateX(-40%); }
+    100%	{ transform: translateX(0); }
 }
 
 @keyframes slide-right {
-    0% {transform: translateX(60%);}
-    100% {transform: translateX(0);}
+    0%		{ transform: translateX(60%); }
+    100%	{ transform: translateX(0); }
 }
 
 @keyframes type {
-    0% {width: 0;}
-    100% {width: 20rem;}
+    0%		{ width: 0; }
+    100%	{ width: 20rem; }
 }
