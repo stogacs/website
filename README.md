@@ -1,6 +1,10 @@
 ![stogacs.club](./banner.png)
-The official site for the Conestoga Computer Science Club. View the site at [stogacs.club](https://stogacs.club)
 
+## About
+
+> This is the website for the Conestoga Computer Science Club. It's usually maintained by a member of the club's current leadership (right now that's me) and *anybody* is welcome to contribute! Check it out at [stogacs.club](https://stogacs.club)
+
+— Vishnu
 
 ## Instructions
 
