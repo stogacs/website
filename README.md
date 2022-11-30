@@ -1,14 +1,14 @@
-![stogacs.club](./banner.png)
+![cs.stoga.club](./banner.png)
 
 ## About
 
-> This is the website for the Conestoga Computer Science Club. It's usually maintained by a member of the club's current leadership (right now that's me) and *anybody* is welcome to contribute! Check it out at [stogacs.club](https://stogacs.club)
+> This is the website for the Conestoga Computer Science Club. It's usually maintained by a member of the club's current leadership (right now that's me) and *anybody* is welcome to contribute! Check it out at [cs.stoga.club](https://cs.stoga.club)
 
 — Vishnu
 
 ## Instructions
 
-First off, you'll probably want to install [NodeJS](https://nodejs.org/en/) and [npm](https://www.npmjs.com/), then install the repository by either [downloading it](https://github.com/stogacs/stogacs.club/archive/refs/heads/main.zip) or running `git clone https://github.com/stogacs/stogacs.club`
+First off, you'll probably want to install [NodeJS](https://nodejs.org/en/) and [npm](https://www.npmjs.com/), then install the repository by either [downloading it](https://github.com/stogacs/website/archive/refs/heads/main.zip) or running `git clone https://github.com/stogacs/website`
 
 To start a dev server:
 
