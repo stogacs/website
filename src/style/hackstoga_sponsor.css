@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --dark: #212121;
+    --darker: #121212;
+    --superdark: #0a0a0a;
+    --light: #fefefe;
+    --superlight: #ffffff;
+    --red: #e83b3b;
+    --darkred: #ae2334;
+    --orange: #f8a435;
+    --offwhite: #c7dcd0;
+    --magenta: #a884f3;
+    --darkpurple: #2e222f;
+    --superdarkpurple: #251c26;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--dark);
+    background-color: var(--light);
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+#main-cover {
+    height: 90vh;
+    background-size: cover;
+}
+
+/* Logo Pieces */
+.logo-piece {
+    width: 20rem;
+    position: absolute;
+    pointer-events: none;
+}
+#scroll {
+    animation: 1s ease-out 0s 1 slide-left;
+}
+#left-torch {
+    animation: 1s ease-out 0s 1 ascend;
+}
+#right-torch {
+    animation: 1s ease-out 0s 1 ascend;
+}
+#laptop {
+    animation: 0.8s ease-out 0s 1 descend;
+}
+#left-bracket {
+    animation: 1s ease-out 0s 1 slide-right;
+}
+#right-bracket {
+    animation: 1s ease-out 0s 1 slide-left;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.rounded {
+    border-radius: 10px;
+}
