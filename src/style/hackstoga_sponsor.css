@@ -13,6 +13,11 @@
     --magenta: #a884f3;
     --darkpurple: #2e222f;
     --superdarkpurple: #251c26;
+
+    --bronze: #9e4539;
+    --silver: #30e1b9;
+    --gold: #f79617;
+    --platinum: #f04f78;
 }
 
 html {
@@ -41,8 +46,18 @@ body {
 }
 
 .sponsor-card {
+    margin: 1em;
     background-color: var(--dark);
     color: var(--light);
+}
+.sponsor-content {
+    width: 80%;
+}
+.sponsor-indicator {
+    width: 12em;
+    height: 2px;
+    margin: 0 0 1em 0;
+    border-radius: 100%;
 }
 
 .flex {
