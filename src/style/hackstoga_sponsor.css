@@ -40,6 +40,28 @@ body {
     float: left;
 }
 
+.sponsor-card {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
 /* Logo Pieces */
 .logo-piece {
     width: 20rem;
@@ -63,21 +85,4 @@ body {
 }
 #right-bracket {
     animation: 1s ease-out 0s 1 slide-left;
-}
-
-.flex {
-    display: flex;
-}
-
-.flex-center {
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-column {
-    flex-direction: column;
-}
-
-.rounded {
-    border-radius: 10px;
 }
