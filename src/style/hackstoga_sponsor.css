@@ -39,6 +39,9 @@ body {
     background-color: var(--light);
 }
 
+.icon {
+    width: 4em;
+}
 .block-number {
     font-size: 5em;
     margin: 0 0.25em 0 0;
