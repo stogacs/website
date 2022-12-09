@@ -32,11 +32,23 @@ body {
     overflow-x: hidden;
 }
 
+
+a:link { color: var(--red); }
+a:visited { color: var(--red); }
+a:hover { color: var(--darkred); }
+a:active { color: var(--darkred); }
 #main-cover {
     height: 90vh;
     background-size: cover;
+    background-image: url("../assets/media/hackstoga/banner.png");
+}
+.light {
     color: var(--dark);
     background-color: var(--light);
+}
+.darker {
+    color: var(--light);
+    background-color: var(--darker);
 }
 
 .icon {
