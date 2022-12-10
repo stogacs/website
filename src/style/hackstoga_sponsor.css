@@ -41,6 +41,7 @@ a:active { color: var(--darkred); }
     height: 90vh;
     background-size: cover;
     background-image: url("../assets/media/hackstoga/banner.png");
+    background-attachment: fixed;
 }
 .light {
     color: var(--dark);
@@ -64,12 +65,20 @@ a:active { color: var(--darkred); }
     margin: 1em;
     background-color: var(--dark);
     color: var(--light);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+    transition: transform ease 300ms;
+}
+.sponsor-card:not(:hover) {
+    transform: translate(0, 0px);
+}
+.sponsor-card:hover {
+    transform: translate(0, -10px);
 }
 .sponsor-content {
     width: 80%;
 }
 .sponsor-indicator {
-    width: 12em;
+    width: 80%;
     height: 2px;
     margin: 0 0 1em 0;
     border-radius: 100%;
