@@ -98,6 +98,12 @@ a:active { color: var(--darkred); }
 .leadership-card:hover {
     transform: translate(0, -10px);
 }
+.leadership-card > img {
+    min-width: 100%;
+}
+.leadership-card > h3, h2, p {
+    overflow-wrap: break-word;
+}
 
 .flex {
     display: flex;
