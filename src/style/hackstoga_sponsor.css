@@ -32,77 +32,30 @@ body {
     overflow-x: hidden;
 }
 
-
-a:link { color: var(--red); }
-a:visited { color: var(--red); }
-a:hover { color: var(--darkred); }
-a:active { color: var(--darkred); }
-#main-cover {
-    height: 90vh;
-    background-size: cover;
-    background-image: url("../assets/media/hackstoga/banner.png");
-    background-attachment: fixed;
+a:link {
+    color: var(--red);
 }
+
+a:visited {
+    color: var(--red);
+}
+
+a:hover {
+    color: var(--darkred);
+}
+
+a:active {
+    color: var(--darkred);
+}
+
 .light {
     color: var(--dark);
     background-color: var(--light);
 }
+
 .darker {
     color: var(--light);
     background-color: var(--darker);
-}
-
-.icon {
-    width: 4em;
-}
-.block-number {
-    font-size: 5em;
-    margin: 0 0.25em 0 0;
-    float: left;
-}
-
-.sponsor-card {
-    margin: 1em;
-    background-color: var(--dark);
-    color: var(--light);
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
-    transition: transform ease 300ms;
-}
-.sponsor-card:not(:hover) {
-    transform: translate(0, 0px);
-}
-.sponsor-card:hover {
-    transform: translate(0, -10px);
-}
-.sponsor-content {
-    width: 80%;
-}
-.sponsor-indicator {
-    width: 80%;
-    height: 2px;
-    margin: 0 0 1em 0;
-    border-radius: 100%;
-}
-
-.leadership-card {
-    margin: 0.5em;
-    padding: 1.5em;
-    background-color: var(--darker);
-    color: var(--light);
-    transition: transform ease 300ms;
-    min-height: 85%;
-}
-.leadership-card:not(:hover) {
-    transform: translate(0, 0px);
-}
-.leadership-card:hover {
-    transform: translate(0, -10px);
-}
-.leadership-card > img {
-    min-width: 100%;
-}
-.leadership-card > h3, h2, p {
-    overflow-wrap: break-word;
 }
 
 .flex {
@@ -122,27 +75,65 @@ a:active { color: var(--darkred); }
     border-radius: 10px;
 }
 
-/* Logo Pieces */
-.logo-piece {
-    width: 20rem;
-    position: absolute;
-    pointer-events: none;
+#main-cover {
+    height: 90vh;
+    background-size: cover;
+    background-image: url("../assets/media/hackstoga/banner.png");
+    background-attachment: fixed;
 }
-#scroll {
-    animation: 1s ease-out 0s 1 slide-left;
+
+.icon {
+    width: 4em;
 }
-#left-torch {
-    animation: 1s ease-out 0s 1 ascend;
+
+.sponsor-card {
+    margin: 1em;
+    background-color: var(--dark);
+    color: var(--light);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+    transition: transform ease 300ms;
 }
-#right-torch {
-    animation: 1s ease-out 0s 1 ascend;
+
+.sponsor-card:not(:hover) {
+    transform: translate(0, 0px);
 }
-#laptop {
-    animation: 0.8s ease-out 0s 1 descend;
+
+.sponsor-card:hover {
+    transform: translate(0, -10px);
 }
-#left-bracket {
-    animation: 1s ease-out 0s 1 slide-right;
+
+.sponsor-content {
+    width: 80%;
 }
-#right-bracket {
-    animation: 1s ease-out 0s 1 slide-left;
+
+.sponsor-indicator {
+    width: 80%;
+    height: 2px;
+    margin: 0 0 1em 0;
+    border-radius: 100%;
+}
+
+.leadership-card {
+    margin: 0.5em;
+    padding: 1.5em;
+    background-color: var(--darker);
+    color: var(--light);
+    transition: transform ease 300ms;
+    min-height: 85%;
+}
+
+.leadership-card:not(:hover) {
+    transform: translate(0, 0px);
+}
+
+.leadership-card:hover {
+    transform: translate(0, -10px);
+}
+
+.leadership-card > img {
+    min-width: 100%;
+}
+
+.leadership-card > h3, h2, p {
+    overflow-wrap: break-word;
 }
