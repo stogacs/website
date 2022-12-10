@@ -84,6 +84,21 @@ a:active { color: var(--darkred); }
     border-radius: 100%;
 }
 
+.leadership-card {
+    margin: 0.5em;
+    padding: 1.5em;
+    background-color: var(--darker);
+    color: var(--light);
+    transition: transform ease 300ms;
+    min-height: 85%;
+}
+.leadership-card:not(:hover) {
+    transform: translate(0, 0px);
+}
+.leadership-card:hover {
+    transform: translate(0, -10px);
+}
+
 .flex {
     display: flex;
 }
