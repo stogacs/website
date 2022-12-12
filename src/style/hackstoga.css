@@ -64,14 +64,20 @@ body {
 #scroll {
 	animation: 1s ease-out 0s 1 slide-left;
 }
-#torch {
+#left-torch {
+	animation: 1s ease-out 0s 1 ascend;
+}
+#right-torch {
 	animation: 1s ease-out 0s 1 ascend;
 }
 #laptop {
+	animation: 0.8s ease-out 0s 1 descend;
+}
+#left-bracket {
 	animation: 1s ease-out 0s 1 slide-right;
 }
-#brackets {
-	animation: 1s ease-out 0s 1 descend;
+#right-bracket {
+	animation: 1s ease-out 0s 1 slide-left;
 }
 #tagline {
 	position: absolute;

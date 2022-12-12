@@ -49,7 +49,7 @@ body {
 	animation: 1s ease-out 0s 1 descend;
 }
 #laptop {
-	animation: 1s ease-out 0s 1 slide-left;
+	animation: 0.8s ease-out 0s 1 slide-left;
 }
 #brackets {
 	animation: 1s ease-out 0s 1 slide-right;
