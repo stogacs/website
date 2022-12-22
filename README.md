@@ -1,10 +1,7 @@
 ![stogacs.club](./banner.png)
 
-## About
-
-> This is the website for the Conestoga Computer Science Club. It's usually maintained by a member of the club's current leadership (right now that's me) and *anybody* is welcome to contribute! Check it out at [stogacs.club](https://stogacs.club)
-
-— Vishnu
+> **Note**  
+> This is the repository for the Conestoga Computer Science Club's website. It's usually maintained by a member of the current club leadership, and everyone is welcome to contribute! Check it out at [stogacs.club](https://stogacs.club)
 
 ## Instructions
 
