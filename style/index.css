@@ -1,0 +1,136 @@
+:root {
+    --banner: #212121;
+    --terminal: #1ebc73;
+    --award-title: #165a4c;
+    --banner-text: #9babb2;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--page);
+    color: var(--text);
+    padding: 0;
+    margin: 0;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+/* Section Header */
+.section-header {
+	text-align: center;
+	padding-top: 5rem;
+	font-weight: bolder;
+	font-size: x-large;
+}
+.section-header > h1 {
+	margin-bottom: 0;
+}
+.section-header > p {
+	font-weight: normal;
+	margin-top: 0;
+}
+
+/* Banner */
+#banner {
+	width: 100%;
+	height: 45rem;
+	background-color: var(--banner);
+	align-items: center;
+}
+.logo-piece {
+	width: 20rem;
+	position: absolute;
+	pointer-events: none;
+}
+#scroll { 
+	animation: 1s ease-out 0s 1 ascend;
+}
+#gold {
+	animation: 1s ease-out 0s 1 descend;
+}
+#laptop {
+	animation: 0.8s ease-out 0s 1 slide-left;
+}
+#brackets {
+	animation: 1s ease-out 0s 1 slide-right;
+}
+#text {
+	color: var(--terminal);
+	font-size: small;
+	text-align: center;
+	white-space:nowrap;
+	overflow: hidden;
+	animation: type 4s steps(29, end) 100ms 1 normal both;
+}
+#banner-text {
+	align-self: end;
+	padding-bottom: 7rem;
+	color: var(--banner-text)
+}
+
+/* Experience */
+#experience {
+	width: 100%;
+	flex-direction: column;
+	padding-bottom: 10%;
+}
+#awards {
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.award {
+	margin: .5rem !important;
+	flex: 0 0 25%;
+	max-width: 25%;
+	font-size: small;}
+.award > a {
+	text-decoration: none;
+	color: var(--award-title);
+}
+.award > a:hover {
+	text-decoration: underline;
+}
+
+/* Trailer Section */
+#about {
+	padding-bottom: 10rem;
+	flex-direction: column;
+}
+#trailer {
+	padding-top: 10vh;
+	border: 0;
+}
+
+/* Contacts */
+#contacts {
+	width: 100%;
+	padding-bottom: 10%;
+	flex-direction: column;
+	background-color: var(--darkpage);
+	color: var(--darktext);
+}
+.section-header > p > b > a {
+	color: var(--link);
+}
+#people {
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-top: 3rem;
+}
+.person {
+	margin: 0 4rem 3rem 0;
+}
+.person > img {
+	width: 12rem;
+	border-radius: 100%;
+}
+.info {
+	margin-left: 2rem;
+	flex-direction: column;
+	width: 12vw;
+}
+.info > p {
+	color: var(--darktext);
+	margin: 0;
+}

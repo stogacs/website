@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+:root {
+    --page:		#efefef;
+    --text:		#212121;
+    --darkpage: #212121;
+    --darktext: #efefef;
+    --noscript: #e83b3b;
+    --link:		#e83b3b;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+noscript {
+	text-align: center;
+	color: var(--noscript)
+}
+
+.flex { 
+	display: flex;
+}
+.flex-center {
+	justify-content: center;
+}
