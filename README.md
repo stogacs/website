@@ -5,7 +5,7 @@
 
 ## Instructions
 
-You'll want to first clone this repository. You can do this with the command `git clone https://github.com/stogacs/website`. If using VSCode, to view the website, you could use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
+You'll want to first clone this repository. You can do this with the command `git clone https://github.com/stogacs/website`. If you're using VSCode, you can use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension to view the site.
 
 ## Contributing
 All pull requests are welcome.
