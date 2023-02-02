@@ -5,19 +5,7 @@
 
 ## Instructions
 
-First off, you'll probably want to install [NodeJS](https://nodejs.org/en/) and [npm](https://www.npmjs.com/), then install the repository by either [downloading it](https://github.com/stogacs/website/archive/refs/heads/main.zip) or running `git clone https://github.com/stogacs/website`
-
-To start a dev server:
-
-```
-npm install
-npm run start:dev
-```
-
-To build for production:
-```
-npm run build:prod
-```
+You'll want to first clone this repository. You can do this with the command `git clone https://github.com/stogacs/website`. If using VSCode, to view the website, you could use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
 
 ## Contributing
 All pull requests are welcome.
