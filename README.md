@@ -12,3 +12,7 @@ All pull requests are welcome.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Images
+- [hackStoga Banner Photo by Alexandre Debiève on Unsplash](https://unsplash.com/photos/FO7JIlwjOtU)
+  

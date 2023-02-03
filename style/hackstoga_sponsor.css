@@ -78,7 +78,7 @@ a:active {
 #main-cover {
     height: 90vh;
     background-size: cover;
-    background-image: url("../assets/media/hackstoga/banner.png");
+    background-image: url("../assets/media/hackstoga/sponsor_banner.png");
     background-attachment: fixed;
 }
 
