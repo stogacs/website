@@ -23,66 +23,6 @@
     --garnet: #8b2b2b;
 }
 
-.hackstoga-button {
-    background-color: var(--transparent);
-    border-radius: 0.3em;
-    border-color: var(--light);
-    color: var(--light);
-    padding: 1rem 2rem;
-    font-size: 150%;
-    text-align: center;
-    text-decoration: none;
-    font-variant: small-caps;
-    display: inline-block;
-    margin: 1em;
-    transition: color 0.1s ease-out, transform 0.05s ease-out;
-}
-
-.hackstoga-button:hover {
-    transform: scale(1.05);
-    border-color: var(--red);
-    color: var(--red);
-}
-
-.hackstoga-button:active {
-    transform: scale(1);
-    border-color: var(--darkred);
-    color: var(--darkred);
-}
-
-.hackstoga-header {
-    font-size: 280%;
-    font-weight:700;
-    font-variant: small-caps;
-    margin: 0;
-    color: var(--darkred);
-    text-shadow: 2px 2px 3px var(--superdark);
-}
-
-.hackstoga-subheader {
-    font-size: 200%;
-    font-weight: 500;
-    font-variant: small-caps;
-    color: var(--darkred);
-    text-shadow: 2px 2px 1px var(--darker);
-}
-
-.hackstoga-faq > summary {
-    font-size: 130%;
-}
-
-.hackstoga-faq > p {
-    font-size: 120%;
-}
-
-.sponsor-image {
-    transition: transform 0.05s ease-out;
-}
-
-.sponsor-image:hover {
-    transform: scale(1.05);
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -93,6 +33,23 @@ body {
     background-color: var(--dark);
     overflow-y: visible;
     overflow-x: hidden;
+}
+
+h1 {
+    font-size: 280%;
+    font-weight:700;
+    font-variant: small-caps;
+    margin: 0;
+    color: var(--darkred);
+    text-shadow: 2px 2px 3px var(--superdark);
+}
+
+h2 {
+    font-size: 200%;
+    font-weight: 500;
+    font-variant: small-caps;
+    color: var(--darkred);
+    text-shadow: 2px 2px 1px var(--darker);
 }
 
 a:link {
@@ -109,6 +66,72 @@ a:hover {
 
 a:active {
     color: var(--darkred);
+}
+
+button {
+    background-color: var(--transparent);
+    border-radius: 0.3em;
+    border-color: var(--light);
+    color: var(--light);
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    font-variant: small-caps;
+    display: inline-block;
+    transition: color 0.1s ease-out, transform 0.05s ease-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    border-color: var(--red);
+    color: var(--red);
+}
+
+button:active {
+    transform: scale(1);
+    border-color: var(--darkred);
+    color: var(--darkred);
+}
+
+details {
+    padding: 1rem;
+    margin: 1em;
+    transition: background-color 0.1s ease-in-out;
+    background-color: var(--darker);
+    border-radius: 1em;
+}
+
+details[open] {
+    background-color: var(--platinum);
+}
+
+details p {
+    font-size: 120%;
+}
+
+details summary {
+    font-size: 130%;
+    cursor: pointer;
+    user-select: none;
+    transition: margin 70ms ease-in-out;
+}
+  
+details[open] summary {
+    margin-bottom: 2em;
+    font-size: 130%;
+}
+
+.hackstoga-button {
+    font-size: 150%;
+    margin: 1em;
+}
+
+.sponsor-image {
+    transition: transform 0.05s ease-in-out;
+}
+
+.sponsor-image:hover {
+    transform: scale(1.05);
 }
 
 .light {
