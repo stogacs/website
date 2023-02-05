@@ -9,6 +9,7 @@
     --transparent: #fff0;
     --red: #e83b3b;
     --darkred: #ae2334;
+    --superdarkred: #6d1520;
     --orange: #f8a435;
     --offwhite: #c7dcd0;
     --magenta: #a884f3;
@@ -102,7 +103,7 @@ details {
 }
 
 details[open] {
-    background-color: var(--platinum);
+    background-color: var(--superdarkred);
 }
 
 details p {
