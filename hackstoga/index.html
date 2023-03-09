@@ -17,12 +17,12 @@
 
 <body>
 <div class="alert">
-    <p id="signup-warning"><b>Warning: Sign-ups for hackStoga will close on <u>Sunday, March 12th 2023</u>!</b></p>
+    <p id="signup-warning"><b>Warning: Sign-ups for hackStoga will close on <u>Sunday, March 19th 2023</u>!</b></p>
     <span class="close-alert" onclick="this.parentElement.style.display='none';">&times;</span>
     <script>
         // awesome script B)
         var warning = document.getElementById("signup-warning");
-        var days = days = Math.ceil((new Date("March 12, 2023") - new Date()) / (1000 * 60 * 60 * 24));
+        var days = days = Math.ceil((new Date("March 19, 2023") - new Date()) / (1000 * 60 * 60 * 24));
         warning.innerHTML = warning.innerHTML.replace(`hackStoga will close`, `hackStoga will close ${days} days from now`);
   </script>
 </div> 
