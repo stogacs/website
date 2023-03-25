@@ -60,6 +60,7 @@ body {
 table {
   width: 60%;
   min-width: 600px;
+  max-height: 90vh;
   
   user-select: none;
 }
