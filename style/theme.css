@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+:root {
+    --background-color: #212121;
+    --navbar-color: #121212;
+    --navbar-text: #fefefe;
+    --navbar-links: #0088A9;
+
+	--anchor: #e83b3b;
+	--anchor-hover: #ae2334;
+    
+	--tooltip: #0a0a0a;
+	--tooltip-underline: #0a0a0a;
+	--tooltip-text: #fefefe;
+
+	--dark: #212121;
+	--darker: #121212;
+	--superdark: #0a0a0a;
+	--light: #fefefe;
+	--superlight: #ffffff;
+	--red: #e83b3b;
+	--darkred: #ae2334;
+	--orange: #f8a435;
+	--offwhite: #c7dcd0;
+	--magenta: #a884f3;
+	--darkpurple: #2e222f;
+	--superdarkpurple: #251c26;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--background-color);
+}
+
+code {
+	font-family: 'Jetbrains Mono', monospace;
+}
+
+a {
+	color: var(--anchor);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--anchor-hover);
+	text-decoration: underline;
+}
+
+.screen {
+    overflow: hidden;
+    min-height: 45em;
+}
+
+
+.textbox {
+	margin: inherit !important;
+	padding: inherit !important;
+	font-size: 130%;
+}
+
+.textbox > h1, h2, h3 {
+    margin: 1.5rem;
+	font-weight: 600;
+}
+
+.textbox > * {
+    margin: 1.5rem;
+}

@@ -1,48 +1,87 @@
-:root {
-    --navbar: #2e222f;
-    --navbar-text: #efefef;
-    --navbar-title: #8fd3ff;
-    --navbar-highlight: #165a4c;
-}
-
-#navbar {
-	width: 100%;
-	background-color: var(--navbar);
-	align-items: center;
-	font-size: large;
-	flex-wrap: wrap;
-	z-index: 1;
+header {
 	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 10%;
+	padding-right: 10%;
+	width: 100vw;
+    background-color: var(--navbar-color);
+	z-index: 1;
 }
 
-#title {
-	margin: 0 auto 0 5%;
+#navbar-click {
+	display: none;
 }
 
-#title > a {
-	color: var(--navbar-title);
-	font-size: xx-large;
+.navbar-links li, .navbar-links li a, .navbar-title {
+	font-weight: 500;
+	font-size: 16px;
 	text-decoration: none;
+    color: var(--navbar-text);
 }
 
-#navs {
-	width: 50%;
-	margin: 0 5% 0 0;
-	padding: 1% 0.5% 1% 0.5%;
-	justify-content: right;
-	flex-wrap: wrap;
-	gap: 1rem;
+.navbar-links li {
+	display: inline-block;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
-#navs > a {
+.navbar-links li a {
+	transition: all 0.3s ease 0s;
+}
+
+.navbar-links li a:hover, .active {
+	color: var(--navbar-links);
+}
+
+.navbar-title {
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.navbar-toggle {
 	color: var(--navbar-text);
-	text-decoration: none;
-	padding: 1% 0.5% 1% 0.5%;
-	border-radius: .25rem;
-	position: initial;
+	display: none;
+	cursor: pointer;
+	padding-left: 10px;
 }
 
-#navs > a:hover {
-	animation: 0.5s ease-out 0s 1 navbar-highlight;
-	background-color: var(--navbar-highlight);
+@media (max-width: 1250px) {
+	.navbar-links {
+		position: fixed;
+		top: 80px;
+		left: -100%;
+		background-color: var(--navbar-color);
+		height: 100vh;
+		width: 100%;
+		display: block;
+		text-align: center;
+		transition: all 0.3s ease;
+	}
+
+    .navbar-toggle {
+		display: inline-block;
+	}
+    
+	#navbar-click:not(:checked) ~ .navbar-links{
+		left: -100%;
+	}
+
+	#navbar-click:checked ~ .navbar-links {
+		left: 0%;
+	}
+
+	#navbar-click:checked ~ .navbar-toggle i:before {
+		content: "\f00d";
+	}
+
+	.navbar-links li {
+		display: block;
+		margin-top: 40px;
+	}
 }

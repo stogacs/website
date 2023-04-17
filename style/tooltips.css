@@ -1,0 +1,58 @@
+/* slightly adapted from vivime.info*/
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+    border-bottom: 1px dotted var(--tooltip-underline);
+    cursor: pointer;
+}
+
+.tooltip > tooltip {
+	visibility: hidden;
+	text-align: center;
+	position: absolute;
+	z-index: 1;
+
+	background-color: var(--tooltip);
+	color: var(--tooltip-text);
+	padding: 5px 0;
+	border-radius: 6px;
+    user-select: none;
+
+	width: 15em;
+	margin: 0 0 0.5em -4em;
+	left: 50%;
+
+	animation: tooltip-out 0.3s forwards, load-in 0.4s forwards;
+}
+
+.tooltip > tooltip:after {
+	content: " ";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: var(--tooltip) transparent transparent transparent;
+}
+
+.tooltip:active > tooltip {
+	animation: tooltip-in 0.5s forwards, load-in 0.4s forwards;
+}
+
+@keyframes load-in {
+	0% {opacity: 0%;}
+	80% {opacity: 0%;} /* 5% of buffer — just in case */
+	100% {opacity: 100%;}
+}
+
+@keyframes tooltip-in {
+	0% {bottom: 50%; visibility: hidden;}
+	100% {bottom: 100%; visibility: visible;}
+}
+
+@keyframes tooltip-out {
+	0% {bottom: 100%; visibility: visible;}
+	100% {bottom: 80%; visibility: hidden;}
+}
