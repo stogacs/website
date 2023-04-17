@@ -13,6 +13,8 @@ All pull requests are welcome.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Images
-- [hackStoga Banner Photo by Alexandre Debiève on Unsplash](https://unsplash.com/photos/FO7JIlwjOtU)
+## Credits
+- Responsive navbar adapted from [responsive-navbar](https://github.com/ART3MISTICAL/responsive-navbar/)
+- Icons from [Font Awesome](https://fontawesome.com/)
+- hackStoga banner photo by [Alexandre Debiève on Unsplash](https://unsplash.com/photos/FO7JIlwjOtU)
   
