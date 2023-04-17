@@ -24,6 +24,22 @@
     color: var(--contacts-text)
 }
 
+/* textbox */
+.textbox {
+	margin: inherit !important;
+	padding: inherit !important;
+	font-size: 130%;
+}
+
+.textbox > h1, h2, h3 {
+    margin: 1.5rem;
+	font-weight: 600;
+}
+
+.textbox > * {
+    margin: 1.5rem;
+}
+
 /* animated logo */
 .logo-piece {
     width: 20em;
@@ -86,11 +102,6 @@
 #accolades > p span {
     font-size: smaller;
 }
-@media screen and (min-width: 800px) {
-    #accolades {
-        border-radius: 1rem;
-    }
-}
 
 /* wavy divider */
 .wavy-divider {
@@ -108,11 +119,6 @@
 .wavy-divider .shape-fill {
     fill: var(--contacts-background);
 }
-@media screen and (max-width: 800px) {
-    .wavy-divider {
-        visibility: hidden;
-    }
-}
 
 /* leadership cards */
 .officer {
@@ -128,6 +134,21 @@
 .officer > .pure-u-1-2 {
     display: flex;
     align-items: center;
+}
+
+/* mobile */
+@media screen and (max-width: 800px) {
+    #accolades {
+        background-color: var(--superdark);
+    }
+    .wavy-divider {
+        background-color: var(--superdark);
+    }
+}
+@media screen and (min-width: 800px) {
+    #accolades {
+        border-radius: 1rem;
+    }
 }
 
 /* animations */

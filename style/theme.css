@@ -79,18 +79,3 @@ a:hover {
 	font-weight: 400;
 	text-shadow: 4px 4px 6px var(--superdark);
 }
-
-.textbox {
-	margin: inherit !important;
-	padding: inherit !important;
-	font-size: 130%;
-}
-
-.textbox > h1, h2, h3 {
-    margin: 1.5rem;
-	font-weight: 600;
-}
-
-.textbox > * {
-    margin: 1.5rem;
-}
