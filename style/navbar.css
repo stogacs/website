@@ -16,14 +16,14 @@ header {
 	display: none;
 }
 
-.navbar-links li, .navbar-links li a, .navbar-title {
+#navbar-links li, #navbar-links li a, .navbar-title {
 	font-weight: 500;
 	font-size: 16px;
 	text-decoration: none;
     color: var(--navbar-text);
 }
 
-.navbar-links li {
+#navbar-links li {
 	display: inline-block;
 	padding-top: 0px;
 	padding-bottom: 0px;
@@ -31,11 +31,11 @@ header {
 	padding-right: 20px;
 }
 
-.navbar-links li a {
+#navbar-links li a {
 	transition: all 0.3s ease 0s;
 }
 
-.navbar-links li a:hover, .active {
+#navbar-links li a:hover, .active {
 	color: var(--navbar-links);
 }
 
@@ -52,7 +52,7 @@ header {
 }
 
 @media (max-width: 1250px) {
-	.navbar-links {
+	#navbar-links {
 		position: fixed;
 		top: 80px;
 		left: -100%;
@@ -68,11 +68,11 @@ header {
 		display: inline-block;
 	}
     
-	#navbar-click:not(:checked) ~ .navbar-links{
+	#navbar-click:not(:checked) ~ #navbar-links{
 		left: -100%;
 	}
 
-	#navbar-click:checked ~ .navbar-links {
+	#navbar-click:checked ~ #navbar-links {
 		left: 0%;
 	}
 
@@ -80,7 +80,7 @@ header {
 		content: "\f00d";
 	}
 
-	.navbar-links li {
+	#navbar-links li {
 		display: block;
 		margin-top: 40px;
 	}
