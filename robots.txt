@@ -1,7 +1,7 @@
 User-agent: *
 # This is a hack to prevent the individual components of our logo from appearing on Google Images
-Disallow: https://stogacs.club/assets/media/logo_background.png
-Disallow: https://stogacs.club/assets/media/logo_laptop.png
-Disallow: https://stogacs.club/assets/media/logo_brackets.png
-Disallow: https://stogacs.club/assets/media/logo_gold.png
-Disallow: https://stogacs.club/assets/media/logo_scroll.png
+Disallow: https://stogacs.club/media/animated_logo/background.png
+Disallow: https://stogacs.club/media/animated_logo/brackets.png
+Disallow: https://stogacs.club/media/animated_logo/gold.png
+Disallow: https://stogacs.club/media/animated_logo/laptop.png
+Disallow: https://stogacs.club/media/animated_logo/scroll.png
