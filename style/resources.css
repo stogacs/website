@@ -8,6 +8,7 @@
     }
 }
 #splash {
+    /* this used to be the hackStoga banner but we have enough pictures of the event that we can use those */
     background-image: url("/media/banners/resources.png");
     font-family: "Montserrat", sans-serif;
 }
