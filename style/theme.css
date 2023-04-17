@@ -26,6 +26,12 @@
 	--magenta: #a884f3;
 	--darkpurple: #2e222f;
 	--superdarkpurple: #251c26;
+
+	--bronze: #9e4539;
+    --silver: #30e1b9;
+    --gold: #f79617;
+    --platinum: #f04f78;
+    --garnet: #8b2b2b;
 }
 
 * {
@@ -60,6 +66,19 @@ a:hover {
     min-height: 45em;
 }
 
+#splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-size: cover;
+    color: var(--light);
+}
+#splash > h1 {
+	color: var(--light);
+	font-size: 400%;
+	font-weight: 400;
+	text-shadow: 4px 4px 6px var(--superdark);
+}
 
 .textbox {
 	margin: inherit !important;

@@ -9,18 +9,13 @@
 
     --account-background: #121212;
 }
-#splash {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--light);
-}
+
+/* screens */
 @media screen and (min-width: 800px) {
     .formatting-separator {
         height: 100px;
     }
 }
-
 #about {
     background-color: var(--light);
 }
@@ -29,13 +24,13 @@
     color: var(--contacts-text)
 }
 
+/* animated logo */
 .logo-piece {
     width: 20em;
     position: absolute;
     pointer-events: none;
     image-rendering: pixelated;
 }
-
 #base {
     animation: 1s ease-out 0s 1 spinny;
 }
@@ -67,6 +62,7 @@
     font-size: large;
 }
 
+/* trailer embed */
 #trailer {
     position: relative; padding-bottom: 56.25%;
 }
@@ -79,6 +75,7 @@
     border-radius: 1em;
 }
 
+/* awards section */
 #accolades {
     background-color: var(--awards-background);
     color: var(--awards-text);
@@ -89,13 +86,35 @@
 #accolades > p span {
     font-size: smaller;
 }
-
 @media screen and (min-width: 800px) {
     #accolades {
         border-radius: 1rem;
     }
 }
 
+/* wavy divider */
+.wavy-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.wavy-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    transform: translateY(2px);
+    height: 120px;
+}
+.wavy-divider .shape-fill {
+    fill: var(--contacts-background);
+}
+@media screen and (max-width: 800px) {
+    .wavy-divider {
+        visibility: hidden;
+    }
+}
+
+/* leadership cards */
 .officer {
     background-color: var(--account-background);
     width: 90%;
@@ -110,6 +129,7 @@
     display: flex;
     align-items: center;
 }
+
 /* animations */
 @keyframes spinny {
     0%  { transform: scale(0.5, 0.5);}

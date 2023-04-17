@@ -16,5 +16,6 @@ All pull requests are welcome.
 ## Credits
 - Responsive navbar adapted from [responsive-navbar](https://github.com/ART3MISTICAL/responsive-navbar/)
 - Icons from [Font Awesome](https://fontawesome.com/)
-- hackStoga banner photo by [Alexandre Debiève on Unsplash](https://unsplash.com/photos/FO7JIlwjOtU)
+- Resources banner photo by [Alexandre Debiève on Unsplash](https://unsplash.com/photos/FO7JIlwjOtU)
+- Shape dividers from [shapedivider.app](https://www.shapedivider.app/)
   
