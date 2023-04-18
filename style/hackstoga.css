@@ -1,5 +1,5 @@
 #cover {
-    background-image: url("/media/banners/resources.png");
+    background-image: url("/media/banners/sponsor23.png");
     background-size: cover;
     color: var(--light);
     min-height: 50em;
@@ -14,39 +14,57 @@
 #subtitle {
     font-size: x-large;
 }
-button {
-    background-color: var(--transparent);
-    border-radius: 0.3em;
-    border-color: var(--light);
-    color: var(--light);
-    padding: 1rem 2rem;
-    text-align: center;
-    text-decoration: none;
-    font-variant: small-caps;
-    display: inline-block;
-    transition: color 0.1s ease-out, transform 0.05s ease-out;
-}
 
-button:hover {
-    transform: scale(1.05);
-    border-color: var(--red);
-    color: var(--red);
-}
-
-button:active {
-    transform: scale(1);
-    border-color: var(--darkred);
-    color: var(--darkred);
-}
-
-.hackstoga-button {
-    font-size: 150%;
-    margin: 1em;
-}
-
-#main {
+#about {
     color: var(--light);
     font-size: 120%;
+}
+#sponsors {
+    background-color: var(--superdark);
+    color: var(--light);
+    font-size: 120%;
+}
+#faq {
+    color: var(--light);
+    font-size: 120%;
+}
+#schedule {
+    background-color: var(--superdark);
+    color: var(--light);
+    font-size: 120%;
+}
+#footer {
+    color: var(--light);
+    background-color: var(--superdark);
+}
+
+/* details */
+details {
+    padding: 1rem;
+    margin: 1em;
+    transition: background-color 0.1s ease-in-out;
+    background-color: var(--darker);
+    border-radius: 1em;
+}
+
+details[open] {
+    background-color: var(--darkred);
+}
+
+details p {
+    font-size: 120%;
+}
+
+details summary {
+    font-size: 130%;
+    cursor: pointer;
+    user-select: none;
+    transition: margin 70ms ease-in-out;
+}
+  
+details[open] summary {
+    margin-bottom: 2em;
+    font-size: 130%;
 }
 
 /* screens */
@@ -64,14 +82,34 @@ button:active {
     }
 }
 
-/* divider */
-.triangle-divider {
+/* dividers */
+.waves-divider {
     bottom: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg) translateY(148px);
+}
+
+.waves-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.waves-divider .shape-fill {
+    fill: var(--dark);
+}
+
+.triangle-divider {
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
 }
 
 .triangle-divider svg {
@@ -82,5 +120,5 @@ button:active {
 }
 
 .triangle-divider .shape-fill {
-    fill: var(--dark);
+    fill: var(--superdark);
 }
