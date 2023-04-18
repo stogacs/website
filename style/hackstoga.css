@@ -1,0 +1,86 @@
+#cover {
+    background-image: url("/media/banners/resources.png");
+    background-size: cover;
+    color: var(--light);
+    min-height: 50em;
+}
+
+#title {
+    font-size: 5em;
+    margin: 0;
+    font-weight:bolder;
+    text-shadow: 2px 2px 3px var(--superdark);
+}
+#subtitle {
+    font-size: x-large;
+}
+button {
+    background-color: var(--transparent);
+    border-radius: 0.3em;
+    border-color: var(--light);
+    color: var(--light);
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    font-variant: small-caps;
+    display: inline-block;
+    transition: color 0.1s ease-out, transform 0.05s ease-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    border-color: var(--red);
+    color: var(--red);
+}
+
+button:active {
+    transform: scale(1);
+    border-color: var(--darkred);
+    color: var(--darkred);
+}
+
+.hackstoga-button {
+    font-size: 150%;
+    margin: 1em;
+}
+
+#main {
+    color: var(--light);
+    font-size: 120%;
+}
+
+/* screens */
+@media screen and (min-width: 800px) {
+    .formatting-separator {
+        height: 100px;
+    }
+}
+@media screen and (max-width: 800px) {
+    #title {
+        font-size: 3.5em;
+    }
+    #subtitle {
+        font-size: medium;
+    }
+}
+
+/* divider */
+.triangle-divider {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg) translateY(148px);
+}
+
+.triangle-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.triangle-divider .shape-fill {
+    fill: var(--dark);
+}
