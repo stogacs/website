@@ -140,6 +140,7 @@
 @media screen and (max-width: 800px) {
     #accolades {
         background-color: var(--superdark);
+        width: 100%;
     }
     .wavy-divider {
         background-color: var(--superdark);
