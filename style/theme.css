@@ -80,3 +80,59 @@ a:hover {
 	font-weight: 400;
 	text-shadow: 4px 4px 6px var(--superdark);
 }
+
+.animated-button {
+	border: none;
+	border-radius: 50px;
+	padding: 10px 20px;
+	margin-top: 20px;
+	max-height: 50px;
+	background-color: var(--anchor);
+	color: white;
+	font-weight: bold;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	transition: background-color 0.2s;
+  }
+  
+  .animated-button:before,
+  .animated-button:after {
+	content: "";
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 400%;
+	height: 200%;
+	background-image: linear-gradient(
+	  135deg,
+	  rgba(255, 227, 104, 0) 0%,
+	  rgba(255, 227, 104, 0) 48%,
+	  rgba(255, 227, 104, 0.5) 50%,
+	  rgba(255, 227, 104, 0) 52%,
+	  rgba(255, 227, 104, 0) 100%
+	);
+	animation: gold-lines 4s linear infinite;
+  }
+  
+  .animated-button:after {
+	animation-delay: 4s;
+  }
+  
+  .animated-button:hover {
+	background-color: var(--anchor-hover);
+  }
+  
+  .animated-button:hover:before,
+  .animated-button:hover:after {
+	animation-duration: 2s;
+  }
+  
+  @keyframes gold-lines {
+	0% {
+	  transform: translateX(-100%);
+	}
+	100% {
+	  transform: translateX(100%);
+	}
+  }
