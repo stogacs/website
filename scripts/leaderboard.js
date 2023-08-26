@@ -15,11 +15,11 @@ function getLeaderboard() {
         if (!data.hasOwnProperty('disabled')) {
             for (let i = 0; i < data.length; i++) {
                 let rank = ordinal(i + 1);
-                let name = data[i].displayName || removeMiddle(data[i].name) || 'N/A';
-                let shekels = data[i].Shekels;
-                let discordLinked = data[i].discordLinked;
+                let name = data[i].display_name || removeMiddle(data[i].name) || 'N/A';
+                let shekels = data[i].shekels;
+                let discord_linked = data[i].discord_linked;
             
-                if (!discordLinked) {
+                if (!discord_linked) {
                 tableContent += `
                     <tr>
                         <td>${rank}</td>
