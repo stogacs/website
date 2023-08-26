@@ -14,42 +14,53 @@
     max-height: 10px;
     font-family: "Montserrat", sans-serif;
 }
-#resources {
+#leaderboard-section {
     padding-top: 100px;
     color: var(--light);
     font-size: 120%;
 }
 
-#leaderboard {
+#leaderboard-list {
     padding-top: 15px;
     padding-bottom: 15px;
     color: var(--light);
     font-size: 120%;
 }
-#leaderboard .error-text {
+#leaderboard-list .error-text {
     color: var(--red);
     font-size: 120%;
 }
-#leaderboard table {
+#leaderboard-list table {
     margin-top: 30px;
-    width: 75%;
     border-collapse: collapse;
     border: 3px solid var(--light);
     border-spacing: 0;
-    padding: 0;
     max-width: 1200px;
-    
+    width: 100%;
 }
-#leaderboard th, td {
-    padding: 15px;
+
+#leaderboard-list th {
+    padding: 3px;
     border-bottom: 1px solid var(--light);
     border-right: 1px solid var(--light);
 }
-#leaderboard img {
+
+#leaderboard-list td {
+    padding: 5px;
+    border-bottom: 1px solid var(--light);
+    border-right: 1px solid var(--light);
+}
+#leaderboard-list img {
     width: auto;
     height: 20px;
     border-radius: 50%;
     margin-right: 10px;
+}
+
+@media screen and (min-width: 800px) {
+    #leaderboard-list table {
+        width: 90%;
+    }
 }
 
 .center-text {

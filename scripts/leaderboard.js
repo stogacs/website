@@ -1,4 +1,5 @@
 function getLeaderboard() {
+    let leaderboard = document.getElementById("leaderboard-list");
     const leaderboardTable = document.createElement('table');
     leaderboardTable.className = 'leaderboard center-text';
     let tableContent = `
@@ -80,7 +81,7 @@ function removeMiddle(name) {
 
 // On page load
 document.addEventListener("DOMContentLoaded", function() {
-    let leaderboard = document.getElementById("leaderboard");
+    let leaderboard = document.getElementById("leaderboard-list");
     leaderboard.innerHTML = `<p class="center-text">Loading leaderboard...</p>`;
     getLeaderboard();
 });
