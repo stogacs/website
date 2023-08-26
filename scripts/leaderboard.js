@@ -10,13 +10,34 @@ function getLeaderboard() {
     `;
     fetch("https://csboard.ddns.net/users")
     .then(response => response.json())
-    .then(data => {
-        data.sort((a, b) => (a.Shekels < b.Shekels) ? 1 : -1); // sort descending by shekels
-        if (!data.hasOwnProperty('disabled')) {
+    .then(data => {          
+        if (! data.disabled) {
+            // sort by name alphabetically first, then by shekels descending
+            data.sort((a, b) => {
+                let name = a.display_name || removeMiddle(a.name) || 'N/A';
+                if (name.toLowerCase() > b.name.toLowerCase()) {
+                    return 1;
+                } else if (name.toLowerCase() < b.name.toLowerCase()) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+            data.sort((a, b) => {
+                if (parseInt(a.shekels) > parseInt(b.shekels)) {
+                    return -1;
+                } else if (parseInt(a.shekels) < parseInt(b.shekels)) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+
             for (let i = 0; i < data.length; i++) {
+                // add each user to the table
                 let rank = ordinal(i + 1);
                 let name = data[i].display_name || removeMiddle(data[i].name) || 'N/A';
-                let shekels = data[i].shekels;
+                let shekels = (parseInt(data[i].shekels) !== 0) ? (parseInt(data[i].shekels) || 'N/A') : 0;
                 let discord_linked = data[i].discord_linked;
             
                 if (!discord_linked) {
