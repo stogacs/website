@@ -14,24 +14,22 @@ function getLeaderboard() {
         if (! data.disabled) {
             // sort by name alphabetically first, then by shekels descending
             data.sort((a, b) => {
-                let name = a.display_name || removeMiddle(a.name) || 'N/A';
-                if (name.toLowerCase() > b.name.toLowerCase()) {
-                    return 1;
-                } else if (name.toLowerCase() < b.name.toLowerCase()) {
-                    return -1;
+                const aDisplayName = a.display_name || removeMiddle(a.name) || 'N/A';
+                const bDisplayName = b.display_name || removeMiddle(b.name) || 'N/A';
+            
+                if (a.discord_linked && !b.discord_linked) {
+                    return -1; // a has discord_linked and b doesn't
+                } else if (!a.discord_linked && b.discord_linked) {
+                    return 1; // b has discord_linked and a doesn't
                 } else {
-                    return 0;
+                    // Both have or don't have discord_linked, sort alphabetically by display name
+                    return aDisplayName.toLowerCase().localeCompare(bDisplayName.toLowerCase());
                 }
             });
-            data.sort((a, b) => {
-                if (parseInt(a.shekels) > parseInt(b.shekels)) {
-                    return -1;
-                } else if (parseInt(a.shekels) < parseInt(b.shekels)) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            });
+            
+            // sort the remaining users by shekels count in descending order
+            data.sort((a, b) => parseInt(b.shekels) - parseInt(a.shekels));
+            
 
             for (let i = 0; i < data.length; i++) {
                 // add each user to the table
