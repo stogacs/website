@@ -12,6 +12,22 @@ header {
 	z-index: 1;
 }
 
+/* Modified badge for navbar */
+.badge-nav {
+    font-family: Inter;
+    position: relative;
+    bottom: 2px;
+    margin-left: 5px;
+    padding:3px 7px;
+    font-size:12px;
+    font-weight:700;
+    color:#fff;
+    text-align:center;
+    white-space:nowrap;
+    background-color: var(--badge);
+    border-radius:10px;
+}
+
 #navbar-click {
 	display: none;
 }

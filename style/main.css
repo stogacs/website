@@ -19,6 +19,23 @@
 #about {
     background-color: var(--light);
 }
+
+.badge {
+    font-family: Inter;
+    position: relative;
+    bottom: 7px;
+    min-width:10px;
+    margin-left: 5px;
+    padding:3px 7px;
+    font-size:16px;
+    font-weight:700;
+    color:#fff;
+    text-align:center;
+    white-space:nowrap;
+    background-color: var(--badge);
+    border-radius:10px;
+}
+
 #contacts {
     background-color: var(--contacts-background);
     color: var(--contacts-text)

@@ -20,24 +20,6 @@
     font-size: 120%;
 }
 
-
-.badge {
-    font-family: Inter;
-    position: relative;
-    bottom: 7px;
-    min-width:10px;
-    margin-left: 5px;
-    padding:3px 10px;
-    font-size:16px;
-    font-weight:700;
-    color:#fff;
-    text-align:center;
-    white-space:nowrap;
-    background-color: var(--badge);
-    border-radius:10px;
-}
-
-
 #leaderboard {
     padding-top: 15px;
     padding-bottom: 15px;
