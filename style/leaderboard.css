@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+/* screens */
+@media screen and (min-width: 800px) {
+    .formatting-separator {
+        height: 100px;
+    }
+}
+#splash {
+    /* this used to be the hackStoga banner but we have enough pictures of the event that we can use those */
+    /* background-image: url("/media/banners/resources.png"); */
+    height: 10px;
+    max-height: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+#resources {
+    padding-top: 100px;
+    color: var(--light);
+    font-size: 120%;
+}
+
+
+.badge {
+    font-family: Inter;
+    position: relative;
+    bottom: 7px;
+    min-width:10px;
+    margin-left: 5px;
+    padding:3px 10px;
+    font-size:16px;
+    font-weight:700;
+    color:#fff;
+    text-align:center;
+    white-space:nowrap;
+    background-color: var(--badge);
+    border-radius:10px;
+}
+
+
+#leaderboard {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: var(--light);
+    font-size: 120%;
+}
+#leaderboard .error-text {
+    color: var(--red);
+    font-size: 120%;
+}
+#leaderboard table {
+    margin-top: 30px;
+    width: 75%;
+    border-collapse: collapse;
+    border: 3px solid var(--light);
+    border-spacing: 0;
+    padding: 0;
+    
+}
+#leaderboard th, td {
+    padding: 15px;
+    border-bottom: 1px solid var(--light);
+    border-right: 1px solid var(--light);
+}
+#leaderboard img {
+    width: auto;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.center-text {
+    text-align: center;
+    margin-left: auto;
+  margin-right: auto;
+}
