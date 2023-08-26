@@ -8,10 +8,9 @@ function getLeaderboard() {
             <th>Shekels</th>
         </tr>
     `;
-    fetch("http://csboard.ddns.net/users")
+    fetch("https://csboard.ddns.net/users")
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         data.sort((a, b) => (a.Shekels < b.Shekels) ? 1 : -1); // sort descending by shekels
         if (!data.hasOwnProperty('disabled')) {
             for (let i = 0; i < data.length; i++) {
