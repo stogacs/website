@@ -26,7 +26,7 @@
     color: var(--light);
     font-size: 120%;
 }
-#leaderboard-list .error-text {
+.error-text {
     color: var(--red);
     font-size: 120%;
 }

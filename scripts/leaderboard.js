@@ -80,8 +80,20 @@ function removeMiddle(name) {
 
 
 // On page load
-document.addEventListener("DOMContentLoaded", function() {
-    let leaderboard = document.getElementById("leaderboard-list");
-    leaderboard.innerHTML = `<p class="center-text">Loading leaderboard...</p>`;
-    getLeaderboard();
+document.addEventListener("DOMContentLoaded", async function() {
+    let navbar = document.getElementById("navbar-links");
+    navbar.innerHTML += `<li id="loader"><p>Now Loading</p></li>`;
+    getLoginDetails();
+    await verifyUser().then(userInfo => {
+        document.getElementById("loader").remove();
+        if (userInfo != null) {
+            let displayTag = userInfo.discordDiscriminator == 0 ? "" : "#" + userInfo.discordDiscriminator;
+            navbar.innerHTML += `<li><a href="/leaderboard/manage.html">${userInfo.discordUsername + displayTag}</a></li>`;
+        }else {
+            navbar.innerHTML += `\n<li><a href="https://csboard.ddns.net/login">Login</a></li>`;
+        }
+        let leaderboard = document.getElementById("leaderboard-list");
+        leaderboard.innerHTML = `<p class="center-text">Loading leaderboard...</p>`;
+        getLeaderboard();
+    });
 });
