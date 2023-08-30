@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Link My Account | Conestoga Computer Science Club</title>
+    <meta name="description" content="Link my Shekel wallet to my Discord account.">
+    <meta name="theme-color" content="#eaaded">
+
+    <!--CSS re-used across stogacs.club -->
+    <link rel="stylesheet" href="/style/theme.css">
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/main.css">
+    
+    <!-- Load in page specific CSS -->
+    <link rel="stylesheet" href="/style/leaderboard.css">
+    <link rel="stylesheet" href="/style/tooltips.css">
+
+    <!-- Load in page specific scripts -->
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/leaderboard/onboarding.js"></script>
+
+    <!-- Load in external CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="page-container">
+    <header>
+        <p class="navbar-title">Conestoga Computer Science Club</p>
+        <input type="checkbox" id="navbar-click">
+        <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
+        <ul id="navbar-links">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </header>
+    
+    <section id="leaderboard-section" class="screen pure-g">
+        <div class="pure-u-1-12"><!-- formatting div PRE--></div>
+        <div class="pure-u-5-6 pure-g">
+            <section class="stack" style="min-height: 10rem;">
+            <h1 class="pure-u-1 center-text">Link to Discord</h1>
+            <p class="center-text">Link your Shekel wallet to your Discord account to claim your Shekels.</p>
+            <p class="center-text error-text" id="error-display" style="padding-top:5px;"></p>
+        </section>
+            <!-- now add a place to add name and graduation year -->
+            <form id="claim-form" class="pure-form pure-form-aligned center-form">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="name-for">Name</label>
+                        <input id="name-for" type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="grad-year">Graduation Year</label>
+                        <select id="grad-year" required>
+                            <option value="" disabled selected hidden>Graduation year</option>
+                            <script>
+                                var currentYear = new Date().getFullYear();
+                                var currentMonth = new Date().getMonth();
+                                if (currentMonth > 7) {
+                                    currentYear++;
+                                }
+                                for (var i = 1; i < 5; i++) {
+                                    document.write('<option value=' + (i) + '>' + (currentYear + i) + '</option>');
+                                }
+                            </script>
+                        </select>
+                    </div>
+                    <div class="pure-controls">
+                        <button id="claim-button" type="button" class="pure-button pure-button-primary" onclick="submitData()">Claim</button>
+                    </div>
+                </fieldset>
+            </form>
+        <div class="pure-u-1-12"><!-- formatting div POST--></div>
+        
+    </section>
+    <div id="loader" class="loader-overlay" style="display: none;">
+        <div class="lds-dual-ring"></div>
+    </div>
+</div>
+</body>

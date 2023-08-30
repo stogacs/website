@@ -82,6 +82,21 @@ a:hover {
 	text-shadow: 4px 4px 6px var(--superdark);
 }
 
+#stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+	color: var(--light);
+}
+
+#stack > h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+	color: var(--light);
+}
+
 .animated-button {
 	border: none;
 	border-radius: 50px;
@@ -135,5 +150,44 @@ a:hover {
 	}
 	100% {
 	  transform: translateX(100%);
+	}
+  }
+
+.center-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* loader from https://loading.io/css/ */
+.lds-dual-ring {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+  }
+  .lds-dual-ring:after {
+	content: " ";
+	display: block;
+	width: 64px;
+	height: 64px;
+	margin: 8px;
+	border-radius: 50%;
+	border: 6px solid #fff;
+	border-color: #fff transparent #fff transparent;
+	animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
 	}
   }

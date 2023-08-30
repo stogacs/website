@@ -57,14 +57,64 @@
     margin-right: 10px;
 }
 
+.center-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pure-form .pure-control-group label {
+    flex-basis: auto;
+    justify-self: flex-start;
+}
+
+.pure-form .pure-control-group input, 
+.pure-form .pure-control-group select {
+    flex-grow: 1;
+}
+
+.pure-form .pure-control-group,
+.pure-form .pure-controls {
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (min-width: 800px) {
     #leaderboard-list table {
         width: 90%;
     }
 }
 
-.center-text {
-    text-align: center;
-    margin-left: auto;
-  margin-right: auto;
+@media screen and (min-width: 700px) {
+    #claim-form {
+        position: relative;
+        right:105px;
+    }
 }
+
+.pure-control-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.page-container {
+    position: relative;
+    /* Your other styles for the page container */
+}
+
+.loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Darkened background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure the loader is on top */
+}
+
