@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shekels | Conestoga Computer Science Club</title>
-    <meta name="description" content="View the Shekel leaderboard for the club.">
+    <title>Manage My Account | Conestoga Computer Science Club</title>
+    <meta name="description" content="Link my Shekel wallet to my Discord account.">
     <meta name="theme-color" content="#eaaded">
 
     <!--CSS re-used across stogacs.club -->
     <link rel="stylesheet" href="/style/theme.css">
     <link rel="stylesheet" href="/style/navbar.css">
     <link rel="stylesheet" href="/style/main.css">
+
+    <!--JS re-used across stogacs.club -->
+    <script src="/scripts/navbar.js"></script>
     
     <!-- Load in page specific CSS -->
     <link rel="stylesheet" href="/style/leaderboard.css">
@@ -19,7 +22,7 @@
 
     <!-- Load in page specific scripts -->
     <script src="/scripts/utils.js"></script>
-    <script src="/scripts/leaderboard.js"></script>
+    <script src="/scripts/leaderboard/manage.js"></script>
 
     <!-- Load in external CSS Libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"/>
@@ -27,6 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   </head>
   <body>
+    <div class="page-container">
     <header>
         <p class="navbar-title">Conestoga Computer Science Club</p>
         <input type="checkbox" id="navbar-click">
@@ -39,8 +43,29 @@
     <section id="leaderboard-section" class="screen pure-g">
         <div class="pure-u-1-12"><!-- formatting div PRE--></div>
         <div class="pure-u-5-6 pure-g">
-            <h1 class="pure-u-1 center-text">Shekel Leaderboard<span class="badge">Beta</span></h1>
-            <p class="error-text center-text">This page is under construction.</p>
+            <section class="stack" style="min-height: 7rem;">
+            <h1 class="pure-u-1 center-text">Your Account Settings</h1>
+            <p class="center-text error-text" id="error-display" style="padding-bottom:5px;"></p>
+        </section>
+        <h2 class="center-text">Appearance</h2>
+            <!-- now add a place to add name and graduation year -->
+            <form id="claim-form" class="pure-form pure-form-aligned center-form">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="display-name-for">Name</label>
+                        <input id="display-name-for" type="text" placeholder="Display Name" required>
+                    </div>
+                    <div class="pure-controls">
+                        <button id="claim-button" type="button" class="pure-button pure-button-primary" onclick="submitData()">Save</button>
+                    </div>
+                </fieldset>
+            </form>
+            <a href="/leaderboard/logout.html"><p class="center-text" style="margin-top:10rem">Logout</p></a>
         <div class="pure-u-1-12"><!-- formatting div POST--></div>
+        
     </section>
+    <div id="loader" class="loader-overlay" style="display: none;">
+        <div class="lds-dual-ring"></div>
+    </div>
+</div>
 </body>

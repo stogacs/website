@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shekels | Conestoga Computer Science Club</title>
+    <title>Sharick Shekels | Conestoga Computer Science Club</title>
     <meta name="description" content="View the Shekel leaderboard for the club.">
     <meta name="theme-color" content="#eaaded">
 
@@ -20,6 +20,7 @@
     <!-- Load in page specific scripts -->
     <script src="/scripts/utils.js"></script>
     <script src="/scripts/leaderboard.js"></script>
+    <script src="/scripts/navbar.js"></script>
 
     <!-- Load in external CSS Libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"/>
@@ -39,11 +40,12 @@
     <section id="leaderboard-section" class="screen pure-g">
         <div class="pure-u-1-12"><!-- formatting div PRE--></div>
         <div class="pure-u-5-6 pure-g">
-            <h1 class="pure-u-1 center-text">Shekel Leaderboard<span class="badge">Beta</span></h1>
+            <h1 class="pure-u-1 center-text">Sharick Shekels<span class="badge">Beta</span></h1>
+            <h2 class="center-text error-text" id="error-display" style="display:none"></h2>
             <ul id="leaderboard-list">
                 <noscript><p class="center-text">Please enable JavaScript to enable leaderboard functionality</p></noscript>
             </ul>
-            <p class="center-text">You can earn shekels by showing up to meetings or as a prize. <br>If you have a preferred name that you'd like to be listed as; you can change it by linking your wallet to the Discord bot.</p>
+            <p class="center-text">You can earn shekels by showing up to meetings or as a prize for helping the club.<br>If you have a preferred name that you'd like to use, you can change it with a linked account.</p>
         <div class="pure-u-1-12"><!-- formatting div POST--></div>
     </section>
 </body>

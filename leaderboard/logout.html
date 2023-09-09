@@ -11,15 +11,20 @@
     <!--CSS re-used across stogacs.club -->
     <link rel="stylesheet" href="/style/theme.css">
     <link rel="stylesheet" href="/style/navbar.css">
+
+    <!--Scripts re-used across stogacs.club -->
+    <script src="/scripts/utils.js"></script>
+
   </head>
   <body>
     <section id="stack" class="screen" style="min-height: 40em;">
-        <h1 class="center-text">401</h1>
-        <p class="center-text" style="color: var(--darkred)">Unauthorized</p>
+        <h1 class="center-text">Done</h1>
+        <p class="center-text" style="color: var(--darkred)">You've been logged out.</p>
     </section>
-    
+    <script>
+      deleteCookie("discordAuth");
+    </script>
     <p style="text-align: center;">
-      <a href="https://csboard.ddns.net/login">Login?</a><br><br>
         <a href="/">Home?</a>
     </p>
 </body>

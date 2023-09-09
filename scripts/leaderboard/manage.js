@@ -1,29 +1,26 @@
 document.addEventListener("DOMContentLoaded", async function() {
     await verifyUser().then(userInfo => {
         if (userInfo != null) {
-            if (userInfo.name != null) {
-                window.location.href = "/leaderboard";
+            if (userInfo.name == null) {
+                window.location.href = "/leaderboard/onboarding/claim.html";
             }
         }else {
             window.location.href = "/401";
         }
     });
-
 });
 
 function submitData() {
     document.getElementById("loader").style.display = "";
 
-    let form = document.getElementById("claim-form");
 
-    fetch("https://csboard.ddns.net/leaderboard/claim?discordAuth=" + getCookie("discordAuth"), {
+    fetch("https://csboard.ddns.net/leaderboard/update_prefs?discordAuth=" + getCookie("discordAuth"), {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            "name": form.elements["name-for"].value,
-            "grad_year": parseInt(form.elements["grad-year"].value)
+            "display_name": document.getElementById("display-name-for").value,
         })
     })
     .then(response => {

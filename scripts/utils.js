@@ -1,3 +1,5 @@
+const knownVersion = 'MS4wLjA';
+
 function getCookie(name) {
     const cookies = document.cookie.split(';');
     for (let i = 0; i < cookies.length; i++) {
@@ -16,13 +18,15 @@ function setCookie(name, value, days) {
     document.cookie = `${name}=${cookieValue}; path=/`;
 }
 
+function deleteCookie(name) {
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+
 function getLoginDetails() {
     const urlParams = new URLSearchParams(window.location.search);
     const access_token = urlParams.get('access_token');
 
-    console.log(access_token);
     if (access_token != null) {
-        console.log('got token')
         setCookie('discordAuth', access_token, 7);
         window.location.href = window.location.href.split('?')[0]; // go back but remove token
     }
@@ -36,10 +40,16 @@ async function verifyUser() {
             const data = await response.json();
             return data;
         } catch (error) {
-            console.log(error);
+            console.error(error);
             return null;
         }
     } else {
         return null;
     }
+}
+
+async function isUpToDate() {
+    const response = await fetch('https://csboard.ddns.net/api/version');
+    const data = await response.json();
+    return data.version == knownVersion;
 }

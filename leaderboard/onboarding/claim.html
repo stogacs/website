@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="/style/theme.css">
     <link rel="stylesheet" href="/style/navbar.css">
     <link rel="stylesheet" href="/style/main.css">
+
+    <!--JS re-used across stogacs.club -->
+    <script src="/scripts/navbar.js"></script>
     
     <!-- Load in page specific CSS -->
     <link rel="stylesheet" href="/style/leaderboard.css">
@@ -40,16 +43,17 @@
     <section id="leaderboard-section" class="screen pure-g">
         <div class="pure-u-1-12"><!-- formatting div PRE--></div>
         <div class="pure-u-5-6 pure-g">
-            <section class="stack" style="min-height: 10rem;">
-            <h1 class="pure-u-1 center-text">Link to Discord</h1>
-            <p class="center-text">Link your Shekel wallet to your Discord account to claim your Shekels.</p>
-            <p class="center-text error-text" id="error-display" style="padding-top:5px;"></p>
+            <h1 class="error-text center-text">Action Needed!</h1>
+            <section class="stack" style="min-height: 7rem; margin-top: 0px;">
+            <h1 class="pure-u-1 center-text" style="margin-top: 0px;">Link to Discord</h1>
+            <p class="center-text">Link your Sharick Shekel Wallet to your Discord account.</p>
+            <p class="center-text error-text" id="error-display" style="padding-bottom:5px;"></p>
         </section>
             <!-- now add a place to add name and graduation year -->
             <form id="claim-form" class="pure-form pure-form-aligned center-form">
                 <fieldset>
                     <div class="pure-control-group">
-                        <label for="name-for">Name</label>
+                        <label for="name-for">Full Name</label>
                         <input id="name-for" type="text" placeholder="Full Name" required>
                     </div>
                     <div class="pure-control-group">
@@ -59,7 +63,7 @@
                             <script>
                                 var currentYear = new Date().getFullYear();
                                 var currentMonth = new Date().getMonth();
-                                if (currentMonth > 7) {
+                                if (currentMonth < 7) {
                                     currentYear++;
                                 }
                                 for (var i = 1; i < 5; i++) {

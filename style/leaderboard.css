@@ -87,7 +87,7 @@
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 480px) {
     #claim-form {
         position: relative;
         right:105px;

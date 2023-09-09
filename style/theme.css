@@ -33,6 +33,11 @@
     --gold: #f79617;
     --platinum: #f04f78;
     --garnet: #8b2b2b;
+
+	--enchanted: #fc86fc;
+	--gold: #fede86;
+	--silver: #C0C0C0;
+	--bronze: #9F7A34;
 }
 
 * {
