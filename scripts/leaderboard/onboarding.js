@@ -16,7 +16,7 @@ function submitData() {
 
     let form = document.getElementById("claim-form");
 
-    fetch("https://csboard.ddns.net/leaderboard/claim?discordAuth=" + getCookie("discordAuth"), {
+    fetch("https://shekels.mrsharick.com/leaderboard/claim?discordAuth=" + getCookie("discordAuth"), {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

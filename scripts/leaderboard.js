@@ -17,7 +17,7 @@ function getLeaderboard() {
             <td>∞</td>
         </tr>
     `;
-    fetch("https://csboard.ddns.net/users")
+    fetch("https://shekels.mrsharick.com/users")
     .then(response => response.json())
     .then(data => {          
         if (! data.disabled) {

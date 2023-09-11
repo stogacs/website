@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             let displayTag = userInfo.discordDiscriminator == 0 ? "" : "#" + userInfo.discordDiscriminator;
             navbar.innerHTML += `<li><a href="/leaderboard/manage.html">${userInfo.discordUsername + displayTag}</a></li>`;
         }else {
-            navbar.innerHTML += `\n<li><a href="https://csboard.ddns.net/login">Login</a></li>`;
+            navbar.innerHTML += `\n<li><a href="https://shekels.mrsharick.com/login">Login</a></li>`;
         }
     });
     if (window.location.pathname.includes("leaderboard") && !window.location.pathname.includes("onboarding") && window.location.pathname != ("/leaderboard/")) {

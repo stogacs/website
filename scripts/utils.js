@@ -36,7 +36,7 @@ async function verifyUser() {
     const access_token = getCookie('discordAuth');
     if (access_token != null) {
         try {
-            const response = await fetch(`https://csboard.ddns.net/discord/user?token=${access_token}`);
+            const response = await fetch(`https://shekels.mrsharick.com/discord/user?token=${access_token}`);
             const data = await response.json();
             return data;
         } catch (error) {
@@ -49,7 +49,7 @@ async function verifyUser() {
 }
 
 async function isUpToDate() {
-    const response = await fetch('https://csboard.ddns.net/api/version');
+    const response = await fetch('https://shekels.mrsharick.com/api/version');
     const data = await response.json();
     return data.version == knownVersion;
 }

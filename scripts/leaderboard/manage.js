@@ -14,7 +14,7 @@ function submitData() {
     document.getElementById("loader").style.display = "";
 
 
-    fetch("https://csboard.ddns.net/leaderboard/update_prefs?discordAuth=" + getCookie("discordAuth"), {
+    fetch("https://shekels.mrsharick.com/leaderboard/update_prefs?discordAuth=" + getCookie("discordAuth"), {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
