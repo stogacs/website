@@ -45,7 +45,15 @@
             <ul id="leaderboard-list">
                 <noscript><p class="center-text">Please enable JavaScript to enable leaderboard functionality</p></noscript>
             </ul>
-            <p class="center-text">You can earn shekels by showing up to meetings or as a prize for helping the club.<br>If you have a preferred name that you'd like to use, you can change it with a linked account.</p>
-        <div class="pure-u-1-12"><!-- formatting div POST--></div>
+            <div class="pure-g">
+                <button id="save-button" type="button" class="pure-button pure-button-primary pure-u-1 pure-u-md-1-12" style=" float: left;display: none; 
+                    justify-content: center;" onclick="updateLeaderboard()">Save</button>
+                <p class="center-text pure-u-1 pure-u-md-5-6" id="footer-text">You can earn shekels by showing up to meetings or as a prize for helping the club.<br>If you have a preferred name that you'd like to use, you can change it with a linked account.</p>
+                <button id="new-row-button" type="button" class="pure-button pure-button-primary pure-u-1 pure-u-md-1-12" style="float: right; display: none;
+                    justify-content: center;" onclick="newRow()">User +</button>
+            </div>
+           
+                <!-- formatting div POST--></div>
+            <div class="pure-u-1-12"><!-- formatting div POST--></div>
     </section>
 </body>
