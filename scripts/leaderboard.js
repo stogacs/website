@@ -65,8 +65,8 @@ function getLeaderboard(userInfo) {
                     document.getElementById("save-button").style.display = "";
                     let footer = document.getElementById("footer-text");
                     footer.innerHTML = `<p class="center-text" id="footer-text">As an administrator, you can edit the leaderboard by editing the value in a cell and saving<br>An empty display name will result in the real name being displayed.</p>`;
-                    leaderboard.appendChild(leaderboardTable);
                 }
+                leaderboard.appendChild(leaderboardTable);
             } else {
                 leaderboard.innerHTML = `<p class="center-text error-text">Web access to the leaderboard is disabled.</p>`;
             }
