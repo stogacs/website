@@ -43,24 +43,34 @@
     <section id="leaderboard-section" class="screen pure-g">
         <div class="pure-u-1-12"><!-- formatting div PRE--></div>
         <div class="pure-u-5-6 pure-g">
-            <section class="stack" style="min-height: 7rem;">
+            <section class="stack">
             <h1 class="pure-u-1 center-text">Account Settings</h1>
             <p class="center-text error-text" id="error-display" style="padding-bottom:5px;"></p>
         </section>
         <h2 class="center-text">Appearance</h2>
-            <!-- now add a place to add name and graduation year -->
             <form id="claim-form" class="pure-form pure-form-aligned center-form">
                 <fieldset>
-                    <div class="pure-control-group">
-                        <label for="display-name-for">Name</label>
-                        <input id="display-name-for" type="text" placeholder="Display Name" required>
-                    </div>
-                    <div class="pure-controls">
-                        <button id="claim-button" type="button" class="pure-button pure-button-primary" onclick="submitData()">Save</button>
-                    </div>
+                    <div class="pure-g" style="display:flex; align-items: center;" >
+                        <div class="pure-control-group">
+                            <label for="display-name-for">Name</label>
+                            <input id="display-name-for" type="text" placeholder="Display Name" required>
+                            <button id="claim-button" type="button" class="pure-button pure-button-primary" onclick="submitData()">Save</button>
+                        </div>
+                        </div>
                 </fieldset>
             </form>
-            <a href="/leaderboard/logout.html"><p class="center-text" style="margin-top:10rem">Logout</p></a>
+            <section class="stack" style="margin-top: 3rem;">
+                <h2 class="center-text">Account</h2>
+                <h3 class="center-text">Securely log into another device even when Discord is inaccessible</h3>
+                <div class="center-text">
+                    <p style="overflow: hidden;">This will generate a unique code that you can use to log into your account on another device. This code will expire after 15 minutes, and you can only have one active code at a time.</p><p class="error-text"> This code will grant anyone access to your account so be careful!</p>
+                </div>
+                <div class="pure-g center-text" style="padding-top: 3rem; display:flex; align-items: center; justify-content: center;">
+                    <button id="caim-button" type="button" class="pure-button pure-button-primary pure-button-disabled" onclick="generateCode()">Generate Code</button>
+                    <p id="code-display" style="padding-left: 10px;">This feature is incomplete.</p>
+                </div>
+            </section>
+            <a href="/leaderboard/logout.html"><p class="center-text" style="margin-top:4rem">Logout</p></a>
         <div class="pure-u-1-12"><!-- formatting div POST--></div>
         
     </section>
