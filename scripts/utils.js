@@ -38,6 +38,10 @@ async function verifyUser() {
         try {
             const response = await fetch(`https://shekels.mrsharick.com/discord/user?token=${access_token}`);
             const data = await response.json();
+            if (response.status == 404) {
+                deleteCookie('discordAuth');
+                return null;
+            }
             return data;
         } catch (error) {
             console.error(error);

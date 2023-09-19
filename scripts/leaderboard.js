@@ -30,7 +30,7 @@ function getLeaderboard(userInfo) {
                     let discord_linked = data[i].discord_linked;
                     let shekelTags = isAdmin ? [`input class="center-text admin-num-input" type="number" min="0" value="${shekels}"`, `input`] : ["p>" + shekels, "p"];
                     let nameTags = isAdmin ? [`<input class="center-text admin-text-input" id="real-name" type="text" value="${data[i].name}"> <input class="center-text admin-text-input" id="display-name" type="text" value="${data[i].displayName}">`, `</input>`, "<img src=\"/media/misc/delete.png\" onclick=\"deleteUser('"+ data[i].id + "')\"></img>"] : ["" + name, "", ""];
-
+                    let styleTag = "";
                     if (i < specialColors.length) {
                         styleTag = `style="color: ${specialColors[i]}"`
                     } else {
@@ -39,7 +39,7 @@ function getLeaderboard(userInfo) {
 
                         if (!discord_linked) {
                             tableContent += `
-                        <tr shekel_guid="${data[i].id}>
+                        <tr shekel_guid="${data[i].id}">
                             <td${styleTag}>${rank}</td>
                             <td>${nameTags[0]}${nameTags[1]}${nameTags[2]}</td>
                             <td><${shekelTags[0]}</${shekelTags[1]}></td>
