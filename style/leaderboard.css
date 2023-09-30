@@ -66,32 +66,10 @@
     text-align: center;
 }
 
-.pure-form .pure-control-group label {
-    flex-basis: auto;
-    justify-self: flex-start;
-}
-
-.pure-form .pure-control-group input, 
-.pure-form .pure-control-group select {
-    flex-grow: 1;
-}
-
-.pure-form .pure-control-group,
-.pure-form .pure-controls {
-    display: flex;
-    justify-content: center;
-}
 
 @media screen and (min-width: 800px) {
     #leaderboard-list table {
         width: 90%;
-    }
-}
-
-@media screen and (min-width: 480px) {
-    #claim-form {
-        position: relative;
-        right:105px;
     }
 }
 
@@ -128,3 +106,4 @@
     background: transparent; 
     color: white
 }
+

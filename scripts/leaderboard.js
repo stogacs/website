@@ -31,7 +31,6 @@ function getLeaderboard(userInfo) {
                     let shekelTags = isAdmin ? [`<input class="center-text admin-num-input" type="number" min="0" value="${shekels}"`, `input`] : ["<p>" + shekels, "p"];
                     let nameTags = isAdmin ? [`<input class="center-text admin-text-input" id="real-name" type="text" value="${data[i].name}"> <input class="center-text admin-text-input" id="display-name" type="text" value="${data[i].displayName}">`, `</input>`, "<img src=\"/media/misc/delete.png\" onclick=\"deleteUser('"+ data[i].id + "')\"></img>"] : ["" + name, "", ""];
                     let styleTag = "";
-                    console.log(rank)
                     if (i < specialColors.length) {
                         styleTag = `style="color: ${specialColors[i]}"`;
                     }
@@ -93,7 +92,6 @@ function updateLeaderboard() {
     }
 
     const json = JSON.stringify(data);
-    console.log(json);
 
     fetch("https://shekels.mrsharick.com/users/update?discordAuth=" + getCookie("discordAuth"), {
         method: 'POST',
@@ -107,22 +105,14 @@ function updateLeaderboard() {
         } else {
             response.json()
             .then(data => {
-                console.log(response)
                 document.getElementById("subheading").innerHTML = `<p class="center-text error-text">${data.message}</p>`;
             })
         }
     });
 }
 
+//Visually delete the user from the table, does not send an api request anymore
 function deleteUser(shekel_guid) {
-    // fetch("https://shekels.mrsharick.com/users/delete?discordAuth=" + getCookie("discordAuth") + "&shekel_guid=" + shekel_guid, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // })
-    // .then(response => {
-    //     if (response.status == 200) {
             const leaderboardTable = document.getElementsByClassName('leaderboard')[0];
             const rows = leaderboardTable.getElementsByTagName('tr');
             for (let i = 2; i < rows.length; i++) {
@@ -132,21 +122,6 @@ function deleteUser(shekel_guid) {
                     break;
                 }
             }
-        // } else {
-        //     // Handle error response
-        //     response.json()
-        //         .then(data => {
-        //             console.log(data); // Log the response data
-        //             document.getElementById("subheading").innerHTML = `<p class="center-text error-text">${data.message}</p>`;
-        //         })
-        //         .catch(error => {
-        //             console.error("Error parsing JSON response:", error);
-        //         });
-        // }
-    // })
-    // .catch(error => {
-    //     console.error("Error sending the request:", error);
-    // });
 }
 
 function newRow() {
@@ -197,13 +172,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     let leaderboard = document.getElementById("leaderboard-list");
     leaderboard.innerHTML = `<p class="center-text">Loading leaderboard...</p>`;
     getLeaderboard(userInfo);
-    // isUpToDate().then(result => {
-    //     if (!result) {
-    //         errorDisplay = document.getElementById("error-display");
-    //         errorDisplay.innerHTML += `<p class="center-text error-text">The server is running a newer version than this site expects. Please try refreshing.</p>`;
-    //         errorDisplay.style.display = "";
-    //     }
-    // });
     let chars = "ᔑʖᓵ↸ᒷ⎓⊣⍑╎⋮ꖌꖎᒲリ𝙹!¡ᑑ∷ᓭℸ⚍⍊ᑑ/||⨅";
     function textEffect() {
         try { document.getElementById("enchanted").innerHTML = chars.charAt(Math.floor(Math.random() * chars.length)) + chars.charAt(Math.floor(Math.random() * chars.length)); }  catch (e) { }

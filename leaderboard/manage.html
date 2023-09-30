@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,7 +16,7 @@
 
     <!--JS re-used across stogacs.club -->
     <script src="/scripts/navbar.js"></script>
-    
+
     <!-- Load in page specific CSS -->
     <link rel="stylesheet" href="/style/leaderboard.css">
     <link rel="stylesheet" href="/style/tooltips.css">
@@ -25,57 +26,94 @@
     <script src="/scripts/leaderboard/manage.js"></script>
 
     <!-- Load in external CSS Libraries -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
     <div class="page-container">
-    <header>
-        <p class="navbar-title">Conestoga Computer Science Club</p>
-        <input type="checkbox" id="navbar-click">
-        <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
-        <ul id="navbar-links">
-            <li><a href="/">Home</a></li>
-        </ul>
-    </header>
-    
-    <section id="leaderboard-section" class="screen pure-g">
-        <div class="pure-u-1-12"><!-- formatting div PRE--></div>
-        <div class="pure-u-5-6 pure-g">
-            <section class="stack">
-            <h1 class="pure-u-1 center-text">Account Settings</h1>
-            <p class="center-text error-text" id="error-display" style="padding-bottom:5px;"></p>
+        <header>
+            <p class="navbar-title">Conestoga Computer Science Club</p>
+            <input type="checkbox" id="navbar-click">
+            <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
+            <ul id="navbar-links">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </header>
+
+        <section id="leaderboard-section" class="screen pure-g">
+            <div class="pure-u-1-12"><!-- formatting div PRE--></div>
+            <div class="pure-u-5-6 pure-g">
+                <section class="stack">
+                    <h1 class="pure-u-1 center-text">Account Settings</h1>
+                    <p class="center-text error-text" id="error-display" style="padding-bottom:5px;"></p>
+                </section>
+                <h2 class="center-text">Appearance</h2>
+                <form id="claim-form" class="pure-form center-form">
+                    <fieldset>
+                        <div class="pure-g" style="display:flex; align-items: center;">
+                            <div class="pure-control-group">
+                                <label for="display-name-for">Name</label>
+                                <input id="display-name-for" type="text" placeholder="Display Name" required>
+                                <button id="claim-button" type="button" class="pure-button pure-button-primary"
+                                    onclick="submitData()">Save</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <section class="stack" style="margin-top: 3rem;">
+                    <h2 class="center-text">Account</h2>
+                    <h3 class="center-text">Securely log into another device even when Discord is inaccessible</h3>
+                    <div class="center-text">
+                        <p style="overflow: hidden;">Enter this code on another device to log in without using Discord.
+                            This code will expire after 15 minutes.</p>
+                        <p class="error-text"> This code will grant anyone access to your account so be careful!</p>
+                    </div>
+                    <div class="pure-g center-text"
+                        style="padding-top: 3rem; display:flex; align-items: center; justify-content: center;">
+                        <button id="code-button" type="button" class="pure-button pure-button-primary"
+                            onclick="getLoginCode()">Show Code</button>
+                        <p id="code-display" style="padding-left: 10px;"></p>
+                    </div>
+                </section>
+                <div id="logout-row"><a class="logout-text" href="/leaderboard/logout.html">
+                        <p>Logout This Device</p>
+                    </a><a class="logout-text" href="/leaderboard/logout.html?all" id="logout-danger">
+                        <p>Logout (All Sessions)</p>
+                    </a></div>
+                <style>
+                    #logout-row {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 20px;
+                    }
+
+                    .logout-text {
+                        margin: 40px 10px;
+                        color: #ff0000;
+                    }
+
+                    #logout-danger {
+                        webkit-animation: breathing 7s ease-out infinite normal;
+                        animation: breathing 7s ease-out infinite normal;
+                    }
+
+                    #logout-danger:hover {
+                        webkit-animation: breathing 2s ease-out infinite normal;
+                        animation: breathing 2s ease-out infinite normal;
+                    }
+
+
+
+                    
+                </style>
+                <div class="pure-u-1-12"><!-- formatting div POST--></div>
+
         </section>
-        <h2 class="center-text">Appearance</h2>
-            <form id="claim-form" class="pure-form pure-form-aligned center-form">
-                <fieldset>
-                    <div class="pure-g" style="display:flex; align-items: center;" >
-                        <div class="pure-control-group">
-                            <label for="display-name-for">Name</label>
-                            <input id="display-name-for" type="text" placeholder="Display Name" required>
-                            <button id="claim-button" type="button" class="pure-button pure-button-primary" onclick="submitData()">Save</button>
-                        </div>
-                        </div>
-                </fieldset>
-            </form>
-            <section class="stack" style="margin-top: 3rem;">
-                <h2 class="center-text">Account</h2>
-                <h3 class="center-text">Securely log into another device even when Discord is inaccessible</h3>
-                <div class="center-text">
-                    <p style="overflow: hidden;">This will generate a unique code that you can use to log into your account on another device. This code will expire after 15 minutes, and you can only have one active code at a time.</p><p class="error-text"> This code will grant anyone access to your account so be careful!</p>
-                </div>
-                <div class="pure-g center-text" style="padding-top: 3rem; display:flex; align-items: center; justify-content: center;">
-                    <button id="caim-button" type="button" class="pure-button pure-button-primary pure-button-disabled" onclick="generateCode()">Generate Code</button>
-                    <p id="code-display" style="padding-left: 10px;">This feature is incomplete.</p>
-                </div>
-            </section>
-            <a href="/leaderboard/logout.html"><p class="center-text" style="margin-top:4rem">Logout</p></a>
-        <div class="pure-u-1-12"><!-- formatting div POST--></div>
-        
-    </section>
-    <div id="loader" class="loader-overlay" style="display: none;">
-        <div class="lds-dual-ring"></div>
+        <div id="loader" class="loader-overlay" style="display: none;">
+            <div class="lds-dual-ring"></div>
+        </div>
     </div>
-</div>
 </body>

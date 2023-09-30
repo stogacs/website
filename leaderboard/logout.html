@@ -18,13 +18,50 @@
   </head>
   <body>
     <section id="stack" class="screen" style="min-height: 40em;">
-        <h1 class="center-text">Done</h1>
-        <p class="center-text" style="color: var(--darkred)">You've been logged out.</p>
+        <h1 class="center-text" id="logout-title">Please wait</h1>
+        <p class="center-text" id="logout-subtitle" style="color: var(--darkred)">Logging you out.</p>
     </section>
-    <script>
-      deleteCookie("discordAuth");
-    </script>
     <p style="text-align: center;">
-        <a href="/">Home?</a>
+        <a id="logout-home" href="/" style="display: none">Home?</a>
     </p>
+    <script>
+      // if url has a query string of all
+      title = document.getElementById("logout-title");
+      subtitle = document.getElementById("logout-subtitle");
+      homeHref = document.getElementById("logout-home");
+      if (window.location.search == "?all") {
+        fetch("https://shekels.mrsharick.com/me/logout?discordAuth=" + getCookie("discordAuth")+ "&all=true", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }).then(res => {
+          if (res.status == 200) {
+            deleteCookie("discordAuth");
+            title.innerText = "Logged Out";
+            subtitle.innerText = "You have been logged out from all devices.";
+            homeHref.innerText = "Home?";
+            homeHref.href = "/";
+            homeHref.style.display = "block";
+          } else {
+
+            res.json().then(data => {
+              console.log(data);
+              title.innerText = "Error";
+              subtitle.innerText =  data.message || "An unknown error occurred, try logging out of just this device.";
+              homeHref.innerText = "Log out from just this device?";
+              homeHref.href = "/leaderboard/logout.html";
+              homeHref.style.display = "block";
+            }); 
+          }
+        });
+        } else {
+          deleteCookie("discordAuth");
+          title.innerText = "Logged Out";
+          subtitle.innerText = "You have been logged out of this device.";
+          homeHref.innerText = "Home?";
+          homeHref.href = "/";
+          homeHref.style.display = "block";
+        }
+    </script>
 </body>

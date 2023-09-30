@@ -1,4 +1,4 @@
-const knownVersion = 'MS4wLjA';
+const knownVersion = 'MS41LjA';
 
 function getCookie(name) {
     const cookies = document.cookie.split(';');
