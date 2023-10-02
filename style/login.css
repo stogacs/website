@@ -1,103 +1,103 @@
 :root {
-    --card-background: #121212;
-  }
+  --card-background: #121212;
+}
 
-  
-  #login-cards {
-    text-align: center;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
 
-  .card {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-    margin-top: 40px;
-    margin-left: 40px;
-    padding: 1rem;
-    padding-top: 0.5rem;
-    background-color: var(--card-background);
-    border-radius: 1rem;
-    font-size: 120%;
-    border-radius: 2rem;
-  }
-  
-  .display-name-for {
-    padding-bottom: 1rem;
-    
-  }
-  
-  .card p, .card b {
-    color: white;
-    font-size: 150%;
-    position: relative;
-  }
+#login-cards {
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-  .card .error-text {
-    color: var(--red);
-    font-size: 120%;
-  }
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  margin-top: 40px;
+  margin-left: 40px;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  background-color: var(--card-background);
+  border-radius: 1rem;
+  font-size: 120%;
+  border-radius: 2rem;
+}
 
+.display-name-for {
+  padding-bottom: 1rem;
   
-  .card > .card-content > img {
-    width: auto;
-    height: 400px;
-  }
-  
-  .card .pure-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+}
 
-  #discord-button {
-    height: 60px;
-  }
-  
-  .card .pure-button img {  
-    position: relative;
-    max-height: 80%;
-    border-radius: 0px;
-  }
+.card p, .card b {
+  color: white;
+  font-size: 150%;
+  position: relative;
+}
 
-  .card a {
-    text-decoration: none;
-  }
-  
-  .card .button-secondary {
-    background: rgb(88, 101, 242);
-    width: 300px;
-  }
-  
-  .card .button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .button-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.card .error-text {
+  color: var(--red);
+  font-size: 120%;
+}
 
-  .button-content > p {
-    position: relative;
-    margin-left: 15px;
-  }
-  
-  .button-icon {
-    display: inline-block;
-    height: 35px;
-    width: auto;
-  }
+
+.card > .card-content > img {
+  width: auto;
+  height: 400px;
+}
+
+.card .pure-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#discord-button {
+  height: 60px;
+}
+
+.card .pure-button img {  
+  position: relative;
+  max-height: 80%;
+  border-radius: 0px;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card .button-secondary {
+  background: rgb(88, 101, 242);
+  width: 300px;
+}
+
+.card .button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-content > p {
+  position: relative;
+  margin-left: 15px;
+}
+
+.button-icon {
+  display: inline-block;
+  height: 35px;
+  width: auto;
+}

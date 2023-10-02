@@ -1,0 +1,164 @@
+:root {
+    --card-background: #121212;
+    --buy-button: #75ba75;
+  }
+
+  
+  #shop-cards, #side-cards {
+    text-align: center;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    margin-top: 40px;
+    margin-left: 40px;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    font-size: 120%;
+    max-width: 450px;
+  }
+
+
+  .side-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    margin-top: 40px;
+    padding-top: 0.5rem;
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    padding: 40px;
+    max-width: 250px;
+}
+  
+  .display-name-for {
+    padding-bottom: 1rem;
+    
+  }
+  
+  #title{
+    color: white;
+    font-size: 150%;
+    position: relative;
+  }
+
+  #description{
+    color: white;
+    font-size: 100%;
+    padding-bottom: 1rem;
+    position: relative;
+  }
+
+  .card .error-text {
+    color: var(--red);
+    font-size: 120%;
+  }
+
+  
+  .card > .card-content > img {
+    width: auto;
+    height: 350px;
+  }
+  
+  .card .pure-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #discord-button {
+    height: 60px;
+  }
+  
+  .card .pure-button img {  
+    position: relative;
+    max-height: 80%;
+    border-radius: 0px;
+  }
+
+  .card a {
+    text-decoration: none;
+  }
+  
+  .card .button-secondary {
+    background: var(--buy-button);
+    width: 300px;
+  }
+  
+  .card .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button-content > p {
+    position: relative;
+    color: white;
+    font-size: 120%;
+  }
+  
+  .button-icon {
+    display: inline-block;
+    height: 35px;
+    width: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    #side-cards {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1074px) {
+    .side-card {
+      margin-left: -70px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .side-card {
+      margin-left: -120px;
+      min-width: 150px;
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    .side-card {
+      margin-left: -120px;
+      min-width: 200px;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    .side-card {
+      margin-left: -190px;
+      min-width: 300px;
+    }
+  }
+
+  

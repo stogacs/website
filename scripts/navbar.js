@@ -1,5 +1,45 @@
 document.addEventListener("DOMContentLoaded", async function () {
     let navbar = document.getElementById("navbar-links");
+    const specialPages = {
+        "shop": {
+            "Purchased": "/shop/past",
+            "Leaderboard": "/leaderboard/"
+        },
+        "leaderboard": {
+            "Shop": "/leaderboard/shop"
+        }
+    }
+    
+    let currentPath = window.location.pathname 
+    // remove trailing slash from currentPath
+    if (currentPath[currentPath.length - 1] == "/") {
+        currentPath = currentPath.slice(0, -1);
+    }
+    let currentPage = currentPath.slice(currentPath.lastIndexOf("/") + 1);
+    console.log(currentPage)
+    console.log(window.location.pathname)
+    console.log(currentPath)
+    if (specialPages[currentPage]) {
+        for (let page in specialPages[currentPage]) {
+            navbar.innerHTML += `<li><a href="${specialPages[currentPage][page]}">${page}</a></li>`;
+        }
+    }
+    if (!currentPage.includes("onboarding")) {
+        // for navbar link
+        let navbarLinks = document.getElementById("navbar-links").children;
+        for (let i = 0; i < navbarLinks.length; i++) {
+            if (navbarLinks[i].children[0].textContent.toLowerCase() == "home") {
+                navbarLinks[i].children[0].textContent = "Back";
+                // this breaks when the current page is /leaderboard/, it does not redirect to /
+                //solution for all links including ones with multiple slashes
+                if (currentPath.slice(0, currentPath.lastIndexOf("/")) == "") {
+                    navbarLinks[i].children[0].href = "/";
+                  } else {
+                    navbarLinks[i].children[0].href = currentPath.slice(0, currentPath.lastIndexOf("/"));
+                  }
+            }
+        }
+    }
     navbar.innerHTML += `<li id="loader"><p>Now Loading</p></li>`;
     getLoginDetails();
     await verifyUser().then(userInfo => {
@@ -11,17 +51,5 @@ document.addEventListener("DOMContentLoaded", async function () {
             navbar.innerHTML += `\n<li><a href="/leaderboard/login.html">Login</a></li>`;
         }
     });
-    if (window.location.pathname.includes("leaderboard") && !window.location.pathname.includes("onboarding") && window.location.pathname != ("/leaderboard/")) {
-        // for navbar link
-        let page = window.location.pathname.split("/")
-        currentPage = page.pop();
-        let navbarLinks = document.getElementById("navbar-links").children;
-        for (let i = 0; i < navbarLinks.length; i++) {
-            if (navbarLinks[i].children[0].textContent.toLowerCase() == "home") {
-                navbarLinks[i].children[0].textContent = "Back";
-                navbarLinks[i].children[0].href = page.join("/");
-            }
-        }
-    }
 
 });
