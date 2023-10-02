@@ -14,10 +14,10 @@
   <link rel="stylesheet" href="/style/theme.css">
   <link rel="stylesheet" href="/style/navbar.css">
   <link rel="stylesheet" href="/style/leaderboard.css">
-  
+
   <!-- Load in page specific CSS -->
   <link rel="stylesheet" href="/style/store.css">
-  
+
   <!--Scripts re-used across stogacs.club -->
   <script src="/scripts/utils.js"></script>
   <script src="/scripts/navbar.js"></script>
@@ -46,35 +46,40 @@
     <div style="font-size: 150%; position:absolute; top:100px; padding-bottom: 90px;">
       <p id="error-display" class="error-text center-text"></p>
     </div>
-    <div class="pure-u-md-1-24">
-      
-      <div id="side-cards" style="position: absolute; top: 0px;">
-        <div class="side-card pure-g">
-          <div class="card-content center-text">
-            <div>
-              <b id="title" class="center-text">Discover the Shekel<span style="color: var(--garnet);">Shop</span></b>
-            </div>
-            <img style="padding:30px;" id="${item.id}">
-            <div>
-              <p id="description" class="center-text">Purchase power-ups for yourself or the club as a whole. Check back regularly as the shop changes frequently!</p>
+    <div class="pure-g main">
+      <div class="pure-u-md-1-24">
+
+        <div id="side-cards" style="position: absolute; top: 0px;">
+          <div class="side-card pure-g">
+            <div class="card-content center-text">
+              <div>
+                <b id="title" class="center-text">Discover the Shekel<span style="color: var(--garnet);">Shop</span></b>
+              </div>
+              <img style="padding:30px;" id="${item.id}">
+              <div>
+                <p id="description" class="center-text">Purchase power-ups for yourself or the club as a whole. Check
+                  back regularly as the shop changes frequently!</p>
+              </div>
             </div>
           </div>
         </div>
-        </div>
-      
-    </div>
-    <div class="pure-u-md-18-24 center-form" style="max-width: 1300px;">
-      
-      <div id="shop-cards">
-        
-        <noscript>
-          <p class="center-text error-text" style="font-size: 180%;">JavaScript is <b>required</b> to view this page.<p>
-        </noscript>
 
       </div>
-      <div class="pure-u-md-1-24">
-        <!-- formatting div POST-->
+      <div style="max-width: 1300px;">
+
+        <div id="shop-cards">
+
+          <noscript>
+            <p class="center-text error-text" style="font-size: 180%;">JavaScript is <b>required</b> to view this page.
+              <p>
+          </noscript>
+
+        </div>
+        <div class="pure-u-md-1-24">
+          <!-- formatting div POST-->
+        </div>
       </div>
+    </div>
   </section>
   <script async defer src="/scripts/main.js"></script>
 </body>

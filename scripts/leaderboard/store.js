@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    await verifyUser().then(userInfo => {
-        if (userInfo != null) {
-            if (userInfo.name == null) {
-                window.location.href = "/leaderboard/onboarding/claim.html";
-            }
-        } else {
-            window.location.href = "/401";
-        }
-    });
+    // await verifyUser().then(userInfo => {
+    //     if (userInfo != null) {
+    //         if (userInfo.name == null) {
+    //             window.location.href = "/leaderboard/onboarding/claim.html";
+    //         }
+    //     } else {
+    //         window.location.href = "/401";
+    //     }
+    // });
 
     try {
         const response = await fetch("https://shekels.mrsharick.com/shop/items", {
@@ -103,7 +103,7 @@ document.addEventListener("click", function (event) {
 });
 
   function buyProduct(id) {
-    fetch("https://shekels.mrsharick.com/shop/buy" + "discordAuth=" + getCookie("discordAuth"), {
+    fetch("https://shekels.mrsharick.com/shop/purchase?" + "discordAuth=" + getCookie("discordAuth"), {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

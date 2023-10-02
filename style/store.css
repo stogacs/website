@@ -1,9 +1,18 @@
 :root {
     --card-background: #121212;
     --buy-button: #75ba75;
+    overflow-x: scroll;
   }
 
-  
+  .main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: calc(57.6%);
+    margin-top: 120px;
+    
+  }
+
   #shop-cards, #side-cards {
     text-align: center;
     margin-top: 120px;
@@ -34,6 +43,7 @@
 
 
   .side-card {
+    margin-left: -250px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -128,37 +138,15 @@
     width: auto;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1150px) {
+    .side-card {
+      margin-left: -175px;
+    }
+  }
+
+
+ @media screen and (max-width: 768px) {
     #side-cards {
       display: none;
     }
   }
-
-  @media screen and (max-width: 1074px) {
-    .side-card {
-      margin-left: -70px;
-    }
-  }
-
-  @media screen and (min-width: 1200px) {
-    .side-card {
-      margin-left: -120px;
-      min-width: 150px;
-    }
-  }
-
-  @media screen and (min-width: 1500px) {
-    .side-card {
-      margin-left: -120px;
-      min-width: 200px;
-    }
-  }
-
-  @media screen and (min-width: 1600px) {
-    .side-card {
-      margin-left: -190px;
-      min-width: 300px;
-    }
-  }
-
-  
