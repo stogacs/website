@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    // await verifyUser().then(userInfo => {
-    //     if (userInfo != null) {
-    //         if (userInfo.name == null) {
-    //             window.location.href = "/leaderboard/onboarding/claim.html";
-    //         }
-    //     } else {
-    //         window.location.href = "/401";
-    //     }
-    // });
+    await verifyUser().then(userInfo => {
+        if (userInfo != null) {
+            if (userInfo.name == null) {
+                window.location.href = "/leaderboard/onboarding/claim.html";
+            }
+        } else {
+            window.location.href = "/401";
+        }
+    });
 
     try {
         const response = await fetch("https://shekels.mrsharick.com/shop/items", {
@@ -22,16 +22,22 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         const data = await response.json();
-        Object.values(data).forEach(item => {
-            if (item.hasImg) {
-                createCard(document.getElementById("shop-cards"), item);
-                fetchImage(item.id).then(img => {
-                    updateCard(item.id, img);
-                });
-            } else {
-                createCard(document.getElementById("shop-cards"), item);
-            }
-        });
+        items = Object.values(data);
+        element = document.getElementById("shop-cards")
+        if (items.length > 0) {
+          items.forEach(item => {
+              if (item.hasImg) {
+                  createCard(element, item);
+                  fetchImage(item.id).then(img => {
+                      updateCard(item.id, img);
+                  });
+              } else {
+                  createCard(element, item);
+              }
+          });
+        } else {
+          document.getElementById("error-display").innerHTML = "There's nothing in store for you at the moment...";
+        }
 
     } catch (error) {
         console.error(error);
