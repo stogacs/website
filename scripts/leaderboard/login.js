@@ -1,7 +1,7 @@
-document.getElementById('login-code-entry').addEventListener('submit', function(event){
+document.getElementById('login-code-entry').addEventListener('submit', function (event) {
     event.preventDefault();
     loginWithCode();
-  });
+});
 
 function loginWithCode() {
     code = document.getElementById("login-code-for").value.replace(/\D/g, '');

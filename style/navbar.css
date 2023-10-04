@@ -8,36 +8,38 @@ header {
 	padding-left: 10%;
 	padding-right: 10%;
 	width: 100vw;
-    background-color: var(--navbar-color);
+	background-color: var(--navbar-color);
 	z-index: 1;
 }
 
 /* Modified badge for navbar */
 .badge-nav {
-    font-family: Inter;
-    position: relative;
-    bottom: 2px;
-    margin-left: 5px;
-    padding:3px 7px;
-    font-size:12px;
-    font-weight:700;
-    color:#fff;
-    text-align:center;
-    white-space:nowrap;
-    background-color: var(--badge);
-    border-radius:10px;
+	font-family: Inter;
+	position: relative;
+	bottom: 2px;
+	margin-left: 5px;
+	padding: 3px 7px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	background-color: var(--badge);
+	border-radius: 10px;
 }
 
 #navbar-click {
 	display: none;
 }
 
-#navbar-links li, #navbar-links li a, .navbar-title {
+#navbar-links li,
+#navbar-links li a,
+.navbar-title {
 	font-family: "Jetbrains Mono", monospace;
 	font-weight: 500;
 	font-size: 16px;
 	text-decoration: none;
-    color: var(--navbar-text);
+	color: var(--navbar-text);
 }
 
 #navbar-links li {
@@ -52,7 +54,8 @@ header {
 	transition: all 0.3s ease 0s;
 }
 
-#navbar-links li a:hover, .active {
+#navbar-links li a:hover,
+.active {
 	color: var(--navbar-links);
 }
 
@@ -81,19 +84,19 @@ header {
 		transition: all 0.3s ease;
 	}
 
-    .navbar-toggle {
+	.navbar-toggle {
 		display: inline-block;
 	}
-    
-	#navbar-click:not(:checked) ~ #navbar-links{
+
+	#navbar-click:not(:checked)~#navbar-links {
 		left: -100%;
 	}
 
-	#navbar-click:checked ~ #navbar-links {
+	#navbar-click:checked~#navbar-links {
 		left: 0%;
 	}
 
-	#navbar-click:checked ~ .navbar-toggle i:before {
+	#navbar-click:checked~.navbar-toggle i:before {
 		content: "\f00d";
 	}
 
@@ -101,26 +104,26 @@ header {
 		display: block;
 		margin-top: 40px;
 	}
-	
+
 	#navbar-links .dropdown {
 		position: relative;
 	}
-	
+
 	#navbar-links .dropdown .dropdown-content {
 		display: none;
 		position: absolute;
 		background-color: var(--navbar-color);
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 		z-index: 1;
 	}
-	
+
 	#navbar-links .dropdown .dropdown-content a {
 		color: var(--navbar-text);
 		padding: 12px 16px;
 		text-decoration: none;
-		display: block;   
+		display: block;
 	}
-	
+
 	#navbar-links .dropdown:hover .dropdown-content {
 		display: block;
 	}

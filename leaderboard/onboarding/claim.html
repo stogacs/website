@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,7 +16,7 @@
 
     <!--JS re-used across stogacs.club -->
     <script src="/scripts/navbar.js"></script>
-    
+
     <!-- Load in page specific CSS -->
     <link rel="stylesheet" href="/style/leaderboard.css">
     <link rel="stylesheet" href="/style/tooltips.css">
@@ -25,63 +26,65 @@
     <script src="/scripts/leaderboard/onboarding.js"></script>
 
     <!-- Load in external CSS Libraries -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
     <div class="page-container">
-    <header>
-        <p class="navbar-title">Conestoga Computer Science Club</p>
-        <input type="checkbox" id="navbar-click">
-        <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
-        <ul id="navbar-links">
-            <li><a href="/">Home</a></li>
-        </ul>
-    </header>
-    
-    <section id="leaderboard-section" class="screen pure-g">
-        <div class="pure-u-1-12"><!-- formatting div PRE--></div>
-        <div class="pure-u-5-6 pure-g">
-            <h1 class="error-text center-text">Action Needed!</h1>
-            <section class="stack" style="min-height: 7rem; margin-top: 0px;">
-            <h1 class="pure-u-1 center-text" style="margin-top: 0px;">Link to Discord</h1>
-            <p class="center-text">Link your Sharick Shekel Wallet to your Discord account.</p>
-            <p class="center-text error-text" id="error-display" style="padding-bottom:5px;"></p>
+        <header>
+            <p class="navbar-title">Conestoga Computer Science Club</p>
+            <input type="checkbox" id="navbar-click">
+            <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
+            <ul id="navbar-links">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </header>
+
+        <section id="leaderboard-section" class="screen pure-g">
+            <div class="pure-u-1-12"><!-- formatting div PRE--></div>
+            <div class="pure-u-5-6 pure-g">
+                <h1 class="error-text center-text">Action Needed!</h1>
+                <section class="stack" style="min-height: 7rem; margin-top: 0px;">
+                    <h1 class="pure-u-1 center-text" style="margin-top: 0px;">Link to Discord</h1>
+                    <p class="center-text">Link your Sharick Shekel Wallet to your Discord account.</p>
+                    <p class="center-text error-text" id="error-display" style="padding-bottom:5px;"></p>
+                </section>
+                <!-- now add a place to add name and graduation year -->
+                <form id="claim-form" class="pure-form pure-form-aligned center-form">
+                    <fieldset>
+                        <div class="pure-control-group">
+                            <label for="name-for">Full Name</label>
+                            <input id="name-for" type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="grad-year">Graduation Year</label>
+                            <select id="grad-year" required>
+                                <option value="" disabled selected hidden>Graduation year</option>
+                                <script>
+                                    var currentYear = new Date().getFullYear();
+                                    var currentMonth = new Date().getMonth();
+                                    if (currentMonth < 7) {
+                                        currentYear++;
+                                    }
+                                    for (var i = 1; i < 5; i++) {
+                                        document.write('<option value=' + (i) + '>' + (currentYear + i) + '</option>');
+                                    }
+                                </script>
+                            </select>
+                        </div>
+                        <div class="pure-controls">
+                            <button id="claim-button" type="button" class="pure-button pure-button-primary"
+                                onclick="submitData()">Claim</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="pure-u-1-12"><!-- formatting div POST--></div>
+
         </section>
-            <!-- now add a place to add name and graduation year -->
-            <form id="claim-form" class="pure-form pure-form-aligned center-form">
-                <fieldset>
-                    <div class="pure-control-group">
-                        <label for="name-for">Full Name</label>
-                        <input id="name-for" type="text" placeholder="Full Name" required>
-                    </div>
-                    <div class="pure-control-group">
-                        <label for="grad-year">Graduation Year</label>
-                        <select id="grad-year" required>
-                            <option value="" disabled selected hidden>Graduation year</option>
-                            <script>
-                                var currentYear = new Date().getFullYear();
-                                var currentMonth = new Date().getMonth();
-                                if (currentMonth < 7) {
-                                    currentYear++;
-                                }
-                                for (var i = 1; i < 5; i++) {
-                                    document.write('<option value=' + (i) + '>' + (currentYear + i) + '</option>');
-                                }
-                            </script>
-                        </select>
-                    </div>
-                    <div class="pure-controls">
-                        <button id="claim-button" type="button" class="pure-button pure-button-primary" onclick="submitData()">Claim</button>
-                    </div>
-                </fieldset>
-            </form>
-        <div class="pure-u-1-12"><!-- formatting div POST--></div>
-        
-    </section>
-    <div id="loader" class="loader-overlay" style="display: none;">
-        <div class="lds-dual-ring"></div>
+        <div id="loader" class="loader-overlay" style="display: none;">
+            <div class="lds-dual-ring"></div>
+        </div>
     </div>
-</div>
 </body>

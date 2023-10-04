@@ -7,18 +7,19 @@ document.addEventListener("DOMContentLoaded", async function () {
         },
         "leaderboard": {
             "Shop": "/leaderboard/shop"
-        }
+        },
+        "login": {
+            "Leaderboard": "/leaderboard/",
+            "Home": "/"
+        },
     }
-    
-    let currentPath = window.location.pathname 
+
+    let currentPath = window.location.pathname
     // remove trailing slash from currentPath
     if (currentPath[currentPath.length - 1] == "/") {
         currentPath = currentPath.slice(0, -1);
     }
     let currentPage = currentPath.slice(currentPath.lastIndexOf("/") + 1);
-    console.log(currentPage)
-    console.log(window.location.pathname)
-    console.log(currentPath)
     if (specialPages[currentPage]) {
         for (let page in specialPages[currentPage]) {
             navbar.innerHTML += `<li><a href="${specialPages[currentPage][page]}">${page}</a></li>`;
@@ -30,13 +31,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         for (let i = 0; i < navbarLinks.length; i++) {
             if (navbarLinks[i].children[0].textContent.toLowerCase() == "home") {
                 navbarLinks[i].children[0].textContent = "Back";
-                // this breaks when the current page is /leaderboard/, it does not redirect to /
-                //solution for all links including ones with multiple slashes
                 if (currentPath.slice(0, currentPath.lastIndexOf("/")) == "") {
                     navbarLinks[i].children[0].href = "/";
-                  } else {
+                } else {
                     navbarLinks[i].children[0].href = currentPath.slice(0, currentPath.lastIndexOf("/"));
-                  }
+                }
             }
         }
     }

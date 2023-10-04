@@ -7,6 +7,7 @@
         height: 100px;
     }
 }
+
 #splash {
     /* this used to be the hackStoga banner but we have enough pictures of the event that we can use those */
     /* background-image: url("/media/banners/resources.png"); */
@@ -14,6 +15,7 @@
     max-height: 10px;
     font-family: "Montserrat", sans-serif;
 }
+
 #leaderboard-section {
     padding-top: 100px;
     color: var(--light);
@@ -26,10 +28,12 @@
     color: var(--light);
     font-size: 120%;
 }
+
 .error-text {
     color: var(--red);
     font-size: 120%;
 }
+
 #leaderboard-list table {
     margin-top: 30px;
     border-collapse: collapse;
@@ -50,6 +54,7 @@
     border-bottom: 1px solid var(--light);
     border-right: 1px solid var(--light);
 }
+
 #leaderboard-list img {
     width: auto;
     height: 20px;
@@ -89,21 +94,22 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Darkened background color */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Darkened background color */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Ensure the loader is on top */
+    z-index: 9999;
+    /* Ensure the loader is on top */
 }
 
 .admin-num-input {
-    max-width:  6rem; 
-    background: transparent; 
+    max-width: 6rem;
+    background: transparent;
     color: white
 }
 
 .admin-text-input {
-    background: transparent; 
+    background: transparent;
     color: white
 }
-

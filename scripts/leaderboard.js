@@ -18,6 +18,8 @@ function getLeaderboard(userInfo) {
             <td>∞</td>
         </tr>
     `;
+
+
     fetch("https://shekels.mrsharick.com/users")
         .then(response => response.json())
         .then(data => {
@@ -29,31 +31,31 @@ function getLeaderboard(userInfo) {
                     let shekels = (parseInt(data[i].shekels) !== 0) ? (parseInt(data[i].shekels) || 'N/A') : 0;
                     let discord_linked = data[i].discord_linked;
                     let shekelTags = isAdmin ? [`<input class="center-text admin-num-input" type="number" min="0" value="${shekels}"`, `input`] : ["<p>" + shekels, "p"];
-                    let nameTags = isAdmin ? [`<input class="center-text admin-text-input" id="real-name" type="text" value="${data[i].name}"> <input class="center-text admin-text-input" id="display-name" type="text" value="${data[i].displayName}">`, `</input>`, "<img src=\"/media/misc/delete.png\" onclick=\"deleteUser('"+ data[i].id + "')\"></img>"] : ["" + name, "", ""];
+                    let nameTags = isAdmin ? [`<input class="center-text admin-text-input" id="real-name" type="text" value="${data[i].name}"> <input class="center-text admin-text-input" id="display-name" type="text" value="${data[i].displayName}">`, `</input>`, "<img src=\"/media/misc/delete.png\" onclick=\"deleteUser('" + data[i].id + "')\"></img>"] : ["" + name, "", ""];
                     let styleTag = "";
                     if (i < specialColors.length) {
                         styleTag = `style="color: ${specialColors[i]}"`;
                     }
 
-                        if (discord_linked) {
-                            tableContent += `
+                    if (discord_linked) {
+                        tableContent += `
                             <tr shekel_guid="${data[i].id}">
                             <td ${styleTag}>${rank}</td>
                             <td>${nameTags[0]}${nameTags[1]}${nameTags[2]}<img src="/media/misc/verified.png"></img></td>
                             <td>${shekelTags[0]}</${shekelTags[1]}></td>
                         </tr>
                     `;
-                        } else {
-                            tableContent += `
+                    } else {
+                        tableContent += `
                             <tr shekel_guid="${data[i].id}">
                                 <td ${styleTag}>${rank}</td>
                                 <td>${nameTags[0]}${nameTags[1]}${nameTags[2]}</td>
                                 <td>${shekelTags[0]}</${shekelTags[1]}></td>
                             </tr>
                         `;
-                        }
-
                     }
+
+                }
 
 
                 leaderboardTable.innerHTML = tableContent;
@@ -104,24 +106,24 @@ function updateLeaderboard() {
             window.location.reload();
         } else {
             response.json()
-            .then(data => {
-                document.getElementById("subheading").innerHTML = `<p class="center-text error-text">${data.message}</p>`;
-            })
+                .then(data => {
+                    document.getElementById("subheading").innerHTML = `<p class="center-text error-text">${data.message}</p>`;
+                })
         }
     });
 }
 
 //Visually delete the user from the table, does not send an api request anymore
 function deleteUser(shekel_guid) {
-            const leaderboardTable = document.getElementsByClassName('leaderboard')[0];
-            const rows = leaderboardTable.getElementsByTagName('tr');
-            for (let i = 2; i < rows.length; i++) {
-                const row = rows[i];
-                if (row.getAttribute('shekel_guid') == shekel_guid) {
-                    row.remove();
-                    break;
-                }
-            }
+    const leaderboardTable = document.getElementsByClassName('leaderboard')[0];
+    const rows = leaderboardTable.getElementsByTagName('tr');
+    for (let i = 2; i < rows.length; i++) {
+        const row = rows[i];
+        if (row.getAttribute('shekel_guid') == shekel_guid) {
+            row.remove();
+            break;
+        }
+    }
 }
 
 function newRow() {
@@ -174,7 +176,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     getLeaderboard(userInfo);
     let chars = "ᔑʖᓵ↸ᒷ⎓⊣⍑╎⋮ꖌꖎᒲリ𝙹!¡ᑑ∷ᓭℸ⚍⍊ᑑ/||⨅";
     function textEffect() {
-        try { document.getElementById("enchanted").innerHTML = chars.charAt(Math.floor(Math.random() * chars.length)) + chars.charAt(Math.floor(Math.random() * chars.length)); }  catch (e) { }
+        try { document.getElementById("enchanted").innerHTML = chars.charAt(Math.floor(Math.random() * chars.length)) + chars.charAt(Math.floor(Math.random() * chars.length)); } catch (e) { }
     }
     setInterval(textEffect, 41);
 

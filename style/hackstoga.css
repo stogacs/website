@@ -8,9 +8,10 @@
 #title {
     font-size: 5em;
     margin: 0;
-    font-weight:bolder;
+    font-weight: bolder;
     text-shadow: 2px 2px 3px var(--superdark);
 }
+
 #subtitle {
     font-size: x-large;
 }
@@ -19,20 +20,24 @@
     color: var(--light);
     font-size: 120%;
 }
+
 #sponsors {
     background-color: var(--superdark);
     color: var(--light);
     font-size: 120%;
 }
+
 #faq {
     color: var(--light);
     font-size: 120%;
 }
+
 #schedule {
     background-color: var(--superdark);
     color: var(--light);
     font-size: 120%;
 }
+
 #footer {
     color: var(--light);
     background-color: var(--superdark);
@@ -61,7 +66,7 @@ details summary {
     user-select: none;
     transition: margin 70ms ease-in-out;
 }
-  
+
 details[open] summary {
     margin-bottom: 2em;
     font-size: 130%;
@@ -73,10 +78,12 @@ details[open] summary {
         height: 100px;
     }
 }
+
 @media screen and (max-width: 800px) {
     #title {
         font-size: 3.5em;
     }
+
     #subtitle {
         font-size: medium;
     }

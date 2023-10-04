@@ -10,7 +10,7 @@ function getCookie(name) {
     }
     return null;
 }
-  
+
 function setCookie(name, value, days) {
     const expirationDate = new Date();
     expirationDate.setDate(expirationDate.getDate() + days);

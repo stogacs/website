@@ -5,7 +5,7 @@
 
 #login-cards {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -21,10 +21,7 @@
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 0;
-  margin-top: 40px;
-  margin-left: 40px;
-  padding: 1rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 2rem .5rem 2rem;
   background-color: var(--card-background);
   border-radius: 1rem;
   font-size: 120%;
@@ -45,6 +42,15 @@
 .card .error-text {
   color: var(--red);
   font-size: 120%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 
@@ -75,7 +81,7 @@
 
 .card .button-secondary {
   background: rgb(88, 101, 242);
-  width: 300px;
+  width: 395px;
 }
 
 .card .button-container {
@@ -83,6 +89,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0px 0px 20px 0px;
 }
 
 .button-content {
@@ -100,4 +107,10 @@
   display: inline-block;
   height: 35px;
   width: auto;
+}
+
+.card-content > .button-label {
+  display: inline-block;
+  font-size: 100%;
+  color: rgba(255, 255, 255, 0.6);
 }

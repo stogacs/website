@@ -6,6 +6,7 @@
         height: 100px;
     }
 }
+
 #splash {
     /* temporary, lets try to find another banner for this page */
     background-image: url("/media/banners/resources.png");

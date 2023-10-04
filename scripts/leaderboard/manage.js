@@ -29,7 +29,7 @@ function getLoginCode() {
             codeString = data.logonCode.toString();
             document.getElementById("code-display").innerText = codeString.substr(0, 3) + "-" + codeString.substr(3, 6);
             button = document.getElementById("code-button");
-            button.innerText = "Expires In " + Math.max(1,Math.trunc(Math.round((data.expiresIn / 60) / 1000)))+ " Minutes";
+            button.innerText = "Expires In " + Math.max(1, Math.trunc(Math.round((data.expiresIn / 60) / 1000))) + " Minutes";
             button.className = "pure-button pure-button-primary pure-button-disabled";
         })
         .catch(error => {
