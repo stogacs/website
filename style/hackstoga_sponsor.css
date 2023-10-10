@@ -83,7 +83,7 @@ a:active {
 #main-cover {
     height: 90vh;
     background-size: cover;
-    background-image: url("../media/hackathon/sponsor/sponsor_banner.jpg");
+    background-image: url("../media/banners/sponsor24.png");
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: multiply;
