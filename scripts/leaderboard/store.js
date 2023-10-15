@@ -7,6 +7,35 @@ document.addEventListener("DOMContentLoaded", async function () {
     } else {
       window.location.href = "/401";
     }
+
+
+    fetch("https://shekels.mrsharick.com/me/purchases?discordAuth=" + getCookie("discordAuth"))
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                let latestPurchase;
+                data.products.reverse();
+                if (data.products.length > 0) {
+                  latestPurchase = data.products[0].timestamps[data.products[0].timestamps.length -1];
+                  for (let i = 0; i < data.products.length; i++) {
+                    let currentLatest = data.products[i].timestamps[data.products[i].timestamps.length -1];
+                      if (currentLatest > latestPurchase) {
+                        latestPurchase = currentLatest;
+                      }
+                    }
+                    latestPurchase = new Date(latestPurchase).toLocaleString().split(",")[0];
+                  } else {
+                    latestPurchase = "Never";
+                  }
+                  document.getElementById("account-description").innerHTML = "Shekels: " + userInfo.shekels + "<br>Last Purchase: " + latestPurchase;
+                  document.getElementById("account-title").innerHTML = userInfo.name;
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        }
+        );
+                  
   });
 
   try {
@@ -22,17 +51,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     const data = await response.json();
-    items = Object.values(data);
+    items = Object.values(data.products);
     element = document.getElementById("shop-cards")
     if (items.length > 0) {
       items.forEach(item => {
+          createCard(element, item);
+      });
+      items.forEach(item => {
         if (item.hasImg) {
-          createCard(element, item);
-          fetchImage(item.id).then(img => {
-            updateCard(item.id, img);
-          });
-        } else {
-          createCard(element, item);
+          updateCard(item.id, fetchImage(item.id));
         }
       });
     } else {
@@ -59,7 +86,7 @@ function createCard(parent, item) {
       <div class="button-container">
         <button type="button" id="${item.id}" class="buy-button pure-button button-secondary">
           <div class="button-content">
-            <p class="button-text">Buy - ${item.price} Shekels</p>
+            <p class="button-text" id="${item.id}">Buy - ${item.price} Shekels</p>
           </div>
         </button>
       </div>
@@ -74,37 +101,15 @@ function updateCard(id, img) {
   imageElement.src = img;
 }
 
+// this is here because it used to be a lot stupider...
 function fetchImage(id) {
-  return fetch(`https://shekels.mrsharick.com/getasset/shop_${id}.png`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.blob();
-    })
-    .then((blob) => {
-      return new Promise((resolve, reject) => {
-        let reader = new FileReader();
-        reader.onloadend = function () {
-          resolve(reader.result);
-        };
-        reader.onerror = reject;
-        reader.readAsDataURL(blob);
-      });
-    });
+  return `https://shekels.mrsharick.com/getasset/shop_${id}.png`;
 }
 
 
 document.addEventListener("click", function (event) {
-  if (event.target.classList.contains("buy-button")) {
-    console.log("buying")
+  if (event.target && (event.target.classList.contains("buy-button") || event.target.classList.contains("button-text")) ) {
     buyProduct(event.target.id);
-
   }
 });
 
@@ -125,7 +130,7 @@ function buyProduct(id) {
     .then(result => {
       console.log(result)
       if (result.success) {
-        window.location.href = "/shop/past.html";
+        window.location.href = "/leaderboard/shop/past.html";
       } else {
         document.getElementById("error-display").innerHTML = result.message;
       }

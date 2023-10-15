@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     let navbar = document.getElementById("navbar-links");
     const specialPages = {
         "shop": {
-            "Purchased": "/shop/past",
-            "Leaderboard": "/leaderboard/"
+            "Purchased": "/leaderboard/shop/past.html",
         },
         "leaderboard": {
-            "Shop": "/leaderboard/shop"
+            "Shop": "/leaderboard/shop",
+            "Purchased": "/leaderboard/shop/past.html",
         },
         "login": {
             "Leaderboard": "/leaderboard/",
@@ -20,23 +20,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         currentPath = currentPath.slice(0, -1);
     }
     let currentPage = currentPath.slice(currentPath.lastIndexOf("/") + 1);
+    if (currentPage == "index.html") {
+        currentPage = currentPath.slice(0, currentPath.lastIndexOf("/"));
+        currentPage = currentPage.slice(currentPage.lastIndexOf("/") + 1);
+    }
+
     if (specialPages[currentPage]) {
         for (let page in specialPages[currentPage]) {
             navbar.innerHTML += `<li><a href="${specialPages[currentPage][page]}">${page}</a></li>`;
-        }
-    }
-    if (!currentPage.includes("onboarding")) {
-        // for navbar link
-        let navbarLinks = document.getElementById("navbar-links").children;
-        for (let i = 0; i < navbarLinks.length; i++) {
-            if (navbarLinks[i].children[0].textContent.toLowerCase() == "home") {
-                navbarLinks[i].children[0].textContent = "Back";
-                if (currentPath.slice(0, currentPath.lastIndexOf("/")) == "") {
-                    navbarLinks[i].children[0].href = "/";
-                } else {
-                    navbarLinks[i].children[0].href = currentPath.slice(0, currentPath.lastIndexOf("/"));
-                }
-            }
         }
     }
     navbar.innerHTML += `<li id="loader"><p>Now Loading</p></li>`;

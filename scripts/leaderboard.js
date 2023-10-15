@@ -1,4 +1,4 @@
-function getLeaderboard(userInfo) {
+function getPurchases(userInfo) {
     const isAdmin = userInfo?.admin;
     let leaderboard = document.getElementById("leaderboard-list");
     const leaderboardTable = document.createElement('table');
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
     let leaderboard = document.getElementById("leaderboard-list");
     leaderboard.innerHTML = `<p class="center-text">Loading leaderboard...</p>`;
-    getLeaderboard(userInfo);
+    getPurchases(userInfo);
     let chars = "ᔑʖᓵ↸ᒷ⎓⊣⍑╎⋮ꖌꖎᒲリ𝙹!¡ᑑ∷ᓭℸ⚍⍊ᑑ/||⨅";
     function textEffect() {
         try { document.getElementById("enchanted").innerHTML = chars.charAt(Math.floor(Math.random() * chars.length)) + chars.charAt(Math.floor(Math.random() * chars.length)); } catch (e) { }

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sharick Shekels | Conestoga Computer Science Club</title>
+    <meta name="description" content="View the Shekel leaderboard for the club.">
+    <meta name="theme-color" content="#eaaded">
+
+    <!--CSS re-used across stogacs.club -->
+    <link rel="stylesheet" href="/style/theme.css">
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/main.css">
+
+    <!-- Load in page specific CSS -->
+    <link rel="stylesheet" href="/style/leaderboard.css">
+    <link rel="stylesheet" href="/style/tooltips.css">
+
+    <!-- Load in page specific scripts -->
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/navbar.js"></script>
+    <script src="/scripts/leaderboard/purchases.js"></script>
+
+    <!-- Load in external CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <p class="navbar-title">Conestoga Computer Science Club</p>
+        <input type="checkbox" id="navbar-click">
+        <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
+        <ul id="navbar-links">
+            <li><a href="/leaderboard/index.html">Back</a></li>
+        </ul>
+    </header>
+
+    <section id="leaderboard-section" class="screen pure-g">
+        <div class="pure-u-1-12"><!-- formatting div PRE--></div>
+        <div class="pure-u-5-6 pure-g">
+            <h1 class="pure-u-1 center-text">My Purchases<span class="badge">Pre</span></h1>
+            <h2 class="center-text error-text" id="error-display" style="display:none"></h2>
+            <noscript>
+                <p class="center-text">Please enable JavaScript to enable leaderboard functionality</p>
+            </noscript>
+            <table id="purchases-table">
+
+            </table>
+
+            <script>
+                function toggleContent(index) {
+                    var content = document.getElementsByClassName("content")[index];
+                    if (content.style.display === "block" || content.classList.contains("fadeIn")) {
+                        content.classList.remove("fadeIn");
+                        content.classList.add("fadeOut")
+                    }
+                    else {
+                        content.classList.remove("fadeOut");
+                        content.classList.add("fadeIn");
+                    }
+                }
+            </script>
+            <style>
+                #leaderboard-section {
+                    padding-top: 100px;
+                    color: var(--light);
+                    font-size: 120%;
+                }
+
+                #leaderboard-list {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    color: var(--light);
+                    font-size: 120%;
+                }
+
+                .error-text {
+                    color: var(--red);
+                    font-size: 120%;
+                }
+
+                table {
+                    text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 30px;
+                    border-collapse: collapse;
+                    border: 3px solid var(--light);
+                    border-spacing: 0;
+                    max-width: 1200px;
+                    width: 100%;
+                }
+
+                table th {
+                    border-bottom: 1px solid var(--light);
+                    border-right: 1px solid var(--light);
+                }
+
+                table td {
+                    padding: 10px;
+                    border-bottom: 1px solid var(--light);
+                    border-right: 1px solid var(--light);
+                }
+
+                table .content {
+                    display: none;
+                }
+
+                table .content td,
+                img {
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes fadeOut {
+                    0% {
+                        opacity: 1;
+                    }
+
+                    100% {
+                        opacity: 0;
+                    }
+                }
+
+                .fadeIn {
+                    animation: fadeIn 0.5s ease-in-out;
+                    display: block !important;
+                }
+
+                .fadeOut {
+                    animation: fadeOut 0.5s ease-in-out;
+                    display: none !important;
+                }
+            </style>
+
+            <!-- formatting div POST-->
+        </div>
+        <div class="pure-u-1-12"><!-- formatting div POST--></div>
+    </section>
+</body>

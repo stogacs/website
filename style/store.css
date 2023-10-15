@@ -10,7 +10,8 @@
   align-items: center;
   margin-top: 120px;
   margin: 0;
-  margin-left: 250px;
+  margin-left: 330px;
+  padding-bottom: 30px
 }
 
 #shop-cards,
@@ -18,15 +19,24 @@
   text-align: center;
   margin-top: 120px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
+#side-cards {
+  margin-left: -40px;
+  flex-direction: column;
+}
+
+#shop-cards {
+  margin-left: -40px;
+  flex-direction: row;
+}
+
 .card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
@@ -35,20 +45,19 @@
   margin-top: 40px;
   margin-left: 40px;
   padding: 1rem;
-  padding-top: 0.5rem;
   background-color: var(--card-background);
   border-radius: 1rem;
   font-size: 120%;
+  height: 600px;
 }
 
 .card>.card-content {
-  min-width: 350px;
-  max-width: 350px;
+  width: 400px;
 }
 
 
 .side-card {
-  margin-left: -250px;
+  margin-left: -370px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -61,7 +70,7 @@
   background-color: var(--card-background);
   border-radius: 1rem;
   padding: 40px;
-  max-width: 250px;
+  max-width: 300px;
 }
 
 .display-name-for {
@@ -69,13 +78,15 @@
 
 }
 
-#title {
+#title,
+#account-title {
   color: white;
   font-size: 150%;
   position: relative;
 }
 
-#description {
+#description,
+#account-description {
   color: white;
   font-size: 100%;
   padding-bottom: 1rem;
@@ -143,9 +154,9 @@
   width: auto;
 }
 
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 1700px) {
   .side-card {
-    margin-left: -175px;
+    margin-left: -275px;
   }
 }
 

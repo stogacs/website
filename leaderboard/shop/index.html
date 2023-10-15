@@ -39,7 +39,7 @@
     <input type="checkbox" id="navbar-click">
     <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
     <ul id="navbar-links">
-      <li><a href="/">Home</a></li>
+      <li><a href="/leaderboard/index.html">Back</a></li>
     </ul>
   </header>
   <section class="screen pure-g center-form">
@@ -54,15 +54,36 @@
             <div>
               <b id="title" class="center-text">Discover the Shekel<span style="color: var(--garnet);">Shop</span></b>
             </div>
-            <img style="padding:30px;" id="${item.id}">
+            <img style="padding:30px;">
             <div>
               <p id="description" class="center-text">Purchase power-ups for yourself or the club as a whole. Check
-                back regularly as the shop changes frequently!</p>
+                back regularly as the shop changes frequently!<br><br>Certain items may require leadership approval to use.<br><br>Some items might be available for a limited time. If you purchase one before it expires, you will retain access indefinitely unless otherwise specified.</p>
+            </div>
+          </div>
+        </div>
+        <div class="side-card pure-g">
+          <div class="card-content center-text">
+            <div>
+              <b id="account-title" class="center-text">My Account</b>
+            </div>
+            <img style="padding:30px;">
+            <div>
+              <p id="account-description" class="center-text">Loading your account info...</p>
+              <a class="button-container" href="./past.html" target="_blank">
+                <button type="button" class="pure-button pure-button-primary">
+                  <div class="button-content">
+                    <p class="button-text">View my items</p>
+                  </div>
+                </button>
+              </a>
+              <noscript>
+                <p class="center-text error-text">JavaScript must be supported and enabled on your system to view your account
+              </noscript>
             </div>
           </div>
         </div>
       </div>
-      <div style="max-width: 1300px;">
+      <div style="max-width: 1450px;">
 
         <div id="shop-cards">
 
