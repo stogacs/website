@@ -78,6 +78,8 @@ a:active {
 #title {
     font-size: calc(1em + 5vw);
     margin: 0 0 0 70px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 3px var(--superdark);
 }
 
 #main-cover {
@@ -87,6 +89,18 @@ a:active {
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: multiply;
+}
+
+.video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    border-radius: 1em;
+}
+
+.video-section {
+    height: 30vh;
 }
 
 .icon {

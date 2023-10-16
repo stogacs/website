@@ -14,16 +14,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         .then(data => {
             if (data.success) {
                 let latestPurchase;
-                data.products.reverse();
                 if (data.products.length > 0) {
-                  latestPurchase = data.products[0].timestamps[data.products[0].timestamps.length -1];
-                  for (let i = 0; i < data.products.length; i++) {
-                    let currentLatest = data.products[i].timestamps[data.products[i].timestamps.length -1];
-                      if (currentLatest > latestPurchase) {
-                        latestPurchase = currentLatest;
-                      }
-                    }
-                    latestPurchase = new Date(latestPurchase).toLocaleString().split(",")[0];
+                  latestPurchase = data.products[0].title + " (" + data.products[0].price + " Shekels)";
                   } else {
                     latestPurchase = "Never";
                   }

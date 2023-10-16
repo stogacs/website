@@ -1,0 +1,80 @@
+#leaderboard-section {
+    padding-top: 100px;
+    color: var(--light);
+    font-size: 120%;
+}
+
+#leaderboard-list {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: var(--light);
+    font-size: 120%;
+}
+
+.error-text {
+    color: var(--red);
+    font-size: 120%;
+}
+
+table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-collapse: collapse;
+    border: 3px solid var(--light);
+    border-spacing: 0;
+    max-width: 1200px;
+    width: 100%;
+}
+
+table th {
+    border-bottom: 1px solid var(--light);
+    border-right: 1px solid var(--light);
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--light);
+    border-right: 1px solid var(--light);
+}
+
+table .content {
+    display: none;
+}
+
+table .content td,
+img {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+    display: block !important;
+}
+
+.fadeOut {
+    animation: fadeOut 0.5s ease-in-out;
+    display: none !important;
+}
