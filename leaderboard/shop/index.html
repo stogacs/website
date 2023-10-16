@@ -44,8 +44,10 @@
     <div style="font-size: 150%; position:absolute; top:100px; padding-bottom: 90px;">
       <p id="error-display" class="error-text center-text"></p>
     </div>
+    <div class="notices">
+      <p class="alert" id="alert-signin" style="display: none;">You are not signed in<span class="close-alert" onclick="this.parentElement.style.display='none';">&times;</span></p>
+    </div>
     <div class="main">
-
       <div id="side-cards" style="position: absolute; top: 0px;">
         <div class="side-card pure-g">
           <div class="card-content center-text">
@@ -70,7 +72,7 @@
             <div>
               <p id="account-description" class="center-text">Loading your account info...</p>
               <a class="button-container" href="./past.html">
-                <button type="button" class="pure-button pure-button-primary">
+                <button type="button" id="past-purchase-button" class="pure-button pure-button-primary">
                   <div class="button-content">
                     <p class="button-text">View my items</p>
                   </div>
