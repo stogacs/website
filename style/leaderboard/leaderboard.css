@@ -103,6 +103,11 @@
     /* Ensure the loader is on top */
 }
 
+#signout-button {
+    background: rgb(202, 60, 60);
+    color: white;
+}
+
 .admin-num-input {
     max-width: 6rem;
     background: transparent;

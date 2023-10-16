@@ -1,4 +1,4 @@
-const knownVersion = 'MS41LjA';
+const knownVersion = 'Mi4wLjA';
 
 function getCookie(name) {
     const cookies = document.cookie.split(';');
@@ -28,7 +28,7 @@ function getLoginDetails() {
 
     if (access_token != null) {
         setCookie('discordAuth', access_token, 7);
-        window.location.href = window.location.href.split('?')[0]; // go back but remove token
+        window.location.href = window.location.href.split('?')[0];
     }
 }
 
@@ -38,7 +38,7 @@ async function verifyUser() {
         try {
             const response = await fetch(`https://shekels.mrsharick.com/discord/user?token=${access_token}`);
             const data = await response.json();
-            if (response.status == 404) {
+            if (response.status != 200) {
                 deleteCookie('discordAuth');
                 return null;
             }

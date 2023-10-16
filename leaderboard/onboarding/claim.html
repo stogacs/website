@@ -18,7 +18,7 @@
     <script src="/scripts/navbar.js"></script>
 
     <!-- Load in page specific CSS -->
-    <link rel="stylesheet" href="/style/leaderboard.css">
+    <link rel="stylesheet" href="/style/leaderboard/leaderboard.css">
     <link rel="stylesheet" href="/style/tooltips.css">
 
     <!-- Load in page specific scripts -->
@@ -74,12 +74,16 @@
                                 </script>
                             </select>
                         </div>
-                        <div class="pure-controls">
-                            <button id="claim-button" type="button" class="pure-button pure-button-primary"
-                                onclick="submitData()">Claim</button>
-                        </div>
+                        
                     </fieldset>
                 </form>
+                <div class="pure-g">
+                    <div class="pure-controls center-text">
+                        <a href="../logout.html"><button id="signout-button" type="button" class="pure-button">Sign Out</button></a>
+                        <button id="claim-button" type="button" class="pure-button pure-button-primary"
+                            onclick="submitData()">Claim</button>
+                    </div>
+                </div>
                 <div class="pure-u-1-12"><!-- formatting div POST--></div>
 
         </section>

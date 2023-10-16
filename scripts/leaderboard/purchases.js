@@ -56,12 +56,17 @@ function getPurchases(userInfo) {
 
 
 document.addEventListener("DOMContentLoaded", async function() {
-    let userInfo = await verifyUser();
-    if (userInfo != null) {
-        if (userInfo.name == null) {
+    let userInfo;
+    await verifyUser().then(userInfo => {
+        if (userInfo != null) {
+          if (userInfo.name == null) {
             window.location.href = "/leaderboard/onboarding/claim.html";
+          }
+        } else {
+          window.location.href = "/401";
         }
-    }
+        userInfo = userInfo;
+    });
     let chart = document.getElementById("purchases-table");
     chart.innerHTML = `<p class="center-text">Now Loading...</p>`;
     getPurchases(userInfo);

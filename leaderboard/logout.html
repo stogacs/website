@@ -31,7 +31,7 @@
     title = document.getElementById("logout-title");
     subtitle = document.getElementById("logout-subtitle");
     homeHref = document.getElementById("logout-home");
-    if (window.location.search == "?all") {
+    if (window.location.search.includes("?all")) {
       fetch("https://shekels.mrsharick.com/me/logout?discordAuth=" + getCookie("discordAuth") + "&all=true", {
         method: "POST",
         headers: {
@@ -64,6 +64,10 @@
       homeHref.innerText = "Home?";
       homeHref.href = "/";
       homeHref.style.display = "block";
+    }
+    if(window.location.search.includes("message")) {
+      let message = window.location.search.split("message=")[1];
+      subtitle.innerText = decodeURIComponent(message);
     }
   </script>
 </body>
