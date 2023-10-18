@@ -242,3 +242,36 @@ a:hover {
 		transform: scale(0.9);
 	}
 }
+
+.alert {
+    padding: 0 2vh 0 3vh;
+    background-color: var(--darkred);
+    color: var(--light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-style: dashed;
+    border-width: 2.5px;
+    border-radius: 10px;
+    border-color: var(--superdarkred);
+}
+
+.alert > p {
+    text-shadow: 2px 2px 3px var(--dark);
+    margin-right: 5vh;
+}
+
+.close-alert {
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 5vh;
+    cursor: pointer;
+    transition: 0.3s;
+	padding: 0;
+}
+  
+.close-alert:hover {
+    color: var(--superdarkred);
+} 

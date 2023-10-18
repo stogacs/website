@@ -154,6 +154,12 @@
   width: auto;
 }
 
+.notices {
+  position: absolute;
+  z-index: 100;
+  top: 90px;
+}
+
 @media screen and (max-width: 1700px) {
   .side-card {
     margin-left: -275px;

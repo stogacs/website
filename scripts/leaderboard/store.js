@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", async function () {
+  let userinfo;
   await verifyUser().then(userInfo => {
+    userinfo = userInfo;
     if (userInfo != null) {
       if (userInfo.name == null) {
         window.location.href = "/leaderboard/onboarding/claim.html";
       }
     } else {
-      window.location.href = "/401";
+      document.getElementById("alert-signin").style = "display: inline-flex;";
+      document.getElementById("account-description").innerText = "Sign in to see your account details.";
+      document.getElementById("past-purchase-button").classList.add("pure-button-disabled");
     }
 
 
@@ -19,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                   } else {
                     latestPurchase = "Never";
                   }
-                  document.getElementById("account-description").innerHTML = "Shekels: " + userInfo.shekels + "<br>Last Purchase: " + latestPurchase;
+                  document.getElementById("account-description").innerText = "Shekels: " + userInfo.shekels + "<br>Last Purchase: " + latestPurchase;
                   document.getElementById("account-title").innerHTML = userInfo.name;
             }
         })
