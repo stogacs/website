@@ -41,7 +41,7 @@
 .presentation-list {
     padding-left:10%;
     padding-right:10%;
-    padding-top:10px;
+    padding-top:100px;
     font-family: "Montserrat", sans-serif;
     color: var(--light);
 }
@@ -91,4 +91,78 @@
     padding-top:10px;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.pas {
+    padding-bottom:30px;
+}
+
+.presentation-list .pres-flex .pres-item .blue-mod {
+    background-color:#0013B6;
+}
+
+.modal-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5000;
+    width:100vw;
+    height:100vh;
+    display: none;
+}
+
+.modal-background .box{
+    background-color:#2E2E2E;
+    border-radius:20px;
+    width:min(100%, 900px);
+    margin: auto;
+    height:550px;
+    position: absolute;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    display:block;
+}
+
+.modal-background .box h1{
+    color: var(--light);
+    padding-left:20px;
+    font-size:45px;
+}
+
+.modal-background .box h2{
+    color: var(--light);
+    font-size:30px;
+    padding:0px;
+}
+
+.modal-background .box p{
+    color: var(--light);
+    padding-left:20px;
+    padding-right:20px;
+    font-size:13px;
+}
+
+.modal-background .box label {
+    color: var(--light);
+    padding-left:20px;
+    font-size:20px;
+}
+
+.modal-background .box button {
+    margin-top:-40px;
+    margin-right:20px;
+    color: var(--light);
+    padding:15px;
+    font-size:20px;
+    float:right;
+    background-color:#309700;
+    border:none;
+    border-radius:20px;
+}
+
+.modal-background .box .color-mod{
+    background-color:#970000;
 }

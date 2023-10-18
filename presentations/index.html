@@ -38,6 +38,40 @@
         <li><a href="/">Home</a></li>
     </ul>
 </header>
+<section id="signupDialog" class="modal-background">
+    <section class="box">
+        <h1>Sign up to present</h1>
+
+        <label for="dateSelect">Choose a day:</label>
+        <select name="date" id="dateSelect">
+        </select>
+
+        <label for="timeSelect">Time Slot:</label>
+        <select name="time" id="timeSelect">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <br><br><br>
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" name="topic"><br><br>
+        <label for="presenters">Presenters:</label>
+        <input type="text" id="presenters" name="presenters"><br><br>
+        <label for="link">Presentation Link:</label>
+        <input type="text" id="link" name="link"><br><br>
+        <p>Make sure the presentation is ONLY viewable (no editing)! When creating the link, check that "Anybody with the link can view" is on.</p>
+        <br>
+        <h2>Override Password</h2>
+        <p>Make/submit an override password for your presentation. <u>Make sure it is not another password you use, there is absolutely no encryption of these.</u> This override password will be used such that nobody else can claim this spot, and if you need to edit your sign up, you can input your override password here again to edit it. Note, there is a global override password for club leaders. </p>
+        <br>
+        <label for="pw">Password:</label>
+        <input type="text" id="pw" name="pw"><br><br>
+        <button>Submit</button>
+        <button class="color-mod" onclick="destroySignup()">Cancel</button>
+
+
+
+    </section>
+</section>
 
 <section id="title">
     <h1 class="pure-u-1 center-text"><strong>Presentations</strong></h1>
@@ -48,17 +82,22 @@
 </section>
 
 <section class="buttons">
-    <form action="/presentations/signup">
-        <button>Sign Up</button>
-    </form>
+    <button onclick="makeSignup()">Sign Up</button>
 
 </section>
 <section id="upcoming-presentations" class="presentation-list">
     <h2 class="pres-typ">Upcoming</h2>
-    <div class="pres-flex" id="upc-flex">
+    <div class="pres-flex" id="upc-flex"></div>
 
-    </div>
 </section>
+
+<section id="past-presentations" class="presentation-list">
+    <h2 class="pres-typ">Past</h2>
+    <div class="pres-flex pas" id="pas-flex"></div>
+
+</section>
+
+
 
 
 </body>
