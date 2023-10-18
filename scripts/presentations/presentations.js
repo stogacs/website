@@ -113,7 +113,6 @@ function destroySignup() {
 };
 
 function check() {
-    console.log("hi");
     $.ajax({
                 type: "GET",
                 url: link + "status",
