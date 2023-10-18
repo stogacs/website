@@ -111,3 +111,79 @@ function destroySignup() {
   var backgr = document.getElementById("signupDialog");
   backgr.style.display="none"
 };
+
+function check() {
+    $.ajax({
+                type: "GET",
+                url: link + "status",
+                data: {
+
+                    "day":$("#dateSelect").val(),
+                    "time":$("#timeSelect").val()
+                },
+                async: false,
+                success: function(meetingData) {
+                    if (meetingData) {
+                        document.getElementById("overrideText").innerHTML = `
+Make an override password for your presentation. <u>Make sure it is not another password you use, there is absolutely no encryption of these.</u> Make sure to remember this, you'll need it to edit.
+                        `;
+                        document.getElementById("submit").innerHTML = "Sign up"
+                        document.getElementById("modal-title").innerHTML = "Sign up to present"
+                    } else {
+                        document.getElementById("overrideText").innerHTML = "Input your override password or the global admin password.";
+                        document.getElementById("submit").innerHTML = "Edit"
+                        document.getElementById("modal-title").innerHTML = "Edit presentation"
+                    }
+                }
+    });
+};
+
+$(function(ready){
+    $('#dateSelect').change(function(){
+        check();
+    });
+});
+window.onload = check
+
+$(function(ready){
+
+    $('#timeSelect').change(function(){
+        check();
+    });
+});
+
+function register() {
+    document.getElementById("submit").innerHTML = "...";
+    document.getElementById("submit").disabled = true;
+    if ($("#topic").val() === "" || $("#presenters").val() === "" || $("#link").val() === "" || $("#pw").val() === "") {
+        document.getElementById("submit").disabled = false;
+        document.getElementById("submit").innerHTML = "Fill all fields";
+    } else {
+        $.ajax({
+                        type: "POST",
+                        url: link + "register",
+                        data: {
+                            "day":$("#dateSelect").val(),
+                            "time":$("#timeSelect").val(),
+                            "topic":$("#topic").val(),
+                            "presenters":$("#presenters").val(),
+                            "link":$("#link").val(),
+                            "pw":$("#pw").val(),
+                        },
+                        headers: {},
+                        async: false,
+                        mode: 'cors',
+                        success: function(res) {
+                            document.getElementById("submit").innerHTML = res
+                            if (res == "Success") {
+                                setTimeout(function(){
+                                    location.reload();
+                                }, 2000); // 3000 milliseconds = 2 seconds
+                            } else {
+                                document.getElementById("submit").disabled = false;
+                            }
+                        }
+            });
+    }
+
+}
