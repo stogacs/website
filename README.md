@@ -18,4 +18,5 @@ All pull requests are welcome.
 - Icons from [Font Awesome](https://fontawesome.com/)
 - Resources banner photo by [Alexandre Debiève on Unsplash](https://unsplash.com/photos/FO7JIlwjOtU)
 - Shape dividers from [shapedivider.app](https://www.shapedivider.app/)
+- Loader from [loading.io](https://loading.io/css/)
   
