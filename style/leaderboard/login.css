@@ -2,7 +2,6 @@
   --card-background: #121212;
 }
 
-
 #login-cards {
   text-align: center;
   margin-top: 20px;
@@ -21,7 +20,7 @@
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 0;
-  padding: 0.5rem 2rem .5rem 2rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
   background-color: var(--card-background);
   border-radius: 1rem;
   font-size: 120%;
@@ -30,10 +29,10 @@
 
 .display-name-for {
   padding-bottom: 1rem;
-  
 }
 
-.card p, .card b {
+.card p,
+.card b {
   color: white;
   font-size: 150%;
   position: relative;
@@ -53,7 +52,6 @@
   width: 100%;
 }
 
-
 .card > .card-content > img {
   width: auto;
   height: 400px;
@@ -69,7 +67,7 @@
   height: 60px;
 }
 
-.card .pure-button img {  
+.card .pure-button img {
   position: relative;
   max-height: 80%;
   border-radius: 0px;

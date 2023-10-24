@@ -11,7 +11,7 @@
   margin-top: 120px;
   margin: 0;
   margin-left: 330px;
-  padding-bottom: 30px
+  padding-bottom: 30px;
 }
 
 #shop-cards,
@@ -51,10 +51,9 @@
   height: 600px;
 }
 
-.card>.card-content {
+.card > .card-content {
   width: 400px;
 }
-
 
 .side-card {
   margin-left: -370px;
@@ -75,7 +74,6 @@
 
 .display-name-for {
   padding-bottom: 1rem;
-
 }
 
 #title,
@@ -98,8 +96,7 @@
   font-size: 120%;
 }
 
-
-.card>.card-content>img {
+.card > .card-content > img {
   width: auto;
   height: 350px;
 }
@@ -142,7 +139,7 @@
   justify-content: center;
 }
 
-.button-content>p {
+.button-content > p {
   position: relative;
   color: white;
   font-size: 120%;
@@ -165,7 +162,6 @@
     margin-left: -275px;
   }
 }
-
 
 @media screen and (max-width: 850px) {
   #side-cards {

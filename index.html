@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Conestoga Computer Science Club</title>
-    <meta name="description" content="The Conestoga Computer Science Club seeks to further students' interest and understanding of Computer Science through enriching experiences. We hold weekly meetings and host contests, hackathons, and more! Stop by after school on Mondays in room 2005.">
-    <meta name="theme-color" content="#eaaded">
+    <meta
+      name="description"
+      content="The Conestoga Computer Science Club seeks to further students' interest and understanding of Computer Science through enriching experiences. We hold weekly meetings and host contests, hackathons, and more! Stop by after school on Mondays in room 2005."
+    />
+    <meta name="theme-color" content="#eaaded" />
 
     <!--CSS re-used across stogacs.club -->
-    <link rel="stylesheet" href="/style/theme.css">
-    <link rel="stylesheet" href="/style/navbar.css">
-    
+    <link rel="stylesheet" href="/style/theme.css" />
+    <link rel="stylesheet" href="/style/navbar.css" />
+
     <!-- Load in page specific CSS -->
-    <link rel="stylesheet" href="/style/main.css">
-    <link rel="stylesheet" href="/style/tooltips.css">
+    <link rel="stylesheet" href="/style/main.css" />
+    <link rel="stylesheet" href="/style/tooltips.css" />
 
     <!-- Load in external CSS Libraries -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <header>
-        <p class="navbar-title">Conestoga Computer Science Club</p>
-        <input type="checkbox" id="navbar-click">
-        <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
-        <ul id="navbar-links">
-            <!--todo: add gallery some where?/ (MEDIA PAGE!)-->
-            <!--todo: add credits to README-->
-            <li><a href="#about">About</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-            <li><a href="/resources">Resources</a></li>
-            <li><a href="/leaderboard">Shekels<span class="badge-nav">Beta</span></a></li>
-            <li><a href="/presentations">Presentations</a></li>
-            <!--<li><a href="/gallery">Gallery</a></li>-->
-            <!--
+      <p class="navbar-title">Conestoga Computer Science Club</p>
+      <input type="checkbox" id="navbar-click" />
+      <label for="navbar-click" class="navbar-toggle"> <i class="fas fa-bars"> </i></label>
+      <ul id="navbar-links">
+        <!--todo: add gallery some where?/ (MEDIA PAGE!)-->
+        <!--todo: add credits to README-->
+        <li><a href="#about">About</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li>
+          <a href="/leaderboard">Shekels</a>
+        </li>
+        <li>
+          <a href="/presentations">Presentations<span class="badge-nav">Beta</span></a>
+        </li>
+        <!--<li><a href="/gallery">Gallery</a></li>-->
+        <!--
               When the Scratchathon, CodeFest, and hackStoga pages are completed, 
               uncomment scripts/main.js so it can add the seasonal event to this navbar
             -->
-        </ul>
+      </ul>
     </header>
     <section id="splash" class="screen">
-      <img class="logo-piece" id="base" src="/media/animated_logo/background.png">
-      <img class="logo-piece" id="gold" src="/media/animated_logo/gold.png">
-      <img class="logo-piece" id="laptop" src="/media/animated_logo/laptop.png">
-      <img class="logo-piece" id="brackets" src="/media/animated_logo/brackets.png">
-      <img class="logo-piece" id="scroll" src="/media/animated_logo/scroll.png">
-      <p class="logo-piece" id="name">Conestoga<br>Computer<br>Science Club</p>
-      <p id="banner-text">Mondays after school in room <span style="color: var(--offwhite);">2005</span></p>
+      <img class="logo-piece" id="base" src="/media/animated_logo/background.png" />
+      <img class="logo-piece" id="gold" src="/media/animated_logo/gold.png" />
+      <img class="logo-piece" id="laptop" src="/media/animated_logo/laptop.png" />
+      <img class="logo-piece" id="brackets" src="/media/animated_logo/brackets.png" />
+      <img class="logo-piece" id="scroll" src="/media/animated_logo/scroll.png" />
+      <p class="logo-piece" id="name"> Conestoga<br />Computer<br />Science Club </p>
+      <p id="banner-text">
+        Mondays after school in room
+        <span style="color: var(--offwhite)">2005</span>
+      </p>
     </section>
     <section id="about" class="screen pure-g">
       <div class="pure-u-md-1-1 formatting-separator"></div>
@@ -58,10 +74,21 @@
       </div>
       <div class="textbox pure-u-md-11-24">
         <h2>About Us</h2>
-        <p><code>Hello World</code>, and welcome to the Conestoga Computer Science Club website! In addition to our weekly meetings (on Mondays in room 2005), we organize a variety of events throughout the year. Our flagship event is hackStoga (Stoga's annual hackathon), but we also organize a Scratchathon, two CodeFests, and participate and sometimes win local events. You should join our <a href="https://schoology.tesd.net/group/812485279" target="_blank">Schoology group</a>!</p>
-        
+        <p>
+          <code>Hello World</code>, and welcome to the Conestoga Computer Science Club website! In
+          addition to our weekly meetings (on Mondays in room 2005), we organize a variety of events
+          throughout the year. Our flagship event is hackStoga (Stoga's annual hackathon), but we
+          also organize a Scratchathon, two CodeFests, and participate and sometimes win local
+          events. You should join our
+          <a href="https://schoology.tesd.net/group/812485279" target="_blank">Schoology group</a>!
+        </p>
+
         <div id="trailer">
-          <iframe src="https://www.youtube-nocookie.com/embed/-6l0NWxp40k?autohide=1&modestbranding=0&rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/-6l0NWxp40k?autohide=1&modestbranding=0&rel=0"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
       <div class="pure-u-md-1-24">
@@ -70,37 +97,83 @@
       <div id="accolades" class="textbox pure-u-md-10-24">
         <h2>Wins</h2>
         <p>
-          <a href="https://www.pclassic.org/" target="_blank">Philadelphia Classic</a><br>
-           <span class="tooltip">➔ Fall 1st Place Novice Division (2018)<tooltip>Matt Gusdorff, Rohit Chatterjee, Mihir Dhamankar</tooltip></span><br>
-           <span class="tooltip">➔ Spring 1st Place Novice Division (2017)<tooltip>Jason Tu, Isaac Singer, Gary Lu</tooltip></span><br>
-           <span class="tooltip">➔ Spring 2nd Place Novice Division (2015)<tooltip>Jason Tu, Orion Forowycz, Aaron Lee</tooltip></span><br>
-           <span class="tooltip">➔ Spring Top 10 (2015)<tooltip>Dennis Lee, Jeffrey Huang, Michael Tao, Narahari Bharadwaj</tooltip></span><br>
-           <span>➔ Spring Top 10 (2013)<br></span>
-           <span class="tooltip">➔ 3rd Place (2012)<tooltip>Jed Thompson, Jichao Sun, Scott Shi, Allen Zhu</tooltip></span>
+          <a href="https://www.pclassic.org/" target="_blank">Philadelphia Classic</a><br />
+          <span class="tooltip"
+            >➔ Fall 1st Place Novice Division (2018)<tooltip
+              >Matt Gusdorff, Rohit Chatterjee, Mihir Dhamankar</tooltip
+            ></span
+          ><br />
+          <span class="tooltip"
+            >➔ Spring 1st Place Novice Division (2017)<tooltip
+              >Jason Tu, Isaac Singer, Gary Lu</tooltip
+            ></span
+          ><br />
+          <span class="tooltip"
+            >➔ Spring 2nd Place Novice Division (2015)<tooltip
+              >Jason Tu, Orion Forowycz, Aaron Lee</tooltip
+            ></span
+          ><br />
+          <span class="tooltip"
+            >➔ Spring Top 10 (2015)<tooltip
+              >Dennis Lee, Jeffrey Huang, Michael Tao, Narahari Bharadwaj</tooltip
+            ></span
+          ><br />
+          <span>➔ Spring Top 10 (2013)<br /></span>
+          <span class="tooltip"
+            >➔ 3rd Place (2012)<tooltip
+              >Jed Thompson, Jichao Sun, Scott Shi, Allen Zhu</tooltip
+            ></span
+          >
         </p>
         <p>
-          <a href="https://hackbca.com/" target="_blank">hackBCA</a><br>
-            <span class="tooltip">➔ Top 10 and Best Mobile App (2017)<tooltip>Jason Tu, Jason Kim, Orion Forowycz</tooltip></span><br>
+          <a href="https://hackbca.com/" target="_blank">hackBCA</a><br />
+          <span class="tooltip"
+            >➔ Top 10 and Best Mobile App (2017)<tooltip
+              >Jason Tu, Jason Kim, Orion Forowycz</tooltip
+            ></span
+          ><br />
         </p>
         <p>
-          <a href="https://blueprint.hackmit.org/" target="_blank">MIT Blueprint</a><br>
-            <span class="tooltip">➔ Most Spirited (2018)<tooltip>Aaron Lee, Brady Monroe</tooltip></span><br>
-            <span class="tooltip">➔ Best Continued Hack (2017)<tooltip>Jason Tu, Vikas Chelur, Michael Fan</tooltip></span><br>
-            <span class="tooltip">➔ 3rd Place Novice Division (2016)<tooltip>Jason Tu, Jason Kim, Orion Forowycz, Aaron Lee</tooltip></span><br>
+          <a href="https://blueprint.hackmit.org/" target="_blank">MIT Blueprint</a><br />
+          <span class="tooltip"
+            >➔ Most Spirited (2018)<tooltip>Aaron Lee, Brady Monroe</tooltip></span
+          ><br />
+          <span class="tooltip"
+            >➔ Best Continued Hack (2017)<tooltip
+              >Jason Tu, Vikas Chelur, Michael Fan</tooltip
+            ></span
+          ><br />
+          <span class="tooltip"
+            >➔ 3rd Place Novice Division (2016)<tooltip
+              >Jason Tu, Jason Kim, Orion Forowycz, Aaron Lee</tooltip
+            ></span
+          ><br />
         </p>
         <p>
-          <a href="https://hackmhs.com/" target="_blank">hackMHS</a><br>
-            <span class="tooltip">➔ Best Usage of AWS (2016)<tooltip>Jason Tu, Richard Xu</tooltip></span><br>
-            <span class="tooltip">➔ Best Education Hack (2016)<tooltip>Jack Damasco, et al.</tooltip></span><br>
+          <a href="https://hackmhs.com/" target="_blank">hackMHS</a><br />
+          <span class="tooltip"
+            >➔ Best Usage of AWS (2016)<tooltip>Jason Tu, Richard Xu</tooltip></span
+          ><br />
+          <span class="tooltip"
+            >➔ Best Education Hack (2016)<tooltip>Jack Damasco, et al.</tooltip></span
+          ><br />
         </p>
         <p>
-          <a href="https://www.cs.swarthmore.edu/info/csnews/swatlocalhackday.html" target="_blank">Swarthmore College Local Hack Day</a><br>
-            <span class="tooltip">➔ Best Overall (2016)<tooltip>Jason Tu, Michael Fan, Orion Forowycz, Richard Xu</tooltip></span><br>
+          <a href="https://www.cs.swarthmore.edu/info/csnews/swatlocalhackday.html" target="_blank"
+            >Swarthmore College Local Hack Day</a
+          ><br />
+          <span class="tooltip"
+            >➔ Best Overall (2016)<tooltip
+              >Jason Tu, Michael Fan, Orion Forowycz, Richard Xu</tooltip
+            ></span
+          ><br />
         </p>
         <p>
-          <a href="https://www.cs.widener.edu/contest/" target="_blank">Widener Programming Competition</a><br>
-          <span class="tooltip">➔ Spring Top 10 (2022)</span><br>
-            <span class="tooltip">➔ 3rd Place (2015)</span><br>
+          <a href="https://www.cs.widener.edu/contest/" target="_blank"
+            >Widener Programming Competition</a
+          ><br />
+          <span class="tooltip">➔ Spring Top 10 (2022)</span><br />
+          <span class="tooltip">➔ 3rd Place (2015)</span><br />
         </p>
       </div>
       <div class="pure-u-md-1-24">
@@ -109,7 +182,10 @@
       <div class="pure-u-md-1-1 formatting-separator"></div>
       <div class="wavy-divider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"
+          ></path>
         </svg>
       </div>
     </section>
@@ -119,15 +195,30 @@
       <div class="pure-u-md-1-24">
         <!-- formatting div PRE-->
       </div>
-    <div class="textbox pure-u-md-11-24">
-      <h2>Accounts</h2>
-      <p>We operate accounts on several sites, some of which are listed below:</p>
-      <p style="font-size: 110%;">
-        <a href="mailto:stogacsclub@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> Email</a> — If you want to shoot us an email, you can reach us at <code>officers@stogacs.club</code><br><br>
-        <a href="https://github.com/stogacs" target="_blank"><i class="fa-brands fa-github"></i> Github</a> — Our GitHub organization page with all our repos (inlcuding <a href="https://github.com/stogacs/website" target="_blank">this site</a>)<br><br>
-        <a href="https://schoology.tesd.net/group/812485279" target="_blank"><i class="fa-solid fa-users"></i> Schoology</a> — You can join our Schoology group by clicking <a href="https://schoology.tesd.net/enroll/group?code=MRV4S-28MM5" target="_blank">this link</a> or with the code <code>MRV4S-28MM5</code><br><br>
-      </p>
-     </div>
+      <div class="textbox pure-u-md-11-24">
+        <h2>Accounts</h2>
+        <p> We operate accounts on several sites, some of which are listed below: </p>
+        <p style="font-size: 110%">
+          <a href="mailto:stogacsclub@gmail.com" target="_blank"
+            ><i class="fa-solid fa-envelope"></i> Email</a
+          >
+          — If you want to shoot us an email, you can reach us at
+          <code>officers@stogacs.club</code><br /><br />
+          <a href="https://github.com/stogacs" target="_blank"
+            ><i class="fa-brands fa-github"></i> Github</a
+          >
+          — Our GitHub organization page with all our repos (inlcuding
+          <a href="https://github.com/stogacs/website" target="_blank">this site</a>)<br /><br />
+          <a href="https://schoology.tesd.net/group/812485279" target="_blank"
+            ><i class="fa-solid fa-users"></i> Schoology</a
+          >
+          — You can join our Schoology group by clicking
+          <a href="https://schoology.tesd.net/enroll/group?code=MRV4S-28MM5" target="_blank"
+            >this link</a
+          >
+          or with the code <code>MRV4S-28MM5</code><br /><br />
+        </p>
+      </div>
       <div class="pure-u-md-1-24">
         <!-- formatting div POST-->
       </div>
@@ -137,50 +228,79 @@
         </div>
 
         <div class="pure-g officer">
-          <div class="pure-u-1-12"></div><div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/24ZhangW.png">
-          </div><div class="pure-u-1-12"></div><div class="pure-u-1-2"><p>
-            <b style="font-size: 120%;">Wilson Zhang</b><br>
-            Co-President
-          </p></div><div class="pure-u-1-12"></div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-4">
+            <img class="pure-img" src="/media/admins/24ZhangW.png" />
+          </div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-2">
+            <p>
+              <b style="font-size: 120%">Wilson Zhang</b><br />
+              Co-President
+            </p>
+          </div>
+          <div class="pure-u-1-12"></div>
         </div>
 
         <div class="pure-g officer">
-          <div class="pure-u-1-12"></div><div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/24ZhangR.png">
-          </div><div class="pure-u-1-12"></div><div class="pure-u-1-2"><p>
-            <b style="font-size: 120%;">Richard Zhang</b><br>
-            Co-President
-          </p></div><div class="pure-u-1-12"></div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-4">
+            <img class="pure-img" src="/media/admins/24ZhangR.png" />
+          </div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-2">
+            <p>
+              <b style="font-size: 120%">Richard Zhang</b><br />
+              Co-President
+            </p>
+          </div>
+          <div class="pure-u-1-12"></div>
         </div>
 
         <div class="pure-g officer">
-          <div class="pure-u-1-12"></div><div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/unknown.png">
-          </div><div class="pure-u-1-12"></div><div class="pure-u-1-2"><p>
-            <b style="font-size: 120%;">Anay Mohile</b><br>
-            Officer
-          </p></div><div class="pure-u-1-12"></div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-4">
+            <img class="pure-img" src="/media/admins/24MohileA.png" />
+          </div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-2">
+            <p>
+              <b style="font-size: 120%">Anay Mohile</b><br />
+              Officer
+            </p>
+          </div>
+          <div class="pure-u-1-12"></div>
         </div>
 
         <div class="pure-g officer">
-          <div class="pure-u-1-12"></div><div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/24DavisD.png">
-          </div><div class="pure-u-1-12"></div><div class="pure-u-1-2"><p>
-            <b style="font-size: 120%;">Daniel Davis</b><br>
-            Officer
-          </p></div><div class="pure-u-1-12"></div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-4">
+            <img class="pure-img" src="/media/admins/24DavisD.png" />
+          </div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-2">
+            <p>
+              <b style="font-size: 120%">Daniel Davis</b><br />
+              Officer
+            </p>
+          </div>
+          <div class="pure-u-1-12"></div>
         </div>
 
         <div class="pure-g officer">
-          <div class="pure-u-1-12"></div><div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/unknown.png">
-          </div><div class="pure-u-1-12"></div><div class="pure-u-1-2"><p>
-            <b style="font-size: 120%;">Milan Agarwala</b><br>
-            Officer
-          </p></div><div class="pure-u-1-12"></div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-4">
+            <img class="pure-img" src="/media/admins/unknown.png" />
+          </div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-2">
+            <p>
+              <b style="font-size: 120%">Milan Agarwala</b><br />
+              Officer
+            </p>
+          </div>
+          <div class="pure-u-1-12"></div>
         </div>
-
       </div>
       <div class="pure-u-md-1-24">
         <!-- formatting div POST-->

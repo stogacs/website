@@ -1,160 +1,162 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
 :root {
-    --dark: #212121;
-    --darker: #121212;
-    --superdark: #0a0a0a;
-    --light: #fefefe;
-    --superlight: #ffffff;
-    --red: #e83b3b;
-    --darkred: #ae2334;
-    --orange: #f8a435;
-    --offwhite: #c7dcd0;
-    --magenta: #a884f3;
-    --darkpurple: #2e222f;
-    --superdarkpurple: #251c26;
+  --dark: #212121;
+  --darker: #121212;
+  --superdark: #0a0a0a;
+  --light: #fefefe;
+  --superlight: #ffffff;
+  --red: #e83b3b;
+  --darkred: #ae2334;
+  --orange: #f8a435;
+  --offwhite: #c7dcd0;
+  --magenta: #a884f3;
+  --darkpurple: #2e222f;
+  --superdarkpurple: #251c26;
 
-    --bronze: #9e4539;
-    --silver: #30e1b9;
-    --gold: #f79617;
-    --platinum: #f04f78;
+  --bronze: #9e4539;
+  --silver: #30e1b9;
+  --gold: #f79617;
+  --platinum: #f04f78;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Space Grotesk', sans-serif;
-    color: var(--light);
-    background-color: var(--dark);
-    overflow-y: visible;
-    overflow-x: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--light);
+  background-color: var(--dark);
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 
 a:link {
-    color: var(--red);
+  color: var(--red);
 }
 
 a:visited {
-    color: var(--red);
+  color: var(--red);
 }
 
 a:hover {
-    color: var(--darkred);
+  color: var(--darkred);
 }
 
 a:active {
-    color: var(--darkred);
+  color: var(--darkred);
 }
 
 .light {
-    color: var(--dark);
-    background-color: var(--light);
+  color: var(--dark);
+  background-color: var(--light);
 }
 
 .darker {
-    color: var(--light);
-    background-color: var(--darker);
+  color: var(--light);
+  background-color: var(--darker);
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .flex-center {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .rounded {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 #title {
-    font-size: calc(1em + 5vw);
-    margin: 0 0 0 70px;
-    font-weight: bolder;
-    text-shadow: 2px 2px 3px var(--superdark);
+  font-size: calc(1em + 5vw);
+  margin: 0 0 0 70px;
+  font-weight: bolder;
+  text-shadow: 2px 2px 3px var(--superdark);
 }
 
 #main-cover {
-    height: 90vh;
-    background-size: cover;
-    background-image: url("../media/banners/sponsor24.png");
-    background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: multiply;
+  height: 90vh;
+  background-size: cover;
+  background-image: url('../media/banners/sponsor24.png');
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
 }
 
 .video {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    height: auto;
-    border-radius: 1em;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  border-radius: 1em;
 }
 
 .video-section {
-    height: 30vh;
+  height: 30vh;
 }
 
 .icon {
-    width: 4em;
+  width: 4em;
 }
 
 .sponsor-card {
-    margin: 1em;
-    background-color: var(--dark);
-    color: var(--light);
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
-    transition: transform ease 300ms;
+  margin: 1em;
+  background-color: var(--dark);
+  color: var(--light);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  transition: transform ease 300ms;
 }
 
 .sponsor-card:not(:hover) {
-    transform: translate(0, 0px);
+  transform: translate(0, 0px);
 }
 
 .sponsor-card:hover {
-    transform: translate(0, -10px);
+  transform: translate(0, -10px);
 }
 
 .sponsor-content {
-    width: 80%;
+  width: 80%;
 }
 
 .sponsor-indicator {
-    width: 80%;
-    height: 2px;
-    margin: 0 0 1em 0;
-    border-radius: 100%;
+  width: 80%;
+  height: 2px;
+  margin: 0 0 1em 0;
+  border-radius: 100%;
 }
 
 .leadership-card {
-    margin: 0.5em;
-    padding: 1.5em;
-    background-color: var(--darker);
-    color: var(--light);
-    transition: transform ease 300ms;
-    min-height: 85%;
+  margin: 0.5em;
+  padding: 1.5em;
+  background-color: var(--darker);
+  color: var(--light);
+  transition: transform ease 300ms;
+  min-height: 85%;
 }
 
 .leadership-card:not(:hover) {
-    transform: translate(0, 0px);
+  transform: translate(0, 0px);
 }
 
 .leadership-card:hover {
-    transform: translate(0, -10px);
+  transform: translate(0, -10px);
 }
 
 .leadership-card > img {
-    min-width: 100%;
+  min-width: 100%;
 }
 
-.leadership-card > h3, h2, p {
-    overflow-wrap: break-word;
+.leadership-card > h3,
+h2,
+p {
+  overflow-wrap: break-word;
 }

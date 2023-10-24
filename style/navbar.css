@@ -1,130 +1,130 @@
 header {
-	position: fixed;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	padding-left: 10%;
-	padding-right: 10%;
-	width: 100vw;
-	background-color: var(--navbar-color);
-	z-index: 1;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 100vw;
+  background-color: var(--navbar-color);
+  z-index: 1;
 }
 
 /* Modified badge for navbar */
 .badge-nav {
-	font-family: Inter;
-	position: relative;
-	bottom: 2px;
-	margin-left: 5px;
-	padding: 3px 7px;
-	font-size: 12px;
-	font-weight: 700;
-	color: #fff;
-	text-align: center;
-	white-space: nowrap;
-	background-color: var(--badge);
-	border-radius: 10px;
+  font-family: Inter;
+  position: relative;
+  bottom: 2px;
+  margin-left: 5px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--badge);
+  border-radius: 10px;
 }
 
 #navbar-click {
-	display: none;
+  display: none;
 }
 
 #navbar-links li,
 #navbar-links li a,
 .navbar-title {
-	font-family: "Jetbrains Mono", monospace;
-	font-weight: 500;
-	font-size: 16px;
-	text-decoration: none;
-	color: var(--navbar-text);
+  font-family: 'Jetbrains Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--navbar-text);
 }
 
 #navbar-links li {
-	display: inline-block;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	padding-left: 20px;
-	padding-right: 20px;
+  display: inline-block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #navbar-links li a {
-	transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 #navbar-links li a:hover,
 .active {
-	color: var(--navbar-links);
+  color: var(--navbar-links);
 }
 
 .navbar-title {
-	font-size: 20px;
-	font-weight: 400;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .navbar-toggle {
-	color: var(--navbar-text);
-	display: none;
-	cursor: pointer;
-	padding-left: 10px;
+  color: var(--navbar-text);
+  display: none;
+  cursor: pointer;
+  padding-left: 10px;
 }
 
 @media (max-width: 1250px) {
-	#navbar-links {
-		position: fixed;
-		top: 80px;
-		left: -100%;
-		background-color: var(--navbar-color);
-		height: 100vh;
-		width: 100%;
-		display: block;
-		text-align: center;
-		transition: all 0.3s ease;
-	}
+  #navbar-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background-color: var(--navbar-color);
+    height: 100vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
 
-	.navbar-toggle {
-		display: inline-block;
-	}
+  .navbar-toggle {
+    display: inline-block;
+  }
 
-	#navbar-click:not(:checked)~#navbar-links {
-		left: -100%;
-	}
+  #navbar-click:not(:checked) ~ #navbar-links {
+    left: -100%;
+  }
 
-	#navbar-click:checked~#navbar-links {
-		left: 0%;
-	}
+  #navbar-click:checked ~ #navbar-links {
+    left: 0%;
+  }
 
-	#navbar-click:checked~.navbar-toggle i:before {
-		content: "\f00d";
-	}
+  #navbar-click:checked ~ .navbar-toggle i:before {
+    content: '\f00d';
+  }
 
-	#navbar-links li {
-		display: block;
-		margin-top: 40px;
-	}
+  #navbar-links li {
+    display: block;
+    margin-top: 40px;
+  }
 
-	#navbar-links .dropdown {
-		position: relative;
-	}
+  #navbar-links .dropdown {
+    position: relative;
+  }
 
-	#navbar-links .dropdown .dropdown-content {
-		display: none;
-		position: absolute;
-		background-color: var(--navbar-color);
-		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-		z-index: 1;
-	}
+  #navbar-links .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--navbar-color);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
 
-	#navbar-links .dropdown .dropdown-content a {
-		color: var(--navbar-text);
-		padding: 12px 16px;
-		text-decoration: none;
-		display: block;
-	}
+  #navbar-links .dropdown .dropdown-content a {
+    color: var(--navbar-text);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
 
-	#navbar-links .dropdown:hover .dropdown-content {
-		display: block;
-	}
+  #navbar-links .dropdown:hover .dropdown-content {
+    display: block;
+  }
 }

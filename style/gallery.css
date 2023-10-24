@@ -2,13 +2,13 @@
 
 /* screens */
 @media screen and (min-width: 800px) {
-    .formatting-separator {
-        height: 100px;
-    }
+  .formatting-separator {
+    height: 100px;
+  }
 }
 
 #splash {
-    /* temporary, lets try to find another banner for this page */
-    background-image: url("/media/banners/resources.png");
-    font-family: "Montserrat", sans-serif;
+  /* temporary, lets try to find another banner for this page */
+  background-image: url('/media/banners/resources.png');
+  font-family: 'Montserrat', sans-serif;
 }

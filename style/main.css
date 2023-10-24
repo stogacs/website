@@ -1,231 +1,231 @@
 :root {
-    --logo-text: #1ebc73;
+  --logo-text: #1ebc73;
 
-    --awards-background: #212121;
-    --awards-text: #fefefe;
+  --awards-background: #212121;
+  --awards-text: #fefefe;
 
-    --contacts-background: #212121;
-    --contacts-text: #fefefe;
+  --contacts-background: #212121;
+  --contacts-text: #fefefe;
 
-    --account-background: #121212;
+  --account-background: #121212;
 }
 
 /* screens */
 @media screen and (min-width: 800px) {
-    .formatting-separator {
-        height: 100px;
-    }
+  .formatting-separator {
+    height: 100px;
+  }
 }
 
 #about {
-    background-color: var(--light);
+  background-color: var(--light);
 }
 
 .badge {
-    font-family: Inter;
-    position: relative;
-    bottom: 7px;
-    min-width: 10px;
-    margin-left: 5px;
-    padding: 3px 7px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    background-color: var(--badge);
-    border-radius: 10px;
+  font-family: Inter;
+  position: relative;
+  bottom: 7px;
+  min-width: 10px;
+  margin-left: 5px;
+  padding: 3px 7px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--badge);
+  border-radius: 10px;
 }
 
 #contacts {
-    background-color: var(--contacts-background);
-    color: var(--contacts-text)
+  background-color: var(--contacts-background);
+  color: var(--contacts-text);
 }
 
 /* textbox */
 .textbox {
-    margin: inherit !important;
-    padding: inherit !important;
-    font-size: 130%;
+  margin: inherit !important;
+  padding: inherit !important;
+  font-size: 130%;
 }
 
-.textbox>h1,
+.textbox > h1,
 h2,
 h3 {
-    margin: 1.5rem;
-    font-weight: 600;
+  margin: 1.5rem;
+  font-weight: 600;
 }
 
-.textbox>* {
-    margin: 1.5rem;
+.textbox > * {
+  margin: 1.5rem;
 }
 
 /* animated logo */
 .logo-piece {
-    width: 20em;
-    position: absolute;
-    pointer-events: none;
-    image-rendering: pixelated;
+  width: 20em;
+  position: absolute;
+  pointer-events: none;
+  image-rendering: pixelated;
 }
 
 #base {
-    animation: 1s ease-out 0s 1 spinny;
+  animation: 1s ease-out 0s 1 spinny;
 }
 
 #scroll {
-    animation: 0.45s ease-out 0s 1 spinny-3;
+  animation: 0.45s ease-out 0s 1 spinny-3;
 }
 
 #gold {
-    animation: 1s ease-out 0s 1 spinny-2;
+  animation: 1s ease-out 0s 1 spinny-2;
 }
 
 #laptop {
-    animation: 0.5s ease-out 0s 1 spinny-3;
+  animation: 0.5s ease-out 0s 1 spinny-3;
 }
 
 #brackets {
-    animation: 1s ease-out 0s 1 spinny;
+  animation: 1s ease-out 0s 1 spinny;
 }
 
 #name {
-    color: var(--logo-text);
-    font-size: medium;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: type 3s steps(27, end) .51s 1 normal both;
+  color: var(--logo-text);
+  font-size: medium;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: type 3s steps(27, end) 0.51s 1 normal both;
 }
 
 #banner-text {
-    align-self: end;
-    font-weight: 500;
-    padding-bottom: 7em;
-    color: var(--banner-text);
-    font-size: large;
+  align-self: end;
+  font-weight: 500;
+  padding-bottom: 7em;
+  color: var(--banner-text);
+  font-size: large;
 }
 
 /* trailer embed */
 #trailer {
-    position: relative;
-    padding-bottom: 56.25%;
+  position: relative;
+  padding-bottom: 56.25%;
 }
 
-#trailer>iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 1em;
+#trailer > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
 }
 
 /* awards section */
 #accolades {
-    background-color: var(--awards-background);
-    color: var(--awards-text);
+  background-color: var(--awards-background);
+  color: var(--awards-text);
 }
 
-#accolades>h2 {
-    text-align: center;
+#accolades > h2 {
+  text-align: center;
 }
 
-#accolades>p span {
-    font-size: smaller;
+#accolades > p span {
+  font-size: smaller;
 }
 
 /* wavy divider */
 .wavy-divider {
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .wavy-divider svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    transform: translateY(2px);
-    height: 120px;
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  transform: translateY(2px);
+  height: 120px;
 }
 
 .wavy-divider .shape-fill {
-    fill: var(--contacts-background);
+  fill: var(--contacts-background);
 }
 
 /* leadership cards */
 .officer {
-    background-color: var(--account-background);
-    width: 90%;
-    border-radius: 1rem;
+  background-color: var(--account-background);
+  width: 90%;
+  border-radius: 1rem;
 }
 
-.officer>.pure-u-1-4>.pure-img {
-    margin-top: 10%;
-    margin-bottom: 10%;
-    border-radius: 4rem;
+.officer > .pure-u-1-4 > .pure-img {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border-radius: 4rem;
 }
 
-.officer>.pure-u-1-2 {
-    display: flex;
-    align-items: center;
+.officer > .pure-u-1-2 {
+  display: flex;
+  align-items: center;
 }
 
 /* mobile */
 @media screen and (max-width: 800px) {
-    #accolades {
-        background-color: var(--superdark);
-        width: 100%;
-    }
+  #accolades {
+    background-color: var(--superdark);
+    width: 100%;
+  }
 
-    .wavy-divider {
-        background-color: var(--superdark);
-    }
+  .wavy-divider {
+    background-color: var(--superdark);
+  }
 }
 
 @media screen and (min-width: 800px) {
-    #accolades {
-        border-radius: 1rem;
-    }
+  #accolades {
+    border-radius: 1rem;
+  }
 }
 
 /* animations */
 @keyframes spinny {
-    0% {
-        transform: scale(0.5, 0.5);
-    }
+  0% {
+    transform: scale(0.5, 0.5);
+  }
 
-    40% {
-        transform: scale(1, 1);
-    }
+  40% {
+    transform: scale(1, 1);
+  }
 }
 
 @keyframes spinny-2 {
-    0% {
-        transform: scale(0.2, 0.2);
-    }
+  0% {
+    transform: scale(0.2, 0.2);
+  }
 
-    40% {
-        transform: scale(1, 1);
-    }
+  40% {
+    transform: scale(1, 1);
+  }
 }
 
 @keyframes spinny-3 {
-    85% {
-        transform: scaleY(1.4);
-    }
+  85% {
+    transform: scaleY(1.4);
+  }
 
-    100% {
-        transform: scaleY(1);
-    }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 @keyframes type {
-    0% {
-        width: 0;
-    }
+  0% {
+    width: 0;
+  }
 
-    100% {
-        width: 20rem;
-    }
+  100% {
+    width: 20rem;
+  }
 }

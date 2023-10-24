@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sharick Shekels | Conestoga Computer Science Club</title>
-    <meta name="description" content="View the Shekel leaderboard for the club.">
-    <meta name="theme-color" content="#eaaded">
+    <meta name="description" content="View the Shekel leaderboard for the club." />
+    <meta name="theme-color" content="#eaaded" />
 
     <!--CSS re-used across stogacs.club -->
-    <link rel="stylesheet" href="/style/theme.css">
-    <link rel="stylesheet" href="/style/navbar.css">
-    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/theme.css" />
+    <link rel="stylesheet" href="/style/navbar.css" />
+    <link rel="stylesheet" href="/style/main.css" />
 
     <!-- Load in page specific CSS -->
-    <link rel="stylesheet" href="/style/leaderboard/leaderboard.css">
-    <link rel="stylesheet" href="/style/tooltips.css">
+    <link rel="stylesheet" href="/style/leaderboard/leaderboard.css" />
+    <link rel="stylesheet" href="/style/tooltips.css" />
 
     <!-- Load in page specific scripts -->
     <script src="/scripts/utils.js"></script>
@@ -25,44 +24,66 @@
 
     <!-- Load in external CSS Libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <p class="navbar-title">Conestoga Computer Science Club</p>
-        <input type="checkbox" id="navbar-click">
-        <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
-        <ul id="navbar-links">
-            <li><a href="/">Home</a></li>
-        </ul>
+      <p class="navbar-title">Conestoga Computer Science Club</p>
+      <input type="checkbox" id="navbar-click" />
+      <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
+      <ul id="navbar-links">
+        <li><a href="/">Home</a></li>
+      </ul>
     </header>
 
     <section id="leaderboard-section" class="screen pure-g">
-        <div class="pure-u-1-12"><!-- formatting div PRE--></div>
-        <div class="pure-u-5-6 pure-g">
-            <h1 class="pure-u-1 center-text">Sharick Shekels<span class="badge">Beta</span></h1>
-            <h2 class="center-text error-text" id="error-display" style="display:none"></h2>
-            <ul id="leaderboard-list">
-                <noscript>
-                    <p class="center-text">Please enable JavaScript to enable leaderboard functionality</p>
-                </noscript>
-            </ul>
-            <div class="pure-g">
-                <button id="save-button" type="button" class="pure-button pure-button-primary pure-u-1 pure-u-md-1-12"
-                    style=" float: left;display: none; 
-                    justify-content: center;" onclick="updateLeaderboard()">Save</button>
-                <p class="center-text pure-u-1 pure-u-md-5-6" id="footer-text">You can earn shekels by showing up to
-                    meetings or as a prize for helping the club.<br>Signing in is required to set a preferred name or to
-                    use the shop.</p>
-                <button id="new-row-button" type="button"
-                    class="pure-button pure-button-primary pure-u-1 pure-u-md-1-12" style="float: right; display: none;
-                    justify-content: center;" onclick="newRow()">User +</button>
-            </div>
-
-            <!-- formatting div POST-->
+      <div class="pure-u-1-12"><!-- formatting div PRE--></div>
+      <div class="pure-u-5-6 pure-g">
+        <h1 class="pure-u-1 center-text"> Sharick Shekels </h1>
+        <h2 class="center-text error-text" id="error-display" style="display: none"></h2>
+        <ul id="leaderboard-list">
+          <noscript>
+            <p class="center-text">
+              Please enable JavaScript to enable leaderboard functionality
+            </p>
+          </noscript>
+        </ul>
+        <div class="pure-g">
+          <button
+            id="save-button"
+            type="button"
+            class="pure-button pure-button-primary pure-u-1 pure-u-md-1-12"
+            style="float: left; display: none; justify-content: center"
+            onclick="updateLeaderboard()"
+          >
+            Save
+          </button>
+          <p class="center-text pure-u-1 pure-u-md-5-6" id="footer-text">
+            You can earn shekels by showing up to meetings or as a prize for helping the club.<br />Signing
+            in is required to set a preferred name or to use the shop.
+          </p>
+          <button
+            id="new-row-button"
+            type="button"
+            class="pure-button pure-button-primary pure-u-1 pure-u-md-1-12"
+            style="float: right; display: none; justify-content: center"
+            onclick="newRow()"
+          >
+            User +
+          </button>
         </div>
-        <div class="pure-u-1-12"><!-- formatting div POST--></div>
+
+        <!-- formatting div POST-->
+      </div>
+      <div class="pure-u-1-12"><!-- formatting div POST--></div>
     </section>
-</body>
+  </body>
+</html>
