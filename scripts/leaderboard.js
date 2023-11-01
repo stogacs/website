@@ -80,6 +80,9 @@ function getPurchases(userInfo) {
         leaderboard.appendChild(leaderboardTable);
       } else {
         leaderboard.innerHTML = `<p class="center-text error-text">Web access to the leaderboard is disabled.</p>`;
+        document.getElementById('footer-text').innerText = data.hasOwnProperty('message')
+          ? data.message
+          : 'Access to the leaderboard has been disabled by a club officer.';
       }
     })
     .catch((error) => {
