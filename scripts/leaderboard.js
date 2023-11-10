@@ -183,6 +183,15 @@ document.addEventListener('DOMContentLoaded', async function () {
       window.location.href = '/leaderboard/onboarding/claim.html';
     }
   }
+
+  cookie = getCookie('postLoginRedir');
+  if (cookie) {
+    if (!cookie.includes('http')) {
+      redir = setCookie('postLoginRedir', '', 0);
+      setCookie('postLoginRedir', '', 0);
+      window.location.href = decodeURIComponent(cookie);
+    }
+  }
   let leaderboard = document.getElementById('leaderboard-list');
   leaderboard.innerHTML = `<p class="center-text">Loading leaderboard...</p>`;
   getPurchases(userInfo);

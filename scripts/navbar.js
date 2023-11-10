@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         userInfo.discordUsername + displayTag
       }</a></li>`;
     } else {
-      navbar.innerHTML += `\n<li><a href="/leaderboard/login.html">Login</a></li>`;
+      navbar.innerHTML += `\n<li><a href="/leaderboard/login.html?redirect=${window.location.pathname}">Login</a></li>`;
     }
   });
 });

@@ -45,55 +45,51 @@
     </header>
     <section id="signupDialog" class="modal-background">
       <section class="box">
-        <h1 id="modal-title">Sign up to present</h1>
+        <h1 id="modal-title">Reserve your spot</h1>
 
         <label for="dateSelect">Choose a day:</label>
         <select name="date" id="dateSelect"></select>
 
         <label for="timeSelect">Time Slot:</label>
-        <select name="time" id="timeSelect">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="1+2">Both</option>
-        </select>
+        <select name="time" id="timeSelect"> </select>
+
+        <label id="slot-status" class="text-loading"><b>Checking availability...</b></label>
         <br /><br /><br />
         <label for="topic">Topic:</label>
         <input type="text" id="topic" name="topic" /><br /><br />
         <label for="presenters">Presenters:</label>
         <input type="text" id="presenters" name="presenters" /><br /><br />
+        <p>
+          Please enter the names of all presenters, separated by commas. (e.g. John Smith, Jane
+          Doe). Include your name if you are presenting.
+        </p>
+        <br />
+        <br />
         <label for="link">Presentation Link:</label>
         <input type="text" id="link" name="link" /><br /><br />
         <p>
-          Make sure the presentation is ONLY viewable (no editing)! When creating the link, check
-          that "Anybody with the link can view" is on.
+          Submit a view only link to your presentation here! (Google Slides, PowerPoint Online,
+          etc.)
         </p>
-        <br />
-        <h2>Override Password</h2>
-        <p id="overrideText">
-          This override password will be used such that nobody else can claim this spot, and if you
-          need to edit your sign up, you can input your override password here again to edit it.
-          Note, there is a global override password for club leaders.
-        </p>
-        <br />
-        <label for="pw">Password:</label>
-        <input type="text" id="pw" name="pw" /><br /><br />
-        <button id="submit" onclick="register()">Submit</button>
-        <button class="color-mod" onclick="destroySignup()">Cancel</button>
+        <button id="submit" class="taken" onclick="register()">Submit</button>
+        <button class="color-cancel" onclick="destroySignup()">Cancel</button>
       </section>
     </section>
 
-    <section id="title">
-      <h1 class="pure-u-1 center-text"><strong>Presentations</strong></h1>
-      <noscript>
-        <p class="center-text"> Please enable JavaScript to enable presentation functionality </p>
-      </noscript>
-      <p class="center-text">
-        Preview upcoming presentations, view past presentations, or sign up to present.
-      </p>
-    </section>
+    <section id="header">
+      <section id="title">
+        <h1 class="pure-u-1 center-text"><strong>Presentations</strong></h1>
+        <noscript>
+          <p class="center-text"> Please enable JavaScript to enable presentation functionality </p>
+        </noscript>
+        <p class="center-text">
+          Preview upcoming presentations, view past presentations, or sign up to present.
+        </p>
+      </section>
 
-    <section class="buttons">
-      <button onclick="makeSignup()">Sign Up</button>
+      <section class="buttons">
+        <button onclick="makeSignup()">Sign Up</button>
+      </section>
     </section>
     <section id="upcoming-presentations" class="presentation-list">
       <h2 class="pres-typ">Upcoming</h2>
@@ -106,5 +102,7 @@
     </section>
   </body>
   <!-- Load in page specific scripts -->
+  <script src="/scripts/utils.js"></script>
+  <script src="/scripts/navbar.js"></script>
   <script src="/scripts/presentations/presentations.js"></script>
 </html>

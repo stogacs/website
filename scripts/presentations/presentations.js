@@ -1,126 +1,122 @@
-const link = 'https://presentations-api.frankanator433.repl.co/';
+const link = 'https://shekels.mrsharick.com/';
+let userinfo;
+document.addEventListener('DOMContentLoaded', async function () {
+  await verifyUser().then((userInfo) => {
+    userinfo = userInfo;
+    if (userInfo != null) {
+      if (userInfo.name == null) {
+        window.location.href = '/leaderboard/onboarding/claim.html';
+      }
+    }
+  });
+});
 
-$.get(link + 'getNextDays', (dateData, status) => {
-  var flex = document.getElementById('upc-flex');
-  for (i in dateData) {
-    var item = document.createElement('span');
-    item.className = 'pres-item';
-    flex.appendChild(item);
+$.get(link + 'schedule/presentations/daily', (response, status) => {
+  if (status !== 'success' || !response || !response.schedule) {
+    console.error('Invalid API response.');
+    return;
+  }
 
-    var banner = document.createElement('section');
-    banner.className = 'col-ban';
-    item.appendChild(banner);
-    var title = document.createElement('h1');
-    title.innerHTML = dateData[i];
+  const handleSchedule = (schedule, flexContainerId, isPast) => {
+    const flexContainer = document.getElementById(flexContainerId);
+    if (!flexContainer) {
+      console.error(`No element with ID ${flexContainerId} found.`);
+      return;
+    }
+
+    for (const dayKey in schedule) {
+      if (!schedule.hasOwnProperty(dayKey)) continue;
+
+      const dayCard = createDayCard(dayKey, isPast);
+      const slotsForDay = schedule[dayKey];
+
+      for (const slotIndex in slotsForDay) {
+        if (!slotsForDay.hasOwnProperty(slotIndex)) continue;
+
+        const slotData = slotsForDay[slotIndex][0];
+        if (slotData) {
+          const item = createSlotItem(slotData, parseInt(slotIndex, 10) + 1);
+          dayCard.appendChild(item);
+        }
+      }
+
+      flexContainer.appendChild(dayCard);
+    }
+  };
+
+  const createDayCard = (dayKey, isPast) => {
+    const dayCard = document.createElement('div');
+    dayCard.className = 'pres-item';
+
+    const banner = document.createElement('section');
+    banner.className = `col-ban ${isPast ? 'blue-mod' : ''}`;
+
+    const title = document.createElement('h1');
+    title.textContent = dayKey.split(' ').splice(1, 3).join(' ');
     banner.appendChild(title);
+    dayCard.appendChild(banner);
 
-    var desc = document.createElement('p');
+    return dayCard;
+  };
+
+  const createSlotItem = (slotData, slotNumber) => {
+    const item = document.createElement('div');
+    item.className = 'slot-item';
+
+    const desc = document.createElement('p');
     desc.className = 'pres-desc';
-    desc.id = 'desc-' + dateData[i];
+    desc.id = `desc-${slotData.id}`;
+
+    desc.innerHTML = `
+      <u>Time Slot: ${slotNumber}</u>
+      <br>
+      Topic:
+      <a href="${slotData.link}"><u>
+         ${slotData.topic}
+      </u></a>
+      <br><br>
+      Presenters: ${slotData.presenters}
+      <br><br>`;
+
+    if ((userinfo && userinfo.id == slotData.ownerID) || (userinfo && userinfo.admin)) {
+      desc.innerHTML += `
+      <button class="pure-button pure-button-primary" onclick="makeSignup()">Edit</button>
+      <button class="pure-button button-danger" style="color: #fff; background-color: #970000;" onclick="destroySignup()">Delete</button>
+      `;
+    }
+
     item.appendChild(desc);
-    $.ajax({
-      type: 'GET',
-      url: link + 'requestDayInfo',
-      data: {
-        day: dateData[i],
-      },
-      async: false,
-      success: function (meetingData) {
-        desc.innerHTML =
-          `
-<u>Time Slot 1:</u>
-<br>
-Topic: ` +
-          meetingData[0][0] +
-          `
-<br><br>
-Presenters: ` +
-          meetingData[0][1] +
-          `
-<br><br>
-<u>Time Slot 2:</u>
-<br>
-Topic: ` +
-          meetingData[1][0] +
-          `
-<br><br>
-Presenters: ` +
-          meetingData[1][1];
-      },
-    });
+    return item;
+  };
+
+  if (response.schedule.upcoming) {
+    handleSchedule(response.schedule.upcoming, 'upc-flex', false);
+  }
+  if (response.schedule.past) {
+    handleSchedule(response.schedule.past, 'pas-flex', true);
   }
 });
 
-$.get(link + 'getAllPastDays', (dateData, status) => {
-  console.log(dateData);
-  var flex = document.getElementById('pas-flex');
-  for (i in dateData) {
-    var item = document.createElement('span');
-    item.className = 'pres-item';
-    flex.appendChild(item);
-
-    var banner = document.createElement('section');
-    banner.className = 'col-ban blue-mod';
-    item.appendChild(banner);
-    var title = document.createElement('h1');
-    title.innerHTML = dateData[i];
-    banner.appendChild(title);
-
-    var desc = document.createElement('p');
-    desc.className = 'pres-desc';
-    desc.id = 'desc-' + dateData[i];
-    item.appendChild(desc);
-    $.ajax({
-      type: 'GET',
-      url: link + 'requestDayInfo',
-      data: {
-        day: dateData[i],
-      },
-      async: false,
-      success: function (meetingData) {
-        desc.innerHTML =
-          `
-<u>Time Slot 1:</u>
-<br>
-Topic: <u><a href=` +
-          meetingData[0][2] +
-          `>` +
-          meetingData[0][0] +
-          `</a></u>` +
-          `
-<br><br>
-Presenters: ` +
-          meetingData[0][1] +
-          `
-<br><br>
-<u>Time Slot 2:</u>
-<br>
-Topic: <u><a href=` +
-          meetingData[1][2] +
-          `>` +
-          meetingData[1][0] +
-          `</a></u>` +
-          `
-<br><br>
-Presenters: ` +
-          meetingData[1][1];
-      },
-    });
-  }
-});
-
-$.get(link + 'getAllFutureDays', (nextDays, status) => {
+$.get(link + 'schedule/presentations/formhelper', (nextDays, status) => {
   var sel = document.getElementById('dateSelect');
-  for (i in nextDays) {
+  for (i in nextDays.dates) {
     var option = document.createElement('option');
-    option.text = option.value = nextDays[i];
+    option.text = option.value = nextDays.dates[i];
     sel.add(option);
+  }
+  var slotSel = document.getElementById('timeSelect');
+  for (i in nextDays.slots) {
+    var option = document.createElement('option');
+    option.text = option.value = nextDays.slots[i];
+    slotSel.add(option);
   }
 });
 
 function makeSignup() {
   var backgr = document.getElementById('signupDialog');
   backgr.style.display = 'flex';
+  setTimeout(function () {}, 100);
+  check();
 }
 
 function destroySignup() {
@@ -131,24 +127,55 @@ function destroySignup() {
 function check() {
   $.ajax({
     type: 'GET',
-    url: link + 'status',
+    url: link + 'schedule/presentation/check',
     data: {
-      day: $('#dateSelect').val(),
-      time: $('#timeSelect').val(),
+      date: $('#dateSelect').val(),
+      slot: $('#timeSelect').val(),
     },
     async: false,
     success: function (meetingData) {
-      if (meetingData) {
-        document.getElementById('overrideText').innerHTML = `
-Make an override password for your presentation. <u>Make sure it is not another password you use, there is absolutely no encryption of these.</u> Make sure to remember this, you'll need it to edit.
-                        `;
-        document.getElementById('submit').innerHTML = 'Sign up';
-        document.getElementById('modal-title').innerHTML = 'Sign up to present';
+      presentation = meetingData.presentation;
+      button = document.getElementById('submit');
+
+      button.classList.remove('available');
+      button.classList.remove('taken');
+
+      slotStatus = document.getElementById('slot-status');
+
+      slotStatus.classList.remove('text-loading');
+      slotStatus.classList.remove('text-available');
+      slotStatus.classList.remove('text-taken');
+
+      if (presentation != null) {
+        if (userinfo) {
+          if (userinfo.admin) {
+            button.disabled = false;
+            button.innerHTML = 'Edit';
+            button.classList.add('available');
+
+            slotStatus.innerHTML = "<b>Editing another user's slot.</b>";
+            slotStatus.classList.add('text-available');
+          } else if (userinfo.id == meetingData.ownerID) {
+            button.disabled = false;
+            button.innerHTML = 'Edit';
+            button.classList.add('available');
+
+            slotStatus.innerHTML = '<b>Now editing your slot.</b>';
+            slotStatus.classList.add('text-available');
+          }
+        } else {
+          button.innerHTML = 'Taken';
+          button.classList.add('taken');
+
+          slotStatus.innerHTML = '<b>Unavailable</b>';
+          slotStatus.classList.add('text-taken');
+        }
       } else {
-        document.getElementById('overrideText').innerHTML =
-          'Input your override password or the global admin password.';
-        document.getElementById('submit').innerHTML = 'Edit';
-        document.getElementById('modal-title').innerHTML = 'Edit presentation';
+        button.innerHTML = 'Sign Up';
+        button.classList.add('available');
+
+        slotStatus.innerHTML = '<b>Available!</b>';
+        slotStatus.classList.add('text-available');
       }
     },
   });
@@ -159,7 +186,6 @@ $(function (ready) {
     check();
   });
 });
-window.onload = check;
 
 $(function (ready) {
   $('#timeSelect').change(function () {
@@ -169,8 +195,11 @@ $(function (ready) {
 
 function register() {
   document.getElementById('submit').innerHTML = '...';
-  document.getElementById('submit').disabled = true;
-  if (
+  if (!userinfo) {
+    document.getElementById('submit').disabled = false;
+    document.getElementById('submit').innerHTML = 'Log in to reserve a slot.';
+    window.location = `/leaderboard/login.html?redirect=${window.location.pathname}`;
+  } else if (
     $('#topic').val() === '' ||
     $('#presenters').val() === '' ||
     $('#link').val() === '' ||
@@ -181,20 +210,22 @@ function register() {
   } else {
     $.ajax({
       type: 'POST',
-      url: link + 'register',
-      data: {
-        day: $('#dateSelect').val(),
-        time: $('#timeSelect').val(),
+      url: link + 'schedule/presentation/',
+      data: JSON.stringify({
+        date: $('#dateSelect').val(),
+        slot: $('#timeSelect').val(),
         topic: $('#topic').val(),
         presenters: $('#presenters').val(),
         link: $('#link').val(),
-        pw: $('#pw').val(),
+      }),
+      headers: {
+        token: getCookie('discordAuth'),
+        'Content-Type': 'application/json',
       },
-      headers: {},
       async: false,
       mode: 'cors',
       success: function (res) {
-        document.getElementById('submit').innerHTML = res;
+        document.getElementById('submit').innerHTML = res.message;
         if (res == 'Success') {
           setTimeout(function () {
             location.reload();

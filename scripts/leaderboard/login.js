@@ -4,6 +4,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     event.preventDefault();
     loginWithCode();
   });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const redirect = urlParams.get('redirect');
+  if (redirect) {
+    setCookie('postLoginRedir', redirect, 1);
+  } else {
+    setCookie('postLoginRedir', '', 0);
+  }
 });
 
 function loginWithCode() {
