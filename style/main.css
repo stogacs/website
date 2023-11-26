@@ -60,6 +60,12 @@ h3 {
   margin: 1.5rem;
 }
 
+.leadership-card p,
+h2,
+h3 {
+  margin: 0.5rem;
+}
+
 /* animated logo */
 .logo-piece {
   width: 20em;

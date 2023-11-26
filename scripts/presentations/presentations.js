@@ -125,6 +125,16 @@ function destroySignup() {
 }
 
 function check() {
+  slotStatus = document.getElementById('slot-status');
+  button = document.getElementById('submit');
+
+  slotStatus.classList.remove('text-loading');
+  slotStatus.classList.remove('text-available');
+  slotStatus.classList.remove('text-taken');
+  slotStatus.classList.add('text-loading');
+
+  slotStatus.innerHTML = '<b>Checking...</b>';
+
   $.ajax({
     type: 'GET',
     url: link + 'schedule/presentation/check',
@@ -135,16 +145,11 @@ function check() {
     async: false,
     success: function (meetingData) {
       presentation = meetingData.presentation;
-      button = document.getElementById('submit');
 
       button.classList.remove('available');
       button.classList.remove('taken');
 
-      slotStatus = document.getElementById('slot-status');
-
       slotStatus.classList.remove('text-loading');
-      slotStatus.classList.remove('text-available');
-      slotStatus.classList.remove('text-taken');
 
       if (presentation != null) {
         if (userinfo) {
@@ -167,7 +172,7 @@ function check() {
           button.innerHTML = 'Taken';
           button.classList.add('taken');
 
-          slotStatus.innerHTML = '<b>Unavailable</b>';
+          slotStatus.innerHTML = '<b>Slot Unavailable</b>';
           slotStatus.classList.add('text-taken');
         }
       } else {
