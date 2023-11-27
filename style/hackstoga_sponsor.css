@@ -131,7 +131,7 @@ a:active {
 
 @media screen and (max-width: 551px) {
   #logo-img {
-    visibility: hidden;
+    display: none;
   }
 }
 
