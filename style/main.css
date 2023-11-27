@@ -66,6 +66,10 @@ h3 {
   margin: 0.5rem;
 }
 
+.textbox p {
+  text-align: left;
+}
+
 /* animated logo */
 .logo-piece {
   width: 20em;
