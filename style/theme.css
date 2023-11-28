@@ -277,3 +277,17 @@ a:hover {
 .close-alert:hover {
   color: var(--superdarkred);
 }
+
+.error-card {
+  background-color: var(--anchor);
+  color: var(--light);
+  border-radius: 10px;
+  padding: 1vh 2vh;
+  margin: 1vh 0;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.error-card:hover {
+  background-color: var(--anchor-hover);
+}

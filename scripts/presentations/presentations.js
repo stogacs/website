@@ -1,5 +1,6 @@
 const link = 'https://shekels.mrsharick.com/';
 let userinfo;
+let dayCount = { past: 0, upcoming: 0 };
 document.addEventListener('DOMContentLoaded', async function () {
   await verifyUser().then((userInfo) => {
     userinfo = userInfo;
@@ -27,6 +28,13 @@ $.get(link + 'schedule/presentations/daily', (response, status) => {
     for (const dayKey in schedule) {
       if (!schedule.hasOwnProperty(dayKey)) continue;
 
+      switch (isPast) {
+        case true:
+          dayCount.past++;
+        case false:
+          dayCount.upcoming++;
+      }
+
       const dayCard = createDayCard(dayKey, isPast);
       const slotsForDay = schedule[dayKey];
 
@@ -35,12 +43,20 @@ $.get(link + 'schedule/presentations/daily', (response, status) => {
 
         const slotData = slotsForDay[slotIndex][0];
         if (slotData) {
-          const item = createSlotItem(slotData, parseInt(slotIndex, 10) + 1);
+          const item = createSlotItem(slotData, parseInt(slotIndex, 10));
           dayCard.appendChild(item);
         }
       }
 
       flexContainer.appendChild(dayCard);
+    }
+
+    console.log(dayCount.past, dayCount.upcoming);
+    if (dayCount.upcoming == 0) {
+      document.getElementById('no-upcoming').classList.remove('hidden');
+    }
+    if (dayCount.past == 0) {
+      document.getElementById('no-past').classList.remove('hidden');
     }
   };
 
@@ -231,10 +247,10 @@ function register() {
       mode: 'cors',
       success: function (res) {
         document.getElementById('submit').innerHTML = res.message;
-        if (res == 'Success') {
+        if (res.success == true) {
           setTimeout(function () {
             location.reload();
-          }, 2000); // 3000 milliseconds = 2 seconds
+          }, 1500);
         } else {
           document.getElementById('submit').disabled = false;
         }

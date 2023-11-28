@@ -115,11 +115,7 @@ a:active {
   color: var(--orange);
   text-decoration-color: var(--orange);
   font-weight: bold;
-  /* border: 2px solid var(--orange); */
   border-radius: 6px;
-  /* background-color: var(--light);
-  color: #000;
-  font-style: italic; */
 }
 
 .pure-img {
