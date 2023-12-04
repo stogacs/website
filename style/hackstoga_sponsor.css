@@ -180,6 +180,20 @@ a:active {
   transition: transform ease 300ms;
 }
 
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px 2px rgba(240, 79, 120, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 20px 2px rgba(240, 79, 120, 0.8);
+  }
+}
+
+.sponsor-card-platinum {
+  animation: glow 5s ease-in-out infinite;
+}
+
 /* trailer embed */
 #trailer {
   position: relative;
