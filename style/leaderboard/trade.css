@@ -18,17 +18,33 @@
   border-radius: 1em;
   color: var(--light);
   width: 50%;
-  max-width: 800px;
-  min-width: 400px;
+  max-width: 850px;
+  min-width: 450px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.info-card input {
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin-right: 0.25em;
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 .info-card h1,
 h2,
 h3 {
   margin-bottom: 1em;
+}
+
+div.vertical-line {
+  width: 1px;
+  background-color: #808080;
+  height: 100%;
+  float: left;
 }
 
 .convert-container {
@@ -70,7 +86,7 @@ h3 {
 
 .sponsor-container {
   display: inline-flex;
-  align-items: flex-end; /* Aligns items to the bottom */
+  align-items: flex-end;
   margin-left: 55%;
 }
 
@@ -80,16 +96,16 @@ h3 {
 
 .sponsor-container p {
   color: white;
-  margin-bottom: 0; /* Optional: Removes default margin */
+  margin-bottom: 0;
 }
 
 .indicator {
   position: relative;
-  width: 20px; /* Size of the central circle */
-  height: 20px; /* Size of the central circle */
-  background-color: #008000; /* Dark green color */
-  border-radius: 50%; /* Makes it a circle */
-  z-index: 1; /* Stack the central circle above the radiating ones */
+  width: 20px;
+  height: 20px;
+  background-color: #008000;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .indicator::before,
@@ -98,18 +114,18 @@ h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%; /* Start width the same as the central circle */
-  height: 100%; /* Start height same as the central circle */
-  border-radius: 50%; /* Circular shape */
-  background-color: rgba(0, 255, 0, 0.5); /* Lighter green with transparency */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(0, 255, 0, 0.5);
   -webkit-transform: translate(-50%, -50%) scale(0.5);
-  transform: translate(-50%, -50%) scale(0.5); /* Center the circles and set the initial scale */
-  opacity: 0; /* Start fully transparent */
-  animation: radiate 2s infinite ease-in-out; /* Animation applied to both */
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  animation: radiate 2s infinite ease-in-out;
 }
 
 .indicator::after {
-  animation-delay: 1s; /* Delay the second animation to create the continuous effect */
+  animation-delay: 1s;
 }
 
 /* Radiate animation */

@@ -56,25 +56,34 @@
         <h1 class="pure-u-1 center-text"> Currency Exchange </h1>
         <h2 class="center-text error-text" id="error-display" style="display: none"></h2>
         <div class="info-card">
-          <h2>Exchange Rate</h2>
           <div class="convert-container">
+            <div class="left-section" style="margin-right: 30px; margin-bottom: 50px">
+              <div class="labels">
+                <h2>I Own</h2>
+                <p id="shekel-bal">0 Sharick Shekels</p>
+                <hr />
+                <p id="dd-bal">0 Dewees Dollars</p>
+              </div>
+              <div class="vertical-line"></div>
+            </div>
             <div class="left-section">
               <div class="labels">
-                <p id="shekel-masteer">1 Sharick Shekel</p>
+                <h2>Exchange Rate</h2>
+                <p id="shekel-master">1 Sharick Shekel</p>
                 <hr />
                 <p id="dd-conv">1 Dewees Dollar</p>
+                <div style="display: inline-flex; margin-top: 1em; align-items: center">
+                  <img
+                    src="/media/misc/logo-ftx.png"
+                    height="28px"
+                    style="margin-top: -2px; margin-right: 3px"
+                  /><p style="margin-right: 5px">Real-Time Quote</p>
+                  <span>
+                    <div class="indicator"> </div>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div style="display: inline-flex; margin-top: 1em; align-items: center">
-            <img
-              src="/media/misc/logo-ftx.png"
-              height="28px"
-              style="margin-top: -2px; margin-right: 3px"
-            /><p style="margin-right: 5px">Real-Time Quote</p>
-            <span>
-              <div class="indicator"> </div>
-            </span>
           </div>
         </div>
 

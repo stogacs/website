@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (userInfo.name == null) {
       window.location.href = '/leaderboard/onboarding/claim.html';
     }
+    const bal = document.getElementById('shekel-bal');
+    bal.textContent = bal.textContent.replace('0', userInfo.shekels);
   }
   sseSubscribe();
   document.getElementById('conv-quantity').addEventListener('input', convert);
@@ -50,5 +52,8 @@ function convert() {
 
 function toggleCurrency() {
   shekelsOnTop = !shekelsOnTop;
+  document.getElementById('conv-quantity').value = Math.round(
+    document.getElementById('conv-result').textContent.split(' ')[0],
+  );
   convert();
 }
