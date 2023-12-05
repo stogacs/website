@@ -1,5 +1,9 @@
 function getPurchases(userInfo) {
   const isAdmin = userInfo?.admin;
+  if (userInfo != null) {
+    const bal = document.getElementById('shekel-bal');
+    bal.textContent = bal.textContent.replace('0', userInfo.shekels);
+  }
   let leaderboard = document.getElementById('leaderboard-list');
   const leaderboardTable = document.createElement('table');
   leaderboardTable.className = 'leaderboard center-text';
@@ -69,8 +73,7 @@ function getPurchases(userInfo) {
         }
 
         leaderboardTable.innerHTML = tableContent;
-        leaderboard.innerHTML =
-          '<p class="center-text" id="subheading">A badge indicates this person has linked their Discord account to the leaderboard.</p>';
+        leaderboard.innerHTML = '';
         if (isAdmin) {
           document.getElementById('new-row-button').style.display = '';
           document.getElementById('save-button').style.display = '';

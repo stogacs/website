@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Sharick Shekels | Conestoga Computer Science Club</title>
-    <meta name="description" content="View the Shekel leaderboard for the club." />
+    <title>Currency Trading | Powered by FTX</title>
+    <meta name="description" content="Trade the official StogaCS Currencies" />
     <meta name="theme-color" content="#eaaded" />
 
     <!--CSS re-used across stogacs.club -->
@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="/style/main.css" />
 
     <!-- Load in page specific CSS -->
-    <link rel="stylesheet" href="/style/leaderboard/leaderboard.css" />
+    <link rel="stylesheet" href="/style/leaderboard/trade.css" />
     <link rel="stylesheet" href="/style/tooltips.css" />
 
     <!-- Load in page specific scripts -->
     <script src="/scripts/utils.js"></script>
-    <script src="/scripts/leaderboard.js"></script>
+    <script src="/scripts/trading.js"></script>
     <script src="/scripts/navbar.js"></script>
 
     <!-- Load in external CSS Libraries -->
@@ -35,8 +35,14 @@
   </head>
 
   <body>
-    <header>
-      <p class="navbar-title">Conestoga Computer Science Club</p>
+    <header style="padding-top: 20px; padding-bottom: 20px">
+      <div>
+        <p class="navbar-title">Conestoga Computer Science Club</p>
+        <div class="sponsor-container">
+          <p>Powered by</p>
+          <img src="/media/misc/logo-ftx.png" alt="FTX Logo" />
+        </div>
+      </div>
       <input type="checkbox" id="navbar-click" />
       <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
       <ul id="navbar-links">
@@ -44,57 +50,56 @@
       </ul>
     </header>
 
-    <section id="leaderboard-section" class="screen pure-g">
+    <section id="main-section" class="screen pure-g">
       <div class="pure-u-1-12"><!-- formatting div PRE--></div>
       <div class="pure-u-5-6 pure-g">
-        <h1 class="pure-u-1 center-text"> Sharick Shekels </h1>
+        <h1 class="pure-u-1 center-text"> Currency Exchange </h1>
         <h2 class="center-text error-text" id="error-display" style="display: none"></h2>
         <div class="info-card">
-          <h2>My Currencies</h2>
+          <h2>Exchange Rate</h2>
           <div class="convert-container">
             <div class="left-section">
               <div class="labels">
-                <p id="shekel-bal">0 Sharick Shekels</p>
+                <p id="shekel-masteer">1 Sharick Shekel</p>
                 <hr />
-                <p id="dd-bal">0 Dewees Dollars</p>
+                <p id="dd-conv">1 Dewees Dollar</p>
+              </div>
+            </div>
+          </div>
+          <div style="display: inline-flex; margin-top: 1em; align-items: center">
+            <img
+              src="/media/misc/logo-ftx.png"
+              height="28px"
+              style="margin-top: -2px; margin-right: 3px"
+            /><p style="margin-right: 5px">Real-Time Quote</p>
+            <span>
+              <div class="indicator"> </div>
+            </span>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h2>Trade</h2>
+          <div class="convert-container">
+            <div class="left-section">
+              <div class="labels">
+                <div style="display: inline-flex; align-items: center">
+                  <input type="number" min="1" value="1" style="width: 75px" id="conv-quantity" /><p
+                    id="conv-input-label"
+                  >
+                    Sharick Shekels</p
+                  >
+                </div>
+                <hr />
+                <p id="conv-result">0 Dewees Dollars</p>
               </div>
               <div class="bracket"></div>
             </div>
             <div class="button-group">
-              <a href="/leaderboard/trading.html"><button class="pure-button">Trade</button></a>
+              <button class="pure-button" id="swap-button">Swap</button>
+              <button class="pure-button" id="buy-button" disabled="true">Execute</button>
             </div>
           </div>
-        </div>
-        <ul id="leaderboard-list">
-          <noscript>
-            <p class="center-text">
-              Please enable JavaScript to enable leaderboard functionality
-            </p>
-          </noscript>
-        </ul>
-        <div class="pure-g">
-          <button
-            id="save-button"
-            type="button"
-            class="pure-button pure-button-primary pure-u-1 pure-u-md-1-12"
-            style="float: left; display: none; justify-content: center"
-            onclick="updateLeaderboard()"
-          >
-            Save
-          </button>
-          <p class="center-text pure-u-1 pure-u-md-5-6" id="footer-text">
-            You can earn shekels by showing up to meetings or as a prize for helping the club.<br />Signing
-            in is required to set a preferred name or to use the shop.
-          </p>
-          <button
-            id="new-row-button"
-            type="button"
-            class="pure-button pure-button-primary pure-u-1 pure-u-md-1-12"
-            style="float: right; display: none; justify-content: center"
-            onclick="newRow()"
-          >
-            User +
-          </button>
         </div>
 
         <!-- formatting div POST-->
