@@ -32,6 +32,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <!-- Load in external scripts -->
+    <script src=" https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js "></script>
+    <script src=" https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js "></script>
   </head>
 
   <body>
@@ -51,69 +55,88 @@
     </header>
 
     <section id="main-section" class="screen pure-g">
-      <div class="pure-u-1-12"><!-- formatting div PRE--></div>
-      <div class="pure-u-5-6 pure-g">
-        <h1 class="pure-u-1 center-text"> Currency Exchange </h1>
-        <h2 class="center-text error-text" id="error-display" style="display: none"></h2>
-        <div class="info-card">
-          <div class="convert-container">
-            <div class="left-section" style="margin-right: 30px; margin-bottom: 50px">
-              <div class="labels">
-                <h2>I Own</h2>
-                <p id="shekel-bal">0 Sharick Shekels</p>
-                <hr />
-                <p id="dd-bal">0 Dewees Dollars</p>
-              </div>
-              <div class="vertical-line"></div>
+      <h1 class="pure-u-1 center-text"> Currency Exchange </h1>
+      <h2 class="center-text error-text" id="error-display" style="display: none"></h2>
+      <div class="info-card" style="max-width: 700px">
+        <div class="convert-container">
+          <div class="left-section" style="margin-right: 30px; margin-bottom: 50px">
+            <div class="labels">
+              <h2>I Own</h2>
+              <p id="shekel-bal">0 Sharick Shekels</p>
+              <hr />
+              <p id="dd-bal">0 Dewees Dollars</p>
             </div>
-            <div class="left-section">
-              <div class="labels">
-                <h2>Exchange Rate</h2>
-                <p id="shekel-master">1 Sharick Shekel</p>
-                <hr />
-                <p id="dd-conv">1 Dewees Dollar</p>
-                <div style="display: inline-flex; margin-top: 1em; align-items: center">
-                  <img
-                    src="/media/misc/logo-ftx.png"
-                    height="28px"
-                    style="margin-top: -2px; margin-right: 3px"
-                  /><p style="margin-right: 5px">Real-Time Quote</p>
-                  <span>
-                    <div class="indicator"> </div>
-                  </span>
-                </div>
+            <div class="vertical-line"></div>
+          </div>
+          <div class="left-section">
+            <div class="labels">
+              <h2>Exchange Rate</h2>
+              <p id="shekel-master">1 Sharick Shekel</p>
+              <hr />
+              <p id="dd-conv">1 Dewees Dollar</p>
+              <div style="display: inline-flex; margin-top: 1em; align-items: center">
+                <img
+                  src="/media/misc/logo-ftx.png"
+                  height="28px"
+                  style="margin-top: -2px; margin-right: 3px"
+                /><p style="margin-right: 5px">Real-Time Quote</p>
+                <span>
+                  <div class="indicator"> </div>
+                </span>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="info-card">
-          <h2>Trade</h2>
-          <div class="convert-container">
-            <div class="left-section">
-              <div class="labels">
-                <div style="display: inline-flex; align-items: center">
-                  <input type="number" min="1" value="1" style="width: 75px" id="conv-quantity" /><p
-                    id="conv-input-label"
-                  >
-                    Sharick Shekels</p
-                  >
-                </div>
-                <hr />
-                <p id="conv-result">0 Dewees Dollars</p>
-              </div>
-              <div class="bracket"></div>
-            </div>
-            <div class="button-group">
-              <button class="pure-button" id="swap-button">Swap</button>
-              <button class="pure-button" id="buy-button" disabled="true">Execute</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- formatting div POST-->
       </div>
-      <div class="pure-u-1-12"><!-- formatting div POST--></div>
+
+      <div class="info-card">
+        <h2>Trade</h2>
+        <div class="currency-selector">
+          <p style="margin-right: 0.5em">Sharick Shekels & </p>
+          <select id="currency-list">
+            <option value="dd">Dewees Dollars</option>
+          </select>
+        </div>
+        <div class="chart-container">
+          <div id="loader" class="chart-loader" id="loader">
+            <div class="lds-dual-ring"></div>
+            <p>Loading Chart..</p>
+          </div>
+          <canvas id="chart" class="hidden"></canvas>
+        </div>
+        <div class="button-row" id="row">
+          <button class="pure-button" id="time-1m">1m</button>
+          <button class="pure-button" id="time-5m">5m</button>
+          <button class="pure-button" id="time-15m">15m</button>
+          <button class="pure-button" id="time-1h">1h</button>
+          <button class="pure-button" id="time-4h">4h</button>
+          <button class="pure-button" id="time-1d">1d</button>
+          <button class="pure-button" id="time-1w">1w</button>
+          <button class="pure-button" id="time-1mo">1mo</button>
+          <button class="pure-button hidden" id="time-3mo">3mo</button>
+          <button class="pure-button hidden" id="time-1y">1y</button>
+        </div>
+        <div class="convert-container">
+          <div class="left-section">
+            <div class="labels">
+              <div style="display: inline-flex; align-items: center">
+                <input type="number" min="1" value="1" style="width: 75px" id="conv-quantity" /><p
+                  id="conv-input-label"
+                >
+                  Sharick Shekels</p
+                >
+              </div>
+              <hr />
+              <p id="conv-result">0 Dewees Dollars</p>
+            </div>
+            <div class="bracket"></div>
+          </div>
+          <div class="button-group">
+            <button class="pure-button" id="swap-button">Swap</button>
+            <button class="pure-button" id="buy-button" disabled="true">Execute</button>
+          </div>
+        </div>
+      </div>
     </section>
   </body>
 </html>

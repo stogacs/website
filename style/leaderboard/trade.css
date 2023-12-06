@@ -4,6 +4,8 @@
   padding-top: 100px;
   color: var(--light);
   font-size: 120%;
+  display: flex;
+  flex-direction: column;
 }
 
 .error-text {
@@ -17,9 +19,9 @@
   background-color: var(--darker);
   border-radius: 1em;
   color: var(--light);
-  width: 50%;
+  width: 80%;
   max-width: 850px;
-  min-width: 450px;
+  min-width: 360px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -105,7 +107,6 @@ div.vertical-line {
   height: 20px;
   background-color: #008000;
   border-radius: 50%;
-  z-index: 1;
 }
 
 .indicator::before,
@@ -126,6 +127,67 @@ div.vertical-line {
 
 .indicator::after {
   animation-delay: 1s;
+}
+
+.chart-container {
+  /* center horizontal */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  height: 400px;
+  margin-bottom: 1em;
+}
+
+.chart-container canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+/* on screen smaller than 500px */
+@media (max-width: 680px) {
+  .chart-container {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.chart-loader {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  border-radius: 1em;
+}
+
+.chart-loader p {
+  font-size: 150%;
+  color: var(--light);
+  margin-left: 1em;
+}
+
+.button-row {
+  margin-bottom: 1em;
+}
+
+.button-row button {
+  margin-bottom: 0.5em;
+}
+
+.button-row .selected {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.currency-selector {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1em;
 }
 
 /* Radiate animation */
