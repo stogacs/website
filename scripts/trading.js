@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   setInterval(function () {
-    getChart('dd', lastInterval);
+    getChart('dd', lastInterval, true);
   }, 20000);
 });
 
@@ -88,11 +88,15 @@ function toggleCurrency() {
   convert();
 }
 
-function getChart(currency, interval) {
+function getChart(currency, interval, reload = false) {
+  document.getElementById('reload-text').textContent = 'Loading Chart...';
   if (newChart != null) {
     newChart.destroy();
   }
   document.getElementById('chart').classList.add('hidden');
+  if (!reload) {
+    document.getElementById('loader').classList.remove('hidden');
+  }
 
   const btnRow = document.getElementById('row');
 
@@ -110,10 +114,53 @@ function getChart(currency, interval) {
       let prices = data.history.map((data) => data.price);
       const diff = prices[prices.length - 1] - prices[0];
       const timeDiff = new Date(labels[labels.length - 1]) - new Date(labels[0]);
+      let stepSize = [];
 
-      // if there is less data then selected interval, add a point at the beginning repeating the first price
-      // slack of 1 minute
+      switch (interval) {
+        case '1m':
+          stepSize = ['second', 1000];
+          break;
+        case '5m':
+          stepSize = ['minute', 60000];
+          break;
+        case '15m':
+          stepSize = ['minute', 60000];
+          break;
+        case '30m':
+          stepSize = ['minute', 60000];
+          break;
+        case '1h':
+          stepSize = ['minute', 60000];
+          break;
+        case '4h':
+          stepSize = ['hour', 3600000];
+          break;
+        case '1d':
+          stepSize = ['hour', 3600000];
+          break;
+        case '1w':
+          stepSize = ['day', 86400000];
+          break;
+        case '1mo':
+          stepSize = ['day', 86400000];
+          break;
+        case '3mo':
+          stepSize = ['month', 2.628e9];
+          break;
+        case '1y':
+          stepSize = ['month', 2.628e9];
+          break;
+        default:
+          stepSize = ['minute', 60000];
+          break;
+      }
+
+      console.log(stepSize);
+
+      //if there is less data then selected interval, add a point at the beginning repeating the first price
+      //slack of 1 minute
       if (timeDiff + 60000 < intervals[interval] * 60000) {
+        document.getElementById('reload-text').textContent = 'Processing data...';
         // go back every minute until the time difference is greater than the interval
         let i = 1;
         while (
@@ -125,6 +172,7 @@ function getChart(currency, interval) {
           i++;
         }
       }
+      document.getElementById('reload-text').textContent = 'Finalizing...';
 
       const color = diff > 0 ? 'rgb(119, 221, 118)' : 'rgb(255, 105, 98)';
 
@@ -176,15 +224,22 @@ function getChart(currency, interval) {
             x: {
               type: 'time',
               time: {
-                unit: 'minute',
+                unit: stepSize[0],
+                displayFormats: {
+                  hour: 'h:mm a',
+                  minute: 'h:mm a',
+                  second: ':ss',
+                  day: 'MMM d',
+                },
               },
+              format: {},
               title: {
                 display: true,
                 text: 'Time',
               },
               ticks: {
                 maxTicksLimit: 6,
-                minRotation: 30,
+                minRotation: 0,
               },
             },
             y: {
