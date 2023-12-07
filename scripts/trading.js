@@ -2,6 +2,8 @@ let shekelsOnTop = true;
 let currentPrice = 0.0;
 let lastInterval = '5m';
 newChart = null;
+let labels = [];
+let prices = [];
 
 intervals = Object.freeze({
   '1m': 1,
@@ -17,12 +19,36 @@ intervals = Object.freeze({
   '1y': 525600,
 });
 
+logSendIntervals = Object.freeze({
+  '1m': 1,
+  '5m': 1,
+  '15m': 2,
+  '30m': 4,
+  '1h': 4,
+  '4h': 12,
+  '1d': 96,
+  '1w': 672,
+  '1mo': 2880,
+  '3mo': 8640,
+  '1y': 43200,
+});
+
 function sseSubscribe() {
   let price = document.getElementById('dd-conv');
   const source = new EventSource('https://shekels.mrsharick.com/events/trading/dd/price');
+  let i = 0;
+
   source.addEventListener('message', function (event) {
+    i++;
+    runEvery = logSendIntervals[lastInterval.toString()];
     const data = JSON.parse(event.data);
     currentPrice = data.price;
+    addData(newChart, data.timestamp, data.price);
+    if (i % runEvery == 0) {
+      addData(newChart, data.timestamp, data.price);
+      removeFirstData(newChart);
+    }
+
     price.innerHTML = data.price.toFixed(2) + ' Dewees Dollars';
     convert();
   });
@@ -50,10 +76,6 @@ document.addEventListener('DOMContentLoaded', async function () {
       getChart('dd', btnRow.children[i].id.split('-')[1]);
     });
   }
-
-  setInterval(function () {
-    getChart('dd', lastInterval, true);
-  }, 20000);
 });
 
 function convert() {
@@ -110,12 +132,11 @@ function getChart(currency, interval, reload = false) {
   fetch(`https://shekels.mrsharick.com/trading/${currency}/history/${interval}`)
     .then((response) => response.json())
     .then((data) => {
-      let labels = data.history.map((data) => data.timestamp);
-      let prices = data.history.map((data) => data.price);
+      labels = data.history.map((data) => data.timestamp);
+      prices = data.history.map((data) => data.price);
       const diff = prices[prices.length - 1] - prices[0];
       const timeDiff = new Date(labels[labels.length - 1]) - new Date(labels[0]);
       let stepSize = [];
-
       switch (interval) {
         case '1m':
           stepSize = ['second', 1000];
@@ -155,8 +176,6 @@ function getChart(currency, interval, reload = false) {
           break;
       }
 
-      console.log(stepSize);
-
       //if there is less data then selected interval, add a point at the beginning repeating the first price
       //slack of 1 minute
       if (timeDiff + 60000 < intervals[interval] * 60000) {
@@ -193,6 +212,9 @@ function getChart(currency, interval, reload = false) {
         },
         options: {
           responsive: true,
+          animation: {
+            duration: 0,
+          },
           interaction: {
             intersect: false,
             mode: 'index',
@@ -258,4 +280,21 @@ function getChart(currency, interval, reload = false) {
       const ctx = document.getElementById('chart');
       newChart = new Chart(ctx, config);
     });
+}
+
+// function from https://www.chartjs.org/docs/latest/developers/updates.html
+function addData(chart, label, newData) {
+  chart.data.labels.push(label);
+  chart.data.datasets.forEach((dataset) => {
+    dataset.data.push(newData);
+  });
+  chart.update();
+}
+
+function removeFirstData(chart) {
+  chart.data.labels.shift();
+  chart.data.datasets.forEach((dataset) => {
+    dataset.data.shift();
+  });
+  chart.update();
 }
