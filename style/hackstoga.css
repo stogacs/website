@@ -1,3 +1,10 @@
+:root {
+  --num-logos: 4;
+  --logo-width: calc(vw / 6);
+  --total-width: calc(var(--num-logos) * var(--logo-width) * 2);
+  --animation-duration: calc(var(--num-logos) * 6.5s);
+}
+
 #cover {
   background-image: url('/media/banners/hackstoga24.jpg');
   background-size: cover;
@@ -130,4 +137,62 @@ details[open] summary {
 
 .triangle-divider .shape-fill {
   fill: var(--superdark);
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider::before,
+.slider::after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: var(--logo-width);
+}
+
+.slider::before {
+  left: 0;
+  background-color: linear-gradient(to right, var(--superdark) 0%, transparent 100%);
+}
+
+.slider::after {
+  content: '';
+  right: 0;
+  background-color: linear-gradient(to left, var(--superdark) 0%, transparent 100%);
+}
+
+.slider ul.brands {
+  max-height: 100%;
+  list-style: none;
+  width: var(--total-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideLeft var(--animation-duration) linear infinite;
+}
+
+@keyframes slideLeft {
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+ul.brands li.brand {
+  margin-left: 200px;
+
+  max-height: 100%;
+  max-width: calc(vw / 6);
+  width: var(--logo-width);
+  object-fit: contain;
+}
+
+ul.brands li.brand img {
+  max-height: calc(vw / 600) !important;
+  text-align: center !important;
 }

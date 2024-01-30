@@ -297,3 +297,26 @@ ul {
 .sponsor-content > ul {
   margin-left: 1em;
 }
+
+.back-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1em;
+  z-index: 100;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white !important;
+}
+
+.back-button i {
+  margin-right: 5px;
+}
+
+.back-button:hover {
+  background-color: #121212c0;
+}
