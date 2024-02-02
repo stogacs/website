@@ -112,7 +112,7 @@ a:hover {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .animated-button:before,
@@ -127,31 +127,32 @@ a:hover {
     135deg,
     rgba(255, 227, 104, 0) 0%,
     rgba(255, 227, 104, 0) 48%,
-    rgba(255, 227, 104, 0.5) 50%,
+    rgba(255, 227, 104, 0.65) 50%,
     rgba(255, 227, 104, 0) 52%,
     rgba(255, 227, 104, 0) 100%
   );
-  animation: gold-lines 4s linear infinite;
+  animation: gold-lines 6s linear infinite;
 }
 
 .animated-button:after {
-  animation-delay: 4s;
+  animation-delay: -2s;
 }
 
 .animated-button:hover {
   background-color: var(--anchor-hover);
+  transform: scale(1.05);
 }
 
 .animated-button:hover:before,
 .animated-button:hover:after {
-  animation-duration: 2s;
+  animation-duration: 3s;
+  animation-delay: 0;
 }
 
 @keyframes gold-lines {
   0% {
     transform: translateX(-100%);
   }
-
   100% {
     transform: translateX(100%);
   }
