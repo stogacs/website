@@ -38,7 +38,7 @@ async function verifyUser() {
   if (access_token != null) {
     try {
       const response = await fetch(
-        `https://shekels.mrsharick.com/discord/user?token=${access_token}`,
+        `https://cs-services.stoga.club/discord/user?token=${access_token}`,
       );
       const data = await response.json();
       if (response.status != 200) {
@@ -56,7 +56,7 @@ async function verifyUser() {
 }
 
 async function isUpToDate() {
-  const response = await fetch('https://shekels.mrsharick.com/api/version');
+  const response = await fetch('https://cs-services.stoga.club/api/version');
   const data = await response.json();
   return data.version == knownVersion;
 }

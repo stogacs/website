@@ -15,16 +15,19 @@ function submitData() {
 
   let form = document.getElementById('claim-form');
 
-  fetch('https://shekels.mrsharick.com/leaderboard/claim?discordAuth=' + getCookie('discordAuth'), {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+  fetch(
+    'https://cs-services.stoga.club/leaderboard/claim?discordAuth=' + getCookie('discordAuth'),
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: form.elements['name-for'].value,
+        grad_year: parseInt(form.elements['grad-year'].value),
+      }),
     },
-    body: JSON.stringify({
-      name: form.elements['name-for'].value,
-      grad_year: parseInt(form.elements['grad-year'].value),
-    }),
-  })
+  )
     .then((response) => {
       return response.json();
     })

@@ -22,7 +22,7 @@ function loginWithCode() {
     return;
   }
 
-  fetch('https://shekels.mrsharick.com/me/login?code=' + code, {
+  fetch('https://cs-services.stoga.club/me/login?code=' + code, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

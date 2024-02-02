@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       document.getElementById('past-purchase-button').classList.add('pure-button-disabled');
     }
 
-    fetch('https://shekels.mrsharick.com/me/purchases?discordAuth=' + getCookie('discordAuth'))
+    fetch('https://cs-services.stoga.club/me/purchases?discordAuth=' + getCookie('discordAuth'))
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   });
 
   try {
-    const response = await fetch('https://shekels.mrsharick.com/shop/items', {
+    const response = await fetch('https://cs-services.stoga.club/shop/items', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ function updateCard(id, img) {
 
 // this is here because it used to be a lot stupider...
 function fetchImage(id) {
-  return `https://shekels.mrsharick.com/getasset/shop_${id}.png`;
+  return `https://cs-services.stoga.club/getasset/shop_${id}.png`;
 }
 
 document.addEventListener('click', function (event) {
@@ -117,7 +117,7 @@ document.addEventListener('click', function (event) {
 
 function buyProduct(id) {
   fetch(
-    'https://shekels.mrsharick.com/shop/purchase?' + 'discordAuth=' + getCookie('discordAuth'),
+    'https://cs-services.stoga.club/shop/purchase?' + 'discordAuth=' + getCookie('discordAuth'),
     {
       method: 'POST',
       headers: {

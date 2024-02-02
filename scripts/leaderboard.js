@@ -23,7 +23,7 @@ function getPurchases(userInfo) {
         </tr>
     `;
 
-  fetch('https://shekels.mrsharick.com/users')
+  fetch('https://cs-services.stoga.club/users')
     .then((response) => response.json())
     .then((data) => {
       if (!data.disabled) {
@@ -111,7 +111,7 @@ function updateLeaderboard() {
 
   const json = JSON.stringify(data);
 
-  fetch('https://shekels.mrsharick.com/users/update?discordAuth=' + getCookie('discordAuth'), {
+  fetch('https://cs-services.stoga.club/users/update?discordAuth=' + getCookie('discordAuth'), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -1,4 +1,4 @@
-const link = 'https://shekels.mrsharick.com/';
+const link = 'https://cs-services.stoga.club/';
 let userinfo;
 let dayCount = { past: 0, upcoming: 0 };
 document.addEventListener('DOMContentLoaded', async function () {

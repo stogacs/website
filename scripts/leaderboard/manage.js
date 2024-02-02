@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 function getLoginCode() {
-  fetch('https://shekels.mrsharick.com/me/login_code?discordAuth=' + getCookie('discordAuth'), {
+  fetch('https://cs-services.stoga.club/me/login_code?discordAuth=' + getCookie('discordAuth'), {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ function submitData() {
   document.getElementById('loader').style.display = '';
 
   fetch(
-    'https://shekels.mrsharick.com/leaderboard/update_prefs?discordAuth=' +
+    'https://cs-services.stoga.club/leaderboard/update_prefs?discordAuth=' +
       getCookie('discordAuth'),
     {
       method: 'POST',

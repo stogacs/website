@@ -35,7 +35,7 @@ logSendIntervals = Object.freeze({
 
 function sseSubscribe() {
   let price = document.getElementById('dd-conv');
-  const source = new EventSource('https://shekels.mrsharick.com/events/trading/dd/price');
+  const source = new EventSource('https://cs-services.stoga.club/events/trading/dd/price');
   let i = 0;
 
   source.addEventListener('message', function (event) {
@@ -129,7 +129,7 @@ function getChart(currency, interval, reload = false) {
   const pressedButton = document.getElementById('time-' + interval);
   pressedButton.classList.add('selected');
 
-  fetch(`https://shekels.mrsharick.com/trading/${currency}/history/${interval}`)
+  fetch(`https://cs-services.stoga.club/trading/${currency}/history/${interval}`)
     .then((response) => response.json())
     .then((data) => {
       labels = data.history.map((data) => data.timestamp);

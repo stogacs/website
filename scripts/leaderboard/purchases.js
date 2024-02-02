@@ -19,7 +19,7 @@ function getPurchases(userInfo) {
             <td class="table-pr">Shekels</td>
             <!-- <td class="table-qty">Qty</td> -->
         </tr>`;
-  fetch('https://shekels.mrsharick.com/me/purchases?discordAuth=' + getCookie('discordAuth'))
+  fetch('https://cs-services.stoga.club/me/purchases?discordAuth=' + getCookie('discordAuth'))
     .then((response) => response.json())
     .then((data) => {
       if (data.success) {
