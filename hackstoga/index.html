@@ -16,6 +16,9 @@
     <!-- Load in page specific CSS -->
     <link rel="stylesheet" href="/style/hackstoga.css">
 
+    <!-- JS re-used across stogacs.club -->
+    <script src="/scripts/utils.js"></script>
+
     <!-- Load in external CSS Libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
@@ -69,17 +72,37 @@
             <h1>Sign Up</h1>
             <button class="animated-button ">Sign up now!</button>
             <script>
-                const signupStart = new Date("2024-02-05T09:00:00-05:00");
+                const signupStart = new Date("2024-02-05T08:00:00-05:00");
                 if (Date.now() > signupStart) {
                     document.querySelector("button").addEventListener("click", () => {
-                        window.location.href = "signup";
+                        const ref = getParameterByName("ref");
+                        if (ref) {
+                            logAnalytics("hs_button_click", JSON.stringify({ "ref": ref }))
+                                .then((result) => {
+                                    window.location.href = `/hackstoga/signup/?ref=${encodeURIComponent(ref)}`;
+                                })
+                                .catch((err) => {
+                                    window.location.href = `/hackstoga/signup/?ref=${encodeURIComponent(ref)}`;
+                                });
+                        } else {
+                            logAnalytics("hs_button_click", JSON.stringify({ "ref": ref }))
+                                .then((result) => {
+                                    window.location.href = `/hackstoga/signup/?ref=web_other`;
+                                })
+                                .catch((err) => {
+                                    window.location.href = `/hackstoga/signup/?ref=web_other`;
+                                });
+                            window.location.href = "/hackstoga/signup";
+                        }
                     });
                 } else {
-                    document.querySelector("button").innerHTML = "Signups open Monday.";
+                    document.querySelector("button").innerHTML = "Signups open Monday @ 8 AM.";
                     document.querySelector("button").style.backgroundColor = "var(--garnet)";
                     document.querySelector("button").style.cursor = "not-allowed";
                     document.querySelector("a[href='signup']").href = "#";
                 }
+
+
             </script>
             <div class="formatting-separator"></div>
             <h1>What is a Hackathon?</h1>

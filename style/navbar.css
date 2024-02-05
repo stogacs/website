@@ -56,7 +56,7 @@ header {
 
 #navbar-links li a:hover,
 .active {
-  color: var(--navbar-links);
+  color: var(--navbar-links) !important;
 }
 
 .navbar-title {

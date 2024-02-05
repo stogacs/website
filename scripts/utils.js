@@ -55,6 +55,36 @@ async function verifyUser() {
   }
 }
 
+async function logAnalytics(event, data) {
+  const token = getCookie('discordAuth') || '';
+  await fetch('https://cs-services.stoga.club/analytics/event', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ event, data, token }),
+  });
+}
+
+function getParameterByName(paramName) {
+  const url = window.location.href;
+  let paramString = url.split('?')[1];
+
+  if (!paramString) {
+    console.error('No parameters found in the URL');
+    return null;
+  }
+
+  let queryString = new URLSearchParams(paramString);
+
+  if (queryString.has(paramName)) {
+    return queryString.get(paramName);
+  } else {
+    console.error('Parameter not found: ' + paramName);
+    return null;
+  }
+}
+
 async function isUpToDate() {
   const response = await fetch('https://cs-services.stoga.club/api/version');
   const data = await response.json();

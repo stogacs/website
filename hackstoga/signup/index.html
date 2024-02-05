@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <head>
   <title>Redirecting...</title>
+  <script src="/scripts/utils.js"></script>
 </head>
 <html>
   <body>
     <p
       >Redirecting to
-      <a href="https://forms.gle/3cbh3s2VLeZSG6ee8">https://forms.gle/3cbh3s2VLeZSG6ee8</a></p
+      <a class="link" href="https://forms.gle/3cbh3s2VLeZSG6ee8"
+        >https://forms.gle/3cbh3s2VLeZSG6ee8</a
+      ></p
     >
   </body>
   <script>
-    window.location.href = 'https://forms.gle/3cbh3s2VLeZSG6ee8';
+    const baseURL =
+      'https://docs.google.com/forms/d/e/1FAIpQLSfgxixYJwW1acff8MTOh2TbEQ-LSDrDRJrViqAURhSCNZmRxw/viewform?usp=pp_url&entry.904236911=';
+    const ref = getParameterByName('ref');
+    if (ref) {
+      document.querySelector('a').href = baseURL + ref;
+      document.querySelector('a').innerText = baseURL + ref;
+      setTimeout(() => {
+        window.location.href = baseURL + ref;
+      }, 100);
+    } else {
+      document.querySelector('a').href = baseURL + 'web_signup_direct';
+      document.querySelector('a').innerText = baseURL + 'web__signup_direct';
+      setTimeout(() => {
+        window.location.href = baseURL + 'web__signup_direct';
+      }, 100);
+    }
   </script>
 </html>
