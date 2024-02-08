@@ -224,8 +224,6 @@ ul.brands li.brand img {
 
 .clean-button:hover {
   transform: scale(1.05);
-  border-color: var(--red);
-  color: var(--red);
   transform: scale(1.1);
   background-color: #12121260;
   text-decoration: none;
@@ -233,6 +231,22 @@ ul.brands li.brand img {
 
 .clean-button:active {
   transform: scale(1);
+}
+
+.red-button {
+  background-color: #8b2b2b7c;
+}
+
+.red-button:hover {
+  background-color: #8b2b2bcc;
+}
+
+.red-outline:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.red-outline:active {
   border-color: var(--darkred);
   color: var(--darkred);
 }
