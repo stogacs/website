@@ -47,6 +47,11 @@
   font-size: 120%;
 }
 
+.header {
+  color: var(--garnet);
+  text-shadow: 2px 2px 3px var(--superdark);
+}
+
 #footer {
   color: var(--light);
   background-color: var(--superdark);
