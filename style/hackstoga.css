@@ -252,11 +252,26 @@ ul.brands li.brand img {
 }
 
 #signup-vol-button:hover {
-  border-color: var(white) !important;
-  color: var(white) !important;
+  border-color: var(white);
+  color: var(white);
 }
 
 #signup-vol-button:active {
-  border-color: var(white) !important;
-  color: var(white) !important;
+  border-color: var(white);
+  color: var(white);
+}
+
+.right-button {
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 522px) {
+  .clean-button {
+    margin: 0px 0px 0px 0px;
+  }
+
+  .right-button {
+    margin-left: 0em;
+    margin-top: 10px;
+  }
 }
