@@ -85,6 +85,28 @@ function getParameterByName(paramName) {
   }
 }
 
+function fetchConstant(constant) {
+  const xhr = new XMLHttpRequest();
+
+  xhr.open('GET', `https://cs-services.stoga.club/constants/${constant}`, false);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+
+  try {
+    xhr.send();
+
+    if (xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText);
+      return data.value;
+    } else {
+      console.error(`Request failed with status ${xhr.status}`);
+      return null;
+    }
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
 async function isUpToDate() {
   const response = await fetch('https://cs-services.stoga.club/api/version');
   const data = await response.json();

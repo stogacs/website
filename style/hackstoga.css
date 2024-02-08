@@ -2,7 +2,7 @@
   --num-logos: 4;
   --logo-width: calc(vw / 6);
   --total-width: calc(var(--num-logos) * var(--logo-width) * 2);
-  --animation-duration: calc(var(--num-logos) * 6.5s);
+  --animation-duration: calc(var(--num-logos) * 6s);
 }
 
 #cover {
@@ -195,4 +195,54 @@ ul.brands li.brand {
 ul.brands li.brand img {
   max-height: calc(vw / 600) !important;
   text-align: center !important;
+}
+
+#notice-container {
+  position: absolute;
+  top: 110px;
+  width: 100%;
+  text-align: center;
+}
+
+#alert-signup-expiry {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.clean-button {
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-size: 2em;
+  text-decoration: none;
+  color: white !important;
+  transition: color 0.1s ease-out, transform 0.05s ease-out;
+  background-color: #12121230;
+}
+
+.clean-button:hover {
+  transform: scale(1.05);
+  border-color: var(--red);
+  color: var(--red);
+  transform: scale(1.1);
+  background-color: #12121260;
+  text-decoration: none;
+}
+
+.clean-button:active {
+  transform: scale(1);
+  border-color: var(--darkred);
+  color: var(--darkred);
+}
+
+#signup-vol-button:hover {
+  border-color: var(white) !important;
+  color: var(white) !important;
+}
+
+#signup-vol-button:active {
+  border-color: var(white) !important;
+  color: var(white) !important;
 }

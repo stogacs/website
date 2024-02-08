@@ -248,7 +248,7 @@ a:hover {
 }
 
 .alert {
-  padding: 0 2vh 0 3vh;
+  padding: 0 1em 0 1em;
   background-color: var(--darkred);
   color: var(--light);
   display: inline-flex;
@@ -259,18 +259,19 @@ a:hover {
   border-width: 2.5px;
   border-radius: 10px;
   border-color: var(--superdarkred);
+  text-shadow: 2px 2px 3px var(--dark);
+  font-size: 1.2em;
 }
 
-.alert > p {
-  text-shadow: 2px 2px 3px var(--dark);
-  margin-right: 5vh;
+.alert span {
+  margin-left: 0.25rem;
 }
 
 .close-alert {
   display: inline-flex;
   align-items: center;
   font-weight: bold;
-  font-size: 5vh;
+  font-size: 2.2em;
   cursor: pointer;
   transition: 0.3s;
   padding: 0;

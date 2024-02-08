@@ -1,313 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>hackStoga | Conestoga Computer Science Club</title>
-    <meta name="description" content="Join us for Conestoga High Schools' annual hackathon!">
-    <meta name="theme-color" content="#eaaded">
+    <meta name="description" content="Join us for Conestoga High Schools' annual hackathon!" />
+    <meta name="theme-color" content="#eaaded" />
 
     <!--CSS re-used across stogacs.club -->
-    <link rel="stylesheet" href="/style/theme.css">
-    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/theme.css" />
+    <link rel="stylesheet" href="/style/navbar.css" />
 
     <!-- Load in page specific CSS -->
-    <link rel="stylesheet" href="/style/hackstoga.css">
+    <link rel="stylesheet" href="/style/hackstoga.css" />
+
+    <!-- Page specific js -->
+    <script src="/scripts/hackstoga.js"></script>
 
     <!-- JS re-used across stogacs.club -->
     <script src="/scripts/utils.js"></script>
 
     <!-- Load in external CSS Libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <p class="navbar-title">Conestoga Computer Science Club</p>
-        <input type="checkbox" id="navbar-click">
-        <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
-        <ul id="navbar-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="signup">Sign Up</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#sponsors">Sponsors</a></li>
-            <li><a href="#faq">Faq</a></li>
-            <li><a href="#schedule">Schedule</a></li>
-        </ul>
+      <p class="navbar-title">Conestoga Computer Science Club</p>
+      <input type="checkbox" id="navbar-click" />
+      <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
+      <ul id="navbar-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="signup">Sign Up</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#faq">Faq</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+      </ul>
     </header>
-    <section id="cover" class="screen" style="display: flex; justify-content: center; align-items: center;">
-        <div class="pure-g" style="width: 100%;">
-            <div class="pure-u-1-8"></div>
-            <div class="pure-u-3-4">
-                <h1 id="title">hack<span style="color: var(--garnet)">Stoga</span></h1>
-                <p id="subtitle">
-                    <b>Conestoga High School's annual hackathon</b>
-                    <br>
-                    March 16, 2024 (9am-6pm) | In-Person Event @ Conestoga High School
-                </p>
-            </div>
-            <div class="pure-u-1-8"></div>
+
+    <section id="notice-container">
+      <div class="notices">
+        <p class="alert" id="alert-signup-expiry">
+          <span id="alert-text">hackStoga Signups End In {x}</span
+          ><span class="close-alert" onclick="this.parentElement.style.display='none';"
+            >&times;</span
+          >
+        </p>
+      </div>
+    </section>
+
+    <script>
+      const deadline = fetchConstant('hsdeadline');
+
+      const signupEnd = new Date(deadline);
+      const now = new Date();
+      const timeLeft = Math.floor((signupEnd - now) / (1000 * 60 * 60 * 24));
+
+      if (timeLeft < 0) {
+        document.getElementById('alert-text').innerText = document
+          .getElementById('alert-text')
+          .innerText.replace('In {x}', 'Today!');
+      } else if (timeLeft < 15) {
+        document.getElementById('alert-text').innerText = document
+          .getElementById('alert-text')
+          .innerText.replace('{x}', timeLeft + ' days!');
+      } else {
+        document.getElementById('alert-signup-expiry').style.display = 'none';
+      }
+    </script>
+
+    <section
+      id="cover"
+      class="screen"
+      style="display: flex; justify-content: center; align-items: center"
+    >
+      <div class="pure-g" style="width: 100%">
+        <div class="pure-u-1-8"></div>
+        <div class="pure-u-3-4">
+          <h1 id="title">hack<span style="color: var(--garnet)">Stoga</span></h1>
+          <p id="subtitle">
+            <b>Conestoga High School's annual hackathon</b>
+            <br />
+            March 16, 2024 (9am-6pm) | In-Person Event @ Conestoga High School
+          </p>
+          <div style="margin-top: 15px">
+            <a id="signup-event-button" class="clean-button" target="_blank">Sign Up</a>
+            <a
+              style="margin-left: 1em; background-color: var(--garnet)"
+              target="_blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScoNTdnHyVVoCxWaH3SvtaiPQ79JgfYfLcRL2d1bvBEu9s0qA/viewform"
+              class="clean-button"
+              id="signup-vol-button"
+              >Volunteer</a
+            >
+          </div>
         </div>
+        <div class="pure-u-1-8"></div>
+      </div>
     </section>
     <div class="waves-divider">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path
-                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                opacity=".25" class="shape-fill"></path>
-            <path
-                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-                opacity=".5" class="shape-fill"></path>
-            <path
-                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-                class="shape-fill"></path>
-        </svg>
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+          opacity=".25"
+          class="shape-fill"
+        ></path>
+        <path
+          d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+          opacity=".5"
+          class="shape-fill"
+        ></path>
+        <path
+          d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+          class="shape-fill"
+        ></path>
+      </svg>
     </div>
-    <section id="about" class="screen pure-g" style="margin-top: -100px;">
-        <div class="pure-u-1-12"><!-- formatting div PRE--></div>
-        <div class="pure-u-5-6 pure-g">
-            <h1>Sign Up</h1>
-            <button class="animated-button ">Sign up now!</button>
-            <script>
-                const signupStart = new Date("2024-02-05T08:00:00-05:00");
-                if (Date.now() > signupStart) {
-                    document.querySelector("button").addEventListener("click", () => {
-                        const ref = getParameterByName("ref");
-                        if (ref) {
-                            logAnalytics("hs_button_click", JSON.stringify({ "ref": ref }))
-                                .then((result) => {
-                                    window.location.href = `/hackstoga/signup/?ref=${encodeURIComponent(ref)}`;
-                                })
-                                .catch((err) => {
-                                    window.location.href = `/hackstoga/signup/?ref=${encodeURIComponent(ref)}`;
-                                });
-                        } else {
-                            logAnalytics("hs_button_click", JSON.stringify({ "ref": ref }))
-                                .then((result) => {
-                                    window.location.href = `/hackstoga/signup/?ref=web_other`;
-                                })
-                                .catch((err) => {
-                                    window.location.href = `/hackstoga/signup/?ref=web_other`;
-                                });
-                            window.location.href = "/hackstoga/signup";
-                        }
-                    });
-                } else {
-                    document.querySelector("button").innerHTML = "Signups open Monday @ 8 AM.";
-                    document.querySelector("button").style.backgroundColor = "var(--garnet)";
-                    document.querySelector("button").style.cursor = "not-allowed";
-                    document.querySelector("a[href='signup']").href = "#";
-                }
-
-
-            </script>
-            <div class="formatting-separator"></div>
-            <h1>What is a Hackathon?</h1>
-            <p>
-                Good question! A Hackathon is an event where students come together to learn, build, and share their
-                creations the course of the day. Hackathons are often paired with delicious (and free!) food and shiny
-                prizes.
-                <br><br>
-                Anybody with an interest in technology can attend and expect a relaxed and welcoming atmosphere. You
-                certainly don't have to be a programmer or even know how to code.
-            </p>
-            <div class="formatting-separator"></div>
-            <h1>About hackStoga</h1>
-            <p>
-                Join over a hundred hackers from around the tri-state area in attending hackStoga on March 16, 2024!
-                <br><br>
-                Whether you're a seasoned hacker or you're new to tech, hackStoga is open to everyone! Create a project,
-                learn new skills, attend workshops, and connect with friends at the event. (Did we mention? There's
-                gonna be free food!)
-            </p>
-            <div class="pure-u-1-1 formatting-separator"></div>
-        </div>
-        <div class="pure-u-1-12"><!-- formatting div POST--></div>
+    <section id="about" class="screen pure-g" style="margin-top: -100px">
+      <div class="pure-u-1-12"><!-- formatting div PRE--></div>
+      <div class="pure-u-5-6 pure-g">
+        <h1>What is a Hackathon?</h1>
+        <p>
+          Good question! A Hackathon is an event where students come together to learn, build, and
+          share their creations the course of the day. Hackathons are often paired with delicious
+          (and free!) food and shiny prizes.
+          <br /><br />
+          Anybody with an interest in technology can attend and expect a relaxed and welcoming
+          atmosphere. You certainly don't have to be a programmer or even know how to code.
+        </p>
+        <div class="formatting-separator"></div>
+        <h1>About hackStoga</h1>
+        <p>
+          Join over a hundred hackers from around the tri-state area in attending hackStoga on March
+          16, 2024!
+          <br /><br />
+          Whether you're a seasoned hacker (programmer) or you're new to tech, hackStoga is open to
+          everyone! Create a project, learn new skills, attend workshops, and connect with friends
+          at the event. (Did we mention? There's gonna be free food!)
+        </p>
+        <div class="pure-u-1-1 formatting-separator"></div>
+      </div>
+      <div class="pure-u-1-12"><!-- formatting div POST--></div>
     </section>
     <div class="triangle-divider">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
-        </svg>
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
+      </svg>
     </div>
     <section id="sponsors" class="screen pure-g">
-        <div class="pure-u-1-6"><!-- formatting div PRE--></div>
-        <div class="pure-u-2-3">
-            <div class="formatting-separator"></div>
-            <h1>Our Sponsors</h1>
-            <p>
-                <br><br>
-                A big thank you to our wonderful sponsors last year — especially our flagship sponsor, SIG. hackStoga would not be
-                possible without them!
-                <br><br>
-                If you would like to be a sponsor this year, learn more <a href="sponsor">here</a>.
-            </p>
-            <div id="sponsor-logos" class="pure-g">
-                <div class="pure-u-1-1"><img class="pure-img" src="/media/hackathon/sponsor/sig.png"></div>
-                <!-- <div class="pure-u-11-24"><img class="pure-img" src="/media/hackathon/sponsor/uif.png"></div>
-                <div class="pure-u-1-12"></div>
-                <div class="pure-u-11-24"><img class="pure-img" src="/media/hackathon/sponsor/mathnasium.png"></div>
-                <div class="pure-u-1-3"><img class="pure-img" src="/media/hackathon/sponsor/keystone_volvo.png"></div>
-                <div class="pure-u-1-12"></div>
-                <div class="pure-u-1-6"><img class="pure-img" src="/media/hackathon/sponsor/clays_bakery.png"></div>
-                <div class="pure-u-1-3"></div> -->
-            </div>
-            
+      <div class="pure-u-1-6"><!-- formatting div PRE--></div>
+      <div class="pure-u-2-3">
+        <div class="formatting-separator"></div>
+        <h1>Our Sponsors</h1>
+        <p>
+          <br /><br />
+          A big thank you to our wonderful sponsors — especially our flagship sponsor, SIG.
+          hackStoga would not be possible without them!
+          <br /><br />
+          If you would like to be a sponsor this year, learn more <a href="sponsor">here</a>.
+        </p>
+        <div id="sponsor-logos" class="pure-g">
+          <div class="pure-u-1-1"
+            ><img class="pure-img" src="/media/hackathon/sponsor/sig.png"
+          /></div>
+          <!-- <div class="pure-u-11-24"
+            ><img class="pure-img" src="/media/hackathon/sponsor/uif.png"
+          /></div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-11-24"
+            ><img class="pure-img" src="/media/hackathon/sponsor/mathnasium.png"
+          /></div>
+          <div class="pure-u-1-3"
+            ><img class="pure-img" src="/media/hackathon/sponsor/keystone_volvo.png"
+          /></div>
+          <div class="pure-u-1-12"></div>
+          <div class="pure-u-1-6"
+            ><img class="pure-img" src="/media/hackathon/sponsor/clays_bakery.png"
+          /></div>
+          <div class="pure-u-1-3"></div> -->
         </div>
+      </div>
 
-        <div class="pure-u-1-6"><!-- formatting div POST--></div>
+      <div class="pure-u-1-6"><!-- formatting div POST--></div>
 
-        <!-- <div class = "pure-u-1-12"></div>
-            <div class="pure-u-5-6 pure-g" style="height: 700px;"></div>
-            <div class="pure-u-1-12"></div> -->
-                
+      <!-- <div class="pure-u-1-12"></div>
+      <div class="pure-u-5-6 pure-g" style="height: 700px"></div>
+      <div class="pure-u-1-12"></div> -->
 
-        <div class="slider">
-            <ul class="brands">
-                <li class="brand"><img src="/media/hackathon/sponsor/carousel/mathnasium.png" alt="Mathnasium" width="auto" style="max-height: calc(100vw / 6); max-width: 800px;"></li>
-                <li class="brand"><img src="/media/hackathon/sponsor/carousel/uif.png" alt="UIF" width="auto" style="max-height: calc(100vw / 6); max-width: 800px;" ></li>
-                <li class="brand"><img src="/media/hackathon/sponsor/carousel/keystone_volvo.png" alt="Keystone Volvo" height="auto" width="auto" style="max-height: calc(100vw / 6); max-width: 800px;"></li>
-                <li class="brand"><img src="/media/hackathon/sponsor/carousel/clays_bakery.png" alt="Clay's Bakery" width="auto" style="max-height: 250px"></li>
-            </ul>
-        </div>
+      <div class="slider">
+        <ul class="brands">
+          <li class="brand"
+            ><img
+              src="/media/hackathon/sponsor/carousel/mathnasium.png"
+              alt="Mathnasium"
+              width="auto"
+              style="max-height: calc(100vw / 6); max-width: 800px"
+          /></li>
+          <li class="brand"
+            ><img
+              src="/media/hackathon/sponsor/carousel/uif.png"
+              alt="UIF"
+              width="auto"
+              style="max-height: calc(100vw / 6); max-width: 800px"
+          /></li>
+          <li class="brand"
+            ><img
+              src="/media/hackathon/sponsor/carousel/keystone_volvo.png"
+              alt="Keystone Volvo"
+              height="auto"
+              width="auto"
+              style="max-height: calc(100vw / 6); max-width: 800px"
+          /></li>
+          <!-- <li class="brand"
+            ><img
+              src="/media/hackathon/sponsor/carousel/nicholas_paint.png"
+              alt="Nicholas Paint"
+              height="auto"
+              width="auto"
+              style="max-height: calc(100vw / 6); max-width: 800px"
+          /></li> -->
+          <li class="brand"
+            ><img
+              src="/media/hackathon/sponsor/carousel/clays_bakery.png"
+              alt="Clay's Bakery"
+              width="auto"
+              style="max-height: 250px"
+          /></li>
+        </ul>
+      </div>
 
-        <script> const brands = document.querySelector('.brands') 
-        numBrands = brands.children.length
-        document.documentElement.style.setProperty('--num-logos', numBrands)
+      <script>
+        const brands = document.querySelector('.brands');
+        numBrands = brands.children.length;
+        document.documentElement.style.setProperty('--num-logos', numBrands);
 
         for (let i = 0; i < numBrands; i++) {
-            brands.appendChild(brands.children[i].cloneNode(true))
+          brands.appendChild(brands.children[i].cloneNode(true));
         }
 
         // on window resize
 
         window.addEventListener('resize', () => {
-            document.documentElement.style.setProperty('--logo-width', 'calc(vw / 6)')
-            document.documentElement.style.setProperty('--total-width', 'calc(var(--num-logos) * var(--logo-width) * 2)')
-            console.log("Total width: " + getComputedStyle(document.documentElement).getPropertyValue('--total-width'))
-        })
-        </script>
-            
-        
-        
-
-        
+          document.documentElement.style.setProperty('--logo-width', 'calc(vw / 6)');
+          document.documentElement.style.setProperty(
+            '--total-width',
+            'calc(var(--num-logos) * var(--logo-width) * 2)',
+          );
+        });
+      </script>
     </section>
-    <div class="triangle-divider" style="transform: rotate(0deg);">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
-        </svg>
+    <div class="triangle-divider" style="transform: rotate(0deg)">
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
+      </svg>
     </div>
     <section id="faq" class="screen pure-g">
-        <div class="pure-u-1-12"><!-- formatting div PRE--></div>
-        <div class="pure-u-5-6 pure-g">
-            <div class="pure-u-1-1 formatting-separator"></div>
-            <h1>Our FAQ</h1>
-            <div class="pure-g">
-                <div class="pure-u-md-1-2">
-                    <h2 style="text-align: center;">General</h2>
-                    <details>
-                        <summary>Where and when is the event?</summary>
-                        <p>hackStoga will take place <b>Saturday March 16th, 2024</b> at Conestoga High School in our
-                            Atrium.</p>
-                    </details>
-                    <details>
-                        <summary>Do I have to bring anything?</summary>
-                        <p>Well, a laptop! We recommend that you bring a charger as well and your phone (especially if
-                            it has a hotspot). You may also want to download any programs or libraries you feel like you
-                            might need— just in case!</p>
-                    </details>
-                    <details>
-                        <summary>How much does hackStoga cost?</summary>
-                        <p>hackStoga is 100% free for all participants thanks to our wonderful sponsors!</p>
-                    </details>
-                    <details>
-                        <summary>Hey, I don't have any coding experience!</summary>
-                        <p>No worries, <b>hackStoga is for everyone.</b> In addition to mentors to help you get started,
-                            we'll have introductory programming classes, opportunities for artists, workshops, and more.
-                        </p>
-                    </details>
-                    <details>
-                        <summary>I'm a middle schooler/college student, can I come?</summary>
-                        <p>Sorry, hackStoga is a highschool event.</p>
-                    </details>
-                </div>
-                <div class="pure-u-md-1-2">
-                    <h2 style="text-align: center;">Teams & Projects</h2>
-                    <details>
-                        <summary>How big can teams be? Do I need a team?</summary>
-                        <p>You may participate in teams of 2-5 or solo (although we don't recommend this).</p>
-                    </details>
-                    <details>
-                        <summary>Will there be a theme?</summary>
-                        <p>hackStoga 24's theme will be announced at the event.</p>
-                    </details>
-                    <details>
-                        <summary>When can I start working on my project?</summary>
-                        <p>You can start work on your project as soon as hackStoga begins— that's right after the
-                            introductory presentation.</p>
-                    </details>
-                    <details>
-                        <summary>Can I work on a previous project?</summary>
-                        <p>No, all projects must be built from scratch. Although, you are welcome to brainstorm ideas
-                            ahead of time.</p>
-                    </details>
-                    <details>
-                        <summary>What libraries/languages can I use?</summary>
-                        <p>Any library, any language. You must also credit any significant amount of code not authored
-                            by you used in your project—whether they're libraries or StackOverflow responses.</p>
-                    </details>
-                </div>
-            </div>
-            <div class="pure-u-1-1 formatting-separator"></div>
+      <div class="pure-u-1-12"><!-- formatting div PRE--></div>
+      <div class="pure-u-5-6 pure-g">
+        <div class="pure-u-1-1 formatting-separator"></div>
+        <h1>Our FAQ</h1>
+        <div class="pure-g">
+          <div class="pure-u-md-1-2">
+            <h2 style="text-align: center">General</h2>
+            <details>
+              <summary>Where and when is the event?</summary>
+              <p
+                >hackStoga will take place <b>Saturday March 16th, 2024</b> at Conestoga High School
+                in our Atrium.</p
+              >
+            </details>
+            <details>
+              <summary>Do I have to bring anything?</summary>
+              <p
+                >Well, a laptop! We recommend that you bring a charger as well and your phone
+                (especially if it has a hotspot). You may also want to download any programs or
+                libraries you feel like you might need— just in case!</p
+              >
+            </details>
+            <details>
+              <summary>How much does hackStoga cost?</summary>
+              <p>hackStoga is 100% free for all participants thanks to our wonderful sponsors!</p>
+            </details>
+            <details>
+              <summary>Hey, I don't have any coding experience!</summary>
+              <p
+                >No worries, <b>hackStoga is for everyone.</b> In addition to mentors to help you
+                get started, we'll have introductory programming classes, opportunities for artists,
+                workshops, and more.
+              </p>
+            </details>
+            <details>
+              <summary>I'm a middle schooler/college student, can I come?</summary>
+              <p>Sorry, hackStoga is a highschool event.</p>
+            </details>
+          </div>
+          <div class="pure-u-md-1-2">
+            <h2 style="text-align: center">Teams & Projects</h2>
+            <details>
+              <summary>How big can teams be? Do I need a team?</summary>
+              <p>You may participate in teams of 2-5 or solo (although we don't recommend this).</p>
+            </details>
+            <details>
+              <summary>Will there be a theme?</summary>
+              <p>hackStoga 24's theme will be announced at the event.</p>
+            </details>
+            <details>
+              <summary>When can I start working on my project?</summary>
+              <p
+                >You can start work on your project as soon as hackStoga begins— that's right after
+                the introductory presentation.</p
+              >
+            </details>
+            <details>
+              <summary>Can I work on a previous project?</summary>
+              <p
+                >No, all projects must be built from scratch. Although, you are welcome to
+                brainstorm ideas ahead of time.</p
+              >
+            </details>
+            <details>
+              <summary>What libraries/languages can I use?</summary>
+              <p
+                >Any library, any language. You must also credit any significant amount of code not
+                authored by you used in your project—whether they're libraries or StackOverflow
+                responses.</p
+              >
+            </details>
+          </div>
         </div>
-        <div class="pure-u-1-12"><!-- formatting div POST--></div>
+        <div class="pure-u-1-1 formatting-separator"></div>
+      </div>
+      <div class="pure-u-1-12"><!-- formatting div POST--></div>
     </section>
     <section id="schedule" class="screen pure-g">
-        <div class="waves-divider" style="transform: none;">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                    opacity=".25" class="shape-fill"></path>
-                <path
-                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-                    opacity=".5" class="shape-fill"></path>
-                <path
-                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div>
-        <div class="pure-u-1-12"><!-- formatting div PRE--></div>
-        <div class="pure-u-5-6 pure-g">
-            <div class="pure-u-1-1 formatting-separator"></div>
-            <h1>Schedule</h1>
-            <p>
-                Check back here closer to the event date for a detailed schedule.
-                <br><br>
-                <p></p>
-            </p>
-            <div class="pure-u-1-1 formatting-separator"></div>
-        </div>
-        <div class="pure-u-1-12"><!-- formatting div POST--></div>
+      <div class="waves-divider" style="transform: none">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+      <div class="pure-u-1-12"><!-- formatting div PRE--></div>
+      <div class="pure-u-5-6 pure-g">
+        <div class="pure-u-1-1 formatting-separator"></div>
+        <h1>Schedule</h1>
+        <p>
+          Check back here closer to the event date for a detailed schedule.
+          <br /><br /> </p
+        ><p> </p>
+        <div class="pure-u-1-1 formatting-separator"></div>
+      </div>
+      <div class="pure-u-1-12"><!-- formatting div POST--></div>
     </section>
     <div class="pure-g" id="footer">
-        <div class="pure-u-md-1-1" style="height: 6vh;">
-            <!-- formatting: top margin -->
+      <div class="pure-u-md-1-1" style="height: 6vh">
+        <!-- formatting: top margin -->
+      </div>
+      <div class="pure-u-md-1-1">
+        <div>
+          <p style="text-align: center; font-size: 140%; font-weight: 100">
+            If you have any questions or would like to <a href="sponsor">sponsor us</a>, don't
+            hesitate to reach out at
+            <a href="mailto:stogacsclub@gmail.com">stogacsclub@gmail.com</a>
+          </p>
         </div>
-        <div class="pure-u-md-1-1">
-            <div>
-                <p style="text-align: center; font-size: 140%; font-weight: 100;">
-                    If you have any questions or would like to <a href="sponsor">sponsor us</a>, don't hesitate to reach
-                    out at
-                    <a href="mailto:stogacsclub@gmail.com">stogacsclub@gmail.com</a>
-                </p>
-            </div>
-        </div>
-        <div class="pure-u-md-1-1" style="height: 6vh;">
-            <!-- formatting: bottom margin -->
-        </div>
+      </div>
+      <div class="pure-u-md-1-1" style="height: 6vh">
+        <!-- formatting: bottom margin -->
+      </div>
     </div>
-</body>
+  </body>
+</html>
