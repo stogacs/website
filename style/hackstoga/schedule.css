@@ -17,15 +17,22 @@ body {
 }
 
 #schedule-list table {
-  border-collapse: collapse;
-  border-spacing: 2;
+  border-collapse: separate;
+  border-spacing: 0;
   width: 100%;
 }
 
-#schedule-list th,
-td {
-  border: 2px solid #000; /* Adding borders for demonstration */
-  padding: 8px; /* Adding padding for demonstration */
+#schedule-list td,
+th {
+  border: 2px solid #000;
+}
+
+.topleft {
+  border-top-left-radius: 1em;
+}
+
+.topright {
+  border-top-right-radius: 1em;
 }
 
 #schedule-list th {

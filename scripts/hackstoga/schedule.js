@@ -5,10 +5,14 @@ function updateSchedule() {
   specialColors = ['gold', 'silver', '#9F7A34'];
   let tableContent = `
         <tr>
-            <th>Time</th>
+            <th
+            class="topleft"
+            >Time</th>
             <th>Main Activity</th>
             <th>Side Activity α</th>
-            <th>Side Activity β</th>
+            <th
+            class="topright"
+            >Side Activity β</th>
         </tr>
     `;
 
