@@ -1,7 +1,6 @@
 User-agent: *
-# This is a hack to prevent the individual components of our logo from appearing on Google Images
-Disallow: https://stogacs.club/media/animated_logo/background.png
-Disallow: https://stogacs.club/media/animated_logo/brackets.png
-Disallow: https://stogacs.club/media/animated_logo/gold.png
-Disallow: https://stogacs.club/media/animated_logo/laptop.png
-Disallow: https://stogacs.club/media/animated_logo/scroll.png
+# Prevent individual components of our logo from appearing on Google Images
+Disallow: /media/animated_logo/
+
+# Prevent schedule, timer, etc from being indexed.
+Disallow: /hackstoga/embed/

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  background-color: transparent !important;
+  background-image: url('/media/banners/resources.png');
+  background-size: cover;
+}
+
+/* @media (max-aspect-ratio: 16/9) {
+  body {
+    background-size: auto;
+  }
+} */
+
+a {
+  text-decoration: none !important;
+}
+
+#img {
+  border-radius: 1em;
+  width: 600px;
+  height: auto;
+}
+
+#countdown {
+  font-size: 116px;
+  color: white;
+  padding: 0.25em 0.5em;
+}
+
+#link {
+  font-size: 76px;
+  color: var(--garnet);
+  padding: 0.25em 0.5em;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+#dimmedCountdownContainer {
+  background-color: #00000052;
+  width: fit-content;
+  border-radius: 1em;
+}
+
+#countdownContainer {
+  background-color: #0000008a;
+  width: fit-content;
+  border-radius: 1em;
+}
