@@ -1,5 +1,3 @@
-const knownVersion = 'Mi4wLjA';
-
 function getCookie(name) {
   const cookies = document.cookie.split(';');
   for (let i = 0; i < cookies.length; i++) {
@@ -21,6 +19,10 @@ function setCookie(name, value, days) {
 
 function deleteCookie(name) {
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+
+function pluralize(word, count) {
+  return count === 1 ? word : word + 's';
 }
 
 function getLoginDetails() {
@@ -105,10 +107,4 @@ function fetchConstant(constant) {
     console.error(error);
     return null;
   }
-}
-
-async function isUpToDate() {
-  const response = await fetch('https://cs-services.stoga.club/api/version');
-  const data = await response.json();
-  return data.version == knownVersion;
 }
