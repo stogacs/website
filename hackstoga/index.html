@@ -51,45 +51,14 @@
     <section id="notice-container">
       <div class="notices">
         <p class="alert" id="alert-signup-expiry">
-          <span id="alert-text">hackStoga Signups End In {x}</span
+          <span id="alert-text"
+            >hackStoga 24 is nearing capacity. Sign up now to reserve your spot.</span
           ><span class="close-alert" onclick="this.parentElement.style.display='none';"
             >&times;</span
           >
         </p>
       </div>
     </section>
-
-    <script>
-      const deadline = fetchConstant('hsdeadline');
-
-      const signupEnd = new Date(deadline);
-      const now = new Date();
-      let timeLeft = Math.floor((signupEnd - now) / (1000 * 60));
-      if (timeLeft < 60 && timeLeft > 0) {
-        const minutesRemaining = timeLeft;
-        document.getElementById('alert-text').innerText = document
-          .getElementById('alert-text')
-          .innerText.replace(
-            'In {x}',
-            `In ${minutesRemaining} ${pluralize('minute', minutesRemaining)}!`,
-          );
-      } else if (timeLeft < 1440 && timeLeft > 0) {
-        const hoursRemaining = Math.floor(timeLeft / 60);
-        document.getElementById('alert-text').innerText = document
-          .getElementById('alert-text')
-          .innerText.replace(
-            'In {x}',
-            `In ${hoursRemaining} ${pluralize('hour', hoursRemaining)}!`,
-          );
-      } else if (timeLeft < 10080 && timeLeft > 0) {
-        const daysRemaining = Math.floor(timeLeft / 1440);
-        document.getElementById('alert-text').innerText = document
-          .getElementById('alert-text')
-          .innerText.replace('In {x}', `In ${daysRemaining} ${pluralize('day', daysRemaining)}!`);
-      } else {
-        document.getElementById('alert-signup-expiry').style.display = 'none';
-      }
-    </script>
 
     <section
       id="cover"
@@ -257,14 +226,14 @@
               width="auto"
               style="max-height: calc(100vw / 6); max-width: 800px"
           /></li>
-          <li class="brand"
+          <!-- <li class="brand"
             ><img
               src="/media/hackathon/sponsor/carousel/keystone_volvo.png"
               alt="Keystone Volvo"
               height="auto"
               width="auto"
               style="max-height: calc(100vw / 6); max-width: 800px"
-          /></li>
+          /></li> -->
           <li class="brand"
             ><img
               src="/media/hackathon/sponsor/carousel/nicholas_paint.png"
