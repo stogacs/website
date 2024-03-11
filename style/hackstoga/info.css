@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* screens */
+@media screen and (min-width: 800px) {
+  .formatting-separator {
+    height: 100px;
+  }
+}
+
+#splash {
+  /* this used to be the hackStoga banner but we have enough pictures of the event that we can use those */
+  background-image: url('/media/banners/resources.png');
+  font-family: 'Montserrat', sans-serif;
+}
+
+#content {
+  color: var(--light);
+  font-size: 120%;
+}
+
+/* divider */
+.triangle-divider {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg) translateY(148px);
+}
+
+.triangle-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.triangle-divider .shape-fill {
+  fill: var(--dark);
+}
