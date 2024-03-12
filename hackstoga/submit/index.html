@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting...</title>
+  <meta name="description" content="Submit your hackStoga project here!" />
+  <meta name="theme-color" content="#eaaded" />
+  <script src="/scripts/utils.js"></script>
+</head>
+<html>
+  <body>
+    <p
+      >Redirecting to
+      <a id="link" class="link" href="./troll.mp4">https://hackstoga24.devpost.com/</a></p
+    >
+  </body>
+
+  <style>
+    /* just throwing everything in here because this page is getting trashed soon anyways :) */
+    .link {
+      word-wrap: break-word;
+    }
+  </style>
+
+  <script>
+    const link = document.getElementById('link');
+
+    function addQuestionMark() {
+      link.innerText = link.innerText + '?'.repeat(Math.min(link.innerText.length + 1, 750));
+    }
+
+    setTimeout(() => {
+      document.title = `You can't leave.`;
+      link.innerText = '?';
+      setInterval(() => {
+        addQuestionMark();
+      }, 2000);
+      const video = document.createElement('video');
+      video.src = './troll.mp4';
+      video.controls = true;
+      video.autoplay = true;
+      video.loop = true;
+      document.body.appendChild(video);
+    }, 1300);
+  </script>
+</html>
