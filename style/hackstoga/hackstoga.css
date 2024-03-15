@@ -224,6 +224,26 @@ ul.brands li.brand img {
   color: var(white);
 }
 
+#vol-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.translucent-bg {
+  margin-top: 2px;
+  font-size: 1.25em;
+  background-color: rgba(0, 0, 0, 0.796);
+  padding: 0.3em;
+  border-radius: 0.5em;
+}
+
 @media screen and (max-width: 522px) {
   .clean-button {
     margin: 0px 0px 0px 0px;

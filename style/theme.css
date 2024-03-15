@@ -308,6 +308,11 @@ a:hover {
   background-color: #12121230;
 }
 
+.button-subtext {
+  font-size: 0.5em;
+  margin-top: 0.5em;
+}
+
 .clean-button:hover {
   transform: scale(1.05);
   transform: scale(1.1);

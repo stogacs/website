@@ -10,36 +10,21 @@
   <body>
     <p
       >Redirecting to
-      <a id="link" class="link" href="./troll.mp4">https://hackstoga24.devpost.com/</a></p
+      <a id="link" class="link" href="https://hackstoga24.devpost.com/"
+        >https://hackstoga24.devpost.com/</a
+      ></p
     >
   </body>
 
   <style>
-    /* just throwing everything in here because this page is getting trashed soon anyways :) */
     .link {
       word-wrap: break-word;
     }
   </style>
 
   <script>
-    const link = document.getElementById('link');
-
-    function addQuestionMark() {
-      link.innerText = link.innerText + '?'.repeat(Math.min(link.innerText.length + 1, 750));
-    }
-
     setTimeout(() => {
-      document.title = `You can't leave.`;
-      link.innerText = '?';
-      setInterval(() => {
-        addQuestionMark();
-      }, 2000);
-      const video = document.createElement('video');
-      video.src = './troll.mp4';
-      video.controls = true;
-      video.autoplay = true;
-      video.loop = true;
-      document.body.appendChild(video);
-    }, 1300);
+      window.location.href = 'https://hackstoga24.devpost.com/';
+    }, 500);
   </script>
 </html>
