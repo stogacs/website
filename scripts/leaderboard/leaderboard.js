@@ -1,9 +1,5 @@
 function getPurchases(userInfo) {
   const isAdmin = userInfo?.admin;
-  if (userInfo != null) {
-    const bal = document.getElementById('shekel-bal');
-    bal.textContent = bal.textContent.replace('0', userInfo.shekels);
-  }
   let leaderboard = document.getElementById('leaderboard-list');
   const leaderboardTable = document.createElement('table');
   leaderboardTable.className = 'leaderboard center-text';
