@@ -222,11 +222,10 @@
       <div class="pure-u-md-1-24">
         <!-- formatting div POST-->
       </div>
-      <div class="textbox pure-u-md-10-24">
+      <div class="textbox pure-u-md-10-24" id="leadership">
         <div class="pure-g leadership">
           <h2>Leadership</h2>
         </div>
-
         <div class="pure-g officer">
           <div class="pure-u-1-12"></div>
           <div class="pure-u-1-4">
@@ -286,10 +285,70 @@
           </div>
           <div class="pure-u-1-12"></div>
         </div>
+
+        <p> <b style="font-size: 120%">Scroll to view more</b> </p>
       </div>
       <div class="pure-u-md-1-24">
         <!-- formatting div POST-->
       </div>
+      <script>
+        const positions = ['Vice President', 'Vice President', 'Vice President', 'CEO', 'Officer'];
+        const delayConst = 450;
+        let lastAddStamp = Date.now();
+        let addTimeout;
+
+        function addLeader(name, position, url) {
+          document.getElementById('leadership').innerHTML += `
+          <div class="pure-g officer">
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-4">
+              <img class="pure-img" src="${url}" />
+            </div>
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-2">
+              <p>
+                <b style="font-size: 120%">${name}</b>
+                <br />
+                ${position}
+              </p>
+            </div>
+            <div class="pure-u-1-12"></div>
+          </div>`;
+        }
+
+        window.addEventListener('scroll', function () {
+          var height = document.documentElement.scrollHeight - window.innerHeight;
+
+          if (window.scrollY >= height) {
+            var delay = Date.now() - lastAddStamp;
+            console.log(Date.now(), lastAddStamp);
+            console.log(delay);
+
+            if (addTimeout) {
+              clearTimeout(addTimeout);
+              addTimeout = null;
+            }
+
+            if (delay > delayConst) {
+              addLeader(
+                '2024-2025 Officer',
+                positions[Math.floor(Math.random() * positions.length)],
+                `http://thispersondoesnotexist.com?${Math.random()}`,
+              );
+              lastAddStamp = Date.now();
+            } else {
+              addTimeout = setTimeout(function () {
+                addLeader(
+                  '2024-2025 Leader',
+                  positions[Math.floor(Math.random() * positions.length)],
+                  `http://thispersondoesnotexist.com?${Math.random()}`,
+                );
+                lastAddStamp = Date.now();
+              }, delayConst - delay);
+            }
+          }
+        });
+      </script>
     </section>
     <script async defer src="/scripts/main.js"></script>
   </body>
