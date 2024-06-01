@@ -332,6 +332,14 @@ a:hover {
   background-color: #8b2b2bcc;
 }
 
+.dark-button {
+  background-color: #0000007c;
+}
+
+.dark-button:hover {
+  background-color: #000000cc;
+}
+
 .red-outline:hover {
   border-color: var(--red);
   color: var(--red);

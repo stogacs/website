@@ -11,6 +11,7 @@
     <!--CSS re-used across stogacs.club -->
     <link rel="stylesheet" href="/style/theme.css" />
     <link rel="stylesheet" href="/style/navbar.css" />
+    <link rel="stylesheet" href="/style/tooltips.css" />
 
     <!-- Load in page specific CSS -->
     <link rel="stylesheet" href="/style/hackstoga/hackstoga.css" />
@@ -49,15 +50,7 @@
     </header>
 
     <section id="notice-container">
-      <div class="notices">
-        <p class="alert" id="alert-signup-expiry">
-          <span id="alert-text"
-            >hackStoga 24 has concluded. Thank you to everyone who attended!</span
-          ><span class="close-alert" onclick="this.parentElement.style.display='none';"
-            >&times;</span
-          >
-        </p>
-      </div>
+      <div class="notices"> </div>
     </section>
 
     <section
@@ -75,24 +68,24 @@
             March 16, 2024 (9am-6pm) | In-Person Event @ Conestoga High School
           </p>
           <div class="button-container">
-            <div>
+            <span class="tooltip" tooltip-position="bottom">
               <a
                 id="signup-event-button"
-                class="clean-button red-outline pure-button-disabled"
+                class="clean-button dark-button red-outline pure-button-disabled"
                 style="padding: 10px 20px 10px 20px"
                 target="_blank"
                 >Sign Up</a
-              >
-            </div>
-            <div id="vol-container" class="right-button">
+              ><tooltip>Signups for hackStoga 24 have concluded.</tooltip>
+            </span>
+            <span id="vol-container" class="tooltip right-button" tooltip-position="bottom">
               <a
                 target="_blank"
                 href="https://docs.google.com/forms/d/e/1FAIpQLScoNTdnHyVVoCxWaH3SvtaiPQ79JgfYfLcRL2d1bvBEu9s0qA/viewform"
                 class="clean-button red-button pure-button-disabled"
                 id="signup-vol-button"
                 >Volunteer</a
-              >
-            </div>
+              ><tooltip>Signups for hackStoga 24 have concluded.</tooltip>
+            </span>
           </div>
         </div>
         <div class="pure-u-1-8"></div>
