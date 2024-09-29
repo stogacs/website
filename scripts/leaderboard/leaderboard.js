@@ -23,50 +23,28 @@ function getPurchases(userInfo) {
     .then((response) => response.json())
     .then((data) => {
       if (!data.disabled) {
-        for (let i = 0; i < data.length; i++) {
-          // add each user to the table
-          let rank = ordinal(i + 1);
-          let name = data[i].display_name || removeMiddle(data[i].name) || 'N/A';
-          let shekels = parseInt(data[i].shekels) !== 0 ? parseInt(data[i].shekels) || 'N/A' : 0;
-          let discord_linked = data[i].discord_linked;
-          let shekelTags = isAdmin
-            ? [
-                `<input class="center-text admin-num-input" type="number" min="0" value="${shekels}"`,
-                `input`,
-              ]
-            : ['<p>' + shekels, 'p'];
-          let nameTags = isAdmin
-            ? [
-                `<input class="center-text admin-text-input" id="real-name" type="text" value="${data[i].name}"> <input class="center-text admin-text-input" id="display-name" type="text" value="${data[i].display_name}">`,
-                `</input>`,
-                '<img src="/media/misc/delete.png" onclick="deleteUser(\'' +
-                  data[i].id +
-                  '\')"></img>',
-              ]
-            : ['' + name, '', ''];
-          let styleTag = '';
-          if (i < specialColors.length) {
-            styleTag = `style="color: ${specialColors[i]}"`;
-          }
+        let groupedByShekels = {};
 
-          if (discord_linked) {
-            tableContent += `
-                            <tr shekel_guid="${data[i].id}">
-                            <td ${styleTag}>${rank}</td>
-                            <td>${nameTags[0]}${nameTags[1]}${nameTags[2]}<img src="/media/misc/verified.png"></img></td>
-                            <td>${shekelTags[0]}</${shekelTags[1]}></td>
-                        </tr>
-                    `;
-          } else {
-            tableContent += `
-                            <tr shekel_guid="${data[i].id}">
-                                <td ${styleTag}>${rank}</td>
-                                <td>${nameTags[0]}${nameTags[1]}${nameTags[2]}</td>
-                                <td>${shekelTags[0]}</${shekelTags[1]}></td>
-                            </tr>
-                        `;
+        data.forEach((user) => {
+          if (!groupedByShekels[user.shekels]) {
+            groupedByShekels[user.shekels] = [];
           }
-        }
+          groupedByShekels[user.shekels].push(user);
+        });
+
+        let sortedShekels = Object.keys(groupedByShekels).sort((a, b) => b - a);
+
+        let rank = 1;
+
+        // add each user to the table
+        sortedShekels.forEach((shekels) => {
+          let usersWithSameShekels = groupedByShekels[shekels];
+          usersWithSameShekels.forEach((user) => {
+            tableContent += createUserContent(user, isAdmin, rank);
+          })
+
+          rank += usersWithSameShekels.length;
+        })
 
         leaderboardTable.innerHTML = tableContent;
         leaderboard.innerHTML = '';
@@ -88,6 +66,42 @@ function getPurchases(userInfo) {
       leaderboard.innerHTML = `<p class="center-text error-text">An error occurred while accessing the leaderboard.</p>`;
       console.log(error);
     });
+}
+
+function createUserContent(user, isAdmin, rank) {
+  let name = user.display_name || removeMiddle(user.name) || 'N/A';
+  let shekels = parseInt(user.shekels) !== 0 ? parseInt(user.shekels) || 'N/A' : 0;
+  let discord_linked = user.discord_linked;
+  let shekelTags = isAdmin
+    ? [
+      `<input class="center-text admin-num-input" type="number" min="0" value="${shekels}"`,
+      `input`,
+    ]
+    : ['<p>' + shekels, 'p'];
+  let nameTags = isAdmin
+    ? [
+      `<input class="center-text admin-text-input" id="real-name" type="text" value="${user.name}"> <input class="center-text admin-text-input" id="display-name" type="text" value="${user.display_name}">`,
+      `</input>`,
+      '<img src="/media/misc/delete.png" onclick="deleteUser(\'' +
+      user.id +
+      '\')"></img>',
+    ]
+    : ['' + name, '', ''];
+  let styleTag = '';
+  if (rank - 1 < specialColors.length) {
+    styleTag = `style="color: ${specialColors[rank - 1]}"`;
+  }
+
+  tableContent = `
+    <tr shekel_guid="${user.id}">
+      <td ${styleTag}>
+        <span>${shekels === 0 ? '-' : '#' + rank}</span>
+      </td>
+      <td>${nameTags[0]}${nameTags[1]}${nameTags[2]}${discord_linked ? '<img src="/media/misc/verified.png"></img>' : ''}</td>
+      <td>${shekelTags[0]}</${shekelTags[1]}></td>
+    </tr>
+    `;      
+  return tableContent;
 }
 
 function updateLeaderboard() {
@@ -149,19 +163,23 @@ function newRow() {
     `;
 }
 
-function ordinal(i) {
+function getOrdinalSuffix(i) {
   var j = i % 10,
     k = i % 100;
   if (j == 1 && k != 11) {
-    return i + 'st';
+    return 'st';
   }
   if (j == 2 && k != 12) {
-    return i + 'nd';
+    return 'nd';
   }
   if (j == 3 && k != 13) {
-    return i + 'rd';
+    return 'rd';
   }
-  return i + 'th';
+  return 'th';
+}
+
+function ordinal(i) {
+  return i + getOrdinalSuffix(i);
 }
 
 function removeMiddle(name) {
