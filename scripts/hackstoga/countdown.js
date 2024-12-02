@@ -1,4 +1,4 @@
-var countDownDate = new Date('Mar 16, 2024 17:00:00').getTime();
+var countDownDate = new Date('Mar 15, 2025 17:00:00').getTime();
 const countDownElement = document.getElementById('countdown');
 const img = document.getElementById('img');
 showDays = false;
