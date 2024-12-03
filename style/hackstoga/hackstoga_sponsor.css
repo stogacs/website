@@ -283,15 +283,17 @@ a:active {
   min-width: 100%;
 }
 
+
 .leadership-card > h3,
 h2,
 p {
   overflow-wrap: break-word;
 }
 
+
 .sponsor-content > p,
 ul {
-  padding-bottom: 0.5em;
+  padding-bottom: 1.5em;
 }
 
 .sponsor-content > ul {
