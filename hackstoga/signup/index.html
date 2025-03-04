@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <head>
   <title>Redirecting...</title>
-  <script src="/scripts/utils.js"></script>
 </head>
 <html>
   <body>
@@ -15,11 +14,10 @@
   <script>
     const baseURL =
       'https://forms.office.com/Pages/ResponsePage.aspx?id=qxqZ1-C_6EaDFd7YfRIuY4BMCTdXlq1HhbUm2JnJ5j9UMUNITVdUTVE1V0VLQUlTTlA0RVpMTlI3OS4u';
-    const ref = getParameterByName('ref');
     document.querySelector('a').href = baseURL;
     document.querySelector('a').innerText = baseURL;
     setTimeout(() => {
-      window.open(baseUrl, "_blank");
+      window.location.href = baseURL;
     }, 100);
  
   </script>
