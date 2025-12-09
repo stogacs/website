@@ -190,6 +190,7 @@ a:active {
   }
 }
 
+
 .sponsor-card-platinum {
   animation: glow 5s ease-in-out infinite;
 }
@@ -225,6 +226,11 @@ a:active {
 .textbox > p {
   line-height: 1.4em;
 }
+
+#mission, #support, #tiers, #contact {
+  scroll-margin-top: 80px;
+}
+
 /* mobile */
 @media screen and (max-width: 800px) {
   .textbox {
@@ -285,8 +291,8 @@ a:active {
 
 
 .leadership-card > h3,
-h2,
-p {
+.leadership-card > h2,
+.leadership-card > p {
   overflow-wrap: break-word;
 }
 
@@ -302,10 +308,10 @@ ul {
 
 .back-button {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 5.5em;
+  left: 0em;
   margin: 1em;
-  z-index: 100;
+  z-index: 50;
   padding: 10px;
   background-color: transparent;
   color: white;
@@ -321,4 +327,13 @@ ul {
 
 .back-button:hover {
   background-color: #121212c0;
+}
+
+header {
+  padding: 30px 10% !important;
+  height: auto;
+}
+#navbar-links {
+  margin: 0;
+  padding: 0;
 }

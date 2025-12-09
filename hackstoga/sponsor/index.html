@@ -11,10 +11,16 @@
     <meta name="theme-color" content="#30e1b9" />
     <meta property="og:title" content="hackStoga" />
     <meta property="og:description" content="👩🏻‍💻 hackStoga is looking for sponsors!" />
-    <link href="/style/hackstoga/hackstoga_sponsor.css" rel="stylesheet" />
+
+    <!--CSS re-used across stogacs.club -->
     <link href="/style/main.css" rel="stylesheet" />
     <link href="/style/theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/style/navbar.css" />
 
+    <!-- Load in page specific CSS -->
+    <link href="/style/hackstoga/hackstoga_sponsor.css" rel="stylesheet" />
+
+    <!-- Load in external CSS Libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
     <link
       rel="stylesheet"
@@ -27,7 +33,20 @@
   </head>
 
   <body>
-    <div id="main-cover" class="flex flex-center">
+    <header>
+      <p class="navbar-title">Conestoga Computer Science Club</p>
+      <input type="checkbox" id="navbar-click" />
+      <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
+      <ul id="navbar-links">
+        <li><a href="/hackstoga/">HackStoga</a></li>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#tiers">Sponsorship Tiers</a></li>
+        <li><a href="#contact">Contacts</a></li>
+      </ul>
+    </header>
+
+    <section id="main-cover" class="screen" style="display: flex; justify-content: center; align-items: center">
       <a href="../index.html" class="back-button"><i class="fas fa-angle-left"></i> Back</a>
 
       <div class="pure-g pure-u-1 flex flex-center">
@@ -39,7 +58,7 @@
         </div>
         <div class="pure-g">
           <div class="pure-u-md-1-12"></div>
-          <div class="flex flex-center flex-column" style="height: 100%; z-index: 999">
+          <div class="flex flex-center flex-column" style="height: 100%; z-index: 10">
             <img
               class="pure-img"
               src="/media/hackathon/logos/24.png"
@@ -49,12 +68,12 @@
           </div>
           <div
             class="flex flex-column"
-            style="z-index: 999; align-items: flex-start; justify-content: center"
+            style="z-index: 10; align-items: flex-start; justify-content: center"
           >
             <div id="textlogo">
               <h1 id="title">hack<span style="color: var(--garnet)">Stoga</span></h1>
               <h2
-                >March 22, 2025<br />
+                >March TBD, 2026<br />
                 <span
                   style="
                     color: var(--garnet);
@@ -68,68 +87,64 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
+   
+    <div id="mission" class="pure-g flex-center darker">
+      <div class="pure-u-md-1-1" style="height: 75px">
+          <!-- formatting: top margin -->
+      </div>
 
-    <div class="pure-g">
-      <div class="pure-g">
-        <section id="mission">
-          <div class="pure-u-md-1-1" style="height: 75px">
-            <!-- formatting: top margin -->
-          </div>
+      <div class="pure-u-md-7-8">
+        <div class="pure-g">
 
-          <div class="pure-u-md-1-24" style="height: 6vh"><!--  formatting div PRE --> </div>
-
-          <div style="text-align: center">
-            <div class="pure-u-md-10-24">
-              <div id="trailer">
+          <div class="pure-u-md-11-24">
+          <div id="trailer">
                 <iframe
                   src="https://www.youtube-nocookie.com/embed/FySgBIQwA7g?autohide=1&amp;modestbranding=0&amp;rel=0"
                   frameborder="0"
                   allowfullscreen=""
                 ></iframe>
-              </div>
-            </div>
-            <div class="pure-u-md-1-24">
-              <!-- formatting div POST-->
-            </div>
-            <div class="pure-u-md-10-24">
-              <div class="textbox pure-u-md-1-1">
-                <h2>Our Mission</h2>
-                <p>
-                  Inspiring students to explore the world of computer science outside of the
-                  classroom by providing <u>hands-on experience</u> with coding and teamwork, and
-                  offering a diverse and inclusive environment where students of all backgrounds can
-                  <u>learn and grow together</u>.
-                </p>
-              </div>
-
-              <div class="pure-u-md-1-1" style="height: 3vh"></div>
-
-              <div class="textbox pure-u-md-1-1">
-                <h2>What hackStoga Looks Like</h2>
-                <p>
-                  For the past two years, we've been hosting hackStoga, and it's been drawing
-                  <u>hundreds of students</u> from local school districts! With skill levels range
-                  from beginner to expert, club-sponsored <u>workshops</u>, an engaging 3D printing
-                  seminar by UIF, and <u>pizza and merch</u> courtesy of SIG, it's always a blast!
-                  This year, we're planning on scaling it up and expanding our workshops to reach a
-                  broader audience and foster a more <u>inclusive</u> high school programming
-                  culture.
-                </p>
-              </div>
-            </div>
-
-            <div class="pure-u-md-1-1 formatting-separator"></div>
           </div>
-        </section>
-      </div>
+          </div>
 
-      <div class="pure-u-md-1-8">
-        <!-- formatting: 1/8 right margin -->
+          <div class="pure-u-md-2-24">
+          <!-- formatting div MIDDLE -->
+          </div>
+
+          <div class="pure-u-md-11-24">
+        <div class="textbox pure-u-md-1-1">
+          <h2>Our Mission</h2>
+          <p>
+            Inspiring students to explore the world of computer science outside of the
+            classroom by providing <u>hands-on experience</u> with coding and teamwork, and
+            offering a diverse and inclusive environment where students of all backgrounds can
+            <u>learn and grow together</u>.
+          </p>
+        </div>
+
+        <div class="pure-u-md-1-1" style="height: 3vh"></div>
+
+        <div class="textbox pure-u-md-1-1">
+          <h2>What hackStoga Looks Like</h2>
+          <p>
+            For the past four years, we've been hosting hackStoga, and it's been drawing
+            <u>hundreds of students</u> from local school districts! With skill levels ranging
+            from beginner to expert, club-sponsored <u>workshops</u>, an engaging <u>estimathon</u>
+            by Jane Street, and <u>pizza and merch</u>, it's always a blast!
+            This year, we're planning on scaling it up and expanding our workshops to reach a
+            broader audience and foster a more <u>inclusive</u> high school programming
+            culture.
+          </p>
+        </div>
+
+        <div class="pure-u-md-1-1 formatting-separator"></div>
+          </div>
+
+        </div>
       </div>
     </div>
 
-    <div class="pure-g">
+    <div id="support" class="pure-g">
       <!-- Icons from Basicons Interface Line Icons -->
 
       <div class="pure-u-md-1-1" style="height: 3vh">
@@ -292,7 +307,7 @@
       </div>
     </div>
 
-    <div class="pure-g flex-center darker">
+    <div class="pure-g flex-center darker" id="tiers">
       <div class="pure-u-md-1-1" style="height: 3vh">
         <!-- formatting: top margin -->
       </div>
@@ -413,7 +428,7 @@
       </div>
     </div>
 
-    <div class="pure-g">
+    <div class="pure-g" id="contact">
       <div class="pure-u-md-1-1" style="height: 6vh">
         <!-- formatting: top margin -->
       </div>
@@ -445,7 +460,7 @@
         <h1 class="flex flex-center">Meet The Team</h1>
       </div>
 
-      <div class="pure-u-md-1-1" style="height: 3vh">
+      <div class="pure-u-md-1-1">
         <!-- formatting: margin -->
       </div>
 
@@ -453,72 +468,72 @@
         <!-- formatting: divider space (reverted to 1/12 after last organizer image)-->
       </div>
 
-      <div class="pure-u-md-1-6" id="leadership-card">
+      <div class="pure-u-md-1-6">
         <div class="leadership-card rounded">
-          <img class="pure-img rounded" src="\media\admins\25VasireddyM.png" />
-          <h3 style="color: var(--almond)">Co-president</h3>
-          <h2>Meghanadh Vasireddy</h2>
-          <a href="mailto:25vasireddym@tesdk12.net"
-            ><p style="font-size: smaller">25vasireddym@tesdk12.net</p></a
+          <img class="pure-img rounded" src="\media\admins\26ZhangA.png" />
+          <h3 style="color: var(--gold)">Co-president</h3>
+          <h2>Anthony Zhang</h2>
+          <a href="mailto:26zhanga@tesdk12.net"
+            ><p style="font-size: smaller">26zhanga@tesdk12.net</p></a
           >
         </div>
       </div>
 
       <div class="pure-u-md-1-6">
         <div class="leadership-card rounded">
-          <img class="pure-img rounded" src="\media\admins\25FrischmannJ.png" />
+          <img class="pure-img rounded" src="\media\admins\26AroraP.png" />
           <h3 style="color: var(--gold)">Co-President</h3>
-          <h2>Jake Frischmann</h2>
-          <a href="mailto:25frischmannj@tesdk12.net"
-            ><p style="font-size: smaller">25frischmannj@tesdk12.net</p></a
+          <h2>Prranit Arora</h2>
+          <a href="mailto:26arorap@tesdk12.net"
+            ><p style="font-size: smaller">26arorap@tesdk12.net</p></a
           >
         </div>
       </div>
 
       <div class="pure-u-md-1-6">
         <div class="leadership-card rounded">
-          <img class="pure-img rounded" src="\media\admins\25LiuH.png" />
-          <h3 style="color: var(--gold)">Vice President</h3>
-          <h2>Hanyang Liu</h2>
-          <a href="mailto:25liuh@tesdk12.net"
-            ><p style="font-size: smaller">25liuh@tesdk12.net</p></a
+          <img class="pure-img rounded" src="\media\admins\26WuJ.png" />
+          <h3 style="color: var(--almond)">Vice President</h3>
+          <h2>Justin Wu</h2>
+          <a href="mailto:26wuj@tesdk12.net"
+            ><p style="font-size: smaller">26wuj@tesdk12.net</p></a
           >
         </div>
       </div>
 
       <div class="pure-u-md-1-6">
+        <div class="leadership-card rounded">
+          <img class="pure-img rounded" src="\media\admins\26ZhangR.png" />
+          <h3 style="color: var(--platinum-sponsor)">Officer</h3>
+          <h2>Ritchie Zhang</h2>
+          <a href="mailto:26zhangr@tesdk12.net"
+            ><p style="font-size: smaller">26zhangr@tesdk12.net</p></a
+          >
+        </div>
+      </div>
+
+      <div class="pure-u-md-1-6">
+        <div class="leadership-card rounded">
+          <img class="pure-img rounded" src="\media\admins\27MussaniI.png" />
+          <h3 style="color: var(--platinum-sponsor)">Officer</h3>
+          <h2>Issaam Mussani</h2>
+          <a href="mailto:27mussanii@tesdk12.net"
+            ><p style="font-size: smaller">27mussanii@tesdk12.net</p></a
+          >
+        </div>
+      </div>
+ 
+      <!-- TO DO: add later - refer to line 96/318 -->
+      <!-- <div class="pure-u-md-1-6">
         <div class="leadership-card rounded">
           <img class="pure-img rounded" src="\media\admins\unknown.png" />
-          <h3 style="color: var(--platinum-sponsor)">President (Girls in STEM)</h3>
+          <h3 style="color: var(--silver-sponsor)">President (Girls in STEM)</h3>
           <h2>Miya Cao</h2>
           <a href="mailto:26caom@tesdk12.net"
             ><p style="font-size: smaller">26caom@tesdk12.net</p></a
           >
         </div>
-      </div>
-
-      <div class="pure-u-md-1-6" id="leadership-card">
-        <div class="leadership-card rounded">
-          <img class="pure-img rounded" src="\media\admins\25AgarwalaM.png" />
-          <h3 style="color: var(--almond)">Head Officer</h3>
-          <h2>Milan Agarwala</h2>
-          <a href="mailto:25agarwalam@tesdk12.net"
-            ><p style="font-size: smaller">25agarwalam@tesdk12.net</p></a
-          >
-        </div>
-      </div>
-<!-- 
-      <div class="pure-u-md-1-6" id="leadership-card">
-        <div class="leadership-card rounded">
-          <img class="pure-img rounded" src="\media\admins\26AroraP.png" />
-          <h3 style="color: var(--almond)">Treasurer</h3>
-          <h2>Prranit Arora</h2>
-          <a href="mailto:26Arorap@tesdk12.net"
-            ><p style="font-size: smaller">26Arorap@tesdk12.net</p></a
-          >
-        </div>
       </div> -->
-
       
 
       <div class="pure-u-md-1-12">

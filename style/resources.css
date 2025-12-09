@@ -18,6 +18,10 @@
   font-size: 120%;
 }
 
+#fundamentals {
+  scroll-margin-top: 100px;
+}
+
 /* divider */
 .triangle-divider {
   bottom: 0;
