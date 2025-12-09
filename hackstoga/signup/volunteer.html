@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <title>Redirecting...</title>
+</head>
+<html>
+  <body>
+    <p
+      >Redirecting to
+      <a class="link" href="https://forms.office.com/r/FzBCY2cjBY"
+        >https://forms.office.com/r/FzBCY2cjBY</a
+      ></p
+    >
+  </body>
+  <script>
+    const baseURL =
+      'https://forms.office.com/r/FzBCY2cjBY';
+    document.querySelector('a').href = baseURL;
+    document.querySelector('a').innerText = baseURL;
+    setTimeout(() => {
+      window.location.href = baseURL;
+    }, 100);
+ 
+  </script>
+</html>

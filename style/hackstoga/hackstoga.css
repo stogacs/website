@@ -28,6 +28,7 @@
 #about {
   color: var(--light);
   font-size: 120%;
+  scroll-margin-top: 100px;
 }
 
 #sponsors {
@@ -45,6 +46,7 @@
   background-color: var(--superdark);
   color: var(--light);
   font-size: 120%;
+  scroll-margin-top: -150px;
 }
 
 .header {
@@ -242,6 +244,38 @@ ul.brands li.brand img {
   background-color: rgba(0, 0, 0, 0.796);
   padding: 0.3em;
   border-radius: 0.5em;
+}
+
+#signup-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px 10px 20px;
+  color: white;
+  background-color: #000000cc;
+  border: 2px solid white;
+  font-size: 2em;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+}
+
+#volunteer-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px 10px 20px;
+  color: white;
+  background-color: #8b2b2be5;
+  border: 2px solid white;
+  font-size: 2em;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  display: none;
 }
 
 @media screen and (max-width: 522px) {

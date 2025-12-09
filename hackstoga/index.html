@@ -41,7 +41,7 @@
       <label for="navbar-click" class="navbar-toggle"><i class="fas fa-bars"></i></label>
       <ul id="navbar-links">
         <li><a href="/">Home</a></li>
-        <li><a href="signup">Sign Up</a></li>
+        <li><a href="#" id="signup-header-link">Sign Up</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#sponsors">Sponsors</a></li>
         <li><a href="#faq">Faq</a></li>
@@ -65,7 +65,7 @@
           <p id="subtitle">
             <b>Conestoga High School's annual hackathon</b>
             <br />
-            March 22, 2025 (9am-6pm) | In-Person Event @ Conestoga High School
+            March Date TBD, 2026 | In-Person Event @ Conestoga High School
           </p>
           <div class="button-container">
             <span class="tooltip" tooltip-position="bottom">
@@ -79,7 +79,6 @@
             <span id="vol-container" class="tooltip right-button" tooltip-position="bottom">
               <a
                 target="_blank"
-                href="https://forms.office.com/r/FzBCY2cjBY"
                 class="clean-button red-button pure-button-enabled"
                 id="signup-vol-button"
                 >Volunteer</a
@@ -144,7 +143,7 @@
           <div class="pure-u-md-5-8">
             <p>
               Join over a hundred hackers from around the tri-state area in attending hackStoga on
-              March 22, 2025!
+              March Date TBD, 2026!
               <br /><br />
               Whether you're a seasoned hacker (programmer) or you're new to tech, hackStoga is open
               to everyone! Create a project, learn new skills, attend workshops, and connect with
@@ -172,51 +171,37 @@
         <div class="formatting-separator"></div>
         <h1 class="header">Last Year's Sponsors</h1>
         <p>
-          <br /><br />
-          A big thank you to our wonderful sponsors last year — especially our flagship sponsor, SIG.
-          <br /><br />
-          We also thank the Uncommon Individual Foundation, Nicholas Paints, and Mathnasium.
+          A big thank you to our wonderful sponsors last year, Jane Street and the Uncommon Individual Foundation.
           <br /><br />
           hackStoga would not be possible without them!
           <br /><br />
         </p>
+        <br />
         <h2>
           If you would like to be a sponsor this year, learn more <a href="sponsor">here</a>.
         </h2>
         
-<!--         <div id="sponsor-logos" class="pure-g">
+        <div id="sponsor-logos" class="pure-g">
           <div class="pure-u-1-1"
-            ><img class="pure-img" src="/media/hackathon/sponsor/sig.png"
-          /></div> -->
-          <!-- <div class="pure-u-11-24"
+            ><img class="pure-img" src="/media/hackathon/sponsor/Jane_Street.png"
+          /></div>
+          <div class="pure-u-1-1"
             ><img class="pure-img" src="/media/hackathon/sponsor/uif.png"
           /></div>
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-11-24"
-            ><img class="pure-img" src="/media/hackathon/sponsor/mathnasium.png"
-          /></div>
-          <div class="pure-u-1-3"
-            ><img class="pure-img" src="/media/hackathon/sponsor/keystone_volvo.png"
-          /></div>
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-6"
-            ><img class="pure-img" src="/media/hackathon/sponsor/clays_bakery.png"
-          /></div>
-          <div class="pure-u-1-3"></div> -->
-<!--         </div>
-      </div> -->
+         </div>
+      </div>
 
       <div class="pure-u-1-6"><!-- formatting div POST--></div>
 
-      <!-- <div class="pure-u-1-12"></div>
-      <div class="pure-u-5-6 pure-g" style="height: 700px"></div>
-      <div class="pure-u-1-12"></div> -->
+      <div class="pure-u-1-12"></div>
+      <div class="pure-u-5-6 pure-g" style="height: 50px"></div>
+      <div class="pure-u-1-12"></div>
 
-<!--       <div class="slider">
+       <div class="slider">
         <ul class="brands">
           <li class="brand"
             ><img
-              src="/media/hackathon/sponsor/carousel/mathnasium.png"
+              src="/media/hackathon/sponsor/carousel/Jane_Street.png"
               alt="Mathnasium"
               width="auto"
               style="max-height: calc(100vw / 6); max-width: 800px"
@@ -228,31 +213,9 @@
               width="auto"
               style="max-height: calc(100vw / 6); max-width: 800px"
           /></li>
-          <!-- <li class="brand"
-            ><img
-              src="/media/hackathon/sponsor/carousel/keystone_volvo.png"
-              alt="Keystone Volvo"
-              height="auto"
-              width="auto"
-              style="max-height: calc(100vw / 6); max-width: 800px"
-          /></li> -->
-<!--           <li class="brand"
-            ><img
-              src="/media/hackathon/sponsor/carousel/nicholas_paint.png"
-              alt="Nicholas Paint"
-              height="auto"
-              width="auto"
-              style="max-height: calc(100vw / 6); max-width: 800px"
-          /></li>
-          <!-- <li class="brand" -->
-<!--             ><img
-              src="/media/hackathon/sponsor/carousel/clays_bakery.png"
-              alt="Clay's Bakery"
-              width="auto"
-              style="max-height: 250px"
-          /></li> -->
-<!--         </ul> -->
-<!--       </div> -->
+         </ul>
+      </div>
+      <div class="pure-u-1-1 formatting-separator"></div>
 
       <script>
         const brands = document.querySelector('.brands');
@@ -362,7 +325,7 @@
       </div>
       <div class="pure-u-1-12"><!-- formatting div POST--></div>
     </section>
-    <section id="schedule" class="screen pure-g" style="height: 1150px">
+    <section id="schedule" class="screen pure-g" style="height: 450px"> <!-- height with schedule is 1150px -->
       <div class="waves-divider" style="transform: none">
         <svg
           data-name="Layer 1"
@@ -386,19 +349,23 @@
           ></path>
         </svg>
       </div>
-      <!--
-      <div class="pure-u-1-12"><!-- formatting div PRE</div>
+      
+      <div class="pure-u-1-12"><!-- formatting div PRE--></div>
       <div class="pure-u-5-6">
         <div class="pure-u-1-1 formatting-separator"></div>
         <h1 class="header">Schedule</h1>
-        <iframe
-          src="./embed/schedule"
+        <!-- TO DO: Fix the schedule -->
+        <!-- <iframe
+          src="./embed/schedule/index.html"
           style="width: 100%; height: 1000px; border: none; overflow: scroll"
-        ></iframe>
+        ></iframe> -->
+        <div class="pure-u-1-1 formatting-separator"></div>
+            <p style="text-align: center; font-size: 140%; font-weight: 100">
+            The schedule for hackStoga 2026 will be announced closer to the event date. Stay tuned!
         <div class="pure-u-1-1 formatting-separator"></div>
       </div>
-      <div class="pure-u-1-12"><!-- formatting div POST</div> 
-      -->
+      <div class="pure-u-1-12"><!-- formatting div POST--></div> 
+      
     </section>
     <div class="pure-g" id="footer">
       <div class="pure-u-md-1-1" style="height: 6vh">
