@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', async function () {
   var currentDate = new Date();
   var currentYear = currentDate.getFullYear();
-  var signupStart = new Date(currentYear, 1, 1);
-  var volunteerStart = new Date(currentYear, 2, 1);
+  var signupStart = new Date(currentYear, 1, 14);
+  var volunteerStart = new Date(currentYear, 2, 7);
   var hackstogaEnd = new Date(currentYear, 2, 31);
 
   if (currentDate > hackstogaEnd) {
