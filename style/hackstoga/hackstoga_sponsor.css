@@ -118,6 +118,27 @@ a:active {
   border-radius: 6px;
 }
 
+.sponsor-textbox {
+  background-color: var(--darker);
+  color: var(--light);
+  padding: 2em;
+  border-radius: 1rem;
+  margin: 0.5em;
+  font-size: 100%;
+}
+
+.sponsor-textbox .pure-g {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.sponsor-textbox .flex-column {
+  display: flex;
+  justify-content: center;
+  
+}
+
 .pure-img {
   height: auto;
 }
