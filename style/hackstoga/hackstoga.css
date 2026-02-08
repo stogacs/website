@@ -47,6 +47,8 @@
   color: var(--light);
   font-size: 120%;
   scroll-margin-top: -150px;
+  min-height: auto;
+  padding-bottom: 3em;
 }
 
 .header {
@@ -57,6 +59,39 @@
 #footer {
   color: var(--light);
   background-color: var(--superdark);
+}
+
+#footer p {
+  padding: 0 1em;
+}
+
+/* responsive logo sizing */
+#sponsor-logos {
+  text-align: center;
+}
+
+.sponsor-logo-container {
+  padding: 1.5em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-logo-main {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+/* mobile */
+@media screen and (max-width: 800px) {
+  .sponsor-logo-main {
+    max-width: 90%;
+  }
+
+  .sponsor-logo-container {
+    padding: 0.5em 0;
+  }
 }
 
 /* details */
@@ -160,18 +195,18 @@ details[open] summary {
   position: absolute;
   content: '';
   height: 100%;
-  width: var(--logo-width);
+  width: 150px;
+  z-index: 1;
 }
 
 .slider::before {
   left: 0;
-  background-color: linear-gradient(to right, var(--superdark) 0%, transparent 100%);
+  background: linear-gradient(to right, var(--superdark) 0%, transparent 100%);
 }
 
 .slider::after {
-  content: '';
   right: 0;
-  background-color: linear-gradient(to left, var(--superdark) 0%, transparent 100%);
+  background: linear-gradient(to left, var(--superdark) 0%, transparent 100%);
 }
 
 .slider ul.brands {
@@ -191,17 +226,37 @@ details[open] summary {
 }
 
 ul.brands li.brand {
-  margin-left: 200px;
-
-  max-height: 100%;
-  max-width: calc(vw / 6);
-  width: var(--logo-width);
-  object-fit: contain;
+  margin: 0 100px;
+  max-height: 200px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ul.brands li.brand img {
-  max-height: calc(vw / 600) !important;
-  text-align: center !important;
+  max-height: 150px;
+  max-width: 300px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* responsive sizing carousel */
+@media screen and (max-width: 800px) {
+  .slider {
+    height: 200px;
+  }
+  
+  ul.brands li.brand {
+    margin: 0 50px;
+    min-width: 150px;
+  }
+  
+  ul.brands li.brand img {
+    max-height: 100px;
+    max-width: 200px;
+  }
 }
 
 #notice-container {
@@ -285,6 +340,10 @@ ul.brands li.brand img {
 
   .right-button {
     margin-left: 0em;
-    margin-top: 10px;
+    margin-top: 15px;
+  }
+  
+  .button-container {
+    gap: 15px;
   }
 }
