@@ -146,18 +146,6 @@ a:active {
   margin-left: 25%;
 }
 
-@media screen and (max-width: 551px) {
-  #logo-img {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .margin-on-desktop {
-    margin-left: 0%;
-  }
-}
-
 #mission {
   background-color: var(--darker);
 }
@@ -252,18 +240,6 @@ a:active {
   scroll-margin-top: 80px;
 }
 
-/* mobile */
-@media screen and (max-width: 800px) {
-  .textbox {
-    background-color: var(--superdark);
-    width: 100%;
-  }
-
-  .wavy-divider {
-    background-color: var(--superdark);
-  }
-}
-
 @media screen and (min-width: 800px) {
   .textbox {
     border-radius: 1rem;
@@ -290,6 +266,10 @@ a:active {
 }
 
 .leadership-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
   margin: 0.5em;
   padding: 1.5em;
   background-color: var(--darker);
@@ -307,9 +287,29 @@ a:active {
 }
 
 .leadership-card > img {
-  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0.75em;
 }
 
+.leadership-card h3,
+.leadership-card h2,
+.leadership-card a {
+  margin: 0.2em 0;
+  overflow-wrap: break-word; 
+}
+
+.leadership-card a {
+  font-size: smaller;
+  color: var(--red);
+  text-decoration: none;
+}
+
+.leadership-card a:hover {
+  text-decoration: underline;
+}
 
 .leadership-card > h3,
 .leadership-card > h2,
@@ -357,4 +357,159 @@ header {
 #navbar-links {
   margin: 0;
   padding: 0;
+}
+
+/* phone style */
+@media screen and (max-width: 800px) {
+
+  header {
+    padding: 30px 10% !important;
+  }
+
+  #main-cover .pure-g {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #logo-img {
+    display: block;
+    margin-left: -1.5rem;
+    margin-right: 1.5rem;
+    height: 10rem;
+    width: auto;
+  }
+
+  #textlogo {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+
+  #textlogo h2 {
+    margin: 0.75rem 0 0 0;
+  }
+
+  section,
+  #mission,
+  #support,
+  #tiers,
+  #contact {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  #mission {
+    padding-bottom: 5rem
+  }
+
+  .back-button {
+    top: 7em;
+    left: 0.5em;
+  }
+
+  #title {
+    font-size: 3.5rem;
+  }
+
+  #mission .pure-u-md-11-24{
+    width: 100%;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+  }
+
+  #trailer {
+    margin-top: -3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .textbox {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 105%;
+    border-radius: 0.75rem;
+  }
+
+  #support h1,
+  #contact h1,
+  #tiers h1 {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  #support .pure-u-md-1-1,
+  #contact .pure-u-md-1-1,
+  #tiers .pure-u-md-1-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sponsor-textbox {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 1.5rem;
+  }
+
+  .sponsor-textbox .pure-g {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sponsor-textbox .pure-u-md-1-4 {
+    width: auto;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sponsor-textbox .pure-u-md-1-8 {
+    width: 1.5rem;
+    flex: 0 0 1.5rem;
+  }
+
+  .sponsor-textbox .pure-u-md-5-8 {
+    width: auto;
+    flex: 1;
+  }
+
+  .sponsor-textbox p {
+    margin: 0;
+  }
+
+  .icon {
+    width: 3rem;
+  }
+
+  .sponsor-card {
+    margin: 0.8rem 0;
+  }
+
+  .sponsor-content {
+    width: 85%;
+  }
+
+  #contact .pure-u-md-1-2,
+  #contact .pure-u-md-1-4 {
+    width: 100%;
+  }
+
+  #contact .pure-u-md-1-2 > .textbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #contact .pure-u-md-1-2 h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  #contact .pure-u-md-1-2 p {
+    margin-top: 0;
+    max-width: 85%;
+  }
 }

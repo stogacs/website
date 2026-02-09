@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sponsor hackStoga</title>
     <meta name="title" content="Stoga CS" />
     <meta
@@ -58,7 +59,7 @@
         </div>
         <div class="pure-g">
           <div class="pure-u-md-1-12"></div>
-          <div class="flex flex-center flex-column" style="height: 100%; z-index: 10">
+          <div class="flex flex-column" style="height: 100%; z-index: 10">
             <img
               class="pure-img"
               src="/media/hackathon/logos/26.png"
@@ -570,8 +571,12 @@
       function adjustImageHeight() {
         var textlogo = document.getElementById('textlogo');
         var img = document.getElementById('logo-img');
-        img.style.maxHeight = textlogo.offsetHeight + 'px';
+
+        if (window.innerWidth > 800) {
+          img.style.maxHeight = textlogo.offsetHeight + 'px';
+        } else {
+          img.style.maxHeight = 'none';
+        }
       }
     </script>
-  </body></html
->
+  </body></html>
