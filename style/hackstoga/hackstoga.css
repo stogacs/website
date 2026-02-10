@@ -92,6 +92,18 @@
   .sponsor-logo-container {
     padding: 0.5em 0;
   }
+
+  #sponsors {
+    scroll-margin-top: 12vmax;
+  }
+
+  #faq {
+    scroll-margin-top: 9vmax;
+  }
+
+  #schedule {
+    scroll-margin-top: -10vmax;
+  }
 }
 
 /* details */

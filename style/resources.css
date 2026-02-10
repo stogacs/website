@@ -42,3 +42,12 @@
 .triangle-divider .shape-fill {
   fill: var(--dark);
 }
+
+/* phone style */
+@media screen and (max-width: 800px) {
+
+  #fundamentals,
+  #presentations {
+    scroll-margin-top: 14vmax;
+  }
+}

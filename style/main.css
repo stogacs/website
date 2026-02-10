@@ -191,6 +191,11 @@ h3 {
   .wavy-divider {
     background-color: var(--superdark);
   }
+
+  #about,
+  #contacts {
+    scroll-margin-top: 12vmax;
+  }
 }
 
 @media screen and (min-width: 800px) {
