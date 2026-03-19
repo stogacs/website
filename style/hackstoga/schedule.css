@@ -1,53 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
 
+:root {
+  --superdark: #0a0a0a;
+  --dark: #212121;
+  --darker: #121212;
+  --white: #fefefe;
+  --red: #e83b3b;
+  --garnet: #8b2b2b;
+}
+ 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+ 
 body {
-  background-color: transparent !important;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--superdark);
+  color: var(--white);
 }
-
-#schedule-list {
-  color: var(--light);
-  font-size: 120%;
+ 
+#schedule {
+  padding: 3em 2em;
+  max-width: 90%;
+  margin: 0 auto;
 }
-
-.error-text {
-  color: var(--red);
-  font-size: 120%;
-  text-align: left;
+ 
+#schedule h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--garnet);
+  margin-bottom: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-
-#schedule-list table {
-  border-collapse: separate;
-  border-spacing: 0;
+ 
+table {
   width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
 }
-
-#schedule-list td,
-th {
-  border: 2px solid #000;
-}
-
-.topleft {
-  border-top-left-radius: 1em;
-}
-
-.topright {
-  border-top-right-radius: 1em;
-}
-
-#schedule-list th {
+ 
+thead tr {
   background-color: var(--garnet);
-  padding: 3px;
 }
-
-#schedule-list td {
-  background-color: var(--background-color);
-  padding: 5px;
+ 
+th {
+  padding: 0.7em 1em;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: var(--white);
+  border: 1px solid #2a2a2a;
 }
+ 
+td {
+  padding: 0.55em 1em;
+  text-align: center;
+  border: 1px solid #1e1e1e;
+  color: var(--white);
+}
+ 
+tbody tr:nth-child(even) { background-color: #121212; }
+tbody tr:nth-child(odd)  { background-color: #212121; }
 
-#schedule-list img {
-  width: auto;
-  height: 20px;
-  border-radius: 50%;
-  margin-right: 10px;
-  padding-left: 5px;
+td:first-child {
+  white-space: nowrap;
 }
