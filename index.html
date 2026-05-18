@@ -32,6 +32,10 @@
 
     <!-- JS re-used across stogacs.club -->
     <script src="/scripts/navbar-close.js"></script>
+
+    <!-- Page specific JS -->
+    <script async defer src="/scripts/main.js"></script>
+
   </head>
   <body>
     <header>
@@ -65,8 +69,7 @@
       <img class="logo-piece" id="scroll" src="/media/animated_logo/scroll.png" />
       <p class="logo-piece" id="name"> Conestoga<br />Computer<br />Science Club </p>
       <p id="banner-text">
-        Mondays after school in room
-        <span style="color: var(--offwhite)">2005</span>
+        Mondays after school in room 2005
       </p>
     </section>
     <section id="about" class="screen pure-g">
@@ -78,7 +81,9 @@
       <div class="textbox pure-u-md-11-24">
         <h2>About Us</h2>
         <p>
-          <code>Hello World</code>, and welcome to the Conestoga Computer Science Club website! In
+          <code>Hello World</code>, and welcome to the Conestoga Computer Science Club website! 
+          Since 2016, we've empowered students of all backgrounds to explore computer science 
+          through hands-on activities, tech talks, and events. In
           addition to our weekly meetings (on Mondays in room 2005), we organize a variety of events
           throughout the year. Our flagship event is hackStoga (Stoga's annual hackathon), but we
           also organize a Scratchathon, two CodeFests, and participate and sometimes win local
@@ -225,89 +230,102 @@
       <div class="pure-u-md-1-24">
         <!-- formatting div POST-->
       </div>
+      <!-- when updating leadership, make sure to put past years leadership into a new html file
+       and update the main.js -->
       <div class="textbox pure-u-md-10-24" id="leadership">
         <div class="pure-g leadership">
           <h2>Leadership</h2>
+          <select id="yearSelect" onchange="showYear(this.value)">
+            <option value="2026">2025-2026</option>
+            <option value="2025">2024-2025</option>
+            <option value="2024">2023-2024</option>
+            <option value="2023">2022-2023</option>
+            <option value="2022">2021-2022</option>
+            <option value="2021">2020-2021</option>
+            <option value="2020">2019-2020</option>
+            <option value="2019">2018-2019</option>
+          </select>
         </div>
-        <div class="pure-g officer">
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/26ZhangA.png" />
+          <div id="officers-container">
+          <div class="pure-g officer">
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-4">
+              <img class="pure-img" src="/media/admins/26ZhangA.png" />
+            </div>
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-2">
+              <p>
+                <b style="font-size: 120%">Anthony Zhang</b><br />
+                Co-President
+              </p>
+            </div>
+            <div class="pure-u-1-12"></div>
           </div>
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-2">
-            <p>
-              <b style="font-size: 120%">Anthony Zhang</b><br />
-              Co-President
-            </p>
-          </div>
-          <div class="pure-u-1-12"></div>
-        </div>
 
-        <div class="pure-g officer">
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/26AroraP.png " />
+          <div class="pure-g officer">
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-4">
+              <img class="pure-img" src="/media/admins/26AroraP.png " />
+            </div>
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-2">
+              <p>
+                <b style="font-size: 120%">Prranit Arora</b><br />
+                Co-President
+              </p>
+            </div>
+            <div class="pure-u-1-12"></div>
           </div>
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-2">
-            <p>
-              <b style="font-size: 120%">Prranit Arora</b><br />
-              Co-President
-            </p>
-          </div>
-          <div class="pure-u-1-12"></div>
-        </div>
 
-        <div class="pure-g officer">
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/26WuJ.png" />
+          <div class="pure-g officer">
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-4">
+              <img class="pure-img" src="/media/admins/26WuJ.png" />
+            </div>
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-2">
+              <p>
+                <b style="font-size: 120%">Justin Wu</b><br />
+                Co-Vice President
+              </p>
+            </div>
+            <div class="pure-u-1-12"></div>
           </div>
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-2">
-            <p>
-              <b style="font-size: 120%">Justin Wu</b><br />
-              Co-Vice President
-            </p>
+          
+          <div class="pure-g officer">
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-4">
+              <img class="pure-img" src="/media/admins/26ZhangR.png" />
+            </div>
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-2">
+              <p>
+                <b style="font-size: 120%">Ritchie Zhang</b><br />
+                Co-Vice President
+              </p>
+            </div>
+            <div class="pure-u-1-12"></div>
           </div>
-          <div class="pure-u-1-12"></div>
-        </div>
-        
-        <div class="pure-g officer">
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/26ZhangR.png" />
-          </div>
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-2">
-            <p>
-              <b style="font-size: 120%">Ritchie Zhang</b><br />
-              Co-Vice President
-            </p>
-          </div>
-          <div class="pure-u-1-12"></div>
-        </div>
 
-        <div class="pure-g officer">
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-4">
-            <img class="pure-img" src="/media/admins/27MussaniI.png" />
+          <div class="pure-g officer">
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-4">
+              <img class="pure-img" src="/media/admins/27MussaniI.png" />
+            </div>
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-1-2">
+              <p>
+                <b style="font-size: 120%">Issaam Mussani</b><br />
+                Officer
+              </p>
+            </div>
+            <div class="pure-u-1-12"></div>
           </div>
-          <div class="pure-u-1-12"></div>
-          <div class="pure-u-1-2">
-            <p>
-              <b style="font-size: 120%">Issaam Mussani</b><br />
-              Officer
-            </p>
-          </div>
-          <div class="pure-u-1-12"></div>
         </div>
       </div>
       <div class="pure-u-md-1-24">
         <!-- formatting div POST-->
       </div>
     </section>
-    <script async defer src="/scripts/main.js"></script>
   </body>
 </html>

@@ -166,8 +166,9 @@ h3 {
 /* leadership cards */
 .officer {
   background-color: var(--account-background);
-  width: 90%;
   border-radius: 1rem;
+  width: 90%;
+  margin: 0 0 1.5rem 0;
 }
 
 .officer > .pure-u-1-4 > .pure-img {
@@ -180,6 +181,22 @@ h3 {
   display: flex;
   align-items: center;
 }
+
+#yearSelect {
+  background-color: var(--account-background);
+  color: var(--contacts-text);
+  border: 2px solid var(--contacts-text);
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin-left: 0.75rem;
+}
+
+#officers-container {
+  width: 100%;
+}
+
 
 /* mobile */
 @media screen and (max-width: 800px) {
@@ -195,6 +212,10 @@ h3 {
   #about,
   #contacts {
     scroll-margin-top: 12vmax;
+  }
+
+  #yearSelect {
+  font-size: 1rem;
   }
 }
 
