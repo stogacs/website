@@ -352,10 +352,17 @@ ul.brands li.brand img {
 
   .right-button {
     margin-left: 0em;
-    margin-top: 15px;
   }
   
   .button-container {
     gap: 15px;
+  }
+
+  #signup-event-button {
+    font-size: 1.3em;
+  }
+
+  #signup-vol-button {
+    font-size: 1.3em;
   }
 }
