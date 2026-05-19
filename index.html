@@ -39,22 +39,23 @@
   </head>
   <body>
     <header>
-      <p class="navbar-title">Conestoga Computer Science Club</p>
+      <a href="/" class="navbar-title">Conestoga Computer Science Club</a>
       <input type="checkbox" id="navbar-click" />
       <label for="navbar-click" class="navbar-toggle"> <i class="fas fa-bars"> </i></label>
       <ul id="navbar-links">
         <!--todo: add gallery some where?/ (MEDIA PAGE!)-->
         <!--todo: add credits to README-->
-        <li><a href="#about">About</a></li>
-        <li><a href="#contacts">Contacts</a></li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" id="dropdown-label">Home ▾</button>
+          <ul class="dropdown-content" id="dropdown-content">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+          </ul>
+        </li>
         <li><a href="/resources">Resources</a></li>
-        <li>
-          <a href="/leaderboard">Shekels</a>
-        </li>
-        <li>
-          <a href="/hackstoga/">hackStoga</a>
-        </li>
-        <!--<li><a href="/gallery">Gallery</a></li>-->
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/leaderboard">Shekels</a></li>
+        <li><a href="/hackstoga/">hackStoga</a></li>
         <!--
               When the Scratchathon, CodeFest, and hackStoga pages are completed, 
               uncomment scripts/main.js so it can add the seasonal event to this navbar

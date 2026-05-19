@@ -359,6 +359,16 @@ header {
   padding: 0;
 }
 
+a.navbar-title {
+  color: var(--light);
+  text-decoration: none;
+}
+
+a.navbar-title:hover {
+  color: var(--red) !important;
+  text-decoration: none;
+} 
+
 /* phone style */
 @media screen and (max-width: 800px) {
 

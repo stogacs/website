@@ -31,3 +31,23 @@ function showYear(year) {
       document.getElementById('officers-container').innerHTML = html;
     });
 }
+
+//script for dropdown menu
+const btn = document.getElementById('dropdown-label');
+const content = document.getElementById('dropdown-content');
+const dropdown = btn.closest('.dropdown');
+
+btn.addEventListener('click', function(e) {
+  e.stopPropagation();
+  if (window.innerWidth <= 1250) {
+    content.classList.toggle('open');
+    dropdown.classList.toggle('open');
+  }
+});
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 1250) {
+    content.classList.remove('open');
+    dropdown.classList.remove('open');
+  }
+});

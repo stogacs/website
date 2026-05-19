@@ -345,6 +345,20 @@ ul.brands li.brand img {
   display: none;
 }
 
+.sponsor-nav-link {
+  background-color: var(--garnet);
+  color: var(--light) !important;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.sponsor-nav-link:hover {
+  background-color: var(--darkred) !important;
+  color: var(--light) !important;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 522px) {
   .clean-button {
     margin: 0px 0px 0px 0px;
