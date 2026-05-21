@@ -8,27 +8,39 @@ let activity = events[day > 310 ? 1 : day > 245 ? 0 : day > 100 ? 1 : day > 30 ?
 
 // script for changing leadership years
 const cache = {};
-let initialHTML;
 
 document.addEventListener('DOMContentLoaded', () => {
-  initialHTML = document.getElementById('officers-container').innerHTML;
-  document.getElementById('yearSelect').value = '2026';
+  const yearSelect = document.getElementById('yearSelect');
+  if (yearSelect) {
+    yearSelect.value = '2026';
+  }
+  // fix race condition
+  setTimeout(() => {
+    showYear('2026');
+  }, 0);
 });
 
 function showYear(year) {
-  if (year === '2026') {
-    document.getElementById('officers-container').innerHTML = initialHTML;
-    return;
-  }
+  const container = document.getElementById('officers-container');
+  if (!container) return;
+  
   if (cache[year]) {
-    document.getElementById('officers-container').innerHTML = cache[year];
+    container.innerHTML = cache[year];
     return;
   }
+  
   fetch('/leadership/' + year + '.html')
-    .then(r => r.text())
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to load');
+      return response.text();
+    })
     .then(html => {
       cache[year] = html;
-      document.getElementById('officers-container').innerHTML = html;
+      container.innerHTML = html;
+    })
+    .catch(error => {
+      container.innerHTML = '<p>Error loading leadership data.</p>';
+      console.error(error);
     });
 }
 
