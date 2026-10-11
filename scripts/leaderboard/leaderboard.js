@@ -1,17 +1,31 @@
-function getPurchases(userInfo) {
-  const isAdmin = userInfo?.admin;
-  let leaderboard = document.getElementById('leaderboard-list');
-  const leaderboardTable = document.createElement('table');
-  leaderboardTable.className = 'leaderboard center-text';
-  specialColors = ['gold', 'silver', '#9F7A34'];
+const specialColors = ['gold', 'silver', '#9F7A34'];
+
+async function loadLeaderboard(profile) {
+  const isAdmin = profile?.is_admin;
+  const leaderboard = document.getElementById('leaderboard-list');
+  if (!shekelsDb) {
+    leaderboard.innerHTML = `<p class="center-text error-text">${NOT_CONFIGURED_MESSAGE}</p>`;
+    return;
+  }
+
+  const { data: users, error } = await shekelsDb
+    .from('profiles')
+    .select('id, username, display_name, shekels')
+    .order('shekels', { ascending: false })
+    .order('display_name', { ascending: true });
+
+  if (error) {
+    leaderboard.innerHTML = `<p class="center-text error-text">An error occurred while accessing the leaderboard.</p>`;
+    console.log(error);
+    return;
+  }
+
   let tableContent = `
         <tr>
             <th>Rank</th>
             <th>Name</th>
             <th>Shekels</th>
         </tr>
-    `;
-  tableContent += `
         <tr>
             <td> <p id="enchanted" style="color: var(--enchanted)">ᔑ!</p></td>
             <td>Mr. Sharick</td>
@@ -19,200 +33,111 @@ function getPurchases(userInfo) {
         </tr>
     `;
 
-  fetch('https://cs-services.stoga.club/users')
-    .then((response) => response.json())
-    .then((data) => {
-      if (!data.disabled) {
-        let groupedByShekels = {};
+  // users tied on shekels share a rank, and the next rank skips ahead (1, 1, 3)
+  let rank = 0;
+  users.forEach((user, index) => {
+    if (index == 0 || user.shekels != users[index - 1].shekels) {
+      rank = index + 1;
+    }
+    tableContent += createUserContent(user, isAdmin, rank);
+  });
 
-        data.forEach((user) => {
-          if (!groupedByShekels[user.shekels]) {
-            groupedByShekels[user.shekels] = [];
-          }
-          groupedByShekels[user.shekels].push(user);
-        });
+  const leaderboardTable = document.createElement('table');
+  leaderboardTable.className = 'leaderboard center-text';
+  leaderboardTable.innerHTML = tableContent;
+  leaderboard.innerHTML = '';
+  leaderboard.appendChild(leaderboardTable);
 
-        let sortedShekels = Object.keys(groupedByShekels).sort((a, b) => b - a);
-
-        let rank = 1;
-
-        // add each user to the table
-        sortedShekels.forEach((shekels) => {
-          let usersWithSameShekels = groupedByShekels[shekels];
-          usersWithSameShekels.forEach((user) => {
-            tableContent += createUserContent(user, isAdmin, rank);
-          })
-
-          rank += usersWithSameShekels.length;
-        })
-
-        leaderboardTable.innerHTML = tableContent;
-        leaderboard.innerHTML = '';
-        if (isAdmin) {
-          document.getElementById('new-row-button').style.display = '';
-          document.getElementById('save-button').style.display = '';
-          let footer = document.getElementById('footer-text');
-          footer.innerHTML = `<p class="center-text" id="footer-text">As an administrator, you can edit the leaderboard by editing the value in a cell and saving<br>An empty display name will result in the real name being displayed.</p>`;
-        }
-        leaderboard.appendChild(leaderboardTable);
-      } else {
-        leaderboard.innerHTML = `<p class="center-text error-text">Web access to the leaderboard is disabled.</p>`;
-        document.getElementById('footer-text').innerText = data.hasOwnProperty('message')
-          ? data.message
-          : 'Access to the leaderboard has been disabled by a club officer.';
-      }
-    })
-    .catch((error) => {
-      leaderboard.innerHTML = `<p class="center-text error-text">An error occurred while accessing the leaderboard.</p>`;
-      console.log(error);
-    });
+  if (isAdmin) {
+    document.getElementById('save-button').style.display = '';
+    document.getElementById('footer-text').innerHTML =
+      'As an administrator, you can edit display names and shekel counts in the table, then press Save.';
+  }
 }
 
 function createUserContent(user, isAdmin, rank) {
-  let name = user.display_name || removeMiddle(user.name) || 'N/A';
-  let shekels = parseInt(user.shekels) !== 0 ? parseInt(user.shekels) || 'N/A' : 0;
-  let discord_linked = user.discord_linked;
-  let shekelTags = isAdmin
-    ? [
-      `<input class="center-text admin-num-input" type="number" min="0" value="${shekels}"`,
-      `input`,
-    ]
-    : ['<p>' + shekels, 'p'];
-  let nameTags = isAdmin
-    ? [
-      `<input class="center-text admin-text-input" id="real-name" type="text" value="${user.name}"> <input class="center-text admin-text-input" id="display-name" type="text" value="${user.display_name}">`,
-      `</input>`,
-      '<img src="/media/misc/delete.png" onclick="deleteUser(\'' +
-      user.id +
-      '\')"></img>',
-    ]
-    : ['' + name, '', ''];
+  const displayName = escapeHtml(user.display_name);
+  const username = escapeHtml(user.username);
+
+  const nameCell = isAdmin
+    ? `<input class="center-text admin-text-input" type="text" maxlength="40" value="${displayName}"
+         data-original="${displayName}"> <span title="Username">(${username})</span>`
+    : `<span title="${username}">${displayName}</span>`;
+  const shekelCell = isAdmin
+    ? `<input class="center-text admin-num-input" type="number" min="0" step="1" value="${user.shekels}"
+         data-original="${user.shekels}">`
+    : `<p>${user.shekels}</p>`;
+
   let styleTag = '';
-  if (rank - 1 < specialColors.length) {
+  if (user.shekels > 0 && rank - 1 < specialColors.length) {
     styleTag = `style="color: ${specialColors[rank - 1]}"`;
   }
 
-  tableContent = `
-    <tr shekel_guid="${user.id}">
+  return `
+    <tr data-user-id="${user.id}">
       <td ${styleTag}>
-        <span>${shekels === 0 ? '-' : '#' + rank}</span>
+        <span>${user.shekels === 0 ? '-' : '#' + rank}</span>
       </td>
-      <td>${nameTags[0]}${nameTags[1]}${nameTags[2]}${discord_linked ? '<img src="/media/misc/verified.png"></img>' : ''}</td>
-      <td>${shekelTags[0]}</${shekelTags[1]}></td>
+      <td>${nameCell}</td>
+      <td>${shekelCell}</td>
     </tr>
-    `;      
-  return tableContent;
-}
-
-function updateLeaderboard() {
-  const leaderboardTable = document.getElementsByClassName('leaderboard')[0];
-  const rows = leaderboardTable.getElementsByTagName('tr');
-  const data = [];
-
-  // skipping the first 2 rows!!!
-  for (let i = 2; i < rows.length; i++) {
-    const row = rows[i];
-    const shekel_guid = row.getAttribute('shekel_guid');
-    const real_name = row.getElementsByTagName('input')[0].value;
-    const display_name = row.getElementsByTagName('input')[1].value;
-    const shekels = row.getElementsByTagName('input')[2].value;
-    data.push({ shekel_guid, real_name, display_name, shekels });
-  }
-
-  const json = JSON.stringify(data);
-
-  fetch('https://cs-services.stoga.club/users/update?discordAuth=' + getCookie('discordAuth'), {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: json,
-  }).then((response) => {
-    if (response.status == 200) {
-      window.location.reload();
-    } else {
-      response.json().then((data) => {
-        document.getElementById(
-          'subheading',
-        ).innerHTML = `<p class="center-text error-text">${data.message}</p>`;
-      });
-    }
-  });
-}
-
-//Visually delete the user from the table, does not send an api request anymore
-function deleteUser(shekel_guid) {
-  const leaderboardTable = document.getElementsByClassName('leaderboard')[0];
-  const rows = leaderboardTable.getElementsByTagName('tr');
-  for (let i = 2; i < rows.length; i++) {
-    const row = rows[i];
-    if (row.getAttribute('shekel_guid') == shekel_guid) {
-      row.remove();
-      break;
-    }
-  }
-}
-
-function newRow() {
-  const leaderboardTable = document.getElementsByClassName('leaderboard')[0];
-  const row = leaderboardTable.insertRow(-1);
-  row.innerHTML = `
-        <td></td>
-        <td><input class="center-text admin-text-input" id="real-name" type="text" value=""> <input class="center-text admin-text-input" id="display-name" type="text" value=""></input></td>
-        <td><input class="center-text admin-num-input" type="number" min="0" value="0"></input></td>
     `;
 }
 
-function getOrdinalSuffix(i) {
-  var j = i % 10,
-    k = i % 100;
-  if (j == 1 && k != 11) {
-    return 'st';
+async function updateLeaderboard() {
+  const saveButton = document.getElementById('save-button');
+  const errorDisplay = document.getElementById('error-display');
+  errorDisplay.style.display = 'none';
+
+  const changes = [];
+  for (const row of document.querySelectorAll('.leaderboard tr[data-user-id]')) {
+    const nameInput = row.querySelector('.admin-text-input');
+    const shekelInput = row.querySelector('.admin-num-input');
+    const displayName = nameInput.value.trim();
+    const shekels = Number(shekelInput.value);
+
+    if (displayName.length < 1 || !Number.isInteger(shekels) || shekels < 0) {
+      errorDisplay.innerText =
+        'Every row needs a display name and a whole number of shekels that is 0 or more.';
+      errorDisplay.style.display = '';
+      return;
+    }
+    if (displayName != nameInput.dataset.original || shekels != Number(shekelInput.dataset.original)) {
+      changes.push({ id: row.dataset.userId, display_name: displayName, shekels });
+    }
   }
-  if (j == 2 && k != 12) {
-    return 'nd';
+
+  if (changes.length == 0) {
+    return;
   }
-  if (j == 3 && k != 13) {
-    return 'rd';
+
+  saveButton.disabled = true;
+  saveButton.innerText = 'Saving...';
+  for (const change of changes) {
+    const { data, error } = await shekelsDb
+      .from('profiles')
+      .update({ display_name: change.display_name, shekels: change.shekels })
+      .eq('id', change.id)
+      .select('id');
+    if (error || data.length == 0) {
+      errorDisplay.innerText = 'Some changes could not be saved. Make sure you are still logged in as an admin.';
+      errorDisplay.style.display = '';
+      saveButton.disabled = false;
+      saveButton.innerText = 'Save';
+      return;
+    }
   }
-  return 'th';
+  window.location.reload();
 }
 
-function ordinal(i) {
-  return i + getOrdinalSuffix(i);
-}
-
-function removeMiddle(name) {
-  let nameArray = name.split(' ');
-  if (nameArray.length > 2) {
-    nameArray.splice(1, 1);
-    return nameArray.join(' ');
-  } else {
-    return name;
-  }
-}
-
-// On page load
 document.addEventListener('DOMContentLoaded', async function () {
-  let userInfo = await verifyUser();
-  if (userInfo != null) {
-    if (userInfo.name == null) {
-      window.location.href = '/leaderboard/onboarding/claim.html';
-    }
-  }
-
-  cookie = getCookie('postLoginRedir');
-  if (cookie) {
-    if (!cookie.includes('http')) {
-      redir = setCookie('postLoginRedir', '', 0);
-      setCookie('postLoginRedir', '', 0);
-      window.location.href = decodeURIComponent(cookie);
-    }
-  }
-  let leaderboard = document.getElementById('leaderboard-list');
+  const leaderboard = document.getElementById('leaderboard-list');
   leaderboard.innerHTML = `<p class="center-text">Loading leaderboard...</p>`;
-  getPurchases(userInfo);
-  let chars = 'ᔑʖᓵ↸ᒷ⎓⊣⍑╎⋮ꖌꖎᒲリ𝙹!¡ᑑ∷ᓭℸ⚍⍊ᑑ/||⨅';
+
+  const profile = await getCurrentProfile();
+  await loadLeaderboard(profile);
+
+  const chars = 'ᔑʖᓵ↸ᒷ⎓⊣⍑╎⋮ꖌꖎᒲリ𝙹!¡ᑑ∷ᓭℸ⚍⍊ᑑ/||⨅';
   function textEffect() {
     try {
       document.getElementById('enchanted').innerHTML =

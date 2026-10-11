@@ -2,14 +2,49 @@
   --card-background: #121212;
 }
 
-#login-cards {
+.login-cards {
   text-align: center;
   margin-top: 20px;
+  padding-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
+  width: calc(100% - 32px);
+}
+
+.login-cards .card {
+  min-width: min(320px, 100%);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 340px;
+  padding: 20px 0px;
+}
+
+.login-form input {
+  width: 100%;
+  margin-bottom: 0.75rem !important;
+}
+
+.login-form .pure-button {
+  margin-top: 0.5rem;
+}
+
+.card .success-text {
+  color: var(--green, #4caf50);
+  font-size: 120%;
+}
+
+#logout-button {
+  background: rgb(202, 60, 60);
+  color: white;
 }
 
 .card {
