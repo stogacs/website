@@ -22,6 +22,9 @@
   <script src="/scripts/utils.js"></script>
 
   <!-- Load in page scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="/scripts/leaderboard/supabase-config.js"></script>
+  <script src="/scripts/leaderboard/shekels.js"></script>
   <script src="/scripts/leaderboard/login.js"></script>
 
   <!-- Load in external CSS Libraries -->
@@ -43,36 +46,81 @@
   </header>
   <section class="stack center-text center-form" class="screen pure-g">
       <div>
-        <h1 class="center-text">Log in</h1>
+        <h1 class="center-text" id="page-title">Log in</h1>
       </div>
-      <div id="login-cards" style="padding-top: 50px;">
+
+      <div id="account-card" class="login-cards" style="display: none;">
         <div class="card pure-g">
           <div class="card-content">
-            <div>
-              <b class="center-text">Log in Options</b>
-            </div>
-            <img class="" style="padding:50px;" src="/media/misc/logo-hires.png"></img>
+            <b id="account-name"></b>
+            <p class="button-label">Username: <span id="account-username"></span></p>
+            <p class="button-label">Shekels: <span id="account-shekels"></span></p>
             <div class="button-container">
-              <a href="https://cs-services.stoga.club/login">
-                <button type="button" id="discord-button" class="pure-button button-secondary">
-                  <div class="button-content">
-                    <img src="/media/misc/discord-mark-white.png" class="button-icon"></img>
-                    <p class="button-text">Log in or Create</p>
-                  </div>
-                </button>
-              </a>
+              <button type="button" id="logout-button" class="pure-button">Log out</button>
             </div>
-            <p class="button-label">Use a Code From Another Device</p>
-            <form id="login-code-entry" class="pure-form center-form" onsubmit="event.preventDefault();">
-              <fieldset>
-                <div class="pure-g" style="display:flex; align-items: center;">
-                  <div class="pure-control-group">
-                    <input id="login-code-for" type="text" placeholder="Login Code" required>
-                    <button id="submit-button" type="button" class="pure-button pure-button-primary"
-                      onclick="loginWithCode();">Submit</button>
-                  </div>
-                </div>
-              </fieldset>
+          </div>
+        </div>
+
+        <div class="card pure-g">
+          <div class="card-content">
+            <b class="center-text">Change display name</b>
+            <form id="display-name-form" class="pure-form pure-form-stacked login-form">
+              <input id="new-display-name" type="text" placeholder="New display name" maxlength="40" required>
+              <p class="error-text" id="display-name-error" style="display: none;"></p>
+              <p class="success-text" id="display-name-success" style="display: none;"></p>
+              <button id="display-name-button" type="submit" class="pure-button pure-button-primary">Save display name</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card pure-g">
+          <div class="card-content">
+            <b class="center-text">Change password</b>
+            <form id="password-form" class="pure-form pure-form-stacked login-form">
+              <input id="current-password" type="password" placeholder="Current password"
+                autocomplete="current-password" required>
+              <input id="new-password" type="password" placeholder="New password (6+ characters)" minlength="6"
+                autocomplete="new-password" required>
+              <input id="new-password-confirm" type="password" placeholder="Confirm new password" minlength="6"
+                autocomplete="new-password" required>
+              <p class="error-text" id="password-error" style="display: none;"></p>
+              <p class="success-text" id="password-success" style="display: none;"></p>
+              <button id="password-button" type="submit" class="pure-button pure-button-primary">Change password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="login-cards" class="login-cards" style="display: none;">
+        <div class="card pure-g">
+          <div class="card-content">
+            <b class="center-text">Log in</b>
+            <form id="login-form" class="pure-form pure-form-stacked login-form">
+              <input id="login-username" type="text" placeholder="Username (e.g. SamStoga28)"
+                autocomplete="username" required>
+              <input id="login-password" type="password" placeholder="Password"
+                autocomplete="current-password" required>
+              <p class="error-text" id="login-error" style="display: none;"></p>
+              <button id="login-button" type="submit" class="pure-button pure-button-primary">Log in</button>
+            </form>
+            <p class="button-label">Forgot your password? Ask a club officer to reset it.</p>
+          </div>
+        </div>
+
+        <div class="card pure-g">
+          <div class="card-content">
+            <b class="center-text">Create an account</b>
+            <form id="signup-form" class="pure-form pure-form-stacked login-form">
+              <input id="signup-username" type="text" placeholder="Full name + grad year (e.g. SamStoga28)"
+                pattern="[A-Za-z]+[0-9]{2}" title="Your full name followed by your two digit graduation year, like SamStoga28"
+                autocomplete="username" required>
+              <input id="signup-display-name" type="text" placeholder="Display name" maxlength="40" required>
+              <input id="signup-password" type="password" placeholder="Password (6+ characters)" minlength="6"
+                autocomplete="new-password" required>
+              <input id="signup-password-confirm" type="password" placeholder="Confirm password" minlength="6"
+                autocomplete="new-password" required>
+              <p class="error-text" id="signup-error" style="display: none;"></p>
+              <button id="signup-button" type="submit" class="pure-button pure-button-primary">Create account</button>
             </form>
           </div>
         </div>

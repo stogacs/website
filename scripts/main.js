@@ -12,11 +12,11 @@ const cache = {};
 document.addEventListener('DOMContentLoaded', () => {
   const yearSelect = document.getElementById('yearSelect');
   if (yearSelect) {
-    yearSelect.value = '2026';
+    yearSelect.value = '2027';
   }
   // fix race condition
   setTimeout(() => {
-    showYear('2026');
+    showYear('2027');
   }, 0);
 });
 
